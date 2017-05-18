@@ -1,0 +1,32 @@
+/**
+*  Copyright (c) 2017, Árpád Poprádi
+*  All rights reserved.
+*
+*  This source code is licensed under the BSD-style license found in the
+*  LICENSE file in the root directory of this source tree.
+*/
+
+ 
+::-webkit-scrollbar {
+display: none;
+}
+
+
+html,body {
+  width: 100vw;
+  margin: 0;
+}
+
+
+@import "app";
+@import "usermenu";
+@import "loginsignup";
+@import "newpassword";
+@import "collectionsview";
+@import "errordialog";
+@import "entityview";
+@import "translationview";
+@import "overviews/overviews";
+@import "propertyviews/propertyviews";
+@import "dialogs/dialogs";
+@import "translationComponents/translationComponents";

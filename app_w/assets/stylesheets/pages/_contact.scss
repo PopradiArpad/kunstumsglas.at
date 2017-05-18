@@ -1,0 +1,33 @@
+/**
+*  Copyright (c) 2017, Árpád Poprádi
+*  All rights reserved.
+*
+*  This source code is licensed under the BSD-style license found in the
+*  LICENSE file in the root directory of this source tree.
+*/
+
+ 
+@import "./helpers/textpage";
+
+.kug-contact {
+  @include text-page();
+  font-size: 1em;
+
+  * {
+    font-weight: 400;
+    font-family: 'Railway',sans-serif;
+  }
+
+  h1 {
+    text-align: center;
+    color: darkslateblue;
+  }
+
+  h2 {
+    margin-bottom: 0px;
+  }
+
+  p {
+    margin-top: 0px;
+  }
+}

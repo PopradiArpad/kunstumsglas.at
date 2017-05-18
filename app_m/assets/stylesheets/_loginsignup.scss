@@ -1,0 +1,40 @@
+/**
+*  Copyright (c) 2017, Árpád Poprádi
+*  All rights reserved.
+*
+*  This source code is licensed under the BSD-style license found in the
+*  LICENSE file in the root directory of this source tree.
+*/
+
+ 
+.kugm-loginsignup {
+  padding: 1em;
+  margin: 1em;
+  text-align: center;
+  background-color: aqua;
+
+  .kugm-loginsignup-title {
+    font-size: 3em;
+    margin: 1em auto;
+  }
+
+  form {
+
+    input {
+      display: block;
+      margin: 1em auto;
+    }
+  }
+  .kugm-loginsignup-switch {
+    margin-top: 2em;
+
+    .kugm-loginsignup-switch-link {
+      color: blue;
+      text-decoration: underline;
+    }
+  }
+}
+
+.kugm-loginsignup__signup {
+  background-color: lightpink;
+}

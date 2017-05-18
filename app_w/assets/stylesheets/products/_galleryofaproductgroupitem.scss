@@ -1,0 +1,72 @@
+/**
+*  Copyright (c) 2017, Árpád Poprádi
+*  All rights reserved.
+*
+*  This source code is licensed under the BSD-style license found in the
+*  LICENSE file in the root directory of this source tree.
+*/
+
+ 
+$border-radius: 1vmin;
+
+.kug-galleryofaproductgroupitem {
+  //centering: https://www.w3.org/Style/Examples/007/center
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+
+  text-align: center;
+
+  .kug-galleryofaproductgroupitem-img {
+    border-top-left-radius:  $border-radius;
+    border-top-right-radius: $border-radius;
+    overflow: hidden;
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .kug-galleryofaproductgroupitem-lines {
+    background-color: white;
+    border-bottom-left-radius:  $border-radius;
+    border-bottom-right-radius: $border-radius;
+    line-height: 1.5em;
+    padding-left: .5em;
+    padding-right: .5em;
+
+    .kug-galleryofaproductgroupitem-line1 {
+      font-family: 'Raleway',serif;
+    }
+
+    .kug-galleryofaproductgroupitem-line2 {
+      font-family: 'Raleway',serif;
+      font-size: 1.8em;
+      padding-bottom: .3em;
+    }
+  }
+}
+
+$transitionTime: 1000ms;
+
+.kug-galleryofaproductgroupitem.carousel-enter {
+  opacity: 0;
+}
+
+.kug-galleryofaproductgroupitem.carousel-enter.carousel-enter-active {
+  opacity: 1;
+  transition: opacity $transitionTime ease-in;
+}
+
+.kug-galleryofaproductgroupitem.carousel-leave {
+  opacity: 1;
+}
+
+.kug-galleryofaproductgroupitem.carousel-leave.carousel-leave-active {
+  opacity: 0;
+  transition: opacity $transitionTime ease-out;
+}

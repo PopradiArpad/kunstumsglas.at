@@ -1,0 +1,68 @@
+/**
+*  Copyright (c) 2017, Árpád Poprádi
+*  All rights reserved.
+*
+*  This source code is licensed under the BSD-style license found in the
+*  LICENSE file in the root directory of this source tree.
+*/
+
+ 
+@import "./helpers/marginal";
+
+$font-size: 2.5em;
+
+.kug-title {
+  text-shadow: 1px 1px #000055;
+
+  .kug-title-top {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 2.5em;
+
+
+    .kug-title-top-menu {
+      font-weight: 400;
+      white-space: nowrap;
+    }
+
+    .kug-title-top-text {
+      flex-grow: 1;
+      text-align: center;
+    }
+  }
+
+  nav {
+    display: none;
+    flex-direction: column;
+
+    .kug-title-nav-item {
+      text-align: center;
+      font-size: 1.5em;
+      padding: .5em;
+      border-bottom: 1px solid #E0E0E0;
+      @include marginal-clickable();
+    }
+  }
+
+  nav.open {
+    display: flex;
+  }
+
+  @media screen and (min-width: 768px){
+    .kug-title-top {
+      .kug-title-top-menu {
+        display: none;
+      }
+    }
+    nav {
+      display: flex;
+      flex-direction: row;
+
+      .kug-title-nav-item {
+        flex-grow: 1;
+      }
+    }
+  }
+
+}

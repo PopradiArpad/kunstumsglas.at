@@ -1,0 +1,30 @@
+/**
+*  Copyright (c) 2017, Árpád Poprádi
+*  All rights reserved.
+*
+*  This source code is licensed under the BSD-style license found in the
+*  LICENSE file in the root directory of this source tree.
+*/
+
+ 
+$productoverview-length: 200px;
+
+.kugm-productgroupoverview {
+  background-color: palegoldenrod;
+  width: $productoverview-length;
+  height: $productoverview-length;
+  text-align: center;
+  position: absolute;//for  draggable
+}
+
+.kugm-productgroupoverview.online {
+  background-color: green;
+}
+
+.kugm-productgroupoverview.offline {
+  background-color: red;
+}
+
+.kugm-productgroupoverview.dragged {
+  opacity: .8;
+}

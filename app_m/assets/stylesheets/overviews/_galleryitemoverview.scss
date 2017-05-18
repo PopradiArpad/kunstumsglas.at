@@ -1,0 +1,36 @@
+/**
+*  Copyright (c) 2017, Árpád Poprádi
+*  All rights reserved.
+*
+*  This source code is licensed under the BSD-style license found in the
+*  LICENSE file in the root directory of this source tree.
+*/
+
+ 
+$galleryitemoverview-length: 200px;
+
+.kugm-galleryitemoverview {
+  width: $galleryitemoverview-length;
+  height: $galleryitemoverview-length;
+  position: absolute;//for  draggable
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+
+  img {
+    max-width: $galleryitemoverview-length;
+    max-height: calc(#{$galleryitemoverview-length} - 4em);
+  }
+
+  .kugm-galleryitemoverview-line {
+    background-color: white;
+    font-size: .8em;
+    text-align: center;
+    padding-top: .5em;
+    border-bottom: 1px solid grey;
+  }
+}
+
+.kugm-galleryitemoverview.dragged {
+  opacity: .8;
+}

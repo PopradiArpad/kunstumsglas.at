@@ -1,0 +1,59 @@
+/**
+*  Copyright (c) 2017, Árpád Poprádi
+*  All rights reserved.
+*
+*  This source code is licensed under the BSD-style license found in the
+*  LICENSE file in the root directory of this source tree.
+*/
+
+ 
+@import "button";
+
+.kugm-collectionsview {
+  background-color: transparent;
+  min-height: 280px;
+  position: relative;//for  draggable
+  width: 100vw;
+
+  .kugm-collectionsview-openclose {
+    @include button(royalblue);
+    text-align: center;
+    font-size: 3em;
+    height: 1em;
+  }
+
+  .kugm-collectionsview-items {
+    padding: 20px;
+  }
+
+  .kugm-collectionsview-menu {
+    background-color: white;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 10000;
+    position: absolute;
+
+     a {
+          color: black;
+          padding: 12px 16px;
+          text-decoration: none;
+          display: block;
+
+          &:hover {
+            background-color: cornsilk;
+          }
+      }
+  }
+}
+.kugm-collectionsview.close {
+  height: 0px;
+  overflow-y: hidden;
+  .kugm-collectionsview-openclose::before {
+    content: '\0023F5';
+  }
+}
+.kugm-collectionsview.open {
+  .kugm-collectionsview-openclose::before {
+    content: '\0023F7';
+  }
+}

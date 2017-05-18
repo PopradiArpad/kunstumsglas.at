@@ -1,0 +1,24 @@
+{
+  "en-US": {
+    "cookie.banner.text": "This page uses cookies.",
+    "data.protection.policy.link": "Data Protection Policy",
+    "about.us": "About us",
+    "contact": "Contact",
+    "back": "back",
+    "Start page": "Start page",
+    "data.protection.policy.text.in.html": "<h3>Data protection policy</h3>Verantwortlich im Sinne der Datenschutzgesetzes:<br></br>Kunst ums Glas<br></br><h3>Erfassung von Daten</h3><p>Während Sie auf unsere Webseiten zugreifen, erfassen wir automatisch Daten von allgemeiner Natur.Diese Daten (Server-Logfiles) umfassen zum Beispiel die Art ihres Browsers, ihr Betriebssystem, den Domainnamen Ihres Internetanbieters sowie weitere ähnliche allgemeine Daten.Diese Daten sind absolut</p>",
+    "data.protection.policy.titel": "Data Protection Policy",
+    "data.protection.policy.responsible": "The responsible body as defined by current data protection laws:",
+    "data.protection.policy.contact": "The responsible body as defined by current data protection laws:",
+    "data.protection.policy": "Data Protection Policy"
+  },
+  "de-DE": {
+    "cookie.banner.text": "Diese Seite verwendet cookies.",
+    "data.protection.policy.link": "Data Protection Policy",
+    "about.us": "Über uns",
+    "contact": "Kontakt",
+    "back": "zurück",
+    "Start page": "Startseite",
+    "data.protection.policy.text.in.html": "<h3>Datenschutzerklärung</h3>Verantwortlich im Sinne der Datenschutzgesetzes:<br></br>Kunst ums Glas<br></br><h3>Erfassung von Daten</h3><p>Während Sie auf unsere Webseiten zugreifen, erfassen wir automatisch Daten von allgemeiner Natur.Diese Daten (Server-Logfiles) umfassen zum Beispiel die Art ihres Browsers, ihr Betriebssystem, den Domainnamen Ihres Internetanbieters sowie weitere ähnliche allgemeine Daten.Diese Daten sind absolut</p>"
+  }
+}

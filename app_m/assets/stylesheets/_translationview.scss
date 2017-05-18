@@ -1,0 +1,78 @@
+/**
+*  Copyright (c) 2017, Árpád Poprádi
+*  All rights reserved.
+*
+*  This source code is licensed under the BSD-style license found in the
+*  LICENSE file in the root directory of this source tree.
+*/
+
+ 
+@import "button";
+
+$button-height: 4em;
+$messageidfield-width: 25em;
+
+
+.kugm-translationview {
+  .kugm-translationview-title {
+    text-align: center;
+    font-size: 3em;
+    color: teal;
+  }
+
+  //TODO unifiy with _translatedmessageview
+  .kugm-translationview-localebar {
+    display: flex;
+    justify-content: space-around;
+
+    .kugm-translationview-localebar-overmessageidfield {
+      flex: 0 0 $messageidfield-width;
+    }
+
+    .kugm-translationview-localebar-locale {
+      flex: 1 1 auto;
+      text-align: center;
+      font-size: 2em;
+      padding: .5em;
+    }
+
+    .kugm-translationview-localebar-locale.even {
+      background-color: sienna;
+    }
+
+    .kugm-translationview-localebar-locale.odd {
+      background-color: sandybrown;
+    }
+  }
+  @for $i from 2 through 10 {
+    .kugm-translationview-localebar.translations-count-#{$i} {
+      .kugm-translationview-localebar-locale {
+        width: calc( (100vw - #{$messageidfield-width}) / #{$i} );
+      }
+    }
+  }
+
+  .kugm-translationview-buttons {
+    width: 100%;
+    height: $button-height;
+    position: relative;
+
+      .kugm-translationview-buttons-allback {
+        @include button(green);
+        position: absolute;
+        left: 0;
+        font-size: $button-height;
+      }
+
+      .kugm-translationview-buttons-save {
+        @include button(green);
+        position: absolute;
+        right: 0;
+        font-size: $button-height;
+      }
+  }
+
+  .kugm-translatedmessageview:nth-child(even) {
+    filter: brightness(95%);
+  }
+}

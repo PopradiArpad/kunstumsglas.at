@@ -1,0 +1,22 @@
+/**
+*  Copyright (c) 2017, Árpád Poprádi
+*  All rights reserved.
+*
+*  This source code is licensed under the BSD-style license found in the
+*  LICENSE file in the root directory of this source tree.
+*/
+
+ 
+@import 'button';
+
+.kugm-dataurlpropertyview {
+  position: relative;
+  img {
+    max-width: 100%;
+    max-height: 100%;
+    font-size: 6em;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    }
+}

@@ -1,0 +1,29 @@
+/**
+*  Copyright (c) 2017, Árpád Poprádi
+*  All rights reserved.
+*
+*  This source code is licensed under the BSD-style license found in the
+*  LICENSE file in the root directory of this source tree.
+*/
+
+ 
+@import "./helpers/textpage";
+
+.kug-impressum {
+  @include text-page();
+  font-size: 1em;
+
+  h1 {
+    text-align: center;
+    color: darkslateblue;
+    font-weight: 400;
+  }
+
+  h2 {
+    margin-bottom: 0px;
+  }
+
+  p {
+    margin-top: 0px;
+  }
+}

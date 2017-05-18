@@ -1,0 +1,174 @@
+/**
+*  Copyright (c) 2017, Árpád Poprádi
+*  All rights reserved.
+*
+*  This source code is licensed under the BSD-style license found in the
+*  LICENSE file in the root directory of this source tree.
+*/
+
+ 
+$font-size: 1em;
+
+
+.kug-product {
+  display: flex;
+  background-color: black;
+  justify-content: space-between;
+
+  .kug-product-img {
+    flex: 0 0 auto;
+
+    img {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  .kug-product-properties {
+    flex: 0 0 auto;
+    display: flex;
+    justify-content: center;
+
+    .kug-product-properties-container {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      margin: 1em 0;
+      width: 100%;
+
+      .kug-product-arrows-container {
+        padding-bottom: 1em;
+        padding-right: 1em;
+        align-self:flex-end;
+
+        @mixin arrow() {
+          display: inline-block;
+          background-size: cover;
+          background-repeat: no-repeat;
+          width: 6vw; height: 6vw;
+          transition: transform .4s, filter .4s;
+          &:hover {
+            transform: scale(1.2,1.2);
+            filter: blur(1px) brightness(200%);
+          }
+        }
+
+        .kug-product-left-arrow {
+          background: url('../icons/left-arrow.svg');
+          @include arrow();
+        }
+        .kug-product-right-arrow {
+          background: url('../icons/right-arrow.svg');
+          @include arrow();
+        }
+      }
+
+        @mixin whole-line() {
+          span {
+            display: inline;
+          }
+        }
+
+      .kug-product-property {
+        font-family: 'El Messiri', sans-serif;
+        color:white;
+        font-size: $font-size;
+        margin: .2em;
+        line-height: 1.1;
+        white-space: pre;
+
+        span {
+          display: inline-block;
+          width: 40%;
+        }
+
+        span:nth-child(1) {
+          text-align: left;
+        }
+
+        span:nth-child(2) {
+          text-align: left;
+        }
+
+        .kug-product-property-title {
+          font-weight: 500;
+        }
+      }
+
+      .kug-product-property.nameline1 {
+        @include whole-line();
+        color: #689cd4;
+        text-shadow: 1px 1px 1px #d8e4e0;
+        font-size: 1.5*$font-size;
+        padding-top: .6em;
+        border-top: #3f5586 1px solid;
+        @media (max-width:600px) {
+	        font-size: $font-size;
+        }
+        @media (max-aspect-ratio: 1/1) {
+	        border-top: none;
+        }
+      }
+
+      .kug-product-property.nameline2 {
+        @include whole-line();
+        color: #689cd4;
+        text-shadow: 1px 1px 1px #d8e4e0;
+        font-size: 1.5*$font-size;
+        padding-bottom:.6em;
+        border-bottom: white 1px solid;
+        @media (max-width:600px) {
+	        font-size: $font-size;
+        }
+      }
+
+      .kug-product-property.usagetipp {
+        @include whole-line();
+        text-shadow: 1px 1px 1px #e42297;
+        font-size: $font-size;
+        line-height: 1.5;
+        order:99;
+        padding-top: 1em;
+
+        span {
+          display: block;
+          width: 100%;
+          text-align: center;
+        }
+      }
+    }
+  }
+
+  .kug-product-contact {
+    margin: 1em;
+    font-size: 3vmin;
+    text-align: center;
+    order:100;
+    color: blueviolet;
+  }
+}
+
+@media (min-aspect-ratio: 1/1) {
+  .kug-product {
+    flex-direction: row;
+  }
+  .kug-product-img {
+    img {
+      height: 100vh;
+      width: auto;
+    }
+  }
+}
+
+@media (max-aspect-ratio: 1/1) {
+  .kug-product {
+    flex-direction: column;
+  }
+  .kug-product-img {
+    img {
+      width: 100vw;
+      height: auto;
+    }
+  }
+}

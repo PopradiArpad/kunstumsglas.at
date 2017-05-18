@@ -1,0 +1,41 @@
+/**
+*  Copyright (c) 2017, Árpád Poprádi
+*  All rights reserved.
+*
+*  This source code is licensed under the BSD-style license found in the
+*  LICENSE file in the root directory of this source tree.
+*/
+
+ 
+@import 'button';
+$button-height: 1em;
+
+.kugm-errordialog {
+  position: fixed;
+  z-index: 10000;//yes 1^4 to over come the z-index made by Draggable
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+
+  .kugm-errordialog-modal-content {
+      background-color: #fefefe;
+      margin: 15% auto; /* 15% from the top and centered */
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%; /* Could be more or less, depending on screen size */
+      text-align: center;
+      font-size: 3em;
+
+    .kugm-errordialog-button-goon {
+      @include button(green);
+      margin-top: 1em;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+      font-size: $button-height;
+    }
+  }
+}

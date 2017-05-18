@@ -1,0 +1,46 @@
+/**
+*  Copyright (c) 2017, Árpád Poprádi
+*  All rights reserved.
+*
+*  This source code is licensed under the BSD-style license found in the
+*  LICENSE file in the root directory of this source tree.
+*/
+
+ 
+@import "button";
+
+$button-height: 4em;
+
+
+.kugm-entityview {
+
+  .kugm-entityview-buttons {
+    width: 100%;
+    height: $button-height;
+    position: relative;
+
+      .kugm-entityview-buttons-allback {
+        @include button(green);
+        position: absolute;
+        left: 0;
+        font-size: $button-height;
+      }
+
+      .kugm-entityview-buttons-save {
+        @include button(green);
+        position: absolute;
+        right: 0;
+        font-size: $button-height;
+      }
+
+      .kugm-entityview-buttons-remove {
+        @include button(red);
+        margin-left: auto;
+        margin-right: auto;
+        width: 1em;
+        text-align: center;
+        font-size: $button-height;
+      }
+  }
+
+}

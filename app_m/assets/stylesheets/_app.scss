@@ -1,0 +1,50 @@
+/**
+*  Copyright (c) 2017, Árpád Poprádi
+*  All rights reserved.
+*
+*  This source code is licensed under the BSD-style license found in the
+*  LICENSE file in the root directory of this source tree.
+*/
+
+ 
+@import "button";
+
+* {
+  box-sizing: border-box;
+}
+
+.kugm-app {
+  width: 100vw;
+  margin: 0;
+}
+
+.kugm-app-header {
+  background-color: pink;
+  width: 100vw;
+  display: flex;
+  font-size: 3em;
+  text-align: center;
+  position: relative;//to position the children
+  justify-content: space-between;
+  align-items: stretch;
+
+  .kugm-app-header-back {
+    flex: 0 0 4em;
+    @include button(greenyellow);
+    &::before {
+      content: '\002190';
+    }
+  }
+
+  .kugm-app-header-title {
+    flex: 1 0 auto;
+  }
+
+  .kugm-usermenu {
+    flex: 0 0 auto;
+  }
+}
+
+.kugm-app-main {
+  width: 100vw;
+}

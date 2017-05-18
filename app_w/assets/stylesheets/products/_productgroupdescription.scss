@@ -1,0 +1,67 @@
+/**
+*  Copyright (c) 2017, Árpád Poprádi
+*  All rights reserved.
+*
+*  This source code is licensed under the BSD-style license found in the
+*  LICENSE file in the root directory of this source tree.
+*/
+
+ 
+$transition-time: .4s;
+
+.kug-productgroupdescription {
+  background: white;
+
+  .kug-productgroupdescription-title {
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
+    font-size: 2em;
+    margin: 1em;
+    margin-bottom: 0em;
+    padding: .1em;
+    border-bottom: black 1px solid;
+    transition: margin-bottom $transition-time ease;
+
+    .kug-productgroupdescription-title-lock {
+      width: 48px; height: 48px;
+      float: right;
+      transition: transform $transition-time;
+    }
+  }
+
+  .kug-productgroupdescription-textcontainer {
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1em;
+    max-width: 60em;
+
+    .kug-productgroupdescription-text {
+      overflow: hidden;
+      max-height: 0px;
+      font-family: 'El Messiri',sans-serif;
+      margin: 2em;
+      margin-top: 0em;
+      padding: .1em;
+      transition: margin-top $transition-time ease,max-height $transition-time ease;
+    }
+  }
+}
+
+.kug-productgroupdescription.open {
+  .kug-productgroupdescription-title {
+    margin-bottom: 1em;
+    .kug-productgroupdescription-title-lock {
+      transform: rotateZ(90deg);
+    }
+  }
+  .kug-productgroupdescription-text {
+    max-height: 1500px;
+    margin-top: 2em;
+  }
+}
+
+@media (min-width: 1000px) {
+  .kug-productgroupdescription .kug-productgroupdescription-textcontainer {
+    font-size: 1.3em;
+  }
+}

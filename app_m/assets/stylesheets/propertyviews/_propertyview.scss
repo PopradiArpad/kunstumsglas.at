@@ -1,0 +1,23 @@
+/**
+*  Copyright (c) 2017, Árpád Poprádi
+*  All rights reserved.
+*
+*  This source code is licensed under the BSD-style license found in the
+*  LICENSE file in the root directory of this source tree.
+*/
+
+ 
+@import 'button';
+
+.propertyview {
+  // border-bottom: 1px solid grey;
+}
+
+.kugm-propertyview-button-back {
+  @include button(green);
+  z-index: 10;
+  position: absolute;
+  left: 0;
+  top:  0;
+  font-size: 2em;
+}

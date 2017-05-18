@@ -1,0 +1,85 @@
+/**
+*  Copyright (c) 2017, Árpád Poprádi
+*  All rights reserved.
+*
+*  This source code is licensed under the BSD-style license found in the
+*  LICENSE file in the root directory of this source tree.
+*/
+
+ 
+.kug-productgroupgallery {
+  background: papayawhip;
+
+  .kug-productgroupgallery-arrows-container {
+    z-index: 1;
+    width: 10vw; height: 5vw;
+    margin-left: auto;
+    margin-right: auto;
+
+    @mixin arrow() {
+      display: inline-block;
+      background-size: cover;
+      background-repeat: no-repeat;
+      width: 5vw; height: 5vw;
+      transition: transform .4s, filter .4s;
+      &:hover {
+        transform: scale(1.2,1.2);
+        filter: blur(1px) brightness(200%);
+      }
+    }
+
+    .kug-productgroupgallery-left-arrow {
+      background: url('../icons/left-arrow.svg');
+      @include arrow();
+    }
+    .kug-productgroupgallery-right-arrow {
+      background: url('../icons/right-arrow.svg');
+      @include arrow();
+    }
+  }
+}
+
+.kug-productgroupgallery.Graviertes {
+    background: black;
+}
+
+.kug-productgroupgallery.Waldglas {
+    background: black;
+}
+
+.kug-productgroupgallery.Glasfusing {
+    background: black;
+}
+
+
+//Rearrange the this and its subcomponents according to media state
+//-----------------------------------------------------------------
+@media (min-width: 0px) {
+  .kug-productsgalleryitem {
+    width: 33%;
+  }
+}
+
+@media (min-width: 831px) {
+  .kug-productsgalleryitem {
+    width: 25%;
+  }
+}
+
+@media (min-width: 1000px) {
+  .kug-productsgalleryitem {
+    width: 20%;
+  }
+}
+
+@media (min-width: 1600px) {
+  .kug-productgroupgallery {
+    max-width: 1600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .kug-productsgalleryitem {
+    width: 16.666666%;
+  }
+}

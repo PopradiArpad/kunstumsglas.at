@@ -1,0 +1,74 @@
+/**
+*  Copyright (c) 2017, Árpád Poprádi
+*  All rights reserved.
+*
+*  This source code is licensed under the BSD-style license found in the
+*  LICENSE file in the root directory of this source tree.
+*/
+
+ 
+@import "button";
+
+$messageidfield-width: 25em;
+$button-height: 2em;
+
+.kugm-translatedmessageview {
+  background-color: darkseagreen;
+  text-align: center;
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+
+  .kugm-translatedmessageview-messageidfield {
+    flex: 0 0 $messageidfield-width;
+    color: darkorchid;
+    font-size: 1em;
+    margin-top: .5em;
+    margin-bottom: .5em;
+    text-align: left;
+    display: flex;
+
+    .kugm-propertyview-button-back {
+      position: relative;
+      margin-right: .3em;
+    }
+    .kugm-translatedmessageview-buttons-remove {
+      flex: 0 0 auto;
+      @include button(red);
+      // margin-left: auto;
+      // margin-right: auto;
+      width: 1em;
+      text-align: center;
+      font-size: $button-height;
+    }
+  }
+
+  .kugm-stringpropertyview {
+    flex: 1 1 auto;
+  }
+
+  .kugm-stringpropertyview.even {
+    background-color: sienna;
+  }
+
+  .kugm-stringpropertyview.odd {
+    background-color: sandybrown;
+  }
+}
+
+.kugm-translatedmessageview.markedToRemove {
+  background-color: grey;
+
+  .kugm-stringpropertyview  {
+    pointer-events: none;
+    background-color: grey;
+  }
+}
+
+@for $i from 2 through 10 {
+  .kugm-translatedmessageview.translations-count-#{$i} {
+    .kugm-stringpropertyview {
+      max-width: calc( (100vw - #{$messageidfield-width}) / #{$i} );
+    }
+  }
+}

@@ -1,0 +1,41 @@
+/**
+*  Copyright (c) 2017, Árpád Poprádi
+*  All rights reserved.
+*
+*  This source code is licensed under the BSD-style license found in the
+*  LICENSE file in the root directory of this source tree.
+*/
+
+ 
+.kug-cookiebanner {
+  background: rgba(0,0,0,.75);
+  position: fixed;
+  bottom: 0;
+  font-size: 1.2em;
+  padding: .3em;
+  width: 100vw;
+  display: flex;
+  justify-content: space-around;
+
+  .kug-cookiebanner-text {
+    color: white;
+  }
+
+  .kug-cookiebanner-x {
+    background: red;
+    flex: 0 0 3em;
+    text-align: center;
+    align-self: center;
+    border-radius: .1em;
+    cursor: pointer;
+  }
+
+  a {
+    padding-left: 2em;
+    padding-right: 2em;
+    color: lightblue;
+  }
+}
+.kug-cookiebanner.close {
+  display: none;
+}

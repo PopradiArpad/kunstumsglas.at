@@ -1,0 +1,19 @@
+/**
+*  Copyright (c) 2017, Árpád Poprádi
+*  All rights reserved.
+*
+*  This source code is licensed under the BSD-style license found in the
+*  LICENSE file in the root directory of this source tree.
+*/
+
+ 
+.hidden-y-scrollbar-container {
+  overflow: hidden;
+}
+
+.hidden-y-scrollbar-scrollable-content {
+  overflow: hidden;
+  width: calc(100% + 19px);
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;//safari: turn on momentum scrolling
+}

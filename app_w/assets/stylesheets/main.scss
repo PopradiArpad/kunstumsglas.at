@@ -1,0 +1,67 @@
+/**
+*  Copyright (c) 2017, Árpád Poprádi
+*  All rights reserved.
+*
+*  This source code is licensed under the BSD-style license found in the
+*  LICENSE file in the root directory of this source tree.
+*/
+
+ 
+* {
+  box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#app {
+  margin: 0;
+  padding: 0;
+}
+
+.kug-span-link {
+  text-decoration: underline;
+  color: blue;
+}
+
+#app-bg-picture {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 100vh;
+    z-index: -1;
+
+    @media (min-aspect-ratio: 1/2) {
+      img {
+        width:  100%;
+        height: auto;
+      }
+    }
+    @media (max-aspect-ratio: 1/2) {
+      img {
+        width:  auto;
+        height: 100%;
+      }
+    }
+}
+
+
+
+
+@import "app";
+@import "title";
+@import "navbar";
+@import "main";
+@import "info";
+@import "copyright";
+@import "cookiebanner";
+@import "products/stylesheets";
+@import "artist";
+@import "pages/stylehseets";

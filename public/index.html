@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name='viewport' content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self';
+                                                        style-src 'self' fonts.googleapis.com;
+                                                        font-src 'self' fonts.gstatic.com;
+                                                        img-src 'self' analytics.kunstumsglas.at;
+                                                        script-src 'self' 'unsafe-eval';
+                                                        connect-src 'self' analytics.kunstumsglas.at">
+    <title>Kunst ums Glas</title>
+    <link href="/main.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=El+Messiri:400,500" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,500,700" rel="stylesheet">
+    <link rel='shortcut icon' type='image/x-icon' href='/favicon.ico' />
+  </head>
+  <body>
+    <div id="app"></div>
+    <picture id="app-bg-picture">
+      <!-- 1.77.. = 16/9 -->
+      <source media="(min-aspect-ratio: 16/9)"
+              srcset="/pics/background/bg-1_77-2560x1440.JPG 2560w,
+                      /pics/background/bg-1_77-3840x2160.JPG 3840w"/>
+      <!-- 1.33.. = 4/3 -->
+      <source media="(min-aspect-ratio: 4/3)"
+              srcset="/pics/background/bg-1_33-1600x1200.JPG 1600w,
+                      /pics/background/bg-1_33-2048x1536.JPG 2048w,
+                      /pics/background/bg-1_33-2732x2048.JPG 2732w"/>
+      <!-- 0.75 = 3/4 -->
+      <source media="(min-aspect-ratio: 3/4)"
+              srcset="/pics/background/bg-0_75-1536x2048.JPG 1536w,
+                      /pics/background/bg-0_75-2048x2732.JPG 2048w"/>
+      <!-- 0.5625 = 9/16-->
+      <source media="(min-aspect-ratio: 9/16)"
+              srcset="/pics/background/bg-0_5625-1080x1920.JPG 1080w,
+                      /pics/background/bg-0_5625-1440x2560.JPG 1440w"/>
+      <!-- 0.5 = 1/2  to get all smartphone-->
+      <source media="(max-aspect-ratio: 9/16)"
+              srcset="/pics/background/bg-0_5-640x1280.JPG  640w,
+                      /pics/background/bg-0_5-960x1920.JPG  960w,
+                      /pics/background/bg-0_5-1280x2560.JPG 1280w"/>
+      <img src='/pics/background/bg-1-1200x1200.JPG'/>
+    </picture>
+  </body>
+  <script src='/app.bundle.js' async></script>
+</html>

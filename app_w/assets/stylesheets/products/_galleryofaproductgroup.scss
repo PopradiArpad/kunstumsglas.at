@@ -1,0 +1,45 @@
+/**
+*  Copyright (c) 2017, Árpád Poprádi
+*  All rights reserved.
+*
+*  This source code is licensed under the BSD-style license found in the
+*  LICENSE file in the root directory of this source tree.
+*/
+
+ 
+.kug-galleryofaproductgroup {
+  padding: 1em;
+  display: block;
+  //To let position the items on top of each other at entering/leaving
+  position: relative;
+  //The containg flexbox directed horizontally
+  //but it can not know the vertical size because it should go more then this level
+  //deep to get it right an it not even try it,
+  //so I give it the max height of a contained element :(
+  height: calc(400px + 10em);
+  overflow: hidden;
+}
+
+@media (min-width: 0px) {
+  .kug-galleryofaproductgroup {
+    flex: 0 0 100%;
+  }
+}
+
+@media (min-width: 831px) {
+  .kug-galleryofaproductgroup {
+    flex: 0 0 50%;
+  }
+}
+
+@media (min-width: 1201px) {
+  .kug-galleryofaproductgroup {
+    flex: 0 0 33.3333333%;
+  }
+}
+
+@media (min-width: 1801px) {
+  .kug-galleryofaproductgroup {
+    flex: 0 0 25%;
+  }
+}

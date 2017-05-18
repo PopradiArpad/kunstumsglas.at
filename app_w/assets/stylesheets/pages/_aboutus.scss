@@ -1,0 +1,47 @@
+/**
+*  Copyright (c) 2017, Árpád Poprádi
+*  All rights reserved.
+*
+*  This source code is licensed under the BSD-style license found in the
+*  LICENSE file in the root directory of this source tree.
+*/
+
+ 
+@import "./helpers/textpage";
+
+.kug-aboutus {
+  @include text-page();
+  font-size: 1em;
+
+  * {
+    font-weight: 400;
+  }
+
+  section {
+    margin-bottom: 5em;
+  }
+
+  section.kug-section-artist {
+    margin-top: 10em;
+  }
+
+  h1 {
+    text-align: center;
+    color: darkslateblue;
+  }
+
+  h2 {
+    margin-bottom: 0px;
+  }
+
+  p {
+    margin-top: 0px;
+  }
+
+  .kug-span-link {
+    font-size: 1.2em;
+    text-align: center;
+    display: block;
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,45 @@
+/**
+*  Copyright (c) 2017, Árpád Poprádi
+*  All rights reserved.
+*
+*  This source code is licensed under the BSD-style license found in the
+*  LICENSE file in the root directory of this source tree.
+*/
+
+ 
+$light-transition-time: .8s;
+
+@mixin marginal() {
+  transition: background-color $light-transition-time;
+  font-family: 'El Messiri', sans-serif;
+  font-weight: 400;
+  color: white;
+  * {
+    color: white;
+    text-decoration:none;
+  }
+}
+
+@mixin marginal-clickable() {
+  transition: background-color .4s;
+
+  @media (hover: hover) {
+    &:hover {
+      background-color: rgba(123, 226, 234, 0.2);
+    }
+  }
+  //TODO: remove this when hover CSS media feature is supported enough
+  @media only screen {
+    &:hover {
+      background-color: rgba(123, 226, 234, 0.2);
+    }
+  }
+}
+
+.marginal-light-on {
+  background-color: rgba(123, 226, 234, 0.5);
+}
+
+.marginal-light-off {
+  background-color: transparent;
+}
