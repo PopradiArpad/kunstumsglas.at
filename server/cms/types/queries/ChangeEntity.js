@@ -23,7 +23,7 @@ const ChangeEntity = {
 
     return getEntity(identity)
       .then(e => (entity = e))
-      .then(() => (entityChanger = new EntityChanger(entity, data, this.db)))
+      .then(() => (entityChanger = EntityChanger.create(entity, data, this.db)))
       .then(() => entityChanger.changeEntity())
       .then(() => entity.save())
       .catch(e => {

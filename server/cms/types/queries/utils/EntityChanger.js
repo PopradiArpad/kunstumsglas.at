@@ -6,34 +6,35 @@
 *  LICENSE file in the root directory of this source tree.
 */
 
- 
-import mkPropertyChanger   from './propertyChangers/mkPropertyChanger';
-import getModel            from './getModel';
+import mkPropertyChanger from './propertyChangers/mkPropertyChanger';
+import getModel from './getModel';
 
 //Model is for entity that is (not yet) in the db
-function EntityChanger(entity,data,db,model) {
-  this.entity           = entity;
-  this.data             = data;
-  this.db               = db;
-  this.model            = model;
-  this.propertyChangers = [];
-}
+const EntityChanger = {
+  create(entity, data, db, model) {
+    let entityChanger = Object.create(EntityChanger);
 
-EntityChanger.prototype = Object.create(Object.prototype);
+    entityChanger.entity = entity;
+    entityChanger.data = data;
+    entityChanger.db = db;
+    entityChanger.model = model;
+    entityChanger.propertyChangers = [];
 
-EntityChanger.prototype.changeEntity = function() {
-  let model = this.model ? this.model : getModel(this.entity);
+    return entityChanger;
+  },
 
-  this.propertyChangers = this.data.map(pv=>mkPropertyChanger(this.entity,
-                                                              pv,
-                                                              model,
-                                                              this.db));
-  return Promise.all(this.propertyChangers.map(pc=>pc.change()));
-}
+  changeEntity() {
+    let model = this.model ? this.model : getModel(this.entity);
 
-EntityChanger.prototype.rollback = function() {
-  this.propertyChangers.map(pc=>pc.rollback());
-}
+    this.propertyChangers = this.data.map(pv =>
+      mkPropertyChanger(this.entity, pv, model, this.db)
+    );
+    return Promise.all(this.propertyChangers.map(pc => pc.change()));
+  },
 
+  rollback() {
+    this.propertyChangers.map(pc => pc.rollback());
+  }
+};
 
 export default EntityChanger;
