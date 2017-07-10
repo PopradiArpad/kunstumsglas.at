@@ -6,22 +6,22 @@
 *  LICENSE file in the root directory of this source tree.
 */
 
- 
-function LocalizedStringsChanger(entity,property,valueAsString) {
-  this.entity          = entity;
-  this.property        = property;
-  this.valueAsString   = valueAsString;
+
+const LocalizedStringsChanger = {
+  create(entity,property,valueAsString) {
+    let changer=Object.create(LocalizedStringsChanger);
+    changer.entity          = entity;
+    changer.property        = property;
+    changer.valueAsString   = valueAsString;
+    return changer;
+  },
+
+  change() {
+    this.entity[this.property] = JSON.parse(this.valueAsString);
+  },
+
+  rollback() {
+  }
 }
-
-LocalizedStringsChanger.prototype = Object.create(Object.prototype);
-LocalizedStringsChanger.prototype.constructor = LocalizedStringsChanger;
-
-LocalizedStringsChanger.prototype.change = function() {
-  this.entity[this.property] = JSON.parse(this.valueAsString);
-}
-
-LocalizedStringsChanger.prototype.rollback = function() {
-}
-
 
 export default LocalizedStringsChanger;

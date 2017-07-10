@@ -6,31 +6,29 @@
 *  LICENSE file in the root directory of this source tree.
 */
 
- 
-function BoolChanger(entity,property,valueAsString) {
-  this.entity          = entity;
-  this.property        = property;
-  this.valueAsString   = valueAsString;
-}
+const BoolChanger = {
+  create(entity, property, valueAsString) {
+    let changer = Object.create(BoolChanger);
 
-BoolChanger.prototype = Object.create(Object.prototype);
-BoolChanger.prototype.constructor = BoolChanger;
+    changer.entity = entity;
+    changer.property = property;
+    changer.valueAsString = valueAsString;
 
-BoolChanger.prototype.change = function() {
-  this.entity[this.property] = parseBool(this.valueAsString);
-}
+    return changer;
+  },
 
-BoolChanger.prototype.rollback = function() {
-}
+  change() {
+    this.entity[this.property] = parseBool(this.valueAsString);
+  },
 
-const parseBool = (string)=>{
-  if (string==='true')
-    return true;
-  if (string==='false')
-    return false;
+  rollback() {}
+};
+
+const parseBool = string => {
+  if (string === 'true') return true;
+  if (string === 'false') return false;
 
   throw new Error(`${string} can not be converted to bool`);
-}
-
+};
 
 export default BoolChanger;

@@ -6,25 +6,28 @@
 *  LICENSE file in the root directory of this source tree.
 */
 
- 
-function TranslatedStringsChanger(entity,property,valueAsString) {
-  this.entity          = entity;
-  this.property        = property;
-  this.valueAsString   = valueAsString;
-}
+const TranslatedStringsChanger = {
+  create(entity, property, valueAsString) {
+    let changer = Object.create(TranslatedStringsChanger);
 
-TranslatedStringsChanger.prototype = Object.create(Object.prototype);
-TranslatedStringsChanger.prototype.constructor = TranslatedStringsChanger;
+    changer.entity = entity;
+    changer.property = property;
+    changer.valueAsString = valueAsString;
 
-TranslatedStringsChanger.prototype.change = function() {
-  const translatedStrings = JSON.parse(this.valueAsString).filter(ils=>! ils.remove);
+    return changer;
+  },
 
-  this.entity[this.property] = translatedStrings;
-}
+  change() {
+    const translatedStrings = JSON.parse(this.valueAsString).filter(
+      ils => !ils.remove
+    );
 
-TranslatedStringsChanger.prototype.rollback = function() {
-  console.log('TranslatedStringsChanger.prototype.rollback not implemented');
-}
+    this.entity[this.property] = translatedStrings;
+  },
 
+  rollback() {
+    console.log('TranslatedStringsChanger.rollback not implemented');
+  }
+};
 
 export default TranslatedStringsChanger;

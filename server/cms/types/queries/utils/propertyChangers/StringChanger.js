@@ -6,22 +6,22 @@
 *  LICENSE file in the root directory of this source tree.
 */
 
- 
-function StringChanger(entity,property,valueAsString) {
-  this.entity          = entity;
-  this.property        = property;
-  this.valueAsString   = valueAsString;
-}
+const StringChanger = {
+  create(entity, property, valueAsString) {
+    let changer = Object.create(StringChanger);
 
-StringChanger.prototype = Object.create(Object.prototype);
-StringChanger.prototype.constructor = StringChanger;
+    changer.entity = entity;
+    changer.property = property;
+    changer.valueAsString = valueAsString;
 
-StringChanger.prototype.change = function() {
-  this.entity[this.property] = this.valueAsString;
-}
+    return changer;
+  },
 
-StringChanger.prototype.rollback = function() {
-}
+  change() {
+    this.entity[this.property] = this.valueAsString;
+  },
 
+  rollback() {}
+};
 
 export default StringChanger;

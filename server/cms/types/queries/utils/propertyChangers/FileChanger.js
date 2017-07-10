@@ -6,48 +6,51 @@
 *  LICENSE file in the root directory of this source tree.
 */
 
- 
+
 import bufferFromDataUrl          from '../bufferFromDataUrl';
 import BufferStream               from 'bufferstream';
 
 
-function FileChanger(entity,property,valueAsString,model,db) {
-  if (! entity._id)
-    throw new Error(`Cannot create FileChanger: the entity must have an _id`);
+const FileChanger = {
+  create(entity,property,valueAsString,model,db) {
+    let changer =Object.create(FileChanger);
+    if (! entity._id)
+      throw new Error(`Cannot create FileChanger: the entity must have an _id`);
 
-  this.entity          = entity;
-  this.property        = property;
-  this.valueAsString   = valueAsString;
-  this.db              = db;
-}
+    changer.entity          = entity;
+    changer.property        = property;
+    changer.valueAsString   = valueAsString;
+    changer.db              = db;
 
-FileChanger.prototype = Object.create(Object.prototype);
-FileChanger.prototype.constructor = FileChanger;
+    return changer;
+  },
 
-FileChanger.prototype.change = function() {
-  if (isStateStatus(this.valueAsString))
-    return Promise.resolve();
+  change() {
+    if (isStateStatus(this.valueAsString))
+      return Promise.resolve();
 
-  //else new content comes back
-  try {
-    let buffer   = bufferFromDataUrl(this.valueAsString);
-    let filename = gfsFileNameOf(this.entity,this.property);
+    //else new content comes back
+    try {
+      let buffer   = bufferFromDataUrl(this.valueAsString);
+      let filename = gfsFileNameOf(this.entity,this.property);
 
-    //No replace in GridFs :(
-    return removeGfsFileIfExist(this.db,filename)
-           .then(()=>this.entity[this.property] = 'NOT_UPLOADED')
-           .then(()=>saveBufferToGfs(this.db.gfs,buffer,filename))
-           .then(()=>this.entity[this.property] = 'UPLOADED');
-  } catch (e) {
-    //TODO rollback the gfs file
-    throw e;
+      //No replace in GridFs :(
+      return removeGfsFileIfExist(this.db,filename)
+             .then(()=>this.entity[this.property] = 'NOT_UPLOADED')
+             .then(()=>saveBufferToGfs(this.db.gfs,buffer,filename))
+             .then(()=>this.entity[this.property] = 'UPLOADED');
+    } catch (e) {
+      //TODO rollback the gfs file
+      throw e;
+    }
+  },
+
+  rollback() {
+      let filename = gfsFileNameOf(this.entity,this.property);
+
+      return removeGfsFileIfExist(this.db,filename);
   }
-}
 
-FileChanger.prototype.rollback = function() {
-    let filename = gfsFileNameOf(this.entity,this.property);
-
-    return removeGfsFileIfExist(this.db,filename);
 }
 
 const removeGfsFileIfExist = (db,filename) => {
