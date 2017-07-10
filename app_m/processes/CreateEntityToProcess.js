@@ -6,9 +6,8 @@
 *  LICENSE file in the root directory of this source tree.
 */
 
- 
-import {fetchGraphQL} from '../api'
-import Process        from './Process'
+import { fetchGraphQL } from '../api';
+import Process from './Process';
 
 const CreateEntityTo = `
 mutation ($dbm: String!,
@@ -22,30 +21,35 @@ mutation ($dbm: String!,
                  property: $prop){
     void
   }
-}`
+}`;
 
-function CreateEntityToProcess() {
-  Process.call(this);
-}
+const CreateEntityToProcess = {
+  processName: 'CreateEntityToProcess',
 
-CreateEntityToProcess.prototype = Object.create(Process.prototype);
-CreateEntityToProcess.prototype.constructor = CreateEntityToProcess;
-CreateEntityToProcess.processName = 'CreateEntityToProcess';
+  create() {
+    let process = Object.create(CreateEntityToProcess);
+    process.initProcess(CreateEntityToProcess.processName);
 
-CreateEntityToProcess.prototype.start = function(entityDescriptionDiff,
-                                                 parentIdentity,
-                                                 parentProperty) {
-  this.identity = entityDescriptionDiff.identity;
-  let propertyValueInputs = this.getPropertyValueInputs(entityDescriptionDiff.propertyDescriptions)
+    return process;
+  },
 
-  return fetchGraphQL(CreateEntityTo, {dbm:this.identity.dbModel,
-                                       pvis:propertyValueInputs,
-                                       pid: parentIdentity,
-                                       prop: parentProperty})
-          .then(this.graphQLErrorAPI.bind(this))
-          .then(this.dispatchProcessFinishedOk.bind(this))
-          .catch(this.dispatchProcessFinishedError.bind(this));
-}
+  start(entityDescriptionDiff, parentIdentity, parentProperty) {
+    this.identity = entityDescriptionDiff.identity;
+    let propertyValueInputs = this.getPropertyValueInputs(
+      entityDescriptionDiff.propertyDescriptions
+    );
 
+    return fetchGraphQL(CreateEntityTo, {
+      dbm: this.identity.dbModel,
+      pvis: propertyValueInputs,
+      pid: parentIdentity,
+      prop: parentProperty
+    })
+      .then(this.graphQLErrorAPI.bind(this))
+      .then(this.dispatchProcessFinishedOk.bind(this))
+      .catch(this.dispatchProcessFinishedError.bind(this));
+  }
+};
+Object.setPrototypeOf(CreateEntityToProcess, Process);
 
 export default CreateEntityToProcess;

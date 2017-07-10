@@ -6,23 +6,24 @@
 *  LICENSE file in the root directory of this source tree.
 */
 
- 
-import {fetchLogin} from '../api'
-import Process from './Process'
+import { fetchLogin } from '../api';
+import Process from './Process';
 
+const LoginProcess = {
+  processName: 'LoginProcess',
 
-function LoginProcess() {
-  Process.call(this);
-}
-LoginProcess.prototype = Object.create(Process.prototype);
-LoginProcess.prototype.constructor = LoginProcess;
-LoginProcess.processName = 'LoginProcess';
+  create() {
+    let process = Object.create(LoginProcess);
+    process.initProcess(LoginProcess.processName);
+    return process;
+  },
 
-LoginProcess.prototype.start = function(name,password) {
-  fetchLogin(name,password)
-  .then(this.dispatchProcessFinishedOk.bind(this))
-  .catch(this.dispatchProcessFinishedError.bind(this));
-}
-
+  start(name, password) {
+    fetchLogin(name, password)
+      .then(this.dispatchProcessFinishedOk.bind(this))
+      .catch(this.dispatchProcessFinishedError.bind(this));
+  }
+};
+Object.setPrototypeOf(LoginProcess, Process);
 
 export default LoginProcess;

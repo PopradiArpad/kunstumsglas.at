@@ -6,9 +6,8 @@
 *  LICENSE file in the root directory of this source tree.
 */
 
- 
-import {fetchGraphQL} from '../api'
-import Process        from './Process'
+import { fetchGraphQL } from '../api';
+import Process from './Process';
 import getEntityPropertyValuesRequests from '../components/propertyViews/getEntityPropertyValuesRequests';
 
 const GetEntityDescription = `
@@ -70,88 +69,97 @@ query ($epvsrs:[EntityPropertyValuesRequest]) {
       value
     }
   }
-}`
+}`;
 
-function LoadEntityProcess() {
-  Process.call(this);
-}
+const LoadEntityProcess = {
+  processName: 'LoadEntityProcess',
 
-LoadEntityProcess.prototype = Object.create(Process.prototype);
-LoadEntityProcess.prototype.constructor = LoadEntityProcess;
-LoadEntityProcess.processName = 'LoadEntityProcess';
+  create() {
+    let process = Object.create(LoadEntityProcess);
+    process.initProcess(LoadEntityProcess.processName);
+    return process;
+  },
 
-LoadEntityProcess.prototype.start = function(identity,entityOverviews) {
-  if (!identity)
-    return this.dispatchNullEntity();
+  start(identity, entityOverviews) {
+    if (!identity) return this.dispatchNullEntity();
 
-  return this.getEntityDescription(identity,entityOverviews);
-}
+    return this.getEntityDescription(identity, entityOverviews);
+  },
 
-LoadEntityProcess.prototype.dispatchNullEntity = function() {
-    Promise.resolve({entityDescription:null,entityOverviews:{}})
-    .then(this.dispatchProcessFinishedOk.bind(this));
-}
+  dispatchNullEntity() {
+    Promise.resolve({ entityDescription: null, entityOverviews: {} }).then(
+      this.dispatchProcessFinishedOk.bind(this)
+    );
+  },
 
-LoadEntityProcess.prototype.getEntityDescription = function(identity,entityOverviews) {
-  return fetchGraphQL(GetEntityDescription, {id:identity})
+  getEntityDescription(identity, entityOverviews) {
+    return fetchGraphQL(GetEntityDescription, { id: identity })
+      .then(this.graphQLErrorAPI.bind(this))
+      .then(this.addEntityDescription.bind(this, identity))
+      .then(this.addEntityPropertyValues.bind(this, entityOverviews))
+      .then(this.dispatchProcessFinishedOk.bind(this))
+      .catch(this.dispatchProcessFinishedError.bind(this));
+  },
+
+  addEntityDescription(identity, graphQLResult) {
+    let GetEntityDescription = graphQLResult.data.GetEntityDescription;
+
+    return {
+      entityDescription: {
+        identity,
+        removable: GetEntityDescription.removable,
+        propertyDescriptions: GetEntityDescription.propertyDescriptions,
+        translatedMessages: GetEntityDescription.translatedMessages
+      }
+    };
+  },
+
+  addEntityPropertyValues(entityOverviews, { entityDescription }) {
+    let entityPropertyValuesRequests = this.getEntityPropertyValuesRequests(
+      entityOverviews,
+      entityDescription
+    );
+
+    return entityPropertyValuesRequests.length
+      ? fetchGraphQL(GetEntityPropertyValues, {
+          epvsrs: entityPropertyValuesRequests
+        })
           .then(this.graphQLErrorAPI.bind(this))
-          .then(this.addEntityDescription.bind(this,identity))
-          .then(this.addEntityPropertyValues.bind(this,entityOverviews))
-          .then(this.dispatchProcessFinishedOk.bind(this))
-          .catch(this.dispatchProcessFinishedError.bind(this));
-}
+          .then(this.addEntityOverviews.bind(this, entityDescription))
+      : { entityDescription };
+  },
 
-LoadEntityProcess.prototype.addEntityDescription = function(identity,graphQLResult) {
-  let GetEntityDescription = graphQLResult.data.GetEntityDescription;
+  getEntityPropertyValuesRequests(entityOverviews, entityDescription) {
+    let entityPropertyValuesRequests = entityDescription.propertyDescriptions.reduce(
+      (a, pd) => {
+        let requests = getEntityPropertyValuesRequests(pd, entityOverviews);
 
-  return {
-          entityDescription:{
-            identity,
-            removable:GetEntityDescription.removable,
-            propertyDescriptions:GetEntityDescription.propertyDescriptions,
-            translatedMessages:GetEntityDescription.translatedMessages
-         }};
-}
+        return requests.length ? a.concat(requests) : a;
+      },
+      []
+    );
 
-LoadEntityProcess.prototype.addEntityPropertyValues = function(entityOverviews,{entityDescription}) {
-  let entityPropertyValuesRequests = this.getEntityPropertyValuesRequests(entityOverviews,entityDescription);
+    return entityPropertyValuesRequests;
+  },
 
-  return (entityPropertyValuesRequests.length)
-         ? fetchGraphQL(GetEntityPropertyValues, {epvsrs:entityPropertyValuesRequests})
-           .then(this.graphQLErrorAPI.bind(this))
-           .then(this.addEntityOverviews.bind(this,entityDescription))
-         : {entityDescription};
-}
+  addEntityOverviews(entityDescription, graphQLResult) {
+    let entityPropertyValues = graphQLResult.data.GetEntityPropertyValues;
 
-LoadEntityProcess.prototype.getEntityPropertyValuesRequests = function(entityOverviews,entityDescription) {
-  let entityPropertyValuesRequests = entityDescription.propertyDescriptions.reduce((a,pd)=>{
-    let requests = getEntityPropertyValuesRequests(pd,entityOverviews);
+    let entityOverviews = entityPropertyValues.reduce((a, epv) => {
+      a[epv.id] = new EntityOverview(epv.propertyValues);
+      return a;
+    }, {});
 
-    return (requests.length) ? a.concat(requests) : a;
-    },[]);
+    return {
+      entityDescription,
+      entityOverviews
+    };
+  }
+};
+Object.setPrototypeOf(LoadEntityProcess, Process);
 
-  return entityPropertyValuesRequests;
-}
-
-LoadEntityProcess.prototype.addEntityOverviews = function(entityDescription,graphQLResult) {
-  let entityPropertyValues = graphQLResult.data.GetEntityPropertyValues;
-
-  let entityOverviews = entityPropertyValues.reduce((a,epv)=>{
-    a[epv.id] = new EntityOverview(epv.propertyValues);
-    return a;
-  },{});
-
-  return {
-          entityDescription,
-          entityOverviews
-         };
-}
-
-
-//TODO: expose this type in entity reducer
 function EntityOverview(propertyValues) {
-  propertyValues.forEach(pv=>this[pv.property]=pv.value);
+  propertyValues.forEach(pv => (this[pv.property] = pv.value));
 }
-
 
 export default LoadEntityProcess;

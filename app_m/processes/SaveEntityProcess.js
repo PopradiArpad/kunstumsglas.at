@@ -6,36 +6,44 @@
 *  LICENSE file in the root directory of this source tree.
 */
 
- 
-import {fetchGraphQL} from '../api'
-import Process        from './Process'
+import { fetchGraphQL } from '../api';
+import Process from './Process';
 
 const ChangeEntity = `
 mutation ($id:Identity!,$pvis:[PropertyValueInput]!) {
   ChangeEntity(identity:$id, data:$pvis){
     void
   }
-}`
+}`;
 
-function SaveEntityProcess() {
-  Process.call(this);
-  this.identity;
-}
+const SaveEntityProcess = {
+  processName: 'SaveEntityProcess',
 
-SaveEntityProcess.prototype = Object.create(Process.prototype);
-SaveEntityProcess.prototype.constructor = SaveEntityProcess;
-SaveEntityProcess.processName = 'SaveEntityProcess';
+  create() {
+    let process = Object.create(SaveEntityProcess);
 
-SaveEntityProcess.prototype.start = function(entityDescriptionDiff) {
-  this.identity = entityDescriptionDiff.identity;
+    process.initProcess(SaveEntityProcess.processName);
+    process.identity; //only to declare it. It will be used later.
 
-  let propertyValueInputs = this.getPropertyValueInputs(entityDescriptionDiff.propertyDescriptions)
+    return process;
+  },
 
-  return fetchGraphQL(ChangeEntity, {id:this.identity, pvis:propertyValueInputs})
-          .then(this.graphQLErrorAPI.bind(this))
-          .then(this.dispatchProcessFinishedOk.bind(this))
-          .catch(this.dispatchProcessFinishedError.bind(this));
-}
+  start(entityDescriptionDiff) {
+    this.identity = entityDescriptionDiff.identity;
 
+    let propertyValueInputs = this.getPropertyValueInputs(
+      entityDescriptionDiff.propertyDescriptions
+    );
+
+    return fetchGraphQL(ChangeEntity, {
+      id: this.identity,
+      pvis: propertyValueInputs
+    })
+      .then(this.graphQLErrorAPI.bind(this))
+      .then(this.dispatchProcessFinishedOk.bind(this))
+      .catch(this.dispatchProcessFinishedError.bind(this));
+  }
+};
+Object.setPrototypeOf(SaveEntityProcess, Process);
 
 export default SaveEntityProcess;

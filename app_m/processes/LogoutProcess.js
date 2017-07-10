@@ -6,22 +6,24 @@
 *  LICENSE file in the root directory of this source tree.
 */
 
- 
-import {fetchLogout} from '../api'
-import Process from './Process'
+import { fetchLogout } from '../api';
+import Process from './Process';
 
+const LogoutProcess = {
+  processName: 'LogoutProcess',
 
-function LogoutProcess() {
-  Process.call(this);
-}
-LogoutProcess.prototype = Object.create(Process.prototype);
-LogoutProcess.prototype.constructor = LogoutProcess;
-LogoutProcess.processName = 'LogoutProcess';
+  create() {
+    let process = Object.create(LogoutProcess);
+    process.initProcess(LogoutProcess.processName);
+    return process;
+  },
 
-LogoutProcess.prototype.start = function() {
-  fetchLogout()
-  .then(this.dispatchProcessFinishedOk.bind(this))
-  .catch(this.dispatchProcessFinishedError.bind(this));
-}
+  start() {
+    fetchLogout()
+      .then(this.dispatchProcessFinishedOk.bind(this))
+      .catch(this.dispatchProcessFinishedError.bind(this));
+  }
+};
+Object.setPrototypeOf(LogoutProcess, Process);
 
 export default LogoutProcess;

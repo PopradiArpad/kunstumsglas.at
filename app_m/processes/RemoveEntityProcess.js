@@ -6,33 +6,35 @@
 *  LICENSE file in the root directory of this source tree.
 */
 
- 
-import {fetchGraphQL} from '../api'
-import Process        from './Process'
+import { fetchGraphQL } from '../api';
+import Process from './Process';
 
 const RemoveEntity = `
 mutation ($id:Identity!,$pid:Identity!) {
   RemoveEntity(identity: $id, parentIdentity: $pid){
     void
   }
-}`
+}`;
 
-function RemoveEntityProcess() {
-  Process.call(this);
-}
+const RemoveEntityProcess = {
+  processName: 'RemoveEntityProcess',
 
-RemoveEntityProcess.prototype = Object.create(Process.prototype);
-RemoveEntityProcess.prototype.constructor = RemoveEntityProcess;
-RemoveEntityProcess.processName = 'RemoveEntityProcess';
+  create() {
+    let process = Object.create(RemoveEntityProcess);
+    process.initProcess(RemoveEntityProcess.processName);
 
-RemoveEntityProcess.prototype.start = function(identity,parentIdentity) {
-  this.identity = identity;
+    return process;
+  },
 
-  return fetchGraphQL(RemoveEntity, {id:identity,pid:parentIdentity})
-          .then(this.graphQLErrorAPI.bind(this))
-          .then(this.dispatchProcessFinishedOk.bind(this))
-          .catch(this.dispatchProcessFinishedError.bind(this));
-}
+  start(identity, parentIdentity) {
+    this.identity = identity;
 
+    return fetchGraphQL(RemoveEntity, { id: identity, pid: parentIdentity })
+      .then(this.graphQLErrorAPI.bind(this))
+      .then(this.dispatchProcessFinishedOk.bind(this))
+      .catch(this.dispatchProcessFinishedError.bind(this));
+  }
+};
+Object.setPrototypeOf(RemoveEntityProcess, Process);
 
 export default RemoveEntityProcess;

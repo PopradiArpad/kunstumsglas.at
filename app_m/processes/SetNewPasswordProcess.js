@@ -6,23 +6,24 @@
 *  LICENSE file in the root directory of this source tree.
 */
 
- 
-import {fetchSetNewPassword} from '../api'
-import Process from './Process'
+import { fetchSetNewPassword } from '../api';
+import Process from './Process';
 
+const SetNewPasswordProcess = {
+  processName: 'SetNewPasswordProcess',
 
-function SetNewPasswordProcess() {
-  Process.call(this);
-}
-SetNewPasswordProcess.prototype = Object.create(Process.prototype);
-SetNewPasswordProcess.prototype.constructor = SetNewPasswordProcess;
-SetNewPasswordProcess.processName = 'SetNewPasswordProcess';
+  create() {
+    let process = Object.create(SetNewPasswordProcess);
+    process.initProcess(SetNewPasswordProcess.processName);
+    return process;
+  },
 
-SetNewPasswordProcess.prototype.start = function(password,newPassword) {
-  fetchSetNewPassword(password,newPassword)
-  .then(this.dispatchProcessFinishedOk.bind(this))
-  .catch(this.dispatchProcessFinishedError.bind(this));
-}
-
+  start(password, newPassword) {
+    fetchSetNewPassword(password, newPassword)
+      .then(this.dispatchProcessFinishedOk.bind(this))
+      .catch(this.dispatchProcessFinishedError.bind(this));
+  }
+};
+Object.setPrototypeOf(SetNewPasswordProcess, Process);
 
 export default SetNewPasswordProcess;

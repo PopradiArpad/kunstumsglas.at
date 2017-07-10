@@ -6,24 +6,26 @@
 *  LICENSE file in the root directory of this source tree.
 */
 
- 
-import {fetchIsLoggedIn} from '../api'
-import Process from './Process'
+import { fetchIsLoggedIn } from '../api';
+import Process from './Process';
 
+const IsLoggedInProcess = {
+  processName: 'IsLoggedInProcess',
 
-function IsLoggedInProcess() {
-  Process.call(this);
-}
+  create() {
+    let process = Object.create(IsLoggedInProcess);
 
-IsLoggedInProcess.prototype = Object.create(Process.prototype);
-IsLoggedInProcess.prototype.constructor = IsLoggedInProcess;
-IsLoggedInProcess.processName = 'IsLoggedInProcess';
+    process.initProcess(IsLoggedInProcess.processName);
 
-IsLoggedInProcess.prototype.start = function() {
-  fetchIsLoggedIn()
-  .then(this.dispatchProcessFinishedOk.bind(this))
-  .catch(this.dispatchProcessFinishedError.bind(this));
-}
+    return process;
+  },
 
+  start() {
+    fetchIsLoggedIn()
+      .then(this.dispatchProcessFinishedOk.bind(this))
+      .catch(this.dispatchProcessFinishedError.bind(this));
+  }
+};
+Object.setPrototypeOf(IsLoggedInProcess, Process);
 
 export default IsLoggedInProcess;
