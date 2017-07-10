@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Example
-# npm run start_test_server -- --dbpath db_test  --db_port 22222 --port 2222 --log --graphiql
+# npm run start_test_server -- --db_path db_test  --db_port 30002 --port 3002 --log --graphiql
 
 DEBUG=0;
 READ_NEXT_ARG=1;
