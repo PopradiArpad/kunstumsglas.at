@@ -25,7 +25,7 @@ const CreateEntityTo = {
     let entityFactory;
 
     return checkTypes(parent, property)
-      .then(() => (entityFactory = new EntityFactory(dbModel, data, this.db)))
+      .then(() => (entityFactory = EntityFactory.create(dbModel, data, this.db)))
       .then(() => entityFactory.createEntity())
       .then(e => (entity = e))
       .then(() => getEntity(parent))

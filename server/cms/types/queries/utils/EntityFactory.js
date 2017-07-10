@@ -11,46 +11,48 @@ import EntityChanger from './EntityChanger';
 import partition from 'lodash.partition';
 import getPropertyTypeName from './getPropertyTypeName';
 
-function EntityFactory(dbModelName, data, db) {
-  this.dbModelName = dbModelName;
-  this.data = data;
-  this.db = db;
-}
+const EntityFactory = {
+  create(dbModelName, data, db) {
+    let entityFactory = Object.create(EntityFactory);
+    entityFactory.dbModelName = dbModelName;
+    entityFactory.data = data;
+    entityFactory.db = db;
+    return entityFactory;
+  },
 
-EntityFactory.prototype = Object.create(Object.prototype);
+  createEntity() {
+    let Model = mongoose.model(this.dbModelName);
+    let constructorArgs = {};
+    let schemaPaths = Model.schema.paths;
+    let [dataNeedId, dataDontNeedId] = partition(this.data, pv =>
+      doesNeedId(schemaPaths, pv)
+    );
+    this.entityChangerWithoutId = EntityChanger.create(
+      constructorArgs,
+      dataDontNeedId,
+      this.db,
+      Model
+    );
 
-EntityFactory.prototype.createEntity = function() {
-  let Model = mongoose.model(this.dbModelName);
-  let constructorArgs = {};
-  let schemaPaths = Model.schema.paths;
-  let [dataNeedId, dataDontNeedId] = partition(this.data, pv =>
-    doesNeedId(schemaPaths, pv)
-  );
-  this.entityChangerWithoutId = EntityChanger.create(
-    constructorArgs,
-    dataDontNeedId,
-    this.db,
-    Model
-  );
+    return this.entityChangerWithoutId
+      .changeEntity()
+      .then(() => new Model(constructorArgs))
+      .then(
+        e =>
+          (this.entityChangerWithId = EntityChanger.create(
+            e,
+            dataNeedId,
+            this.db
+          ))
+      )
+      .then(() => this.entityChangerWithId.changeEntity())
+      .then(() => this.entityChangerWithId.entity);
+  },
 
-  return this.entityChangerWithoutId
-    .changeEntity()
-    .then(() => new Model(constructorArgs))
-    .then(
-      e =>
-        (this.entityChangerWithId = EntityChanger.create(
-          e,
-          dataNeedId,
-          this.db
-        ))
-    )
-    .then(() => this.entityChangerWithId.changeEntity())
-    .then(() => this.entityChangerWithId.entity);
-};
-
-EntityFactory.prototype.rollback = function() {
-  rollbackIfExist(this.entityChangerWithoutId);
-  rollbackIfExist(this.entityChangerWithId);
+  rollback() {
+    rollbackIfExist(this.entityChangerWithoutId);
+    rollbackIfExist(this.entityChangerWithId);
+  }
 };
 
 const rollbackIfExist = function(entityChanger) {
