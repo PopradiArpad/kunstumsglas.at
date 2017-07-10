@@ -6,54 +6,51 @@
 *  LICENSE file in the root directory of this source tree.
 */
 
- 
-import cloneDeep                      from 'lodash.clonedeep';
-import isDeepEqual                    from 'lodash.isequal';
-import merge                          from 'lodash.merge';
+import cloneDeep from 'lodash.clonedeep';
+import isDeepEqual from 'lodash.isequal';
+import merge from 'lodash.merge';
 
+const PropertyState = {
+  initPropertyState({ propertyDescription, onChanged, onUnchanged }) {
+    this.entityPropertyDescription = propertyDescription;
+    this.onChanged = onChanged;
+    this.onUnchanged = onUnchanged;
 
-function PropertyState({propertyDescription,
-                        onChanged,
-                        onUnchanged}) {
-  this.entityPropertyDescription  = propertyDescription;
-  this.onChanged                  = onChanged;
-  this.onUnchanged                = onUnchanged;
+    this.workingPropertyDescription = cloneDeep(propertyDescription);
+    this.changed = false;
 
-  this.workingPropertyDescription = cloneDeep(propertyDescription);
-  this.changed                    = false;
+    //These functions are called not on the prototype chain!
+    //TODO: call them explicit on the property state object
+    this.mergeChange = this.mergeChange.bind(this);
+    this.setBack = this.setBack.bind(this);
+  },
 
-  this.mergeChange = this.mergeChange.bind(this);
-  this.setBack     = this.setBack.bind(this);
-}
+  setBack() {
+    this.workingPropertyDescription = cloneDeep(this.entityPropertyDescription);
+    this.changed = false;
+    this.onUnchanged();
+  },
 
-PropertyState.prototype = Object.create(Object.prototype);
-PropertyState.prototype.constructor = PropertyState;
-
-PropertyState.prototype.setBack = function () {
-  this.workingPropertyDescription = cloneDeep(this.entityPropertyDescription);
-  this.changed                    = false;
-  this.onUnchanged();
-}
-
-PropertyState.prototype.mergeChange = function(toMerge) {
-    merge(this.workingPropertyDescription,toMerge);
+  mergeChange(toMerge) {
+    merge(this.workingPropertyDescription, toMerge);
     this.setChanged();
+  },
+
+  setChanged() {
+    const changed = !isDeepEqual(
+      this.entityPropertyDescription,
+      this.workingPropertyDescription
+    );
+
+    if (changed === this.changed) return;
+
+    this.changed = changed;
+    changed ? this.onChanged() : this.onUnchanged();
+  },
+
+  getDiff() {
+    return this.changed ? this.workingPropertyDescription : null;
   }
-
-PropertyState.prototype.setChanged = function() {
-  const changed = ! isDeepEqual(this.entityPropertyDescription,this.workingPropertyDescription);
-
-  if (changed===this.changed)
-    return;
-
-  this.changed = changed;
-  (changed) ? this.onChanged() : this.onUnchanged();
-  }
-
-PropertyState.prototype.getDiff = function() {
-  return this.changed ? this.workingPropertyDescription : null;
-  }
-
-
+};
 
 export default PropertyState;

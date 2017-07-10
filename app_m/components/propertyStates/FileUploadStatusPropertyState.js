@@ -1,3 +1,4 @@
+/* eslint react/display-name: 0 */
 /**
 *  Copyright (c) 2017, Árpád Poprádi
 *  All rights reserved.
@@ -6,44 +7,44 @@
 *  LICENSE file in the root directory of this source tree.
 */
 
- 
-import React                          from 'react';
-import FileUploadStatusPropertyView   from '../propertyViews/FileUploadStatusPropertyView';
-import PropertyState                  from './PropertyState';
-import getFirstString                 from '../utils/getFirstString';
+import React from 'react';
+import FileUploadStatusPropertyView from '../propertyViews/FileUploadStatusPropertyView';
+import PropertyState from './PropertyState';
+import getFirstString from '../utils/getFirstString';
 
+const FileUploadStatusPropertyState = {
+  create({ propertyDescription, onChanged, onUnchanged, entityDescription }) {
+    let propertyState = Object.create(FileUploadStatusPropertyState);
 
-function FileUploadStatusPropertyState({propertyDescription,
-                                        onChanged,
-                                        onUnchanged,
-                                        entityDescription}) {
-  PropertyState.call(this,{propertyDescription,
-                            onChanged,
-                            onUnchanged});
-  this.identity     = entityDescription.identity;
-  this.baseFileName = getFirstString(entityDescription);
-}
+    propertyState.initPropertyState({
+      propertyDescription,
+      onChanged,
+      onUnchanged
+    });
+    propertyState.identity = entityDescription.identity;
+    propertyState.baseFileName = getFirstString(entityDescription);
 
-FileUploadStatusPropertyState.prototype = Object.create(PropertyState.prototype);
-FileUploadStatusPropertyState.prototype.constructor = FileUploadStatusPropertyState;
+    return propertyState;
+  },
 
-FileUploadStatusPropertyState.prototype.isFocusable = function () {
-  return false;
-}
+  isFocusable() {
+    return false;
+  },
 
-FileUploadStatusPropertyState.prototype.render = function(key) { // eslint-disable-line react/display-name
-  let props = {
-    key,
-    propertyDescription:   this.workingPropertyDescription,
-    entityOverviews:       this.entityOverviews,
-    onBack:                this.changed ? this.setBack : null,
-    onMergePropertyChange: this.mergeChange,
-    identity:              this.identity,
-    baseFileName:          this.baseFileName
-  };
+  render(key) {
+    let props = {
+      key,
+      propertyDescription: this.workingPropertyDescription,
+      entityOverviews: this.entityOverviews,
+      onBack: this.changed ? this.setBack : null,
+      onMergePropertyChange: this.mergeChange,
+      identity: this.identity,
+      baseFileName: this.baseFileName
+    };
 
-  return <FileUploadStatusPropertyView {...props} />;
-}
-
+    return <FileUploadStatusPropertyView {...props} />;
+  }
+};
+Object.setPrototypeOf(FileUploadStatusPropertyState, PropertyState);
 
 export default FileUploadStatusPropertyState;

@@ -1,3 +1,4 @@
+/* eslint react/display-name: 0 */
 /**
 *  Copyright (c) 2017, Árpád Poprádi
 *  All rights reserved.
@@ -6,37 +7,39 @@
 *  LICENSE file in the root directory of this source tree.
 */
 
- 
-import React                          from 'react';
-import BoolPropertyView               from '../propertyViews/BoolPropertyView';
-import PropertyState                  from './PropertyState';
+import React from 'react';
+import BoolPropertyView from '../propertyViews/BoolPropertyView';
+import PropertyState from './PropertyState';
 
+const BoolPropertyState = {
+  create({ propertyDescription, onChanged, onUnchanged }) {
+    let propertyState = Object.create(BoolPropertyState);
 
-function BoolPropertyState({propertyDescription,
-                            onChanged,
-                            onUnchanged}) {
-  PropertyState.call(this,{propertyDescription,
-                            onChanged,
-                            onUnchanged});
-}
+    propertyState.initPropertyState({
+      propertyDescription,
+      onChanged,
+      onUnchanged
+    });
 
-BoolPropertyState.prototype = Object.create(PropertyState.prototype);
-BoolPropertyState.prototype.constructor = BoolPropertyState;
+    return propertyState;
+  },
 
-BoolPropertyState.prototype.isFocusable = function () {
-  return false;
-}
+  isFocusable() {
+    return false;
+  },
 
-BoolPropertyState.prototype.render = function(key) { // eslint-disable-line react/display-name
-  let props = {
-    key,
-    propertyDescription:   this.workingPropertyDescription,
-    onBack:                this.changed ? this.setBack : null,
-    onMergePropertyChange: this.mergeChange
-  };
+  render(key) {
+    let props = {
+      key,
+      propertyDescription:   this.workingPropertyDescription,
+      onBack:                this.changed ? this.setBack : null,
+      onMergePropertyChange: this.mergeChange
+    };
 
-  return <BoolPropertyView {...props} />;
-}
+    return <BoolPropertyView {...props} />;
+  }
+};
+Object.setPrototypeOf(BoolPropertyState, PropertyState);
 
 
 export default BoolPropertyState;

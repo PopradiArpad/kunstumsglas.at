@@ -1,3 +1,4 @@
+/* eslint react/display-name: 0 */
 /**
 *  Copyright (c) 2017, Árpád Poprádi
 *  All rights reserved.
@@ -6,49 +7,52 @@
 *  LICENSE file in the root directory of this source tree.
 */
 
- 
-import React                          from 'react';
-import IdArrayPropertyView            from '../propertyViews/IdArrayPropertyView';
-import PropertyState                  from './PropertyState';
+import React from 'react';
+import IdArrayPropertyView from '../propertyViews/IdArrayPropertyView';
+import PropertyState from './PropertyState';
 
+const IdArrayPropertyState = {
+  create({
+    propertyDescription,
+    entityOverviews,
+    onChanged,
+    onUnchanged,
+    onSelectEntity,
+    onCreateNewEntity
+  }) {
+    let propertyState = Object.create(IdArrayPropertyState);
 
-function IdArrayPropertyState({propertyDescription,
-                               entityOverviews,
-                               onChanged,
-                               onUnchanged,
-                               onSelectEntity,
-                               onCreateNewEntity}) {
-  PropertyState.call(this,{propertyDescription,
-                            onChanged,
-                            onUnchanged});
+    propertyState.initPropertyState({
+      propertyDescription,
+      onChanged,
+      onUnchanged
+    });
 
-  this.entityOverviews            = entityOverviews;
-  this.onSelectEntity             = onSelectEntity;
-  this.onCreateNewEntity          = onCreateNewEntity;
-}
+    propertyState.entityOverviews = entityOverviews;
+    propertyState.onSelectEntity = onSelectEntity;
+    propertyState.onCreateNewEntity = onCreateNewEntity;
 
-IdArrayPropertyState.prototype = Object.create(PropertyState.prototype);
-IdArrayPropertyState.prototype.constructor = IdArrayPropertyState;
+    return propertyState;
+  },
 
+  isFocusable() {
+    return false;
+  },
 
-IdArrayPropertyState.prototype.isFocusable = function () {
-  return false;
-}
+  render(key) {
+    let props = {
+      key,
+      propertyDescription: this.workingPropertyDescription,
+      entityOverviews: this.entityOverviews,
+      onBack: this.changed ? this.setBack : null,
+      onMergePropertyChange: this.mergeChange,
+      onSelectEntity: this.onSelectEntity,
+      onCreateNewEntity: dbModelName => this.onCreateNewEntity(dbModelName)
+    };
 
-
-IdArrayPropertyState.prototype.render = function(key) { // eslint-disable-line react/display-name
-  let props = {
-    key,
-    propertyDescription:   this.workingPropertyDescription,
-    entityOverviews:       this.entityOverviews,
-    onBack:                this.changed ? this.setBack : null,
-    onMergePropertyChange: this.mergeChange,
-    onSelectEntity:        this.onSelectEntity,
-    onCreateNewEntity:     (dbModelName) => this.onCreateNewEntity(dbModelName)
-  };
-
-  return <IdArrayPropertyView {...props} />;
-}
-
+    return <IdArrayPropertyView {...props} />;
+  }
+};
+Object.setPrototypeOf(IdArrayPropertyState, PropertyState);
 
 export default IdArrayPropertyState;

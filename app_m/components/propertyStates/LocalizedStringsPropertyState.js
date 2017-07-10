@@ -1,3 +1,4 @@
+/* eslint react/display-name: 0 */
 /**
 *  Copyright (c) 2017, Árpád Poprádi
 *  All rights reserved.
@@ -6,45 +7,50 @@
 *  LICENSE file in the root directory of this source tree.
 */
 
- 
-import React                          from 'react';
-import LocalizedStringsPropertyView   from '../propertyViews/LocalizedStringsPropertyView';
-import PropertyState                  from './PropertyState';
+import React from 'react';
+import LocalizedStringsPropertyView from '../propertyViews/LocalizedStringsPropertyView';
+import PropertyState from './PropertyState';
 
+const LocalizedStringsPropertyState = {
+  create({
+    propertyDescription,
+    onChanged,
+    onUnchanged,
+    onFocusSet,
+    onFocusReleased
+  }) {
+    let propertyState = Object.create(LocalizedStringsPropertyState);
 
-function LocalizedStringsPropertyState({propertyDescription,
-                              onChanged,
-                              onUnchanged,
-                              onFocusSet,
-                              onFocusReleased
-                            }) {
-  PropertyState.call(this,{propertyDescription,
-                            onChanged,
-                            onUnchanged});
-  this.onFocusSet      = onFocusSet;
-  this.onFocusReleased = onFocusReleased;
-}
+    propertyState.initPropertyState({
+      propertyDescription,
+      onChanged,
+      onUnchanged
+    });
 
-LocalizedStringsPropertyState.prototype = Object.create(PropertyState.prototype);
-LocalizedStringsPropertyState.prototype.constructor = LocalizedStringsPropertyState;
+    propertyState.onFocusSet = onFocusSet;
+    propertyState.onFocusReleased = onFocusReleased;
 
-LocalizedStringsPropertyState.prototype.isFocusable = function () {
-  return true;
-}
+    return propertyState;
+  },
 
-LocalizedStringsPropertyState.prototype.render = function(key,focused) { // eslint-disable-line react/display-name
-  let props = {
-    key,
-    propertyDescription:   this.workingPropertyDescription,
-    onBack:                this.changed ? this.setBack : null,
-    onMergePropertyChange: this.mergeChange,
-    onStartEdit:           this.onFocusSet,
-    onFinishEdit:          this.onFocusReleased,
-    focused
-  };
+  isFocusable() {
+    return true;
+  },
 
-  return <LocalizedStringsPropertyView {...props} />;
-}
+  render(key, focused) {
+    let props = {
+      key,
+      propertyDescription: this.workingPropertyDescription,
+      onBack: this.changed ? this.setBack : null,
+      onMergePropertyChange: this.mergeChange,
+      onStartEdit: this.onFocusSet,
+      onFinishEdit: this.onFocusReleased,
+      focused
+    };
 
+    return <LocalizedStringsPropertyView {...props} />;
+  }
+};
+Object.setPrototypeOf(LocalizedStringsPropertyState, PropertyState);
 
 export default LocalizedStringsPropertyState;

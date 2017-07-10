@@ -1,3 +1,4 @@
+/* eslint react/display-name: 0 */
 /**
 *  Copyright (c) 2017, Árpád Poprádi
 *  All rights reserved.
@@ -6,45 +7,50 @@
 *  LICENSE file in the root directory of this source tree.
 */
 
- 
-import React                          from 'react';
-import StringPropertyView             from '../propertyViews/StringPropertyView';
-import PropertyState                  from './PropertyState';
+import React from 'react';
+import StringPropertyView from '../propertyViews/StringPropertyView';
+import PropertyState from './PropertyState';
 
+const StringPropertyState = {
+  create({
+    propertyDescription,
+    onChanged,
+    onUnchanged,
+    onFocusSet,
+    onFocusReleased
+  }) {
+    let propertyState = Object.create(StringPropertyState);
 
-function StringPropertyState({propertyDescription,
-                              onChanged,
-                              onUnchanged,
-                              onFocusSet,
-                              onFocusReleased
-                            }) {
-  PropertyState.call(this,{propertyDescription,
-                            onChanged,
-                            onUnchanged});
-  this.onFocusSet                 = onFocusSet;
-  this.onFocusReleased            = onFocusReleased;
-}
+    propertyState.initPropertyState({
+      propertyDescription,
+      onChanged,
+      onUnchanged
+    });
 
-StringPropertyState.prototype = Object.create(PropertyState.prototype);
-StringPropertyState.prototype.constructor = StringPropertyState;
+    propertyState.onFocusSet = onFocusSet;
+    propertyState.onFocusReleased = onFocusReleased;
 
-StringPropertyState.prototype.isFocusable = function () {
-  return true;
-}
+    return propertyState;
+  },
 
-StringPropertyState.prototype.render = function(key,focused) { // eslint-disable-line react/display-name
-  let props = {
-    key,
-    propertyDescription:   this.workingPropertyDescription,
-    onBack:                this.changed ? this.setBack : null,
-    onMergePropertyChange: this.mergeChange,
-    onStartEdit:           this.onFocusSet,
-    onFinishEdit:          this.onFocusReleased,
-    focused
-  };
+  isFocusable() {
+    return true;
+  },
 
-  return <StringPropertyView {...props} />;
-}
+  render(key, focused) {
+    let props = {
+      key,
+      propertyDescription: this.workingPropertyDescription,
+      onBack: this.changed ? this.setBack : null,
+      onMergePropertyChange: this.mergeChange,
+      onStartEdit: this.onFocusSet,
+      onFinishEdit: this.onFocusReleased,
+      focused
+    };
 
+    return <StringPropertyView {...props} />;
+  }
+};
+Object.setPrototypeOf(StringPropertyState, PropertyState);
 
 export default StringPropertyState;

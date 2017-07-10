@@ -1,3 +1,4 @@
+/* eslint react/display-name: 0 */
 /**
 *  Copyright (c) 2017, Árpád Poprádi
 *  All rights reserved.
@@ -6,38 +7,39 @@
 *  LICENSE file in the root directory of this source tree.
 */
 
- 
-import React                          from 'react';
-import DataURLPropertyView            from '../propertyViews/DataURLPropertyView';
-import PropertyState                  from './PropertyState';
+import React from 'react';
+import DataURLPropertyView from '../propertyViews/DataURLPropertyView';
+import PropertyState from './PropertyState';
 
+const DataURLPropertyState = {
+  create({ propertyDescription, onChanged, onUnchanged }) {
+    let propertyState = Object.create(DataURLPropertyState);
 
-function DataURLPropertyState({propertyDescription,
-                               onChanged,
-                               onUnchanged}) {
-  PropertyState.call(this,{propertyDescription,
-                            onChanged,
-                            onUnchanged});
-}
+    propertyState.initPropertyState({
+      propertyDescription,
+      onChanged,
+      onUnchanged
+    });
 
-DataURLPropertyState.prototype = Object.create(PropertyState.prototype);
-DataURLPropertyState.prototype.constructor = DataURLPropertyState;
+    return propertyState;
+  },
 
-DataURLPropertyState.prototype.isFocusable = function () {
-  return false;
-}
+  isFocusable() {
+    return false;
+  },
 
-DataURLPropertyState.prototype.render = function(key) { // eslint-disable-line react/display-name
-  let props = {
-    key,
-    propertyDescription:   this.workingPropertyDescription,
-    entityOverviews:       this.entityOverviews,
-    onBack:                this.changed ? this.setBack : null,
-    onMergePropertyChange: this.mergeChange
-  };
+  render(key) {
+    let props = {
+      key,
+      propertyDescription: this.workingPropertyDescription,
+      entityOverviews: this.entityOverviews,
+      onBack: this.changed ? this.setBack : null,
+      onMergePropertyChange: this.mergeChange
+    };
 
-  return <DataURLPropertyView {...props} />;
-}
-
+    return <DataURLPropertyView {...props} />;
+  }
+};
+Object.setPrototypeOf(DataURLPropertyState, PropertyState);
 
 export default DataURLPropertyState;
