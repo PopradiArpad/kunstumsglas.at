@@ -6,27 +6,27 @@
 *  LICENSE file in the root directory of this source tree.
 */
 
- 
-import Process        from './Process'
-import {fetchProduct}  from '../api'
+import Process from './Process';
+import { fetchProduct } from '../api';
 
+const LoadProductProcess = {
+  processName: 'LoadProductProcess',
 
-function LoadProductProcess() {
-  Process.call(this);
-}
+  create() {
+    let process = Object.create(LoadProductProcess);
+    process.initProcess(LoadProductProcess.processName);
+    return process;
+  },
 
-LoadProductProcess.prototype = Object.create(Process.prototype);
-LoadProductProcess.prototype.constructor = LoadProductProcess;
-LoadProductProcess.processName = 'LoadProductProcess';
+  start(pid, pgid, locale) {
+    this.pid = pid;
+    this.pgid = pgid;
 
-LoadProductProcess.prototype.start = function(pid,pgid,locale) {
-  this.pid  = pid;
-  this.pgid = pgid;
-
-  return fetchProduct(pid,locale)
-          .then(this.dispatchProcessFinishedOk.bind(this))
-          .catch(this.dispatchProcessFinishedError.bind(this));
-}
-
+    return fetchProduct(pid, locale)
+      .then(this.dispatchProcessFinishedOk.bind(this))
+      .catch(this.dispatchProcessFinishedError.bind(this));
+  }
+};
+Object.setPrototypeOf(LoadProductProcess, Process);
 
 export default LoadProductProcess;

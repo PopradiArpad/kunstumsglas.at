@@ -6,26 +6,26 @@
 *  LICENSE file in the root directory of this source tree.
 */
 
- 
-import Process        from './Process'
-import {fetchProductGroup}  from '../api'
+import Process from './Process';
+import { fetchProductGroup } from '../api';
 
+const LoadProductGroupProcess = {
+  processName: 'LoadProductGroupProcess',
 
-function LoadProductGroupProcess() {
-  Process.call(this);
-}
+  create() {
+    let process = Object.create(LoadProductGroupProcess);
+    process.initProcess(LoadProductGroupProcess.processName);
+    return process;
+  },
 
-LoadProductGroupProcess.prototype = Object.create(Process.prototype);
-LoadProductGroupProcess.prototype.constructor = LoadProductGroupProcess;
-LoadProductGroupProcess.processName = 'LoadProductGroupProcess';
+  start(id, locale) {
+    this.id = id;
 
-LoadProductGroupProcess.prototype.start = function(id,locale) {
-  this.id = id;
-
-  return fetchProductGroup(id,locale)
-          .then(this.dispatchProcessFinishedOk.bind(this))
-          .catch(this.dispatchProcessFinishedError.bind(this));
-}
-
+    return fetchProductGroup(id, locale)
+      .then(this.dispatchProcessFinishedOk.bind(this))
+      .catch(this.dispatchProcessFinishedError.bind(this));
+  }
+};
+Object.setPrototypeOf(LoadProductGroupProcess, Process);
 
 export default LoadProductGroupProcess;

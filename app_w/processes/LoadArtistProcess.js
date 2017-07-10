@@ -6,24 +6,24 @@
 *  LICENSE file in the root directory of this source tree.
 */
 
- 
-import Process        from './Process'
-import {fetchArtist}  from '../api'
+import Process from './Process';
+import { fetchArtist } from '../api';
 
+const LoadArtistProcess = {
+  processName: 'LoadArtistProcess',
 
-function LoadArtistProcess() {
-  Process.call(this);
-}
+  create() {
+    let process = Object.create(LoadArtistProcess);
+    process.initProcess(LoadArtistProcess.processName);
+    return process;
+  },
 
-LoadArtistProcess.prototype = Object.create(Process.prototype);
-LoadArtistProcess.prototype.constructor = LoadArtistProcess;
-LoadArtistProcess.processName = 'LoadArtistProcess';
-
-LoadArtistProcess.prototype.start = function(name,pgid,locale) {
-  return fetchArtist(name,locale)
-          .then(this.dispatchProcessFinishedOk.bind(this))
-          .catch(this.dispatchProcessFinishedError.bind(this));
-}
-
+  start(name, pgid, locale) {
+    return fetchArtist(name, locale)
+      .then(this.dispatchProcessFinishedOk.bind(this))
+      .catch(this.dispatchProcessFinishedError.bind(this));
+  }
+};
+Object.setPrototypeOf(LoadArtistProcess, Process);
 
 export default LoadArtistProcess;

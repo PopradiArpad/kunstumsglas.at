@@ -6,26 +6,26 @@
 *  LICENSE file in the root directory of this source tree.
 */
 
- 
-import Process        from './Process'
-import {fetchLocale}  from '../api'
+import Process from './Process';
+import { fetchLocale } from '../api';
 
+const LoadLocaleProcess = {
+  processName: 'LoadLocaleProcess',
 
-function LoadLocaleProcess() {
-  Process.call(this);
-}
+  create() {
+    let process = Object.create(LoadLocaleProcess);
+    process.initProcess(LoadLocaleProcess.processName);
+    return process;
+  },
 
-LoadLocaleProcess.prototype = Object.create(Process.prototype);
-LoadLocaleProcess.prototype.constructor = LoadLocaleProcess;
-LoadLocaleProcess.processName = 'LoadLocaleProcess';
+  start(locale) {
+    this.locale = locale;
 
-LoadLocaleProcess.prototype.start = function(locale) {
-  this.locale = locale;
-
-  return fetchLocale(locale)
-          .then(this.dispatchProcessFinishedOk.bind(this))
-          .catch(this.dispatchProcessFinishedError.bind(this));
-}
-
+    return fetchLocale(locale)
+      .then(this.dispatchProcessFinishedOk.bind(this))
+      .catch(this.dispatchProcessFinishedError.bind(this));
+  }
+};
+Object.setPrototypeOf(LoadLocaleProcess, Process);
 
 export default LoadLocaleProcess;
