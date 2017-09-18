@@ -17,15 +17,6 @@ class EntityView extends Component {
   constructor() {
     super(...arguments);
 
-    this.setChanged = this.setChanged.bind(this);
-    this.setUnchanged = this.setUnchanged.bind(this);
-    this.setFocus = this.setFocus.bind(this);
-    this.removeFocus = this.removeFocus.bind(this);
-    this.setFocusOnNext = this.setFocusOnNext.bind(this);
-    this.setAllPropertyBack = this.setAllPropertyBack.bind(this);
-    this.askUserAboutRemoving = this.askUserAboutRemoving.bind(this);
-    this.saveEntity = this.saveEntity.bind(this);
-
     this.state = this.getResetState(this.props);
   }
 
@@ -84,7 +75,7 @@ class EntityView extends Component {
     this.setState(this.getResetState(nextProps));
   }
 
-  setChanged(property, ix) {
+  setChanged = (property, ix) => {
     const changedPropertiesMap = merge({}, this.state.changedPropertiesMap, {
       [property]: ix
     });
@@ -92,14 +83,14 @@ class EntityView extends Component {
     this.setState({ changedPropertiesMap });
   }
 
-  setUnchanged(property) {
+  setUnchanged = (property) => {
     let changedPropertiesMap = merge({}, this.state.changedPropertiesMap);
     delete changedPropertiesMap[property];
 
     this.setState({ changedPropertiesMap });
   }
 
-  setFocusOnNext(ix) {
+  setFocusOnNext = (ix) => {
     let nextIx = ix + 1;
 
     while (true) {
@@ -114,12 +105,12 @@ class EntityView extends Component {
     }
   }
 
-  setFocus(e, ix) {
+  setFocus = (e, ix) => {
     e.stopPropagation();
     return this.setState({ focusedPropertyIx: ix });
   }
 
-  removeFocus(e) {
+  removeFocus = (e) => {
     e.stopPropagation();
     return this.setState({ focusedPropertyIx: null });
   }
@@ -198,7 +189,7 @@ class EntityView extends Component {
     );
   }
 
-  setAllPropertyBack(e) {
+  setAllPropertyBack = (e) => {
     e.stopPropagation();
     this.state.propertyStates.map(ecs => ecs.setBack());
     //The callbacks from setBack come before a render can be triggered:
@@ -206,7 +197,7 @@ class EntityView extends Component {
     this.setState({ changedPropertiesMap: {} });
   }
 
-  askUserAboutRemoving(e) {
+  askUserAboutRemoving = (e) => {
     e.stopPropagation();
     const entityDescription = this.props.entityDescription;
     const name = getFirstString(entityDescription);
@@ -228,7 +219,7 @@ class EntityView extends Component {
     });
   }
 
-  saveEntity(e) {
+  saveEntity = (e) => {
     e.stopPropagation();
     this.props.onSaveEntity(this.getEntityDescriptionDiff());
   }

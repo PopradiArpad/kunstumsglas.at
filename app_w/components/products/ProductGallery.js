@@ -6,7 +6,6 @@
 *  LICENSE file in the root directory of this source tree.
 */
 
- 
 import React, { Component,PropTypes } from 'react';
 import {connect}                      from 'react-redux';
 import Product from './Product';
@@ -18,10 +17,6 @@ import RemoveSwipeableProp from '../utils/RemoveSwipeableProp';
 class ProductGallery extends Component {
   constructor() {
     super(...arguments);
-
-    this.dispatchSetPreviousProduct = this.dispatchSetPreviousProduct.bind(this);
-    this.dispatchSetNextProduct     = this.dispatchSetNextProduct.bind(this);
-    this.navigate                   = this.navigate.bind(this);
 
     this.dispatchSetProductIfNeeded(this.props);
   }
@@ -65,21 +60,21 @@ class ProductGallery extends Component {
       this.props.dispatch(new SetProduct(props.params.pid,props.params.pgid));
   }
 
-  dispatchSetNextProduct(e) {
+  dispatchSetNextProduct = (e) => {
     if (e)
       e.stopPropagation();
 
     this.props.dispatch(new SetNextProduct());
   }
 
-  dispatchSetPreviousProduct(e) {
+  dispatchSetPreviousProduct = (e) => {
     if (e)
       e.stopPropagation();
 
     this.props.dispatch(new SetPreviousProduct());
   }
 
-  navigate(e) {
+  navigate = (e) => {
     e.stopPropagation();
     switch (e.keyCode) {
       case 39:        return this.dispatchSetNextProduct();

@@ -6,7 +6,6 @@
 *  LICENSE file in the root directory of this source tree.
 */
 
- 
 import React, { Component } from 'react';
 import {FormattedMessage} from 'react-intl';
 import {Link} from 'react-router';
@@ -14,10 +13,9 @@ import {Link} from 'react-router';
 class Info extends Component {
   constructor() {
     super(...arguments);
-    this.menuClicked = this.menuClicked.bind(this);
   }
 
-  menuClicked() {
+  menuClicked = () => {
     this.refs.me.classList.toggle('open');
   }
 

@@ -6,7 +6,6 @@
 *  LICENSE file in the root directory of this source tree.
 */
 
- 
 import React, {PropTypes, Component } from 'react';
 import {connect}              from 'react-redux';
 import Title from './Title';
@@ -25,8 +24,6 @@ let displayedCookiesNotification = document.cookie.includes('displayedCookiesNot
 class App extends Component {
   constructor() {
     super(...arguments);
-    this.setVisited   = this.setVisited.bind(this);
-    this.changeLocale = this.changeLocale.bind(this);
     this.props.dispatch(new SetLocale(getDefaultLocale()));
   }
 
@@ -66,7 +63,7 @@ class App extends Component {
     return (this.props.locale==='de-DE') ? 'English' : 'Deutsch';
   }
 
-  changeLocale() {
+  changeLocale = () => {
     let locale = (this.props.locale==='de-DE') ? 'en-US' : 'de-DE';
     this.props.dispatch(new SetLocale(locale));
   }
@@ -79,7 +76,7 @@ class App extends Component {
     return ! this.props.location.pathname.match(/\/product\//);
   }
 
-  setVisited() {
+  setVisited = () => {
     document.cookie="displayedCookiesNotification=1";
     displayedCookiesNotification = true;
   }

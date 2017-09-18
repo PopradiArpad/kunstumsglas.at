@@ -19,8 +19,8 @@ class GalleryOfAProductGroupItem extends Component {
     const galleryItem = this.props.galleryItem;
 
     return (
-      <Link to={this.props.link}>
-        <div className="kug-galleryofaproductgroupitem">
+      <div className="kug-galleryofaproductgroupitem">
+        <Link to={this.props.link}>
           <div className="kug-galleryofaproductgroupitem-img">
             <img src={`/item/${galleryItem.id}/smallPic?dbModel=GalleryItem`}/>
           </div>
@@ -32,8 +32,8 @@ class GalleryOfAProductGroupItem extends Component {
               {galleryItem.line2}
             </div>
           </div>
-        </div>
-      </Link>
+        </Link>
+      </div>
     );
   }
 }

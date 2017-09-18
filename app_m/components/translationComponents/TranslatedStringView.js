@@ -6,7 +6,6 @@
 *  LICENSE file in the root directory of this source tree.
 */
 
- 
 import React, {Component, PropTypes}  from 'react';
 import classnames          from 'classnames';
 import StringPropertyView  from '../propertyViews/StringPropertyView';
@@ -14,10 +13,6 @@ import StringPropertyView  from '../propertyViews/StringPropertyView';
 class TranslatedStringView extends Component {
   constructor(){
     super(...arguments);
-
-    this.nextFocusedStringPropertyIx = this.nextFocusedStringPropertyIx.bind(this);
-    this.setAllTranslationsBack      = this.setAllTranslationsBack.bind(this);
-    this.remove                      = this.remove.bind(this);
 
     this.state = {focusedStringPropertyIx: null}
   }
@@ -96,7 +91,7 @@ class TranslatedStringView extends Component {
           };
   }
 
-  setAllTranslationsBack(e) {
+  setAllTranslationsBack = (e) => {
     e.stopPropagation();
     this.props.onAllBack(this.props.messageId);
   }
@@ -110,7 +105,7 @@ class TranslatedStringView extends Component {
     this.props.onStartEdit(this.props.messageId);
   }
 
-  nextFocusedStringPropertyIx() {
+  nextFocusedStringPropertyIx = () => {
     let nextIx = this.state.focusedStringPropertyIx+1;
 
     if (this.props.localizedStringIds[nextIx])
@@ -121,7 +116,7 @@ class TranslatedStringView extends Component {
     }
   }
 
-  remove(e) {
+  remove = (e) => {
     e.stopPropagation();
     this.props.onRemove(this.props.messageId);
   }

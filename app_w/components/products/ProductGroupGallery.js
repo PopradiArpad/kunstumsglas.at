@@ -6,7 +6,6 @@
 *  LICENSE file in the root directory of this source tree.
 */
 
- 
 import React, { Component,PropTypes } from 'react';
 import {connect}                      from 'react-redux';
 import ProductGroup from './ProductGroup';
@@ -21,10 +20,6 @@ import classnames                     from 'classnames';
 class ProductGroupGallery extends Component {
   constructor() {
     super(...arguments);
-
-    this.dispatchSetPreviousProductGroup = this.dispatchSetPreviousProductGroup.bind(this);
-    this.dispatchSetNextProductGroup     = this.dispatchSetNextProductGroup.bind(this);
-    this.navigate                        = this.navigate.bind(this);
 
     this.dispatchSetProductGroupIfNeeded(this.props);
   }
@@ -76,15 +71,15 @@ class ProductGroupGallery extends Component {
             </div>);
   }
 
-  dispatchSetNextProductGroup() {
+  dispatchSetNextProductGroup = () => {
     this.props.dispatch(new SetNextProductGroup(this.props.productGroup.id));
   }
 
-  dispatchSetPreviousProductGroup() {
+  dispatchSetPreviousProductGroup = () => {
     this.props.dispatch(new SetPreviousProductGroup(this.props.productGroup.id));
   }
 
-  navigate(e) {
+  navigate = (e) => {
     e.stopPropagation();
     switch (e.keyCode) {
       case 39:        return this.dispatchSetNextProductGroup();

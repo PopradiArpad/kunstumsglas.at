@@ -6,7 +6,6 @@
 *  LICENSE file in the root directory of this source tree.
 */
 
- 
 import React, {Component,PropTypes} from 'react';
 import {Link} from 'react-router';
 import {FormattedMessage} from 'react-intl';
@@ -14,10 +13,6 @@ import {FormattedMessage} from 'react-intl';
 class Title extends Component {
   constructor() {
     super(...arguments);
-
-    this.menuClicked  = this.menuClicked.bind(this);
-    this.closeMenu    = this.closeMenu.bind(this);
-    this.changeLocale = this.changeLocale.bind(this);
   }
 
   render() {
@@ -50,15 +45,15 @@ class Title extends Component {
     return (<FormattedMessage id={ 'Link_zum_Kontakt' } defaultMessage={ 'a' }/>);
   }
 
-  menuClicked() {
+  menuClicked = () => {
     this.refs.nav.classList.toggle('open');
   }
 
-  closeMenu() {
+  closeMenu = () => {
     this.refs.nav.classList.remove('open');
   }
 
-  changeLocale() {
+  changeLocale = () => {
     this.props.onChangeLocale();
     this.closeMenu();
   }

@@ -6,14 +6,13 @@
 *  LICENSE file in the root directory of this source tree.
 */
 
- 
+
 import React, {Component, PropTypes}  from 'react';
 import classNames  from 'classnames';
 
 class LoginSignup extends Component {
   constructor(){
     super(...arguments);
-    this.onSubmit = this.onSubmit.bind(this);
     this.state={name:'', password:'', login: true /*false means signup*/};
   }
 
@@ -49,7 +48,7 @@ class LoginSignup extends Component {
     );
   }
 
-  onSubmit(e) {
+  onSubmit = (e) => {
     e.preventDefault();
 
     let state  = this.state;

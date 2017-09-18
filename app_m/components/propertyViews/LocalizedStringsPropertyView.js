@@ -6,7 +6,6 @@
 *  LICENSE file in the root directory of this source tree.
 */
 
- 
 import React, {PropTypes}  from 'react';
 import classnames          from 'classnames';
 import merge               from 'lodash.merge';
@@ -15,11 +14,6 @@ import PropertyView        from './PropertyView';
 class LocalizedStringsPropertyView extends PropertyView {
   constructor(){
     super(...arguments);
-
-    this.onChange                   = this.onChange.bind(this);
-    this.onEditorKeyPress           = this.onEditorKeyPress.bind(this);
-    this.onMultilineEditorKeyPress  = this.onMultilineEditorKeyPress.bind(this);
-    this.setFocusOnNthItem          = this.setFocusOnNthItem.bind(this);
 
     this.state=this.resetState(this.props,null);
   }
@@ -123,14 +117,14 @@ class LocalizedStringsPropertyView extends PropertyView {
           </pre>);
   }
 
-  setFocusOnNthItem(e,ix) {
+  setFocusOnNthItem = (e,ix) => {
     this.setState({focusedIx:ix});
 
     if (! this.props.focused)
       this.props.onStartEdit(e);
   }
 
-  onChange(e) {
+  onChange = (e) => {
     e.stopPropagation();
 
     const state     = this.state;
@@ -142,14 +136,14 @@ class LocalizedStringsPropertyView extends PropertyView {
     this.props.onMergePropertyChange({localizedStrings:{[focusedIx]:{locale,string}}});
   }
 
-  onEditorKeyPress(e) {
+  onEditorKeyPress = (e) => {
     if (e.key!=="Enter")
       return;
 
     this.setFocusOnNextLocalesOrFinish(e);
   }
 
-  onMultilineEditorKeyPress(e) {
+  onMultilineEditorKeyPress = (e) => {
     if (! ((e.key==="Enter") && e.shiftKey))
       return;
 

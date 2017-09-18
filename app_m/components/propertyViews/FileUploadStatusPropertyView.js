@@ -6,7 +6,6 @@
 *  LICENSE file in the root directory of this source tree.
 */
 
- 
 import React, {PropTypes}  from 'react';
 import classnames          from 'classnames';
 import PropertyView        from './PropertyView';
@@ -14,8 +13,6 @@ import PropertyView        from './PropertyView';
 class FileUploadStatusPropertyView extends PropertyView {
     constructor(){
       super(...arguments);
-      this.onFileSelected = this.onFileSelected.bind(this);
-      this.onBack         = this.onBack.bind(this);
     }
 
     render() {
@@ -60,12 +57,12 @@ class FileUploadStatusPropertyView extends PropertyView {
       </div>);
   }
 
-  onBack(e) {
+  onBack = (e) => {
     this.refs.input.value='';
     this.props.onBack(e);
   }
 
-  onFileSelected(e) {
+  onFileSelected = (e) => {
     e.stopPropagation();
     let file = e.target.files[0];
     var reader=new FileReader();

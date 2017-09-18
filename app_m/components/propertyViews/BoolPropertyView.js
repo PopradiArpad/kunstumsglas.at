@@ -6,7 +6,6 @@
 *  LICENSE file in the root directory of this source tree.
 */
 
- 
 import React, {PropTypes}  from 'react';
 import classnames          from 'classnames';
 import PropertyView        from './PropertyView';
@@ -14,7 +13,6 @@ import PropertyView        from './PropertyView';
 class BoolPropertyView extends PropertyView {
     constructor(){
       super(...arguments);
-      this.change=this.change.bind(this);
     }
 
     render() {
@@ -36,7 +34,7 @@ class BoolPropertyView extends PropertyView {
       );
     }
 
-  change(e) {
+  change = (e) => {
     e.stopPropagation();
     this.props.onMergePropertyChange({bool:!this.props.propertyDescription.bool});
   }

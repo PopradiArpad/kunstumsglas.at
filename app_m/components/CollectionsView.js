@@ -6,7 +6,6 @@
 *  LICENSE file in the root directory of this source tree.
 */
 
- 
 import React, {Component, PropTypes}  from 'react';
  // CSSPlugin must be load for Draggable
 import {TweenLite, TimelineMax, CSSPlugin}  from 'gsap'; //eslint-disable-line
@@ -39,18 +38,7 @@ class CollectionsView extends Component {
         //structure: {menu: {x,y, id? }} x,y, are the menu position , id only for item menu
         open: false
       };
-      this.itemClicked=this.itemClicked.bind(this);
-      this.backgroundClicked=this.backgroundClicked.bind(this);
-      this.clicked=this.clicked.bind(this);
-      this.storeRef=this.storeRef.bind(this);
-
       this.placeAllProductsTimerID = null;
-      this.placeAllItems = this.placeAllItems.bind(this);
-      this.onProductDragStart=this.onProductDragStart.bind(this);
-      this.onProductDrag=this.onProductDrag.bind(this);
-      this.onProductDragEnd=this.onProductDragEnd.bind(this);
-
-      this.toggleOpenClose = this.toggleOpenClose.bind(this);
     }
 
     shouldComponentUpdate() {
@@ -67,7 +55,7 @@ class CollectionsView extends Component {
       this.draggableState.order = nextProps.ids;
     }
 
-    storeRef(id,c) {
+    storeRef = (id,c) => {
       if (! c)
         return;
 
@@ -77,15 +65,15 @@ class CollectionsView extends Component {
       domNode.setAttribute('data-item-id',id);
     }
 
-    itemClicked(e,id) {
+    itemClicked = (e,id) => {
       this.clicked(e,id);
     }
 
-    backgroundClicked(e) {
+    backgroundClicked = (e) => {
       this.clicked(e);
     }
 
-    clicked(e,id) {
+    clicked = (e,id) => {
       e.stopPropagation();
 
       if (this.state.menu)
@@ -153,7 +141,7 @@ class CollectionsView extends Component {
               </div>);
     }
 
-    toggleOpenClose(e) {
+    toggleOpenClose = (e) => {
       e.stopPropagation();
       this.setState({open:!this.state.open});
     }
@@ -178,7 +166,7 @@ class CollectionsView extends Component {
       return this.draggableState.draggedItem.id;
     }
 
-    placeAllItems() {
+    placeAllItems = () => {
       let state    = this.draggableState;
       let moveTime = (this.isDragging()) ? .5 : .3;
       let maxColumn = this.getMaxColumn();
@@ -225,13 +213,13 @@ class CollectionsView extends Component {
       return ix;
     }
 
-    onProductDragStart(id) {
+    onProductDragStart = (id) => {
       let ix = this.getIxOfId(id);
       this.setDraggableState({draggedItem:{id,ix},renderWasRequestedDuringDragging:false});
       TweenLite.to(this.itemDOMNodes[id],.3,{scale: .95, className:'+=dragged'});
     }
 
-    onProductDrag() {
+    onProductDrag = () => {
       let state = this.draggableState;
 
       if (state.aPlacingIsRunning)
@@ -305,7 +293,7 @@ class CollectionsView extends Component {
       return newOrder;
     }
 
-    onProductDragEnd() {
+    onProductDragEnd = () => {
       TweenLite.to(this.itemDOMNodes[this.draggableState.draggedItem.id],.3,{scale: 1,
                                                                              className:'-=dragged',
                                                                              onComplete:this.onDraggedProductMoveCompleted.bind(this)});

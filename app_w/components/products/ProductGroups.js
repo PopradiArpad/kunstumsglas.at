@@ -8,9 +8,8 @@
 
 
 import React, { Component,PropTypes } from 'react';
-import {connect}                      from 'react-redux';
-import GalleryOfAProductGroup            from './GalleryOfAProductGroup';
-import {browserHistory}               from 'react-router';
+import {connect} from 'react-redux';
+import GalleryOfAProductGroup from './GalleryOfAProductGroup';
 
 class ProductGroups extends Component {
   constructor() {

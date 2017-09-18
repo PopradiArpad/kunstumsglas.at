@@ -6,7 +6,6 @@
 *  LICENSE file in the root directory of this source tree.
 */
 
- 
 import React, {Component, PropTypes}  from 'react';
 import {connect}              from 'react-redux';
 import LoadingPage            from './LoadingPage';
@@ -35,23 +34,6 @@ import {ErrorAcknowledged,
 export class App extends Component {
   constructor(){
     super(...arguments);
-
-    this.dispatchErrorAcknowledged = this.dispatchErrorAcknowledged.bind(this);
-    this.dispatchLogout            = this.dispatchLogout.bind(this);
-    this.dispatchLogin             = this.dispatchLogin.bind(this);
-    this.dispatchSignup            = this.dispatchSignup.bind(this);
-
-    this.dispatchLoadEntity           = this.dispatchLoadEntity.bind(this);
-    this.dispatchRemoveEntity         = this.dispatchRemoveEntity.bind(this);
-    this.dispatchSaveEntity           = this.dispatchSaveEntity.bind(this);
-    this.dispatchLoadTemporaryEntity  = this.dispatchLoadTemporaryEntity.bind(this);
-
-    this.dispatchBack              = this.dispatchBack.bind(this);
-
-    this.showNewPasswordPage       = this.showNewPasswordPage.bind(this);
-    this.dispatchSetNewPassword    = this.dispatchSetNewPassword.bind(this);
-    this.hideNewPasswordPage       = this.hideNewPasswordPage.bind(this);
-    this.dispatchError             = this.dispatchError.bind(this);
 
     this.state = {newPasswordPage:false};
     this.props.dispatch(new IsLoggedIn());
@@ -140,56 +122,56 @@ export class App extends Component {
     return (this.props.error) ? <ErrorDialog appError={this.props.error} onFinished={this.dispatchErrorAcknowledged}/> : null;
   }
 
-  dispatchErrorAcknowledged() {
+  dispatchErrorAcknowledged = () => {
     this.props.dispatch(new ErrorAcknowledged());
   }
 
-  dispatchLogout() {
+  dispatchLogout = () => {
     this.props.dispatch(new Logout());
   }
 
-  dispatchLogin(name,password) {
+  dispatchLogin = (name,password) => {
     this.props.dispatch(new Login(name,password));
   }
 
-  dispatchSignup(name,password) {
+  dispatchSignup = (name,password) => {
     this.props.dispatch(new Signup(name,password));
   }
 
-  dispatchLoadEntity(identity){
+  dispatchLoadEntity = (identity) => {
     this.props.dispatch(new LoadEntity(identity));
   }
 
-  dispatchRemoveEntity(identity){
+  dispatchRemoveEntity = (identity)=> {
     this.props.dispatch(new RemoveEntity(identity));
   }
 
-  dispatchSaveEntity(entityDescription){
+  dispatchSaveEntity = (entityDescription) => {
     this.props.dispatch(new SaveEntity(entityDescription));
   }
 
-  dispatchLoadTemporaryEntity(parentIdentity,parentProperty,dbModelName){
+  dispatchLoadTemporaryEntity = (parentIdentity,parentProperty,dbModelName) => {
     this.props.dispatch(new LoadTemporaryEntity(parentIdentity,parentProperty,dbModelName));
   }
 
-  dispatchBack(e){
+  dispatchBack = (e) => {
     e.stopPropagation();
     this.props.dispatch(new Back());
   }
 
-  dispatchSetNewPassword(password,newPassword){
+  dispatchSetNewPassword = (password,newPassword) => {
     this.props.dispatch(new SetNewPassword(password,newPassword));
   }
 
-  dispatchError(title,errorMessages) {
+  dispatchError = (title,errorMessages) => {
     this.props.dispatch(new AddError(title,errorMessages));
   }
 
-  showNewPasswordPage() {
+  showNewPasswordPage = () => {
     this.setState({newPasswordPage:true});
   }
 
-  hideNewPasswordPage() {
+  hideNewPasswordPage = () => {
     this.setState({newPasswordPage:false});
   }
 }

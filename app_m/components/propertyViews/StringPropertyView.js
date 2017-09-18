@@ -6,7 +6,6 @@
 *  LICENSE file in the root directory of this source tree.
 */
 
- 
 import React, {PropTypes}  from 'react';
 import classnames          from 'classnames';
 import PropertyView        from './PropertyView';
@@ -14,7 +13,6 @@ import PropertyView        from './PropertyView';
 class StringPropertyView extends PropertyView {
   constructor(){
     super(...arguments);
-    this.onChange = this.onChange.bind(this);
     this.state={value:this.props.propertyDescription.string};
   }
 
@@ -85,7 +83,7 @@ class StringPropertyView extends PropertyView {
       </div>);
   }
 
-  onChange(e) {
+  onChange = (e) => {
     e.stopPropagation();
     this.setState({value:e.target.value})
     this.props.onMergePropertyChange({string:e.target.value});

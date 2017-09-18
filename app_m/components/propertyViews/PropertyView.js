@@ -6,14 +6,12 @@
 *  LICENSE file in the root directory of this source tree.
 */
 
- 
 import React, {PropTypes, Component}  from 'react';
 
 
 class PropertyView extends Component {
     constructor(){
       super(...arguments);
-      this.onBackPropertyView = this.onBackPropertyView.bind(this);
     }
 
   getBack() {
@@ -23,7 +21,7 @@ class PropertyView extends Component {
       </div>);
   }
 
-  onBackPropertyView(e) {
+  onBackPropertyView = (e) => {
     e.stopPropagation();
     this.props.onBack();
   }

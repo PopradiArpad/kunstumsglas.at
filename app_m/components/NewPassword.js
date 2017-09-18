@@ -6,14 +6,13 @@
 *  LICENSE file in the root directory of this source tree.
 */
 
- 
+
 import React, {Component, PropTypes}  from 'react';
 import classNames  from 'classnames';
 
 class NewPassword extends Component {
   constructor(){
     super(...arguments);
-    this.onSubmit = this.onSubmit.bind(this);
     this.state={oldPassword:'', newPassword1:'', newPassword2:''};
   }
 
@@ -48,7 +47,7 @@ class NewPassword extends Component {
     );
   }
 
-  onSubmit(e) {
+  onSubmit = (e) => {
     e.preventDefault();
 
     let state  = this.state;

@@ -6,7 +6,7 @@
 *  LICENSE file in the root directory of this source tree.
 */
 
- 
+
 import React, {PropTypes}      from 'react';
 import classnames              from 'classnames';
 import PropertyView            from './PropertyView';
@@ -16,11 +16,6 @@ import CollectionsView         from '../CollectionsView';
 class IdArrayPropertyView extends PropertyView {
   constructor(){
     super(...arguments);
-    this.createOverview=this.createOverview.bind(this);
-    this.createOverviewMenu=this.createOverviewMenu.bind(this);
-    this.createBackgroundMenu=this.createBackgroundMenu.bind(this);
-    this.createNewElement=this.createNewElement.bind(this);
-    this.onChangeItemOrder=this.onChangeItemOrder.bind(this);
   }
 
   render() {
@@ -40,7 +35,7 @@ class IdArrayPropertyView extends PropertyView {
             </div>);
   }
 
-  createOverview(id,storeRef,onClick) {
+  createOverview = (id,storeRef,onClick) => {
     let propertyDescription = this.props.propertyDescription;
     let referredDbModel     = propertyDescription.referredDbModel;
     let Overview            = getOverviewConstructor(referredDbModel);
@@ -54,7 +49,7 @@ class IdArrayPropertyView extends PropertyView {
                       onClick={(e)=>onClick(e,id)}/>;
   }
 
-  createOverviewMenu(id) {
+  createOverviewMenu = (id) => {
     return (
       <div className="kugm-collectionsview-menu">
         <a href="#" onClick={(e)=>this.showEntity(e,id)}>Zeigen</a>
@@ -62,7 +57,7 @@ class IdArrayPropertyView extends PropertyView {
     );
   }
 
-  createBackgroundMenu() {
+  createBackgroundMenu = () => {
     if (! this.props.propertyDescription.createNewItemAllowed)
       return null;
     
@@ -78,12 +73,12 @@ class IdArrayPropertyView extends PropertyView {
     this.props.onSelectEntity({id,dbModel:this.props.propertyDescription.referredDbModel})
   }
 
-  createNewElement(e) {
+  createNewElement = (e) => {
     e.stopPropagation();
     this.props.onCreateNewEntity(this.props.propertyDescription.referredDbModel)
   }
 
-  onChangeItemOrder(ids) {
+  onChangeItemOrder = (ids) => {
     this.props.onMergePropertyChange({ids});
   }
 

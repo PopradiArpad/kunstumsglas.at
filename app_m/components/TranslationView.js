@@ -6,7 +6,6 @@
 *  LICENSE file in the root directory of this source tree.
 */
 
- 
 import React, {Component, PropTypes}      from 'react';
 import TranslatedStringView               from './translationComponents/TranslatedStringView';
 import cloneDeep                          from 'lodash.clonedeep';
@@ -62,15 +61,6 @@ const getCompletedReorderedTranslatedStrings = (translatedStrings,locales) => {
 export class TranslationView extends Component {
   constructor(){
     super(...arguments);
-
-    this.setTranslation              = this.setTranslation.bind(this);
-    this.setTranslationBack          = this.setTranslationBack.bind(this);
-    this.setTranslatedStringBack     = this.setTranslatedStringBack.bind(this);
-    this.setAllTranslatedStringsBack = this.setAllTranslatedStringsBack.bind(this);
-    this.nextFocusedTranslatedString = this.nextFocusedTranslatedString.bind(this);
-    this.setFocusedTranslatedString  = this.setFocusedTranslatedString.bind(this);
-    this.saveEntity                  = this.saveEntity.bind(this);
-    this.markTranslatedStringToRemove= this.markTranslatedStringToRemove.bind(this);
 
     this.state = this.getResetState(this.props.entityDescription);
   }
@@ -261,7 +251,7 @@ export class TranslationView extends Component {
     });
   }
 
-  setTranslation(localizedStringId,string) {
+  setTranslation = (localizedStringId,string) => {
     let normalizedWorkingTranslatedStrings = merge({},
                                                     this.state.normalizedWorkingTranslatedStrings,
                                                     {entities:{localizedStrings:{[localizedStringId]:{string}}}});
@@ -269,13 +259,13 @@ export class TranslationView extends Component {
     this.setState({normalizedWorkingTranslatedStrings});
   }
 
-  setTranslationBack(localizedStringId) {
+  setTranslationBack = (localizedStringId) => {
     const entityTranslation = this.state.normalizedEntityTranslatedStrings.entities.localizedStrings[localizedStringId].string;
 
     this.setTranslation(localizedStringId,entityTranslation);
   }
 
-  setTranslatedStringBack(id) {
+  setTranslatedStringBack = (id) => {
     const entities                = this.state.normalizedEntityTranslatedStrings.entities;
     const entityLocalizedStrings  = entities.localizedStrings;
     const localizedStringsToMerge = entities.translatedStrings[id].localizedStrings.reduce((a,localizedStringId)=>{
@@ -293,7 +283,7 @@ export class TranslationView extends Component {
     this.setState({normalizedWorkingTranslatedStrings});
   }
 
-  setAllTranslatedStringsBack() {
+  setAllTranslatedStringsBack = () => {
     const entityLocalizedStrings = this.state.normalizedEntityTranslatedStrings.entities.localizedStrings;
     const entityTranslatedStrings = this.state.normalizedEntityTranslatedStrings.entities.translatedStrings;
 
@@ -306,11 +296,11 @@ export class TranslationView extends Component {
     this.setState({normalizedWorkingTranslatedStrings});
   }
 
-  setFocusedTranslatedString(id) {
+  setFocusedTranslatedString = (id) => {
     this.setState({focusedTranslatedStringId:id});
   }
 
-  nextFocusedTranslatedString() {
+  nextFocusedTranslatedString = () => {
     const normalizedWorkingTranslatedStrings = this.state.normalizedWorkingTranslatedStrings;
     const ids                                = normalizedWorkingTranslatedStrings.result;
     const translatedStrings                  = normalizedWorkingTranslatedStrings.entities.translatedStrings;
@@ -332,7 +322,7 @@ export class TranslationView extends Component {
     }
   }
 
-  markTranslatedStringToRemove(id) {
+  markTranslatedStringToRemove = (id) => {
     let normalizedWorkingTranslatedStrings = merge({},
                                                     this.state.normalizedWorkingTranslatedStrings,
                                                     {entities:{translatedStrings:{[id]:{remove:true}}}});
@@ -340,7 +330,7 @@ export class TranslationView extends Component {
     this.setState({normalizedWorkingTranslatedStrings,focusedTranslatedStringId:null});
   }
 
-  saveEntity(e) {
+  saveEntity = (e) => {
     e.stopPropagation();
     //The whole working state will be saved, to let save the in-merged current app messages
     this.props.onSaveEntity(this.getWorkingEntityDescription());

@@ -6,7 +6,6 @@
 *  LICENSE file in the root directory of this source tree.
 */
 
- 
 import React, { Component } from 'react';
 import {Link,browserHistory} from 'react-router';
 import {FormattedMessage} from 'react-intl';
@@ -15,8 +14,6 @@ import {isDesktopDevice} from './utils/deviceInfo';
 class Navbar extends Component {
   constructor() {
     super(...arguments);
-
-    this.back = this.back.bind(this);
   }
 
   render() {
@@ -48,7 +45,7 @@ class Navbar extends Component {
            : null;
   }
 
-  back() {
+  back = () => {
     const pathname = this.props.location.pathname;
 
     const productGallery = pathname.match(/product\/(\w+)\/(\w+)/);

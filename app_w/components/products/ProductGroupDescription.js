@@ -6,15 +6,12 @@
 *  LICENSE file in the root directory of this source tree.
 */
 
- 
 import React, { Component,PropTypes } from 'react';
 import classnames from 'classnames';
 
 class ProductGroupDescription extends Component {
   constructor() {
     super(...arguments);
-
-    this.openClose = this.openClose.bind(this);
 
     this.state={open:false}
   }
@@ -42,7 +39,7 @@ class ProductGroupDescription extends Component {
     );
   }
 
-  openClose(e) {
+  openClose = (e) => {
     e.stopPropagation();
     this.setState({open:!this.state.open});
   }
