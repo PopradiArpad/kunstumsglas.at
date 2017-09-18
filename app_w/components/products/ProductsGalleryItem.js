@@ -6,31 +6,28 @@
 *  LICENSE file in the root directory of this source tree.
 */
 
- 
+
 import React, { Component,PropTypes } from 'react';
+import { Link } from 'react-router';
 
 class ProductsGalleryItem extends Component {
   constructor() {
     super(...arguments);
-    this.onClick = this.onClick.bind(this);
   }
 
   render() {
     return (
-      <div className="kug-productsgalleryitem" onClick={this.onClick}>
-        <img src={`/item/${this.props.id}/smallPic?dbModel=Product`}/>
+      <div className="kug-productsgalleryitem">
+        <Link to={`/product/${this.props.pgId}/${this.props.id}`}>
+          <img src={`/item/${this.props.id}/smallPic?dbModel=Product`}/>
+        </Link>
       </div>
     );
   }
-
-  onClick(e) {
-    e.stopPropagation();
-    this.props.onProductSelected(this.props.id);
-  }
 }
 ProductsGalleryItem.propTypes = {
-  id:                PropTypes.string.isRequired,
-  onProductSelected: PropTypes.func.isRequired
+  id: PropTypes.string.isRequired,
+  pgId: PropTypes.string.isRequired
 }
 
 export default ProductsGalleryItem;

@@ -6,6 +6,7 @@
                     "messagesDir": "./app_w/build/messages",
                     "enforceDescriptions": false
                   }
-                ]
+                ],
+                "transform-class-properties"
    ]
 }

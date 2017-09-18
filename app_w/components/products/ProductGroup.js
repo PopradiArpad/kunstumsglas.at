@@ -6,7 +6,7 @@
 *  LICENSE file in the root directory of this source tree.
 */
 
- 
+
 import React, { Component,PropTypes } from 'react';
 import {connect}                      from 'react-redux';
 import ProductGroupDescription        from './ProductGroupDescription';
@@ -16,7 +16,6 @@ import {browserHistory}               from 'react-router';
 class ProductGroup extends Component {
   constructor() {
     super(...arguments);
-    this.setProduct = this.setProduct.bind(this);
   }
 
   render() {
@@ -27,17 +26,17 @@ class ProductGroup extends Component {
 
     return (
       <div className="kug-productgroup">
-        <ProductGroupDescription name={productGroup.name}
-                                 localizedName={productGroup.localizedName}
-                                 introduction_html={productGroup.introduction_html}/>
-        <Products ids={productGroup.productIds}
-                  onProductSelected={this.setProduct}/>
+        <ProductGroupDescription
+          name={productGroup.name}
+          localizedName={productGroup.localizedName}
+          introduction_html={productGroup.introduction_html}
+        />
+        <Products
+          ids={productGroup.productIds}
+          pgId={this.props.productGroup.id}
+        />
       </div>
     );
-  }
-
-  setProduct(pid) {
-    browserHistory.push(`/product/${this.props.productGroup.id}/${pid}`);
   }
 }
 ProductGroup.propTypes = {

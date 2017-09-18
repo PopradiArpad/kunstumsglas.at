@@ -6,7 +6,7 @@
 *  LICENSE file in the root directory of this source tree.
 */
 
- 
+
 import React, { Component,PropTypes } from 'react';
 import ProductsGalleryItem from './ProductsGalleryItem';
 
@@ -27,14 +27,16 @@ class Products extends Component {
 
   getProducts() {
     return this.props.ids.map(id=>
-      <ProductsGalleryItem key={id}
-                           id={id}
-                           onProductSelected={this.props.onProductSelected}/>);
+      <ProductsGalleryItem
+        key={id}
+        id={id}
+        pgId={this.props.pgId}
+      />);
   }
 }
 Products.propTypes = {
-  ids:               PropTypes.array.isRequired,
-  onProductSelected: PropTypes.func.isRequired
+  ids: PropTypes.array.isRequired,
+  pgId: PropTypes.string.isRequired
 }
 
 export default Products;

@@ -6,7 +6,7 @@
 *  LICENSE file in the root directory of this source tree.
 */
 
- 
+
 import React, { Component,PropTypes } from 'react';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import GalleryOfAProductGroupItem from './GalleryOfAProductGroupItem';
@@ -14,10 +14,6 @@ import GalleryOfAProductGroupItem from './GalleryOfAProductGroupItem';
 class GalleryOfAProductGroup extends Component {
   constructor() {
     super(...arguments);
-
-    this.startCarousel   = this.startCarousel.bind(this);
-    this.nextGalleryItem = this.nextGalleryItem.bind(this);
-    this.onClick         = this.onClick.bind(this);
 
     const galleryIx = this.props.gallery.length > 0 ? 0 : null;
     this.state={galleryIx};
@@ -30,7 +26,7 @@ class GalleryOfAProductGroup extends Component {
     const galleryItem = this.getGalleryItem();
 
     return (
-        <ReactCSSTransitionGroup  className="kug-galleryofaproductgroup" onClick={this.onClick}
+        <ReactCSSTransitionGroup  className="kug-galleryofaproductgroup"
           transitionName="carousel"
           transitionEnterTimeout={1000}
           transitionLeaveTimeout={1000}>
@@ -44,16 +40,16 @@ class GalleryOfAProductGroup extends Component {
       this.interval = setTimeout(this.startCarousel,2000 + (this.props.ix*2000));
   }
 
-  startCarousel() {
-    this.interval = setInterval(this.nextGalleryItem,5000);
-  }
-
   componentWillUnmount() {
     if (this.interval)
       clearInterval(this.interval);
   }
 
-  nextGalleryItem() {
+  startCarousel = () => {
+    this.interval = setInterval(this.nextGalleryItem,5000);
+  }
+
+  nextGalleryItem = () => {
     let galleryIx = this.state.galleryIx+1;
 
     if (galleryIx > (this.props.gallery.length-1))
@@ -66,18 +62,17 @@ class GalleryOfAProductGroup extends Component {
     const galleryIx   = this.state.galleryIx;
     const galleryItem = this.props.gallery[galleryIx];
 
-    return <GalleryOfAProductGroupItem key={galleryIx} galleryItem={galleryItem}/>;
-  }
-
-  onClick(e) {
-    e.stopPropagation();
-    this.props.onProductGroupClicked();
+    return (<GalleryOfAProductGroupItem
+             key={galleryIx}
+             galleryItem={galleryItem}
+             link={this.props.link}
+           />);
   }
 }
 GalleryOfAProductGroup.propTypes = {
-  gallery:               PropTypes.array.isRequired,
-  ix:                    PropTypes.number.isRequired,
-  onProductGroupClicked: PropTypes.func.isRequired
+  gallery: PropTypes.array.isRequired,
+  ix: PropTypes.number.isRequired,
+  link: PropTypes.string.isRequired
 }
 
 export default GalleryOfAProductGroup;

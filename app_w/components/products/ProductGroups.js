@@ -6,7 +6,7 @@
 *  LICENSE file in the root directory of this source tree.
 */
 
- 
+
 import React, { Component,PropTypes } from 'react';
 import {connect}                      from 'react-redux';
 import GalleryOfAProductGroup            from './GalleryOfAProductGroup';
@@ -15,8 +15,6 @@ import {browserHistory}               from 'react-router';
 class ProductGroups extends Component {
   constructor() {
     super(...arguments);
-
-    this.linkToProductGroup = this.linkToProductGroup.bind(this);
   }
 
   render() {
@@ -35,15 +33,11 @@ class ProductGroups extends Component {
         <GalleryOfAProductGroup key={productGroup.id}
                                 gallery={productGroup.gallery}
                                 ix={ix}
-                                onProductGroupClicked={()=>this.linkToProductGroup(productGroup.id)}
+                                link={`/productgroup/${productGroup.id}`}
                                 />
     );
 
     return productGroupGalleries;
-  }
-
-  linkToProductGroup(pgid){
-    browserHistory.push(`/productgroup/${pgid}`);
   }
 }
 ProductGroups.propTypes = {
