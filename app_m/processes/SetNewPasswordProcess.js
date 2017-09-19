@@ -20,8 +20,8 @@ const SetNewPasswordProcess = {
 
   start(password, newPassword) {
     fetchSetNewPassword(password, newPassword)
-      .then(this.dispatchProcessFinishedOk.bind(this))
-      .catch(this.dispatchProcessFinishedError.bind(this));
+      .then(this.dispatchProcessFinishedOk)
+      .catch(this.dispatchProcessFinishedError);
   }
 };
 Object.setPrototypeOf(SetNewPasswordProcess, Process);

@@ -81,24 +81,25 @@ const LoadEntityProcess = {
   },
 
   start(identity, entityOverviews) {
-    if (!identity) return this.dispatchNullEntity();
+    if (!identity) {
+     return this.dispatchNullEntity();
+    }
 
     return this.getEntityDescription(identity, entityOverviews);
   },
 
   dispatchNullEntity() {
-    Promise.resolve({ entityDescription: null, entityOverviews: {} }).then(
-      this.dispatchProcessFinishedOk.bind(this)
-    );
+    Promise.resolve({ entityDescription: null, entityOverviews: {} })
+    .then(this.dispatchProcessFinishedOk);
   },
 
   getEntityDescription(identity, entityOverviews) {
     return fetchGraphQL(GetEntityDescription, { id: identity })
-      .then(this.graphQLErrorAPI.bind(this))
-      .then(this.addEntityDescription.bind(this, identity))
-      .then(this.addEntityPropertyValues.bind(this, entityOverviews))
-      .then(this.dispatchProcessFinishedOk.bind(this))
-      .catch(this.dispatchProcessFinishedError.bind(this));
+      .then(this.graphQLErrorAPI)
+      .then(graphQLResult => this.addEntityDescription(identity,graphQLResult))
+      .then(entityDescription => this.addEntityPropertyValues(entityOverviews,entityDescription))
+      .then(this.dispatchProcessFinishedOk)
+      .catch(this.dispatchProcessFinishedError);
   },
 
   addEntityDescription(identity, graphQLResult) {
@@ -124,8 +125,8 @@ const LoadEntityProcess = {
       ? fetchGraphQL(GetEntityPropertyValues, {
           epvsrs: entityPropertyValuesRequests
         })
-          .then(this.graphQLErrorAPI.bind(this))
-          .then(this.addEntityOverviews.bind(this, entityDescription))
+          .then(this.graphQLErrorAPI)
+          .then(graphQLResult => this.addEntityOverviews(entityDescription,graphQLResult))
       : { entityDescription };
   },
 

@@ -10,6 +10,9 @@ import { ProcessFinishedOk, ProcessFinishedError } from '../actions';
 
 let dispatch;
 
+/*
+  The Process objects make a pure prototypical hierarchy.
+*/
 const Process = {
   setDispatch(storeDispatch) {
     dispatch = storeDispatch;
@@ -17,6 +20,12 @@ const Process = {
 
   initProcess(name) {
     this.name = name;
+
+    //instance methods
+    this.dispatchProcessFinishedOk = this.dispatchProcessFinishedOk.bind(this);
+    this.dispatchProcessFinishedError = this.dispatchProcessFinishedError.bind(this);
+    this.graphQLErrorAPI = this.graphQLErrorAPI.bind(this);
+    this.getPropertyValueInputs = this.getPropertyValueInputs.bind(this);
   },
 
   dispatchProcessFinishedOk(result) {

@@ -6,7 +6,6 @@
 *  LICENSE file in the root directory of this source tree.
 */
 
- 
 import React, {PropTypes}  from 'react';
 import classnames          from 'classnames';
 import PropertyView        from './PropertyView';
@@ -23,8 +22,8 @@ class DataURLPropertyView extends PropertyView {
     return (
       <div className={className}
          onDragOver={e=>e.preventDefault()}
-         onDrop={this.onDrop.bind(this)}
-         onDragEnd={this.onDragEnd.bind(this)}>
+         onDrop={this.onDrop}
+         onDragEnd={this.onDragEnd}>
         {this.getImg()}
         {back}
       </div>
@@ -35,14 +34,14 @@ class DataURLPropertyView extends PropertyView {
     return <img src={this.props.propertyDescription.dataurl} alt="Ziehe ein Bild rein" />;
   }
 
-  onDrop(e) {
+  onDrop = (e) => {
     e.preventDefault();
     var dt = e.dataTransfer;
     if (dt.files.length)
       this.previewFile(dt.files[0]);
   }
 
-  onDragEnd(e) {
+  onDragEnd = (e) => {
     e.preventDefault();
     e.dataTransfer.clearData();
   }

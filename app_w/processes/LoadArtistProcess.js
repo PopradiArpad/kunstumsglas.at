@@ -20,8 +20,8 @@ const LoadArtistProcess = {
 
   start(name, pgid, locale) {
     return fetchArtist(name, locale)
-      .then(this.dispatchProcessFinishedOk.bind(this))
-      .catch(this.dispatchProcessFinishedError.bind(this));
+      .then(this.dispatchProcessFinishedOk)
+      .catch(this.dispatchProcessFinishedError);
   }
 };
 Object.setPrototypeOf(LoadArtistProcess, Process);

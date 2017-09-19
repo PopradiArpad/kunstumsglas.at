@@ -10,6 +10,9 @@ import { ProcessFinishedOk, ProcessFinishedError } from '../actions';
 
 let dispatch;
 
+/*
+  The Process objects make a pure prototypical hierarchy.
+*/
 const Process = {
   setDispatch(storeDispatch) {
     dispatch = storeDispatch;
@@ -19,6 +22,10 @@ const Process = {
     //Why not simple constructor.name ?
     //Because the uglification gives the same name for different constructors
     this.name = name;
+
+    //instance methods
+    this.dispatchProcessFinishedOk = this.dispatchProcessFinishedOk.bind(this);
+    this.dispatchProcessFinishedError = this.dispatchProcessFinishedError.bind(this);
   },
 
   dispatchProcessFinishedOk(result) {

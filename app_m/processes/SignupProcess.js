@@ -20,8 +20,8 @@ const SignupProcess = {
 
   start(name, password) {
     fetchSignup(name, password)
-      .then(this.dispatchProcessFinishedOk.bind(this))
-      .catch(this.dispatchProcessFinishedError.bind(this));
+      .then(this.dispatchProcessFinishedOk)
+      .catch(this.dispatchProcessFinishedError);
   }
 };
 Object.setPrototypeOf(SignupProcess, Process);

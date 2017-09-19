@@ -20,8 +20,8 @@ const LoginProcess = {
 
   start(name, password) {
     fetchLogin(name, password)
-      .then(this.dispatchProcessFinishedOk.bind(this))
-      .catch(this.dispatchProcessFinishedError.bind(this));
+      .then(this.dispatchProcessFinishedOk)
+      .catch(this.dispatchProcessFinishedError);
   }
 };
 Object.setPrototypeOf(LoginProcess, Process);

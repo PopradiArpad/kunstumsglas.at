@@ -22,8 +22,8 @@ const LoadProductGroupProcess = {
     this.id = id;
 
     return fetchProductGroup(id, locale)
-      .then(this.dispatchProcessFinishedOk.bind(this))
-      .catch(this.dispatchProcessFinishedError.bind(this));
+      .then(this.dispatchProcessFinishedOk)
+      .catch(this.dispatchProcessFinishedError);
   }
 };
 Object.setPrototypeOf(LoadProductGroupProcess, Process);

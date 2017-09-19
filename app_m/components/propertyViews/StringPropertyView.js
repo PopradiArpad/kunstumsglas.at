@@ -65,7 +65,7 @@ class StringPropertyView extends PropertyView {
     return (
       <input ref="input" type="text" value={this.props.propertyDescription.string}
              onChange={this.onChange}
-             onKeyPress={this.onEditorKeyPress.bind(this)}
+             onKeyPress={this.onEditorKeyPress}
              onClick={e=>e.stopPropagation()}/>);
   }
 
@@ -78,7 +78,7 @@ class StringPropertyView extends PropertyView {
         <textarea ref="input" type="text" value={this.props.propertyDescription.string}
                   rows="30" cols="100"
                   onChange={this.onChange}
-                  onKeyPress={this.onMultilineEditorKeyPress.bind(this)}
+                  onKeyPress={this.onMultilineEditorKeyPress}
                   onClick={e=>e.stopPropagation()}/>
       </div>);
   }
@@ -89,12 +89,12 @@ class StringPropertyView extends PropertyView {
     this.props.onMergePropertyChange({string:e.target.value});
   }
 
-  onEditorKeyPress(e) {
+  onEditorKeyPress = (e) => {
     if (e.key==="Enter")
       this.props.onFinishEdit();
   }
 
-  onMultilineEditorKeyPress(e) {
+  onMultilineEditorKeyPress = (e) => {
     if ((e.key==="Enter") && e.shiftKey)
       this.props.onFinishEdit();
   }

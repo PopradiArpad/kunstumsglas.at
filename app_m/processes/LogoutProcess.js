@@ -20,8 +20,8 @@ const LogoutProcess = {
 
   start() {
     fetchLogout()
-      .then(this.dispatchProcessFinishedOk.bind(this))
-      .catch(this.dispatchProcessFinishedError.bind(this));
+      .then(this.dispatchProcessFinishedOk)
+      .catch(this.dispatchProcessFinishedError);
   }
 };
 Object.setPrototypeOf(LogoutProcess, Process);

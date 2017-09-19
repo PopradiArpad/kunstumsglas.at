@@ -6,7 +6,6 @@
 *  LICENSE file in the root directory of this source tree.
 */
 
- 
 import React, { Component } from 'react';
 import {Link} from 'react-router';
 import {FormattedMessage} from 'react-intl';
@@ -16,7 +15,7 @@ class CookieBanner extends Component {
     super(...arguments);
   }
 
-  xClicked() {
+  xClicked = () => {
     this.refs.me.classList.add("close");
     this.props.setVisited();
   }
@@ -28,12 +27,13 @@ class CookieBanner extends Component {
           {this.CookieBannerText()}
           <span onClick={this.props.setVisited}><Link to="/dataprotectionpolicy">{this.DataProtectionPolicy()}</Link></span>
         </div>
-        <div className="kug-cookiebanner-x" onClick={this.xClicked.bind(this)}>
+        <div className="kug-cookiebanner-x" onClick={this.xClicked}>
           X
         </div>
       </div>
     );
   }
+  
   CookieBannerText() {
     return (<FormattedMessage id={ 'Cookie_Banner_Text' } defaultMessage={ 'a' }/>);
   }

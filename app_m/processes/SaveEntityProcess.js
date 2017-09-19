@@ -39,9 +39,9 @@ const SaveEntityProcess = {
       id: this.identity,
       pvis: propertyValueInputs
     })
-      .then(this.graphQLErrorAPI.bind(this))
-      .then(this.dispatchProcessFinishedOk.bind(this))
-      .catch(this.dispatchProcessFinishedError.bind(this));
+      .then(this.graphQLErrorAPI)
+      .then(this.dispatchProcessFinishedOk)
+      .catch(this.dispatchProcessFinishedError);
   }
 };
 Object.setPrototypeOf(SaveEntityProcess, Process);

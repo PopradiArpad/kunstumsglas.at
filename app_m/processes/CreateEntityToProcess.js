@@ -45,9 +45,9 @@ const CreateEntityToProcess = {
       pid: parentIdentity,
       prop: parentProperty
     })
-      .then(this.graphQLErrorAPI.bind(this))
-      .then(this.dispatchProcessFinishedOk.bind(this))
-      .catch(this.dispatchProcessFinishedError.bind(this));
+      .then(this.graphQLErrorAPI)
+      .then(this.dispatchProcessFinishedOk)
+      .catch(this.dispatchProcessFinishedError);
   }
 };
 Object.setPrototypeOf(CreateEntityToProcess, Process);

@@ -296,10 +296,10 @@ class CollectionsView extends Component {
     onProductDragEnd = () => {
       TweenLite.to(this.itemDOMNodes[this.draggableState.draggedItem.id],.3,{scale: 1,
                                                                              className:'-=dragged',
-                                                                             onComplete:this.onDraggedProductMoveCompleted.bind(this)});
+                                                                             onComplete:this.onDraggedProductMoveCompleted});
     }
 
-    onDraggedProductMoveCompleted() {
+    onDraggedProductMoveCompleted = () => {
       if (this.draggableState.renderWasRequestedDuringDragging)
         this.forceUpdate();
 

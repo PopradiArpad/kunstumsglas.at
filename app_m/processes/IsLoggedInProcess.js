@@ -14,7 +14,6 @@ const IsLoggedInProcess = {
 
   create() {
     let process = Object.create(IsLoggedInProcess);
-
     process.initProcess(IsLoggedInProcess.processName);
 
     return process;
@@ -22,8 +21,8 @@ const IsLoggedInProcess = {
 
   start() {
     fetchIsLoggedIn()
-      .then(this.dispatchProcessFinishedOk.bind(this))
-      .catch(this.dispatchProcessFinishedError.bind(this));
+      .then(this.dispatchProcessFinishedOk)
+      .catch(this.dispatchProcessFinishedError);
   }
 };
 Object.setPrototypeOf(IsLoggedInProcess, Process);

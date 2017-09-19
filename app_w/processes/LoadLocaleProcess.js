@@ -22,8 +22,8 @@ const LoadLocaleProcess = {
     this.locale = locale;
 
     return fetchLocale(locale)
-      .then(this.dispatchProcessFinishedOk.bind(this))
-      .catch(this.dispatchProcessFinishedError.bind(this));
+      .then(this.dispatchProcessFinishedOk)
+      .catch(this.dispatchProcessFinishedError);
   }
 };
 Object.setPrototypeOf(LoadLocaleProcess, Process);
