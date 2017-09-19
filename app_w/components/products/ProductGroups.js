@@ -33,6 +33,7 @@ class ProductGroups extends Component {
                                 gallery={productGroup.gallery}
                                 ix={ix}
                                 link={`/productgroup/${productGroup.id}`}
+                                productGroupName={productGroup.localizedName}
                                 />
     );
 

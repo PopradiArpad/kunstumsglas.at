@@ -66,13 +66,15 @@ class GalleryOfAProductGroup extends Component {
              key={galleryIx}
              galleryItem={galleryItem}
              link={this.props.link}
+             productGroupName={this.props.productGroupName}
            />);
   }
 }
 GalleryOfAProductGroup.propTypes = {
   gallery: PropTypes.array.isRequired,
   ix: PropTypes.number.isRequired,
-  link: PropTypes.string.isRequired
+  link: PropTypes.string.isRequired,
+  productGroupName: PropTypes.string.isRequired,
 }
 
 export default GalleryOfAProductGroup;

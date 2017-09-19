@@ -6,7 +6,7 @@
 *  LICENSE file in the root directory of this source tree.
 */
 
- 
+
 import mongoose                 from 'mongoose';
 import { normalize, schema }    from 'normalizr';
 const EventEmitter = require('events').EventEmitter;
@@ -113,7 +113,7 @@ cacheSchema.methods.getWebsiteLandingPageProductGroupsData = function(locale) {
             return productGroups.reduce((b,productGroup)=>{
               b.push({
                       id:      productGroup._id,
-                      name:    productGroup.name,
+                      localizedName: getString(productGroup.localizedName,locale),
                       gallery: productGroup.gallery.map(galleryItem=>({
                                                                      line1: getString(galleryItem.line1,locale),
                                                                      line2: getString(galleryItem.line2,locale),

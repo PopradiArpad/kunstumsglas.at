@@ -10,7 +10,7 @@ server_build
 /test/public/*
 /test/test_db/*
 !/public/*.html
-!/public/favicon
+!/public/favicon.ico
 !/public/pics
 /db
 /db_test*

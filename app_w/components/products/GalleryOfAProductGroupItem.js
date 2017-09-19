@@ -9,6 +9,7 @@
 
 import React, { Component,PropTypes } from 'react';
 import { Link } from 'react-router';
+import {defineMessages, injectIntl} from 'react-intl';
 
 class GalleryOfAProductGroupItem extends Component {
   constructor() {
@@ -17,29 +18,42 @@ class GalleryOfAProductGroupItem extends Component {
 
   render() {
     const galleryItem = this.props.galleryItem;
+    const line1 = galleryItem.line1;
+    const line2 = galleryItem.line2;
+    const alt=`${this.props.productGroupName} ${this.Produkte()}: ${line2}`
 
     return (
       <div className="kug-galleryofaproductgroupitem">
         <Link to={this.props.link}>
           <div className="kug-galleryofaproductgroupitem-img">
-            <img src={`/item/${galleryItem.id}/smallPic?dbModel=GalleryItem`}/>
+            <img src={`/item/${galleryItem.id}/smallPic?dbModel=GalleryItem`} alt={alt}/>
           </div>
           <div className="kug-galleryofaproductgroupitem-lines">
-            <div className="kug-galleryofaproductgroupitem-line1">
-              {galleryItem.line1}
-            </div>
-            <div className="kug-galleryofaproductgroupitem-line2">
-              {galleryItem.line2}
-            </div>
+            <h1 className="kug-galleryofaproductgroupitem-line1">
+              {line1}
+            </h1>
+            <h1 className="kug-galleryofaproductgroupitem-line2">
+              {line2}
+            </h1>
           </div>
         </Link>
       </div>
     );
   }
+  Produkte() {
+    const message = defineMessages({
+      product: {
+        id: "Produkte",
+        defaultMessage: `a`
+      }});
+    return this.props.intl.formatMessage(message.product);
+  }
 }
 GalleryOfAProductGroupItem.propTypes = {
   galleryItem: PropTypes.object.isRequired,
-  link: PropTypes.string.isRequired
+  link: PropTypes.string.isRequired,
+  productGroupName: PropTypes.string.isRequired,
+  intl: PropTypes.object.isRequired,
 }
 
-export default GalleryOfAProductGroupItem;
+export default injectIntl(GalleryOfAProductGroupItem);

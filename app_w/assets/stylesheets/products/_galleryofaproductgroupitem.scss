@@ -39,16 +39,24 @@ $border-radius: 1vmin;
     padding-left: .5em;
     padding-right: .5em;
 
-    .kug-galleryofaproductgroupitem-line1 {
+
+    @mixin kug-galleryofaproductgroupitem-common() {
       font-family: 'Raleway',serif;
       color:black;
+      margin: 0px;
+      font-weight: normal;
+      font-size: 1em;
+    }
+
+    .kug-galleryofaproductgroupitem-line1 {
+      @include kug-galleryofaproductgroupitem-common();
+      font-size: 1em;
     }
 
     .kug-galleryofaproductgroupitem-line2 {
-      font-family: 'Raleway',serif;
-      font-size: 1.8em;
+      @include kug-galleryofaproductgroupitem-common();
       padding-bottom: .3em;
-      color:black;
+      font-size: 1.8em;
     }
   }
 

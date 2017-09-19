@@ -26,12 +26,12 @@ class ProductGroupDescription extends Component {
                                );
     return (
       <div className={className} onClick={this.openClose}>
-        <div className="kug-productgroupdescription-title">
+        <h1 className="kug-productgroupdescription-title">
           {props.localizedName}
           <div className="kug-productgroupdescription-title-lock">
             &#8250;
           </div>
-        </div>
+        </h1>
         <div className="kug-productgroupdescription-textcontainer">
           <div className="kug-productgroupdescription-text" dangerouslySetInnerHTML={html}/>
         </div>
