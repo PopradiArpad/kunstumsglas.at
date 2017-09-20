@@ -6,18 +6,17 @@
 *  LICENSE file in the root directory of this source tree.
 */
 
- 
 const getFirstString = (entityDescription) => {
-    const firstString = getFirstPropertyDescription(entityDescription,'StringProperty');
-
-    if (firstString && firstString['string'])
-      return firstString['string'];
-
     const firstLocalizedString = getFirstPropertyDescription(entityDescription,'LocalizedStringsProperty');
 
     //temporary entities can have incomplete data
     if (firstLocalizedString && firstLocalizedString['localizedStrings'] && firstLocalizedString['localizedStrings'][0])
       return firstLocalizedString['localizedStrings'][0].string;
+
+    const firstString = getFirstPropertyDescription(entityDescription,'StringProperty');
+
+    if (firstString && firstString['string'])
+      return firstString['string'];
 
     return '';
   }

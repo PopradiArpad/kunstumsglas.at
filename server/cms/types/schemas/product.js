@@ -6,7 +6,7 @@
 *  LICENSE file in the root directory of this source tree.
 */
 
- 
+
 import mongoose   from 'mongoose';
 import {LocalizedString}   from '../schemaTypes/TranslatedString';
 
@@ -38,7 +38,7 @@ export const gelasertes = mongoose.Schema({
   //The belonging files (corelfile and machinefile)
   //are stored via GridFs under the name 'id/filename'
   nameline1                   : {type: [LocalizedString], required: true, default: [], title: 'Produktbezeichnung', forCustomer: true},
-  productionprocedure         : {type: String, default: '', title: 'Produktionsablauf', multiline: true, forCustomer: true},
+  productionprocedure         : {type: String, default: '', title: 'Produktionsablauf', multiline: true, forCustomer: false},
   lasertime                   : {type: String, default: '', title: 'Laserzeit'},
   corelfile                   : {type: Types.FileUploadStatus, default: 'NOT_UPLOADED', title: 'Corel File', extension: 'cdr'},
   machinefile                 : {type: Types.FileUploadStatus, default: 'NOT_UPLOADED', title: 'Laser File', extension: 'ME3'}
