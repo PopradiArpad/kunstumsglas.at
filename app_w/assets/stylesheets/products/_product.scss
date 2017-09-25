@@ -6,7 +6,6 @@
 *  LICENSE file in the root directory of this source tree.
 */
 
- 
 $font-size: 1em;
 
 
@@ -94,33 +93,38 @@ $font-size: 1em;
         .kug-product-property-title {
           font-weight: 500;
         }
+
+        h1 {
+          font-weight: normal;
+          color: #689cd4;
+          text-shadow: 1px 1px 1px #d8e4e0;
+          font-size: 1.5*$font-size;
+          @media (max-width:600px) {
+  	        font-size: $font-size;
+          }
+          margin: 0px;
+        }
+      }
+
+      @mixin kug-product-property-nameline() {
+        margin: 0px;
+        line-height: 1;
       }
 
       .kug-product-property.nameline1 {
-        @include whole-line();
-        color: #689cd4;
-        text-shadow: 1px 1px 1px #d8e4e0;
-        font-size: 1.5*$font-size;
+        @include kug-product-property-nameline();
         padding-top: .6em;
         border-top: #3f5586 1px solid;
-        @media (max-width:600px) {
-	        font-size: $font-size;
-        }
         @media (max-aspect-ratio: 1/1) {
 	        border-top: none;
         }
       }
 
       .kug-product-property.nameline2 {
-        @include whole-line();
-        color: #689cd4;
-        text-shadow: 1px 1px 1px #d8e4e0;
-        font-size: 1.5*$font-size;
-        padding-bottom:.6em;
+        @include kug-product-property-nameline();
+        padding-bottom: .6em;
         border-bottom: white 1px solid;
-        @media (max-width:600px) {
-	        font-size: $font-size;
-        }
+        margin-bottom: .6em;
       }
 
       .kug-product-property.usagetipp {

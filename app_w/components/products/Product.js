@@ -6,13 +6,25 @@
 *  LICENSE file in the root directory of this source tree.
 */
 
- 
 import React, { Component,PropTypes } from 'react';
 import classnames from 'classnames';
 import {FormattedMessage} from 'react-intl';
 import {Link} from 'react-router';
 import {isDesktopDevice} from '../utils/deviceInfo';
 
+
+const Value = ({property, children, ...restProps}) => {
+    if ((property === 'nameline1') || (property === 'nameline2')) {
+      return (
+          <h1 {...restProps}>
+            {children}
+          </h1>);
+    } else  {
+      return (
+          <span {...restProps}>
+            {children}
+          </span>);
+    }}
 
 class Product extends Component {
   constructor() {
@@ -25,7 +37,7 @@ class Product extends Component {
     return (
       <div className="kug-product">
         <div className="kug-product-img">
-          <img src={`/item/${this.props.product.id}/bigPic?dbModel=Product`}/>
+          <img src={`/item/${this.props.product.id}/bigPic?dbModel=Product`} alt={this.getAlt()}/>
         </div>
         <div className="kug-product-properties">
           <div className="kug-product-properties-container">
@@ -35,6 +47,11 @@ class Product extends Component {
         </div>
       </div>
     );
+  }
+
+  getAlt() {
+    const properties = this.props.product.properties;
+    return `${properties.nameline1.value} ${properties.nameline2.value}`;
   }
 
   getArrows() {
@@ -70,9 +87,9 @@ class Product extends Component {
               <span className='kug-product-property-title'>
                 {title}
               </span>
-              <span className='kug-product-property-value'>
+              <Value property={property} className='kug-product-property-value'>
                 {value}
-              </span>
+              </Value>
             </div>);
   }
 
