@@ -51,7 +51,12 @@ class Product extends Component {
 
   getAlt() {
     const properties = this.props.product.properties;
-    return `${properties.nameline1.value} ${properties.nameline2.value}`;
+    let alt = "";
+
+    alt = this.addIfExist(alt,properties,'nameline1');
+    alt = this.addIfExist(alt,properties,'nameline2');
+
+    return alt;
   }
 
   getArrows() {
@@ -91,6 +96,11 @@ class Product extends Component {
                 {value}
               </Value>
             </div>);
+  }
+
+  addIfExist(alt,properties,propertyName) {
+    var text = properties[propertyName] ? properties[propertyName] : "";
+    return alt + text;
   }
 
   getContactTheArtist() {
