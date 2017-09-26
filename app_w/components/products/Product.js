@@ -33,11 +33,12 @@ class Product extends Component {
 
   render() {
     const arrows = isDesktopDevice() ? this.getArrows() : null;
+    const name = this.getName();
 
     return (
       <div className="kug-product">
         <div className="kug-product-img">
-          <img src={`/item/${this.props.product.id}/bigPic?dbModel=Product`} alt={this.getAlt()}/>
+          <img src={`/item/${this.props.product.id}/bigPic?dbModel=Product`} alt={name}/>
         </div>
         <div className="kug-product-properties">
           <div className="kug-product-properties-container">
@@ -45,18 +46,82 @@ class Product extends Component {
             {this.getProperties()}
           </div>
         </div>
+        {this.getProductDescription(name)}
       </div>
     );
   }
 
-  getAlt() {
+  getProductDescription(name) {
+    let jsonLd = `{
+            "@context": "http://schema.org/",
+            "@type": "Product",
+            "name": "${name}",
+            "description": "${name}",
+            "image": ${this.getImages()},
+            "brand": {
+              "@type": "LocalBusiness",
+              "legalName": "Kunst ums Glas"
+            },
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "EUR",
+              "price": "${this.getPrice()}",
+              "itemCondition": "http://schema.org/NewCondition",
+              "availability": "http://schema.org/InStock",
+              "url": "${this.getUrl()}"
+            }
+          }`;
+
+    return (
+        <script type="application/ld+json">
+          {jsonLd}
+        </script>);
+  }
+
+  getImages() {
+    let props = this.props;
+
+    if (props && props.product && props.product.id) {
+      let pre = `https://kunstumsglas.at/item/${this.props.product.id}`;
+      return `["${pre}/bigPic?dbModel=Product","${pre}/smallPic?dbModel=Product"]`;
+    }
+
+    return "";
+  }
+
+  getUrl() {
+    let props = this.props;
+
+    if (props && props.pgid && props.product && props.product.id) {
+      return `https://kunstumsglas.at/product/${this.props.pgid}/${this.props.product.id}`;
+    }
+
+    return "";
+  }
+
+  getName() {
     const properties = this.props.product.properties;
-    let alt = "";
+    let name = "";
 
-    alt = this.addIfExist(alt,properties,'nameline1');
-    alt = this.addIfExist(alt,properties,'nameline2');
+    name = this.addIfExist(name,properties,'nameline1');
+    name = this.addIfExist(name,properties,'nameline2');
 
-    return alt;
+    return name;
+  }
+
+  getPrice() {
+    const properties = this.props.product.properties;
+    const price = properties && properties.price && properties.price.value;
+
+    if (! price) {
+      return "";
+    }
+
+    if (price.slice(-1) === "€") {
+      return price.slice(0,-1);
+    }
+
+    return price;
   }
 
   getArrows() {
@@ -99,8 +164,11 @@ class Product extends Component {
   }
 
   addIfExist(alt,properties,propertyName) {
-    var text = properties[propertyName] ? properties[propertyName] : "";
-    return alt + text;
+    if (properties[propertyName] && properties[propertyName].value) {
+      return alt + properties[propertyName].value + " ";
+    }
+
+    return alt;
   }
 
   getContactTheArtist() {
@@ -129,7 +197,8 @@ Product.propTypes = {
   product:      PropTypes.object.isRequired,
   artistName:   PropTypes.string.isRequired,
   onNext:       PropTypes.func.isRequired,
-  onPrevious:   PropTypes.func.isRequired
+  onPrevious:   PropTypes.func.isRequired,
+  pgid:         PropTypes.string,
 }
 
 export default Product;

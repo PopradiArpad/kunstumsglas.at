@@ -35,10 +35,13 @@ class ProductGallery extends Component {
       <div className="kug-productgallery">
         <Swipeable onSwipeLeft={this.dispatchSetNextProduct} onSwipeRight={this.dispatchSetPreviousProduct}>
           <RemoveSwipeableProp>
-            <Product product={props.product}
-                     artistName={props.artistName}
-                     onNext={this.dispatchSetNextProduct}
-                     onPrevious={this.dispatchSetPreviousProduct}/>
+            <Product
+              product={props.product}
+              artistName={props.artistName}
+              onNext={this.dispatchSetNextProduct}
+              onPrevious={this.dispatchSetPreviousProduct}
+              pgid={props.params.pgid}
+            />
           </RemoveSwipeableProp>
         </Swipeable>
       </div>
@@ -86,7 +89,6 @@ class ProductGallery extends Component {
 ProductGallery.propTypes = {
   product:      PropTypes.object,
   artistName:   PropTypes.string,
-  pgid:         PropTypes.string,
   dispatch:     PropTypes.func.isRequired,
   location:     PropTypes.object.isRequired
 }
