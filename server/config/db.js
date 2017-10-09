@@ -6,31 +6,16 @@
 *  LICENSE file in the root directory of this source tree.
 */
 
- 
-let dbPort;
 
-process.argv.forEach((val,ix) => {
-  if (val==='--db_port') {
-    dbPort=parseInt(process.argv[ix+1]);
-  }
-});
-
-if ((typeof dbPort)!=='number') {
-  console.error("Error: db port must be specified by --db_port!");
+if (! process.env.MONGO_URL)  {
+  console.error("Error: mongo url must be specified by the environment variable MONGO_URL!");
   process.exit(1);
 }
 
 function getUrl() {
-  return `mongodb://localhost:${getPort()}/`;
-}
-
-function getPort() {
-  return dbPort;
+  return process.env.MONGO_URL;
 }
 
 module.exports = {
-  // The whole url
   url:  getUrl(),
-  // Part of the url, needed to start the mongod at deploy and test
-  port: getPort()
 }
