@@ -6,11 +6,12 @@
 *  LICENSE file in the root directory of this source tree.
 */
 
- 
+
 import mongoose  from 'mongoose';
 import Grid      from 'gridfs-stream';
 import promisify from 'es6-promisify';
 
+var attempts = 0;
 
 const connectToDb = (config_db) => {
   return new Promise((resolve)=>{
@@ -23,17 +24,25 @@ const connectToDb = (config_db) => {
     mongoose.connect(config_db.url);
 
     con.on('error', (err) => {
-      console.error("Database is not accessable: ",err);
-      process.exit(1);
+      if (attempts < 3) {
+        attempts++;
+        console.error("Database is not accessable. Sleeping");
+        setTimeout(()=>connectToDb(config_db),1000);
+      } else {
+        console.error("Database is not accessable: ",err);
+        throw new Error('Unable to connect to the database after '+attempts+' attempts');
+      }
     });
 
-    con.once('open',function () {
-      con.gfs        = Grid(con.db, mongoose.mongo);
-      con.gfs_exist  = promisify(con.gfs.exist, con.gfs);
-      con.gfs_remove = promisify(con.gfs.remove,con.gfs);
-      
-      resolve(con);
-    })
+    if (attempts === 0) {
+      con.once('open',function () {
+        con.gfs        = Grid(con.db, mongoose.mongo);
+        con.gfs_exist  = promisify(con.gfs.exist, con.gfs);
+        con.gfs_remove = promisify(con.gfs.remove,con.gfs);
+
+        resolve(con);
+      });
+    }
   });
 }
 

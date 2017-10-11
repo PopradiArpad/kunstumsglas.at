@@ -6,7 +6,7 @@
 *  LICENSE file in the root directory of this source tree.
 */
 
- 
+
 import express          from 'express';
 import port             from './config/port';
 import dbConfig         from './config/db';
@@ -75,3 +75,9 @@ connectToDb(dbConfig)
   console.log(e);
   process.exit(1);
 })
+
+process.on('unhandledRejection', error => {
+  console.log('Warning UnhandledRejection !!');
+  console.log('   message', error.message);
+  console.log('   stack', error.stack);
+});

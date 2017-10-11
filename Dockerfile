@@ -16,10 +16,13 @@ RUN apk del make gcc g++ python
 #Copy the app's own files but only the ones that are needed by the running app
 COPY .babelrc .
 COPY public public/
-COPY app_m app_m/
 COPY app_w app_w/
+RUN npm run-script build_app_w
+#app_m and server has common code in server/cms/shared_server_app
+COPY app_m app_m/
 COPY server server/
-RUN npm run-script build
+RUN npm run-script build_app_m
+RUN npm run-script build_server
 
 EXPOSE 80
 CMD ["npm", "start"]
