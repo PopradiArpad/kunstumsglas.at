@@ -51,12 +51,13 @@ function killMongod() {
   rm mongod.pid;
 
   if ps $MONGOPID>/dev/null; then
-    kill -9 $MONGOPID;
+    #Never use kill -9 on mongod!
+    kill -2 $MONGOPID;
   fi
 }
 
-echo "starting mongo: dbpath $DB_PATH, db_port $DB_PORT"
-(mongod --dbpath $DB_PATH --port $DB_PORT & echo $! > mongod.pid) && exitIfMongodCannotStarted;
+echo "starting mongod"
+(mongod --master --dbpath $DB_PATH --port $DB_PORT & echo $! > mongod.pid) && exitIfMongodCannotStarted;
 
 
 echo "starting server with npm run start with --db_port $DB_PORT $UNINTERPRETED_ARGS"

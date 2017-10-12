@@ -1,7 +1,7 @@
 FROM node:8.6.0-alpine
 
 #To build during installation a build environment is needed
-RUN apk add --no-cache make gcc g++ python
+RUN apk add --no-cache make gcc g++ python imagemagick
 
 #Leverage Docker's cache
 #First install the least probably changing parts
@@ -10,7 +10,7 @@ WORKDIR /app
 COPY package.json .
 RUN npm install
 
-#Remove build dependencies
+#Remove build dependencies but not imagemagick
 RUN apk del make gcc g++ python
 
 #Copy the app's own files but only the ones that are needed by the running app
