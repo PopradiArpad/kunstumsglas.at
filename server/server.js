@@ -81,3 +81,11 @@ process.on('unhandledRejection', error => {
   console.log('   message', error.message);
   console.log('   stack', error.stack);
 });
+
+//Preparing for gracefull shutdown:
+//Docker stops a task by sending the main process
+//inside the container a SIGTERM, and after a grace period, SIGKILL.
+process.on('SIGTERM', () => {
+  console.log('Received SIGTERM.', new Date());
+  process.exit(0);
+});

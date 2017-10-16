@@ -24,5 +24,12 @@ COPY server server/
 RUN npm run-script build_app_m
 RUN npm run-script build_server
 
-EXPOSE 80
-CMD ["npm", "start"]
+#Let run as an unprivileged user with nonexisting uid on the host (for a breakout)
+RUN addgroup -g 2000 onlyhere && adduser -u 2000 -G onlyhere -s /bin/sh -D onlyhere
+USER onlyhere
+
+#Only root can get port under 1024
+EXPOSE 8080
+
+#(SIGINT, SIGTERM) for a gracefull shutdown in rolling updates
+CMD ["node", "server_build/server.js","--gc_interval=100"]
