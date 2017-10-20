@@ -35,12 +35,6 @@ for arg in "$@"; do
   fi
 done
 
-if [[ $DEBUG -eq '1' ]];then
-  CMD=start_debug;
-else
-  CMD=start;
-fi
-
 function exitIfMongodCannotStarted() {
   sleep .5;
 
@@ -65,5 +59,10 @@ echo "starting mongod"
 
 
 echo "starting server with npm run start with --db_port $DB_PORT $UNINTERPRETED_ARGS"
-PORT=$PORT MONGO_URL=mongodb://127.0.0.1:$DB_PORT/test npm run $CMD --  $UNINTERPRETED_ARGS;
+if [[ $DEBUG -eq '1' ]];then
+  PORT=$PORT MONGO_URL=mongodb://127.0.0.1:$DB_PORT/test node --inspect-brk --trace-warnings server_build/server.js --  $UNINTERPRETED_ARGS;
+else
+  PORT=$PORT MONGO_URL=mongodb://127.0.0.1:$DB_PORT/test node --trace-warnings server_build/server.js --  $UNINTERPRETED_ARGS;
+fi
+
 killMongod;

@@ -6,7 +6,7 @@
 *  LICENSE file in the root directory of this source tree.
 */
 
- 
+
 const path = require('path');
 const webpack = require('webpack');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
@@ -46,12 +46,11 @@ var plugins = isProduction
 
 var devtool = isProduction ? 'source-map' : 'eval-source-map';
 
-
 module.exports = {
   entry: './app_m/index.js',
 
   output: {
-    path:     './public',
+    path:     __dirname + '/../public',
     publicPath: '/', //All relative url within the app will be absoluteize with this prefix before sending to the host.
     filename: 'management-app.bundle.js'
   },

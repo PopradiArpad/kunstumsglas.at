@@ -6,7 +6,7 @@
 *  LICENSE file in the root directory of this source tree.
 */
 
- 
+
 const webpack = require('webpack');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const buildLocales = require('./MakeDefaultMessagesWebpackPlugin');
@@ -53,7 +53,7 @@ module.exports = {
   entry: './app_w/index.js',
 
   output: {
-    path: "./public",
+    path:     __dirname + '/../public',
     publicPath: '/', //All relative url within the app will be absolutized with this prefix before sending to the host.
     filename: 'app.bundle.js'
   },

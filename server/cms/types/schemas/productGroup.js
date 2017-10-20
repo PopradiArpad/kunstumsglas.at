@@ -6,7 +6,7 @@
 *  LICENSE file in the root directory of this source tree.
 */
 
- 
+
 import mongoose   from 'mongoose';
 let Types = mongoose.Schema.Types;
 import {LocalizedString}   from '../schemaTypes/TranslatedString';
@@ -85,7 +85,7 @@ productGroup.statics.refreshListedProductsAfterProductChangeOrRemove = function(
                                                 }
                                         }
                         }}
-           ]).addCursorFlag('noCursorTimeout', true).exec()
+           ])//.addCursorFlag('noCursorTimeout', true).exec() this cursor flag seems not to be supported anymore
             .then(datas=>{
               const data = datas[0];
 
