@@ -17,6 +17,10 @@ for arg in "$@"; do
         DB_PORT=$1;
         READ_NEXT_ARG=0;
         ;;
+      "--port")
+        PORT=$1;
+        READ_NEXT_ARG=0;
+        ;;
       "DEBUG")
         DEBUG=1;
         READ_NEXT_ARG=1;
@@ -61,5 +65,5 @@ echo "starting mongod"
 
 
 echo "starting server with npm run start with --db_port $DB_PORT $UNINTERPRETED_ARGS"
-npm run $CMD -- --db_port $DB_PORT $UNINTERPRETED_ARGS;
+PORT=$PORT MONGO_URL=mongodb://127.0.0.1:$DB_PORT/test npm run $CMD --  $UNINTERPRETED_ARGS;
 killMongod;
