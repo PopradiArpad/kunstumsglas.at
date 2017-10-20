@@ -14,6 +14,7 @@ RUN npm install
 RUN apk del make gcc g++ python
 
 #Copy the app's own files but only the ones that are needed by the running app
+ENV NODE_ENV=production
 COPY .babelrc .
 COPY public public/
 COPY app_w app_w/
