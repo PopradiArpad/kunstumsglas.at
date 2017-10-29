@@ -11,14 +11,14 @@ import React, {Component} from 'react';
 import { Router, Route, Switch } from 'react-router-dom';
 import history from './history';
 import App from './components/App';
-import AboutUs from './components/pages/AboutUs';
-import Contact from './components/pages/Contact';
-import DataProtectionPolicy from './components/pages/DataProtectionPolicy';
-import Impressum from './components/pages/Impressum';
-import ProductGroups from './components/products/ProductGroups';
-import ProductGroupGallery from './components/products/ProductGroupGallery';
-import ProductGallery from './components/products/ProductGallery';
-import Artist from './components/Artist';
+// import AboutUs from './components/pages/AboutUs';
+// import Contact from './components/pages/Contact';
+// import DataProtectionPolicy from './components/pages/DataProtectionPolicy';
+// import Impressum from './components/pages/Impressum';
+// import ProductGroups from './components/products/ProductGroups';
+// import ProductGroupGallery from './components/products/ProductGroupGallery';
+// import ProductGallery from './components/products/ProductGallery';
+// import Artist from './components/Artist';
 import { Provider } from 'react-redux';
 import store from './store';
 
@@ -33,20 +33,25 @@ class Root extends Component {
   render() {
     return (<Provider store={store}>
               <Router history={history}>
-                <Route path="/" component={App}>
-                  <Switch>
-                    <Route exact path="/" component={ProductGroups}/>
-                    <Route path="productgroup/:pgid" component={ProductGroupGallery}/>
-                    <Route path="product/:pgid/:pid" component={ProductGallery}/>
-                    <Route path="artist/:artistName" component={Artist}/>
-                    <Route path="aboutus" component={AboutUs}/>
-                    <Route path="contact"  component={Contact}/>
-                    <Route path="dataprotectionpolicy" component={DataProtectionPolicy}/>
-                    <Route path="impressum" component={Impressum}/>
-                  </Switch>
-                </Route>
+                <Route component={App}/>
               </Router>
             </Provider>);
+    // return (<Provider store={store}>
+    //           <Router history={history}>
+    //             <Route component={App}>
+    //               <Switch>
+    //                 <Route exact path="/" component={ProductGroups}/>
+    //                 <Route path="productgroup/:pgid" component={ProductGroupGallery}/>
+    //                 <Route path="product/:pgid/:pid" component={ProductGallery}/>
+    //                 <Route path="artist/:artistName" component={Artist}/>
+    //                 <Route path="aboutus" component={AboutUs}/>
+    //                 <Route path="contact"  component={Contact}/>
+    //                 <Route path="dataprotectionpolicy" component={DataProtectionPolicy}/>
+    //                 <Route path="impressum" component={Impressum}/>
+    //               </Switch>
+    //             </Route>
+    //           </Router>
+    //         </Provider>);
   }
 }
 

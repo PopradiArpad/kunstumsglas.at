@@ -9,7 +9,7 @@
 import React, { Component,PropTypes } from 'react';
 import classnames from 'classnames';
 import {FormattedMessage} from 'react-intl';
-import {Link} from 'react-router';
+import {Link} from 'react-router-dom';
 import {isDesktopDevice} from '../utils/deviceInfo';
 
 

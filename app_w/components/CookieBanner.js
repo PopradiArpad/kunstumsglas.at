@@ -7,7 +7,7 @@
 */
 
 import React, { Component } from 'react';
-import {Link} from 'react-router';
+import {Link} from 'react-router-dom';
 import {FormattedMessage} from 'react-intl';
 
 class CookieBanner extends Component {
@@ -33,7 +33,7 @@ class CookieBanner extends Component {
       </div>
     );
   }
-  
+
   CookieBannerText() {
     return (<FormattedMessage id={ 'Cookie_Banner_Text' } defaultMessage={ 'a' }/>);
   }

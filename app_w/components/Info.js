@@ -8,7 +8,7 @@
 
 import React, { Component } from 'react';
 import {FormattedMessage} from 'react-intl';
-import {Link} from 'react-router';
+import {Link} from 'react-router-dom';
 
 class Info extends Component {
   constructor() {

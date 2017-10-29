@@ -7,7 +7,7 @@
 */
 
 import React, {Component,PropTypes} from 'react';
-import {Link} from 'react-router';
+import {Link} from 'react-router-dom';
 import {FormattedMessage} from 'react-intl';
 
 class Title extends Component {
