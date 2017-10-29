@@ -7,7 +7,8 @@
 */
 
 import React, { Component } from 'react';
-import {Link,browserHistory} from 'react-router';
+import {Link} from 'react-router-dom';
+import history from '../history';
 import {FormattedMessage} from 'react-intl';
 import {isDesktopDevice} from './utils/deviceInfo';
 
@@ -50,13 +51,13 @@ class Navbar extends Component {
 
     const productGallery = pathname.match(/product\/(\w+)\/(\w+)/);
     if (productGallery)
-      return browserHistory.push(`/productgroup/${productGallery[1]}`);
+      return history.push(`/productgroup/${productGallery[1]}`);
 
     const productGroup = pathname.match(/productgroup\/(\w+)/);
     if (productGroup)
-      return browserHistory.push(`/`);
+      return history.push(`/`);
 
-    browserHistory.goBack();
+    history.goBack();
   }
 
   isLandingPage() {

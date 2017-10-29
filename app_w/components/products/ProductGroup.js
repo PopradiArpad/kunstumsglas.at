@@ -11,7 +11,6 @@ import React, { Component,PropTypes } from 'react';
 import {connect}                      from 'react-redux';
 import ProductGroupDescription        from './ProductGroupDescription';
 import Products                       from './Products';
-import {browserHistory}               from 'react-router';
 
 class ProductGroup extends Component {
   constructor() {

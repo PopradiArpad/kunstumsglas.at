@@ -6,9 +6,10 @@
 *  LICENSE file in the root directory of this source tree.
 */
 
- 
+
 import React, {Component} from 'react';
-import { Router, Route, IndexRoute, browserHistory } from 'react-router';
+import { Router, Route, Switch } from 'react-router-dom';
+import history from './history';
 import App from './components/App';
 import AboutUs from './components/pages/AboutUs';
 import Contact from './components/pages/Contact';
@@ -31,9 +32,10 @@ class Root extends Component {
   //E.g ProductGallery needs the product group too to let work set next/previous product
   render() {
     return (<Provider store={store}>
-                <Router history={browserHistory}>
-                  <Route path="/" component={App}>
-                    <IndexRoute component={ProductGroups}/>
+              <Router history={history}>
+                <Route path="/" component={App}>
+                  <Switch>
+                    <Route exact path="/" component={ProductGroups}/>
                     <Route path="productgroup/:pgid" component={ProductGroupGallery}/>
                     <Route path="product/:pgid/:pid" component={ProductGallery}/>
                     <Route path="artist/:artistName" component={Artist}/>
@@ -41,9 +43,10 @@ class Root extends Component {
                     <Route path="contact"  component={Contact}/>
                     <Route path="dataprotectionpolicy" component={DataProtectionPolicy}/>
                     <Route path="impressum" component={Impressum}/>
-                  </Route>
-                </Router>
-              </Provider>);
+                  </Switch>
+                </Route>
+              </Router>
+            </Provider>);
   }
 }
 

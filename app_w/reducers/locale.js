@@ -19,7 +19,7 @@ import { addLocaleData } from 'react-intl';
 import { startProcess, isMyRunningProcess } from './utils';
 import en from 'react-intl/locale-data/en';
 import de from 'react-intl/locale-data/de';
-import { browserHistory } from 'react-router';
+import history from '../history';
 
 addLocaleData([...en, ...de]);
 
@@ -177,7 +177,7 @@ const getProductGroupIx = (state, pgid) => {
 const pushBrowserHistoryToProductGroup = productGroupId => {
   //setting new path results in Error: Reducers may not dispatch actions.
   setImmediate(() => {
-    browserHistory.push(`/productgroup/${productGroupId}`);
+    history.push(`/productgroup/${productGroupId}`);
   });
 };
 

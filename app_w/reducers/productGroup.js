@@ -21,7 +21,7 @@ import LoadProductGroupProcess from '../processes/LoadProductGroupProcess';
 import LoadProductProcess from '../processes/LoadProductProcess';
 import { startProcess, isMyRunningProcess } from './utils';
 import merge from 'lodash.merge';
-import { browserHistory } from 'react-router';
+import history from '../history';
 
 //The product and product group data are coupled by the feature set next/previous product
 //To get the next/previous product the belonging product group is needed.
@@ -207,7 +207,7 @@ const getProductIx = state => {
 const pushBrowserHistoryToProduct = (productGroupId, nextProductId) => {
   //setting new path results in Error: Reducers may not dispatch actions.
   setImmediate(() => {
-    browserHistory.push(`/product/${productGroupId}/${nextProductId}`);
+    history.push(`/product/${productGroupId}/${nextProductId}`);
   });
 };
 

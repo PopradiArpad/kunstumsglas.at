@@ -6,9 +6,9 @@
 *  LICENSE file in the root directory of this source tree.
 */
 
- 
+
 import React, { Component } from 'react';
-import {browserHistory} from 'react-router';
+import history from '../../history';
 import {defineMessages}   from 'react-intl';
 import HtmlText           from '../utils/HtmlText';
 
@@ -53,7 +53,7 @@ class AboutUs extends Component {
   //To use in the html text
   toArtist(event,name) {
     event.stopPropagation();
-    browserHistory.push(`/artist/${name}`);
+    history.push(`/artist/${name}`);
   }
 }
 
