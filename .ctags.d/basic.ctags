@@ -1,0 +1,6 @@
+--recurse=yes
+--exclude=node_modules
+--exclude=.cache
+--exclude=package-lock.json
+--exclude=*_build
+--exclude=db_test

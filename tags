@@ -1,0 +1,1770 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	0.0.0	//
+#app	public/main.css	/^#app {$/;"	i
+#app-bg-picture	public/main.css	/^#app-bg-picture {$/;"	i
+#app-bg-picture img	public/main.css	/^  #app-bg-picture img {$/;"	s
+#kug-copyright	public/main.css	/^  #kug-copyright {$/;"	i
+#kug-copyright	public/main.css	/^#kug-copyright {$/;"	i
+#kug-copyright a	public/main.css	/^#kug-copyright a {$/;"	s
+*	public/main.css	/^* {$/;"	s
+.kug-aboutus	public/main.css	/^.kug-aboutus {$/;"	c
+.kug-aboutus *	public/main.css	/^.kug-aboutus * {$/;"	s
+.kug-aboutus .kug-span-link	public/main.css	/^.kug-aboutus .kug-span-link {$/;"	c
+.kug-aboutus h1	public/main.css	/^.kug-aboutus h1 {$/;"	s
+.kug-aboutus h2	public/main.css	/^.kug-aboutus h2 {$/;"	s
+.kug-aboutus h2	public/main.css	/^.kug-aboutus h2,$/;"	s
+.kug-aboutus h3	public/main.css	/^.kug-aboutus h3 {$/;"	s
+.kug-aboutus img	public/main.css	/^.kug-aboutus img {$/;"	s
+.kug-aboutus p	public/main.css	/^.kug-aboutus p {$/;"	s
+.kug-aboutus p	public/main.css	/^.kug-aboutus p,$/;"	s
+.kug-aboutus section	public/main.css	/^.kug-aboutus section {$/;"	s
+.kug-aboutus section.kug-section-artist	public/main.css	/^.kug-aboutus section.kug-section-artist {$/;"	c
+.kug-app .kug-app-curtain	public/main.css	/^.kug-app .kug-app-curtain {$/;"	c
+.kug-app footer	public/main.css	/^.kug-app footer {$/;"	s
+.kug-app footer *	public/main.css	/^.kug-app footer * {$/;"	s
+.kug-app header	public/main.css	/^.kug-app header {$/;"	s
+.kug-app header *	public/main.css	/^.kug-app header * {$/;"	s
+.kug-app.light-off .kug-app-curtain	public/main.css	/^.kug-app.light-off .kug-app-curtain {$/;"	c
+.kug-app.light-off .kug-navbar-arrowusage *	public/main.css	/^.kug-app.light-off .kug-navbar-arrowusage * {$/;"	s
+.kug-app.light-on .kug-app-curtain	public/main.css	/^.kug-app.light-on .kug-app-curtain {$/;"	c
+.kug-app.light-on .kug-navbar-arrowusage *	public/main.css	/^.kug-app.light-on .kug-navbar-arrowusage * {$/;"	s
+.kug-artist	public/main.css	/^.kug-artist {$/;"	c
+.kug-artist .kug-artist-img	public/main.css	/^.kug-artist .kug-artist-img {$/;"	c
+.kug-artist .kug-artist-img img	public/main.css	/^.kug-artist .kug-artist-img img {$/;"	s
+.kug-artist .kug-span-link	public/main.css	/^.kug-artist .kug-span-link {$/;"	c
+.kug-artist h1	public/main.css	/^.kug-artist h1 {$/;"	s
+.kug-artist h2	public/main.css	/^.kug-artist h2,$/;"	s
+.kug-artist h3	public/main.css	/^.kug-artist h3 {$/;"	s
+.kug-artist img	public/main.css	/^.kug-artist img {$/;"	s
+.kug-artist p	public/main.css	/^.kug-artist p,$/;"	s
+.kug-contact	public/main.css	/^.kug-contact {$/;"	c
+.kug-contact *	public/main.css	/^.kug-contact * {$/;"	s
+.kug-contact .kug-span-link	public/main.css	/^.kug-contact .kug-span-link {$/;"	c
+.kug-contact h1	public/main.css	/^.kug-contact h1 {$/;"	s
+.kug-contact h2	public/main.css	/^.kug-contact h2 {$/;"	s
+.kug-contact h2	public/main.css	/^.kug-contact h2,$/;"	s
+.kug-contact h3	public/main.css	/^.kug-contact h3 {$/;"	s
+.kug-contact img	public/main.css	/^.kug-contact img {$/;"	s
+.kug-contact p	public/main.css	/^.kug-contact p {$/;"	s
+.kug-contact p	public/main.css	/^.kug-contact p,$/;"	s
+.kug-cookiebanner	public/main.css	/^.kug-cookiebanner {$/;"	c
+.kug-cookiebanner .kug-cookiebanner-text	public/main.css	/^.kug-cookiebanner .kug-cookiebanner-text {$/;"	c
+.kug-cookiebanner .kug-cookiebanner-x	public/main.css	/^.kug-cookiebanner .kug-cookiebanner-x {$/;"	c
+.kug-cookiebanner a	public/main.css	/^.kug-cookiebanner a {$/;"	s
+.kug-cookiebanner.close	public/main.css	/^.kug-cookiebanner.close {$/;"	c
+.kug-dataprotectionpolicy	public/main.css	/^.kug-dataprotectionpolicy {$/;"	c
+.kug-dataprotectionpolicy *	public/main.css	/^.kug-dataprotectionpolicy * {$/;"	s
+.kug-dataprotectionpolicy .kug-span-link	public/main.css	/^.kug-dataprotectionpolicy .kug-span-link {$/;"	c
+.kug-dataprotectionpolicy h1	public/main.css	/^.kug-dataprotectionpolicy h1 {$/;"	s
+.kug-dataprotectionpolicy h2	public/main.css	/^.kug-dataprotectionpolicy h2 {$/;"	s
+.kug-dataprotectionpolicy h2	public/main.css	/^.kug-dataprotectionpolicy h2,$/;"	s
+.kug-dataprotectionpolicy h3	public/main.css	/^.kug-dataprotectionpolicy h3 {$/;"	s
+.kug-dataprotectionpolicy img	public/main.css	/^.kug-dataprotectionpolicy img {$/;"	s
+.kug-dataprotectionpolicy p	public/main.css	/^.kug-dataprotectionpolicy p {$/;"	s
+.kug-dataprotectionpolicy p	public/main.css	/^.kug-dataprotectionpolicy p,$/;"	s
+.kug-galleryofaproductgroup	public/main.css	/^  .kug-galleryofaproductgroup {$/;"	c
+.kug-galleryofaproductgroup	public/main.css	/^.kug-galleryofaproductgroup {$/;"	c
+.kug-galleryofaproductgroupitem	public/main.css	/^.kug-galleryofaproductgroupitem {$/;"	c
+.kug-galleryofaproductgroupitem .kug-galleryofaproductgroupitem-img	public/main.css	/^.kug-galleryofaproductgroupitem .kug-galleryofaproductgroupitem-img {$/;"	c
+.kug-galleryofaproductgroupitem .kug-galleryofaproductgroupitem-img img	public/main.css	/^.kug-galleryofaproductgroupitem .kug-galleryofaproductgroupitem-img img {$/;"	s
+.kug-galleryofaproductgroupitem .kug-galleryofaproductgroupitem-lines	public/main.css	/^.kug-galleryofaproductgroupitem .kug-galleryofaproductgroupitem-lines {$/;"	c
+.kug-galleryofaproductgroupitem .kug-galleryofaproductgroupitem-lines .kug-galleryofaproductgroupitem-line1	public/main.css	/^.kug-galleryofaproductgroupitem .kug-galleryofaproductgroupitem-lines .kug-galleryofaproductgrou/;"	c
+.kug-galleryofaproductgroupitem .kug-galleryofaproductgroupitem-lines .kug-galleryofaproductgroupitem-line2	public/main.css	/^.kug-galleryofaproductgroupitem .kug-galleryofaproductgroupitem-lines .kug-galleryofaproductgrou/;"	c
+.kug-galleryofaproductgroupitem a	public/main.css	/^.kug-galleryofaproductgroupitem a {$/;"	s
+.kug-galleryofaproductgroupitem.carousel-enter	public/main.css	/^.kug-galleryofaproductgroupitem.carousel-enter {$/;"	c
+.kug-galleryofaproductgroupitem.carousel-enter.carousel-enter-active	public/main.css	/^.kug-galleryofaproductgroupitem.carousel-enter.carousel-enter-active {$/;"	c
+.kug-galleryofaproductgroupitem.carousel-leave	public/main.css	/^.kug-galleryofaproductgroupitem.carousel-leave {$/;"	c
+.kug-galleryofaproductgroupitem.carousel-leave.carousel-leave-active	public/main.css	/^.kug-galleryofaproductgroupitem.carousel-leave.carousel-leave-active {$/;"	c
+.kug-impressum	public/main.css	/^.kug-impressum {$/;"	c
+.kug-impressum .kug-span-link	public/main.css	/^.kug-impressum .kug-span-link {$/;"	c
+.kug-impressum h1	public/main.css	/^.kug-impressum h1 {$/;"	s
+.kug-impressum h2	public/main.css	/^.kug-impressum h2 {$/;"	s
+.kug-impressum h2	public/main.css	/^.kug-impressum h2,$/;"	s
+.kug-impressum h3	public/main.css	/^.kug-impressum h3 {$/;"	s
+.kug-impressum img	public/main.css	/^.kug-impressum img {$/;"	s
+.kug-impressum p	public/main.css	/^.kug-impressum p {$/;"	s
+.kug-impressum p	public/main.css	/^.kug-impressum p,$/;"	s
+.kug-info	public/main.css	/^.kug-info {$/;"	c
+.kug-info .kug-info-menu	public/main.css	/^  .kug-info .kug-info-menu {$/;"	c
+.kug-info .kug-info-menu	public/main.css	/^.kug-info .kug-info-menu {$/;"	c
+.kug-info nav	public/main.css	/^  .kug-info nav {$/;"	s
+.kug-info nav	public/main.css	/^.kug-info nav {$/;"	s
+.kug-info nav .kug-info-nav-item	public/main.css	/^  .kug-info nav .kug-info-nav-item {$/;"	c
+.kug-info nav .kug-info-nav-item	public/main.css	/^.kug-info nav .kug-info-nav-item {$/;"	c
+.kug-info nav .kug-info-nav-item:hover	public/main.css	/^  .kug-info nav .kug-info-nav-item:hover {$/;"	c
+.kug-info.open .kug-info-menu	public/main.css	/^.kug-info.open .kug-info-menu {$/;"	c
+.kug-info.open nav	public/main.css	/^.kug-info.open nav {$/;"	s
+.kug-main	public/main.css	/^.kug-main {$/;"	c
+.kug-navbar	public/main.css	/^.kug-navbar {$/;"	c
+.kug-navbar .kug-navbar-arrowusage *	public/main.css	/^.kug-navbar .kug-navbar-arrowusage * {$/;"	s
+.kug-navbar .kug-navbar-link	public/main.css	/^.kug-navbar .kug-navbar-link {$/;"	c
+.kug-navbar .kug-navbar-link:hover	public/main.css	/^  .kug-navbar .kug-navbar-link:hover {$/;"	c
+.kug-product	public/main.css	/^  .kug-product {$/;"	c
+.kug-product	public/main.css	/^.kug-product {$/;"	c
+.kug-product .kug-product-contact	public/main.css	/^.kug-product .kug-product-contact {$/;"	c
+.kug-product .kug-product-img	public/main.css	/^.kug-product .kug-product-img {$/;"	c
+.kug-product .kug-product-img img	public/main.css	/^.kug-product .kug-product-img img {$/;"	s
+.kug-product .kug-product-properties	public/main.css	/^.kug-product .kug-product-properties {$/;"	c
+.kug-product .kug-product-properties .kug-product-properties-container	public/main.css	/^.kug-product .kug-product-properties .kug-product-properties-container {$/;"	c
+.kug-product .kug-product-properties .kug-product-properties-container .kug-product-arrows-container	public/main.css	/^.kug-product .kug-product-properties .kug-product-properties-container .kug-product-arrows-conta/;"	c
+.kug-product .kug-product-properties .kug-product-properties-container .kug-product-arrows-container .kug-product-left-arrow	public/main.css	/^.kug-product .kug-product-properties .kug-product-properties-container .kug-product-arrows-conta/;"	c
+.kug-product .kug-product-properties .kug-product-properties-container .kug-product-arrows-container .kug-product-left-arrow:hover	public/main.css	/^.kug-product .kug-product-properties .kug-product-properties-container .kug-product-arrows-conta/;"	c
+.kug-product .kug-product-properties .kug-product-properties-container .kug-product-arrows-container .kug-product-right-arrow	public/main.css	/^.kug-product .kug-product-properties .kug-product-properties-container .kug-product-arrows-conta/;"	c
+.kug-product .kug-product-properties .kug-product-properties-container .kug-product-arrows-container .kug-product-right-arrow:hover	public/main.css	/^.kug-product .kug-product-properties .kug-product-properties-container .kug-product-arrows-conta/;"	c
+.kug-product .kug-product-properties .kug-product-properties-container .kug-product-property	public/main.css	/^.kug-product .kug-product-properties .kug-product-properties-container .kug-product-property {$/;"	c
+.kug-product .kug-product-properties .kug-product-properties-container .kug-product-property .kug-product-property-title	public/main.css	/^.kug-product .kug-product-properties .kug-product-properties-container .kug-product-property .ku/;"	c
+.kug-product .kug-product-properties .kug-product-properties-container .kug-product-property h1	public/main.css	/^  .kug-product .kug-product-properties .kug-product-properties-container .kug-product-property h/;"	s
+.kug-product .kug-product-properties .kug-product-properties-container .kug-product-property h1	public/main.css	/^.kug-product .kug-product-properties .kug-product-properties-container .kug-product-property h1 /;"	s
+.kug-product .kug-product-properties .kug-product-properties-container .kug-product-property span	public/main.css	/^.kug-product .kug-product-properties .kug-product-properties-container .kug-product-property spa/;"	s
+.kug-product .kug-product-properties .kug-product-properties-container .kug-product-property span:nth-child(1)	public/main.css	/^.kug-product .kug-product-properties .kug-product-properties-container .kug-product-property spa/;"	s
+.kug-product .kug-product-properties .kug-product-properties-container .kug-product-property span:nth-child(2)	public/main.css	/^.kug-product .kug-product-properties .kug-product-properties-container .kug-product-property spa/;"	s
+.kug-product .kug-product-properties .kug-product-properties-container .kug-product-property.nameline1	public/main.css	/^  .kug-product .kug-product-properties .kug-product-properties-container .kug-product-property.n/;"	c
+.kug-product .kug-product-properties .kug-product-properties-container .kug-product-property.nameline1	public/main.css	/^.kug-product .kug-product-properties .kug-product-properties-container .kug-product-property.nam/;"	c
+.kug-product .kug-product-properties .kug-product-properties-container .kug-product-property.nameline2	public/main.css	/^.kug-product .kug-product-properties .kug-product-properties-container .kug-product-property.nam/;"	c
+.kug-product .kug-product-properties .kug-product-properties-container .kug-product-property.usagetipp	public/main.css	/^.kug-product .kug-product-properties .kug-product-properties-container .kug-product-property.usa/;"	c
+.kug-product .kug-product-properties .kug-product-properties-container .kug-product-property.usagetipp span	public/main.css	/^.kug-product .kug-product-properties .kug-product-properties-container .kug-product-property.usa/;"	s
+.kug-product-img img	public/main.css	/^  .kug-product-img img {$/;"	s
+.kug-productgallery	public/main.css	/^.kug-productgallery {$/;"	c
+.kug-productgroup	public/main.css	/^.kug-productgroup {$/;"	c
+.kug-productgroupdescription	public/main.css	/^.kug-productgroupdescription {$/;"	c
+.kug-productgroupdescription .kug-productgroupdescription-textcontainer	public/main.css	/^  .kug-productgroupdescription .kug-productgroupdescription-textcontainer {$/;"	c
+.kug-productgroupdescription .kug-productgroupdescription-textcontainer	public/main.css	/^.kug-productgroupdescription .kug-productgroupdescription-textcontainer {$/;"	c
+.kug-productgroupdescription .kug-productgroupdescription-textcontainer .kug-productgroupdescription-text	public/main.css	/^.kug-productgroupdescription .kug-productgroupdescription-textcontainer .kug-productgroupdescrip/;"	c
+.kug-productgroupdescription .kug-productgroupdescription-title	public/main.css	/^.kug-productgroupdescription .kug-productgroupdescription-title {$/;"	c
+.kug-productgroupdescription .kug-productgroupdescription-title .kug-productgroupdescription-title-lock	public/main.css	/^.kug-productgroupdescription .kug-productgroupdescription-title .kug-productgroupdescription-tit/;"	c
+.kug-productgroupdescription.open .kug-productgroupdescription-text	public/main.css	/^.kug-productgroupdescription.open .kug-productgroupdescription-text {$/;"	c
+.kug-productgroupdescription.open .kug-productgroupdescription-title	public/main.css	/^.kug-productgroupdescription.open .kug-productgroupdescription-title {$/;"	c
+.kug-productgroupdescription.open .kug-productgroupdescription-title .kug-productgroupdescription-title-lock	public/main.css	/^.kug-productgroupdescription.open .kug-productgroupdescription-title .kug-productgroupdescriptio/;"	c
+.kug-productgroupgallery	public/main.css	/^  .kug-productgroupgallery {$/;"	c
+.kug-productgroupgallery	public/main.css	/^.kug-productgroupgallery {$/;"	c
+.kug-productgroupgallery .kug-productgroupgallery-arrows-container	public/main.css	/^.kug-productgroupgallery .kug-productgroupgallery-arrows-container {$/;"	c
+.kug-productgroupgallery .kug-productgroupgallery-arrows-container .kug-productgroupgallery-left-arrow	public/main.css	/^.kug-productgroupgallery .kug-productgroupgallery-arrows-container .kug-productgroupgallery-left/;"	c
+.kug-productgroupgallery .kug-productgroupgallery-arrows-container .kug-productgroupgallery-left-arrow:hover	public/main.css	/^.kug-productgroupgallery .kug-productgroupgallery-arrows-container .kug-productgroupgallery-left/;"	c
+.kug-productgroupgallery .kug-productgroupgallery-arrows-container .kug-productgroupgallery-right-arrow	public/main.css	/^.kug-productgroupgallery .kug-productgroupgallery-arrows-container .kug-productgroupgallery-righ/;"	c
+.kug-productgroupgallery .kug-productgroupgallery-arrows-container .kug-productgroupgallery-right-arrow:hover	public/main.css	/^.kug-productgroupgallery .kug-productgroupgallery-arrows-container .kug-productgroupgallery-righ/;"	c
+.kug-productgroupgallery.Glasfusing	public/main.css	/^.kug-productgroupgallery.Glasfusing {$/;"	c
+.kug-productgroupgallery.Graviertes	public/main.css	/^.kug-productgroupgallery.Graviertes {$/;"	c
+.kug-productgroupgallery.Waldglas	public/main.css	/^.kug-productgroupgallery.Waldglas {$/;"	c
+.kug-productgroups	public/main.css	/^.kug-productgroups {$/;"	c
+.kug-products	public/main.css	/^.kug-products {$/;"	c
+.kug-productsgalleryitem	public/main.css	/^  .kug-productsgalleryitem {$/;"	c
+.kug-productsgalleryitem	public/main.css	/^.kug-productsgalleryitem {$/;"	c
+.kug-productsgalleryitem img	public/main.css	/^.kug-productsgalleryitem img {$/;"	s
+.kug-productsgalleryitem img:focus	public/main.css	/^.kug-productsgalleryitem img:focus {$/;"	s
+.kug-productsgalleryitem img:hover	public/main.css	/^.kug-productsgalleryitem img:hover,$/;"	s
+.kug-span-link	public/main.css	/^.kug-span-link {$/;"	c
+.kug-title	public/main.css	/^.kug-title {$/;"	c
+.kug-title .kug-title-top	public/main.css	/^.kug-title .kug-title-top {$/;"	c
+.kug-title .kug-title-top .kug-title-top-menu	public/main.css	/^  .kug-title .kug-title-top .kug-title-top-menu {$/;"	c
+.kug-title .kug-title-top .kug-title-top-menu	public/main.css	/^.kug-title .kug-title-top .kug-title-top-menu {$/;"	c
+.kug-title .kug-title-top .kug-title-top-text	public/main.css	/^.kug-title .kug-title-top .kug-title-top-text {$/;"	c
+.kug-title nav	public/main.css	/^  .kug-title nav {$/;"	s
+.kug-title nav	public/main.css	/^.kug-title nav {$/;"	s
+.kug-title nav .kug-title-nav-item	public/main.css	/^  .kug-title nav .kug-title-nav-item {$/;"	c
+.kug-title nav .kug-title-nav-item	public/main.css	/^.kug-title nav .kug-title-nav-item {$/;"	c
+.kug-title nav .kug-title-nav-item:hover	public/main.css	/^  .kug-title nav .kug-title-nav-item:hover {$/;"	c
+.kug-title nav.open	public/main.css	/^.kug-title nav.open {$/;"	c
+.marginal-light-off	public/main.css	/^.marginal-light-off {$/;"	c
+.marginal-light-on	public/main.css	/^.marginal-light-on {$/;"	c
+0	app_w/build/messages/app_w/components/CookieBanner.json	/^  {$/;"	o
+0	app_w/build/messages/app_w/components/Info.json	/^  {$/;"	o
+0	app_w/build/messages/app_w/components/Navbar.json	/^  {$/;"	o
+0	app_w/build/messages/app_w/components/Title.json	/^  {$/;"	o
+0	app_w/build/messages/app_w/components/pages/AboutUs.json	/^  {$/;"	o
+0	app_w/build/messages/app_w/components/pages/Contact.json	/^  {$/;"	o
+0	app_w/build/messages/app_w/components/pages/DataProtectionPolicy.json	/^  {$/;"	o
+0	app_w/build/messages/app_w/components/pages/Impressum.json	/^  {$/;"	o
+0	app_w/build/messages/app_w/components/products/GalleryOfAProductGroupItem.json	/^  {$/;"	o
+0	app_w/build/messages/app_w/components/products/Product.json	/^  {$/;"	o
+1	app_w/build/messages/app_w/components/CookieBanner.json	/^  {$/;"	o
+1	app_w/build/messages/app_w/components/Info.json	/^  {$/;"	o
+1	app_w/build/messages/app_w/components/Navbar.json	/^  {$/;"	o
+1	app_w/build/messages/app_w/components/Title.json	/^  {$/;"	o
+1	app_w/build/messages/app_w/components/products/Product.json	/^  {$/;"	o
+2	app_w/build/messages/app_w/components/Info.json	/^  {$/;"	o
+2	app_w/build/messages/app_w/components/Navbar.json	/^  {$/;"	o
+3	app_w/build/messages/app_w/components/Info.json	/^  {$/;"	o
+::-webkit-scrollbar	public/main.css	/^::-webkit-scrollbar {$/;"	s
+ADD_ERROR	app_m/actions.js	/^export const ADD_ERROR          = 'ADD_ERROR'; \/\/process -> process$/;"	C
+AboutUs	app_w/components/Title.js	/^  AboutUs() {$/;"	m	class:Title
+AboutUs	app_w/components/pages/AboutUs.js	/^class AboutUs extends Component {$/;"	c
+AddError	app_m/actions.js	/^export function AddError(title, errorMessages) {$/;"	f
+AnonymousFunction2d8a65570100	server/cms/types/addGetFileRoutes.js	/^  router.param('id', function(req, res, next, id) {$/;"	f
+AnonymousFunction64feec1e0100	server/db/connectToDb.js	/^      con.once('open',function () {$/;"	f
+AnonymousFunction9612e91d0100	app_w/MakeDefaultMessagesWebpackPlugin.js	/^  compiler.plugin('emit', function(compiler, callback) {$/;"	f
+AnonymousFunctionaa2ab56d0100	server/cms/types/schemas/productGroup.js	/^productGroup.pre('save', function(next) {$/;"	f
+AnonymousFunctionadb673550100	server/cms/auth/mkAuthRoutes.js	/^  router.post('\/signup', function(req, res, next) {$/;"	f
+AnonymousFunctionadb673550200	server/cms/auth/mkAuthRoutes.js	/^    User.register(new User({username: req.body.username, name: ''}),req.body.password, function(/;"	f
+AnonymousFunctionadb673550300	server/cms/auth/mkAuthRoutes.js	/^  router.get('\/user', function(req, res) {$/;"	f
+AnonymousFunctionb0e04fa90100	test/run_server_test.js	/^setTimeout( function () {$/;"	f
+AnonymousFunctionb0e04fa90200	test/run_server_test.js	/^  setTimeout( function () {$/;"	f	function:AnonymousFunctionb0e04fa90100
+App	app_m/components/App.js	/^export class App extends Component {$/;"	c
+App	app_w/components/App.js	/^class App extends Component {$/;"	c
+AppError	app_m/AppError.js	/^function AppError(title, errorMessages) {$/;"	c
+Artboard-1	app_w/assets/icons/left-arrow.svg	/^       transform="translate(-395.000000, -191.000000)">$/;"	i
+Artboard-1	app_w/assets/icons/right-arrow.svg	/^       transform="translate(-467.000000, -191.000000)">$/;"	i
+Artboard-1	public/app_w/assets/icons/left-arrow.svg	/^       transform="translate(-395.000000, -191.000000)">$/;"	i
+Artboard-1	public/app_w/assets/icons/right-arrow.svg	/^       transform="translate(-467.000000, -191.000000)">$/;"	i
+Artist	app_w/components/Artist.js	/^class Artist extends Component {$/;"	c
+BACK	app_m/actions.js	/^export const BACK               = 'BACK';$/;"	C
+BIG_PIC_DATAURL	server/cms/shared_server_app/dataItemType.js	/^  BIG_PIC_DATAURL: 'BIG_PIC_DATAURL',$/;"	p	class:DATA_ITEM_TYPE
+Back	app_m/actions.js	/^export function Back() {$/;"	f
+BadRequest	server/error/KugmError.js	/^BadRequest.prototype = Object.create(KugmError.prototype);$/;"	c
+BadRequest	server/error/KugmError.js	/^function BadRequest(message) {$/;"	f
+Benutzen_Sie_die_Pfeil_tasten_zum_Navigation	app_w/i18n/defaultMessages.json	/^  "Benutzen_Sie_die_Pfeil_tasten_zum_Navigation": "a",$/;"	s
+BoolChanger	server/cms/types/queries/utils/propertyChangers/BoolChanger.js	/^const BoolChanger = {$/;"	c
+BoolPropertyState	app_m/components/propertyStates/BoolPropertyState.js	/^const BoolPropertyState = {$/;"	c
+BoolPropertyView	app_m/components/propertyViews/BoolPropertyView.js	/^class BoolPropertyView extends PropertyView {$/;"	c
+BooleanProperty	server/cms/gvda/createGraphQLSchema.js	/^  const BooleanProperty = new GraphQLObjectType({$/;"	C
+CSSPlugin	app_m/webpack.config.js	/^        "CSSPlugin": "node_modules\/gsap\/src\/uncompressed\/plugins\/CSSPlugin"$/;"	p	class:module.exports.resolve.alias
+Cache	server/cms/types/models/Cache.js	/^let Cache = mongoose.model('Cache', cache);$/;"	v
+CacheIn	server/cache/CacheIn.js	/^const CacheIn = {$/;"	c
+ChangeEntity	app_m/processes/SaveEntityProcess.js	/^const ChangeEntity = `$/;"	C
+ChangeEntity	server/cms/types/queries/ChangeEntity.js	/^const ChangeEntity = {$/;"	c
+CmsConfig	server/config/CmsConfig.js	/^let CmsConfig = mongoose.model('CmsConfig', cmsConfig);$/;"	v
+CollectionsView	app_m/components/CollectionsView.js	/^class CollectionsView extends Component {$/;"	c
+CompressionPlugin	app_m/webpack.config.js	/^const CompressionPlugin = require("compression-webpack-plugin");$/;"	C
+CompressionPlugin	app_w/webpack.config.js	/^const CompressionPlugin = require("compression-webpack-plugin");$/;"	C
+ConfirmDialog	app_m/components/dialogs/ConfirmDialog.js	/^class ConfirmDialog extends Component {$/;"	c
+ConfirmRemoveDialog	app_m/components/dialogs/ConfirmRemoveDialog.js	/^class ConfirmRemoveDialog extends Component {$/;"	c
+Contact	app_w/components/Title.js	/^  Contact() {$/;"	m	class:Title
+Contact	app_w/components/pages/Contact.js	/^class Contact extends Component {$/;"	c
+CookieBanner	app_w/components/CookieBanner.js	/^class CookieBanner extends Component {$/;"	c
+Cookie_Banner_Text	app_w/i18n/defaultMessages.json	/^  "Cookie_Banner_Text": "a",$/;"	s
+Copyright	app_w/components/Copyright.js	/^class Copyright extends Component {$/;"	c
+CreateEntityTo	app_m/processes/CreateEntityToProcess.js	/^const CreateEntityTo = `$/;"	C
+CreateEntityTo	server/cms/types/queries/CreateEntityTo.js	/^const CreateEntityTo = {$/;"	c
+CreateEntityToProcess	app_m/processes/CreateEntityToProcess.js	/^const CreateEntityToProcess = {$/;"	c
+DATA_ITEM_TYPE	server/cms/shared_server_app/dataItemType.js	/^export const DATA_ITEM_TYPE = {$/;"	c
+DataProtectionPolicy	app_w/components/pages/DataProtectionPolicy.js	/^class DataProtectionPolicy extends Component {$/;"	c
+DataURLProperty	server/cms/gvda/createGraphQLSchema.js	/^  const DataURLProperty = new GraphQLObjectType({$/;"	C
+DataURLPropertyState	app_m/components/propertyStates/DataURLPropertyState.js	/^const DataURLPropertyState = {$/;"	c
+DataURLPropertyView	app_m/components/propertyViews/DataURLPropertyView.js	/^class DataURLPropertyView extends PropertyView {$/;"	c
+Datenschutzerklärung_Inhalt_html	app_w/i18n/defaultMessages.json	/^  "Datenschutzerklärung_Inhalt_html": "a",$/;"	s
+EOF	scripts/addCopyright.sh	/^HEADER=$(cat <<'EOF'$/;"	h
+ERROR_ACKNOWLEDGED	app_m/actions.js	/^export const ERROR_ACKNOWLEDGED = 'ERROR_ACKNOWLEDGED';$/;"	C
+EntityChanger	server/cms/types/queries/utils/EntityChanger.js	/^const EntityChanger = {$/;"	c
+EntityDescription	server/cms/gvda/createGraphQLSchema.js	/^  const EntityDescription = new GraphQLObjectType({$/;"	C
+EntityFactory	server/cms/types/queries/utils/EntityFactory.js	/^const EntityFactory = {$/;"	c
+EntityOverview	app_m/processes/LoadEntityProcess.js	/^function EntityOverview(propertyValues) {$/;"	f
+EntityPropertyValues	server/cms/gvda/createGraphQLSchema.js	/^  const EntityPropertyValues = new GraphQLObjectType({$/;"	C
+EntityPropertyValuesRequest	app_m/components/propertyViews/IdArrayPropertyView.js	/^function EntityPropertyValuesRequest(id,dbModel,properties) {$/;"	c
+EntityPropertyValuesRequest	server/cms/gvda/createGraphQLSchema.js	/^  const EntityPropertyValuesRequest = new GraphQLInputObjectType({$/;"	C
+EntityView	app_m/components/EntityView.js	/^class EntityView extends Component {$/;"	c
+ErrorAcknowledged	app_m/actions.js	/^export function ErrorAcknowledged() {$/;"	f
+ErrorDialog	app_m/components/dialogs/ErrorDialog.js	/^class ErrorDialog extends Component {$/;"	c
+EventEmitter	server/cms/types/schemas/cache.js	/^const EventEmitter = require('events').EventEmitter;$/;"	C
+ExtractTextPlugin	app_m/webpack.config.js	/^const ExtractTextPlugin = require("extract-text-webpack-plugin");$/;"	C
+ExtractTextPlugin	app_w/webpack.config.js	/^const ExtractTextPlugin = require("extract-text-webpack-plugin");$/;"	C
+FILE_DATAURL	server/cms/shared_server_app/dataItemType.js	/^  FILE_DATAURL:    'FILE_DATAURL'$/;"	p	class:DATA_ITEM_TYPE
+FileChanger	server/cms/types/queries/utils/propertyChangers/FileChanger.js	/^const FileChanger = {$/;"	c
+FileUploadStatus	server/cms/gvda/createGraphQLSchema.js	/^  const FileUploadStatus = new GraphQLEnumType({$/;"	C
+FileUploadStatus	server/cms/types/schemaTypes/FileUploadStatus.js	/^FileUploadStatus.prototype = Object.create(mongoose.SchemaType.prototype);$/;"	c
+FileUploadStatus	server/cms/types/schemaTypes/FileUploadStatus.js	/^function FileUploadStatus(key, options) {$/;"	f
+FileUploadStatusProperty	server/cms/gvda/createGraphQLSchema.js	/^  const FileUploadStatusProperty = new GraphQLObjectType({$/;"	C
+FileUploadStatusPropertyState	app_m/components/propertyStates/FileUploadStatusPropertyState.js	/^const FileUploadStatusPropertyState = {$/;"	c
+FileUploadStatusPropertyView	app_m/components/propertyViews/FileUploadStatusPropertyView.js	/^class FileUploadStatusPropertyView extends PropertyView {$/;"	c
+GALLERY_ITEM	server/cms/shared_server_app/itemType.js	/^export const GALLERY_ITEM = 'GALLERY_ITEM';$/;"	C
+GalleryItem	server/cms/types/models/GalleryItem.js	/^let GalleryItem = mongoose.model('GalleryItem', galleryItem);$/;"	v
+GalleryItemOverview	app_m/components/overviews/GalleryItemOverview.js	/^export class GalleryItemOverview extends Overview {$/;"	c
+GalleryOfAProductGroup	app_w/components/products/GalleryOfAProductGroup.js	/^class GalleryOfAProductGroup extends Component {$/;"	c
+GalleryOfAProductGroupItem	app_w/components/products/GalleryOfAProductGroupItem.js	/^class GalleryOfAProductGroupItem extends Component {$/;"	c
+GetEntityDescription	app_m/processes/LoadEntityProcess.js	/^const GetEntityDescription = `$/;"	C
+GetEntityDescription	server/cms/types/queries/GetEntityDescription.js	/^function GetEntityDescription(root, {identity}) {$/;"	f
+GetEntityPropertyValues	app_m/processes/LoadEntityProcess.js	/^const GetEntityPropertyValues = `$/;"	C
+GetEntityPropertyValues	server/cms/types/queries/GetEntityPropertyValues.js	/^const GetEntityPropertyValues = (root, {entityPropertyValuesRequests}) => {$/;"	C
+HtmlText	app_w/components/utils/HtmlText.js	/^const HtmlText = ({messageDescriptor,intl}) => {$/;"	C
+IS_LOGGED_IN	app_m/actions.js	/^export const IS_LOGGED_IN        = 'IS_LOGGED_IN';$/;"	C
+ITEM_TYPE	server/cms/shared_server_app/itemType.js	/^export const ITEM_TYPE = {$/;"	C
+IdArrayChanger	server/cms/types/queries/utils/propertyChangers/IdArrayChanger.js	/^const IdArrayChanger = {$/;"	c
+IdArrayProperty	server/cms/gvda/createGraphQLSchema.js	/^  const IdArrayProperty = new GraphQLObjectType({$/;"	C
+IdArrayPropertyState	app_m/components/propertyStates/IdArrayPropertyState.js	/^const IdArrayPropertyState = {$/;"	c
+IdArrayPropertyView	app_m/components/propertyViews/IdArrayPropertyView.js	/^class IdArrayPropertyView extends PropertyView {$/;"	c
+Identity	server/cms/gvda/createGraphQLSchema.js	/^  const Identity = new GraphQLInputObjectType({$/;"	C
+Impressum	app_w/components/pages/Impressum.js	/^class Impressum extends Component {$/;"	c
+Impressum_Inhalt_html	app_w/i18n/defaultMessages.json	/^  "Impressum_Inhalt_html": "a",$/;"	s
+Info	app_w/components/Info.js	/^class Info extends Component {$/;"	c
+InternalServerError	server/error/KugmError.js	/^InternalServerError.prototype = Object.create(KugmError.prototype);$/;"	c
+InternalServerError	server/error/KugmError.js	/^function InternalServerError(message) {$/;"	f
+IsLoggedIn	app_m/actions.js	/^export function IsLoggedIn() {$/;"	f
+IsLoggedInProcess	app_m/processes/IsLoggedInProcess.js	/^const IsLoggedInProcess = {$/;"	c
+KUG_kontaktieren	app_w/i18n/defaultMessages.json	/^  "KUG_kontaktieren": "a"$/;"	s
+Kontakt_Inhalt_html	app_w/i18n/defaultMessages.json	/^  "Kontakt_Inhalt_html": "a",$/;"	s
+KugmError	server/error/KugmError.js	/^function KugmError({status, errorMessages}) {$/;"	c
+LOAD_ENTITY	app_m/actions.js	/^export const LOAD_ENTITY        = 'LOAD_ENTITY';$/;"	C
+LOGIN	app_m/actions.js	/^export const LOGIN               = 'LOGIN';$/;"	C
+LOGOUT	app_m/actions.js	/^export const LOGOUT              = 'LOGOUT';$/;"	C
+Link_Zurück	app_w/i18n/defaultMessages.json	/^  "Link_Zurück": "a",$/;"	s
+Link_zum_Datenschutzerklärung	app_w/i18n/defaultMessages.json	/^  "Link_zum_Datenschutzerklärung": "a",$/;"	s
+Link_zum_Impressum	app_w/i18n/defaultMessages.json	/^  "Link_zum_Impressum": "a",$/;"	s
+Link_zum_Kontakt	app_w/i18n/defaultMessages.json	/^  "Link_zum_Kontakt": "a",$/;"	s
+Link_zum_Künstler_kontaktieren	app_w/i18n/defaultMessages.json	/^  "Link_zum_Künstler_kontaktieren": "a",$/;"	s
+Link_zum_Über_Uns	app_w/i18n/defaultMessages.json	/^  "Link_zum_Über_Uns": "a",$/;"	s
+Link_zur_Datenschutzerklärung	app_w/i18n/defaultMessages.json	/^  "Link_zur_Datenschutzerklärung": "a",$/;"	s
+Link_zur_Start_Seite	app_w/i18n/defaultMessages.json	/^  "Link_zur_Start_Seite": "a",$/;"	s
+LoadArtistProcess	app_w/processes/LoadArtistProcess.js	/^const LoadArtistProcess = {$/;"	c
+LoadEntity	app_m/actions.js	/^export function LoadEntity(identity) {$/;"	f
+LoadEntityProcess	app_m/processes/LoadEntityProcess.js	/^const LoadEntityProcess = {$/;"	c
+LoadLocaleProcess	app_w/processes/LoadLocaleProcess.js	/^const LoadLocaleProcess = {$/;"	c
+LoadProductGroupProcess	app_w/processes/LoadProductGroupProcess.js	/^const LoadProductGroupProcess = {$/;"	c
+LoadProductProcess	app_w/processes/LoadProductProcess.js	/^const LoadProductProcess = {$/;"	c
+LoadTemporaryEntity	app_m/actions.js	/^export function LoadTemporaryEntity(parentIdentity,parentProperty,dbModel) {$/;"	f
+LoadingPage	app_m/components/LoadingPage.js	/^const LoadingPage = ()=>($/;"	C
+LocalStorageMock	app_m/test/local-storage-mock.js	/^export default class LocalStorageMock {$/;"	c
+LocalizedString	server/cms/gvda/createGraphQLSchema.js	/^  const LocalizedString = new GraphQLObjectType({$/;"	C
+LocalizedString	server/cms/types/queries/utils/propertyDescriptionFactories/mkTranslatedStringsDescription.js	/^function LocalizedString({locale,string}) {$/;"	c
+LocalizedString	server/cms/types/schemaTypes/TranslatedString.js	/^let LocalizedString = mongoose.Schema({$/;"	v
+LocalizedStringsChanger	server/cms/types/queries/utils/propertyChangers/LocalizedStringsChanger.js	/^const LocalizedStringsChanger = {$/;"	c
+LocalizedStringsProperty	server/cms/gvda/createGraphQLSchema.js	/^  const LocalizedStringsProperty = new GraphQLObjectType({$/;"	C
+LocalizedStringsPropertyState	app_m/components/propertyStates/LocalizedStringsPropertyState.js	/^const LocalizedStringsPropertyState = {$/;"	c
+LocalizedStringsPropertyView	app_m/components/propertyViews/LocalizedStringsPropertyView.js	/^class LocalizedStringsPropertyView extends PropertyView {$/;"	c
+Login	app_m/actions.js	/^export function Login(name,password) {$/;"	f
+LoginProcess	app_m/processes/LoginProcess.js	/^const LoginProcess = {$/;"	c
+LoginSignup	app_m/components/LoginSignup.js	/^class LoginSignup extends Component {$/;"	c
+Logout	app_m/actions.js	/^export function Logout() {$/;"	f
+LogoutProcess	app_m/processes/LogoutProcess.js	/^const LogoutProcess = {$/;"	c
+Main	app_w/components/Main.js	/^class Main extends Component {$/;"	c
+MainView	server/cms/types/models/MainView.js	/^let MainView = mongoose.model('MainView', mainView);$/;"	v
+Make a link to every productgroup and product	TODO.md	/^#### Make a link to every productgroup and product$/;"	t
+Make kug indexable by search engines	TODO.md	/^## Make kug indexable by search engines$/;"	s
+MakeDefaultMessagesWebpackPlugin	app_w/MakeDefaultMessagesWebpackPlugin.js	/^MakeDefaultMessagesWebpackPlugin.prototype.apply = function(compiler) {$/;"	c
+MakeDefaultMessagesWebpackPlugin	app_w/MakeDefaultMessagesWebpackPlugin.js	/^function MakeDefaultMessagesWebpackPlugin() {$/;"	f
+MakeDefaultMessagesWebpackPlugin	app_w/webpack.config.js	/^const MakeDefaultMessagesWebpackPlugin = buildLocales.MakeDefaultMessagesWebpackPlugin;$/;"	C
+Model	server/cms/types/queries/CreateEntityTo.js	/^  let Model = mongoose.model(parent.dbModel);$/;"	v
+Model	server/cms/types/queries/utils/mkProductDescriptionForCustomer.js	/^  let Model;$/;"	v
+Model	server/cms/types/queries/utils/mkTemporaryEntity.js	/^  let Model       = mongoose.model(dbModelName);$/;"	v
+Model	server/locales/init.js	/^    const Model = mongoose.model(modelName);$/;"	C
+Model	server/locales/init.js	/^  const Model     = mongoose.model(modelName);$/;"	C
+Mutation	server/cms/gvda/createGraphQLSchema.js	/^  const Mutation = new GraphQLObjectType({$/;"	C
+NOT_SHOWN	server/cms/shared_server_app/dataItemType.js	/^  NOT_SHOWN:       'NOT_SHOWN',$/;"	p	class:DATA_ITEM_TYPE
+NOT_UPLOADED	server/cms/shared_server_app/uploadState.js	/^  NOT_UPLOADED: 'NOT_UPLOADED'$/;"	p	class:UPLOAD_STATE
+Navbar	app_w/components/Navbar.js	/^class Navbar extends Component {$/;"	c
+NewPassword	app_m/components/NewPassword.js	/^class NewPassword extends Component {$/;"	c
+NotFound	server/error/KugmError.js	/^NotFound.prototype = Object.create(KugmError.prototype);$/;"	c
+NotFound	server/error/KugmError.js	/^function NotFound(message) {$/;"	f
+Overview	app_m/components/overviews/Overview.js	/^export class Overview extends Component {$/;"	c
+Overview	app_m/components/propertyViews/IdArrayPropertyView.js	/^  let Overview         = getOverviewConstructor(referredDbModel);$/;"	v
+PROCESS_FINISHED_ERROR	app_m/actions.js	/^export const PROCESS_FINISHED_ERROR = 'PROCESS_FINISHED_ERROR';$/;"	C
+PROCESS_FINISHED_ERROR	app_w/actions.js	/^export const PROCESS_FINISHED_ERROR = 'PROCESS_FINISHED_ERROR';$/;"	C
+PROCESS_FINISHED_OK	app_m/actions.js	/^export const PROCESS_FINISHED_OK    = 'PROCESS_FINISHED_OK';$/;"	C
+PROCESS_FINISHED_OK	app_w/actions.js	/^export const PROCESS_FINISHED_OK    = 'PROCESS_FINISHED_OK';$/;"	C
+PRODUCT	server/cms/shared_server_app/itemType.js	/^export const PRODUCT      = 'PRODUCT';$/;"	C
+PicsChanger	server/cms/types/queries/utils/propertyChangers/PicsChanger.js	/^const PicsChanger = {$/;"	c
+Process	app_m/processes/Process.js	/^const Process = {$/;"	c
+Process	app_w/processes/Process.js	/^const Process = {$/;"	c
+ProcessFinishedError	app_m/actions.js	/^export function ProcessFinishedError(processName,errorMessages) {$/;"	f
+ProcessFinishedError	app_w/actions.js	/^export function ProcessFinishedError(processName,errorMessages) {$/;"	f
+ProcessFinishedOk	app_m/actions.js	/^export function ProcessFinishedOk(processName,result) {$/;"	f
+ProcessFinishedOk	app_w/actions.js	/^export function ProcessFinishedOk(processName,result) {$/;"	f
+Product	app_w/components/products/Product.js	/^class Product extends Component {$/;"	c
+Product	server/cms/types/models/Product.js	/^const Product = mongoose.model('Product', product);$/;"	C
+ProductGallery	app_w/components/products/ProductGallery.js	/^class ProductGallery extends Component {$/;"	c
+ProductGroup	app_w/components/products/ProductGroup.js	/^class ProductGroup extends Component {$/;"	c
+ProductGroup	server/cms/types/models/ProductGroup.js	/^let ProductGroup = mongoose.model('ProductGroup', productGroup);$/;"	v
+ProductGroupDescription	app_w/components/products/ProductGroupDescription.js	/^class ProductGroupDescription extends Component {$/;"	c
+ProductGroupGallery	app_w/components/products/ProductGroupGallery.js	/^class ProductGroupGallery extends Component {$/;"	c
+ProductGroupOverview	app_m/components/overviews/ProductGroupOverview.js	/^export class ProductGroupOverview extends Overview {$/;"	c
+ProductGroups	app_w/components/products/ProductGroups.js	/^class ProductGroups extends Component {$/;"	c
+ProductOverview	app_m/components/overviews/ProductOverview.js	/^export class ProductOverview extends Overview {$/;"	c
+Products	app_w/components/products/Products.js	/^class Products extends Component {$/;"	c
+ProductsGalleryItem	app_w/components/products/ProductsGalleryItem.js	/^class ProductsGalleryItem extends Component {$/;"	c
+Produkte	app_w/components/products/GalleryOfAProductGroupItem.js	/^  Produkte() {$/;"	m	class:GalleryOfAProductGroupItem
+Produkte	app_w/i18n/defaultMessages.json	/^  "Produkte": "a",$/;"	s
+PropertyDescription	server/cms/gvda/createGraphQLSchema.js	/^  const PropertyDescription = new GraphQLInterfaceType({$/;"	C
+PropertyState	app_m/components/propertyStates/PropertyState.js	/^const PropertyState = {$/;"	c
+PropertyValueInput	app_m/processes/Process.js	/^PropertyValueInput.prototype.getValue = function(propertyDescription) {$/;"	c
+PropertyValueInput	app_m/processes/Process.js	/^function PropertyValueInput(propertyDescription) {$/;"	f
+PropertyValueInput	server/cms/gvda/createGraphQLSchema.js	/^  const PropertyValueInput = new GraphQLInputObjectType({$/;"	C
+PropertyValueOutput	server/cms/gvda/createGraphQLSchema.js	/^  const PropertyValueOutput = new GraphQLObjectType({$/;"	C
+PropertyView	app_m/components/propertyViews/PropertyView.js	/^class PropertyView extends Component {$/;"	c
+Query	server/cms/gvda/createGraphQLSchema.js	/^  const Query = new GraphQLObjectType({$/;"	C
+REGISTRATION_IS_ALLOWED_Path	test/run_server_test.js	/^var REGISTRATION_IS_ALLOWED_Path = configPath+'\/REGISTRATION_IS_ALLOWED';$/;"	v
+REMOVE_ENTITY	app_m/actions.js	/^export const REMOVE_ENTITY      = 'REMOVE_ENTITY';$/;"	C
+RemoveEntity	app_m/actions.js	/^export function RemoveEntity(identity) {$/;"	f
+RemoveEntity	app_m/processes/RemoveEntityProcess.js	/^const RemoveEntity = `$/;"	C
+RemoveEntity	server/cms/types/queries/RemoveEntity.js	/^const RemoveEntity = {$/;"	c
+RemoveEntityProcess	app_m/processes/RemoveEntityProcess.js	/^const RemoveEntityProcess = {$/;"	c
+RemoveSwipeableProp	app_w/components/utils/RemoveSwipeableProp.js	/^const RemoveSwipeableProp = (props) => {$/;"	C
+Root	app_m/components/Root.js	/^const Root = () => <Provider store={store}><App\/><\/Provider>;$/;"	C
+Root	app_w/Root.js	/^class Root extends Component {$/;"	c
+SAVE_ENTITY	app_m/actions.js	/^export const SAVE_ENTITY        = 'SAVE_ENTITY';$/;"	C
+SET_ARTIST	app_w/actions.js	/^export const SET_ARTIST            = 'SET_ARTIST';$/;"	C
+SET_LOCALE	app_w/actions.js	/^export const SET_LOCALE                  = 'SET_LOCALE';$/;"	C
+SET_NEW_PASSWORD	app_m/actions.js	/^export const SET_NEW_PASSWORD    = 'SET_NEW_PASSWORD'$/;"	C
+SET_NEXT_PRODUCT	app_w/actions.js	/^export const SET_NEXT_PRODUCT            = 'SET_NEXT_PRODUCT';$/;"	C
+SET_NEXT_PRODUCT_GROUP	app_w/actions.js	/^export const SET_NEXT_PRODUCT_GROUP      = 'SET_NEXT_PRODUCT_GROUP';$/;"	C
+SET_PREVIOUS_PRODUCT	app_w/actions.js	/^export const SET_PREVIOUS_PRODUCT        = 'SET_PREVIOUS_PRODUCT';$/;"	C
+SET_PREVIOUS_PRODUCT_GROUP	app_w/actions.js	/^export const SET_PREVIOUS_PRODUCT_GROUP  = 'SET_PREVIOUS_PRODUCT_GROUP';$/;"	C
+SET_PRODUCT	app_w/actions.js	/^export const SET_PRODUCT                 = 'SET_PRODUCT';$/;"	C
+SET_PRODUCT_GROUP	app_w/actions.js	/^export const SET_PRODUCT_GROUP           = 'SET_PRODUCT_GROUP';$/;"	C
+SIGNUP	app_m/actions.js	/^export const SIGNUP              = 'SIGNUP';$/;"	C
+STRING	server/cms/shared_server_app/dataItemType.js	/^  STRING:          'STRING',$/;"	p	class:DATA_ITEM_TYPE
+SaveEntity	app_m/actions.js	/^export function SaveEntity(entityDescriptionDiff) {$/;"	f
+SaveEntityProcess	app_m/processes/SaveEntityProcess.js	/^const SaveEntityProcess = {$/;"	c
+SessionStorageMock	app_m/test/session-storage-mock.js	/^export default class SessionStorageMock {$/;"	c
+SetArtist	app_w/actions.js	/^export function SetArtist(name) {$/;"	f
+SetLocale	app_w/actions.js	/^export function SetLocale(locale) {$/;"	f
+SetNewPassword	app_m/actions.js	/^export function SetNewPassword(password,newPassword) {$/;"	f
+SetNewPasswordProcess	app_m/processes/SetNewPasswordProcess.js	/^const SetNewPasswordProcess = {$/;"	c
+SetNextProduct	app_w/actions.js	/^export function SetNextProduct() {$/;"	f
+SetNextProductGroup	app_w/actions.js	/^export function SetNextProductGroup(currentPgId) {$/;"	f
+SetPreviousProduct	app_w/actions.js	/^export function SetPreviousProduct() {$/;"	f
+SetPreviousProductGroup	app_w/actions.js	/^export function SetPreviousProductGroup(currentPgId) {$/;"	f
+SetProduct	app_w/actions.js	/^export function SetProduct(pid,pgid) {$/;"	f
+SetProductGroup	app_w/actions.js	/^export function SetProductGroup(id) {$/;"	f
+Signup	app_m/actions.js	/^export function Signup(name,password) {$/;"	f
+SignupProcess	app_m/processes/SignupProcess.js	/^const SignupProcess = {$/;"	c
+Start page	app_w/i18n/translated.json	/^    "Start page": "Start page",$/;"	s	object:en-US
+Start page	app_w/i18n/translated.json	/^    "Start page": "Startseite",$/;"	s	object:de-DE
+StringChanger	server/cms/types/queries/utils/propertyChangers/StringChanger.js	/^const StringChanger = {$/;"	c
+StringProperty	server/cms/gvda/createGraphQLSchema.js	/^  const StringProperty = new GraphQLObjectType({$/;"	C
+StringPropertyState	app_m/components/propertyStates/StringPropertyState.js	/^const StringPropertyState = {$/;"	c
+StringPropertyView	app_m/components/propertyViews/StringPropertyView.js	/^class StringPropertyView extends PropertyView {$/;"	c
+Test	test/README.md	/^Test$/;"	c
+Title	app_w/components/Title.js	/^class Title extends Component {$/;"	c
+TranslatedMessage	server/cms/types/schemaTypes/TranslatedMessage.js	/^TranslatedMessage.prototype = Object.create(mongoose.SchemaType.prototype);$/;"	c
+TranslatedMessage	server/cms/types/schemaTypes/TranslatedMessage.js	/^function TranslatedMessage(key, options) {$/;"	f
+TranslatedString	server/cms/gvda/createGraphQLSchema.js	/^  const TranslatedString = new GraphQLObjectType({$/;"	C
+TranslatedString	server/cms/types/queries/utils/propertyDescriptionFactories/mkTranslatedStringsDescription.js	/^function TranslatedString(id,localizedStrings,removable) {$/;"	c
+TranslatedString	server/cms/types/schemaTypes/TranslatedString.js	/^let TranslatedString = mongoose.Schema({$/;"	v
+TranslatedStringView	app_m/components/translationComponents/TranslatedStringView.js	/^class TranslatedStringView extends Component {$/;"	c
+TranslatedStringsChanger	server/cms/types/queries/utils/propertyChangers/TranslatedStringsChanger.js	/^const TranslatedStringsChanger = {$/;"	c
+TranslatedStringsProperty	server/cms/gvda/createGraphQLSchema.js	/^  const TranslatedStringsProperty = new GraphQLObjectType({$/;"	C
+Translation	server/cms/types/models/Translation.js	/^let Translation = mongoose.model('Translation', translation);$/;"	v
+TranslationOverview	app_m/components/overviews/TranslationOverview.js	/^export class TranslationOverview extends Overview {$/;"	c
+TranslationView	app_m/components/TranslationView.js	/^export class TranslationView extends Component {$/;"	c
+TweenLite	app_m/webpack.config.js	/^        "TweenLite": "node_modules\/gsap\/src\/uncompressed\/TweenLite",$/;"	p	class:module.exports.resolve.alias
+Types	server/cms/types/schemas/mainView.js	/^let Types = mongoose.Schema.Types;$/;"	v
+Types	server/cms/types/schemas/mainview.js	/^let Types = mongoose.Schema.Types;$/;"	v
+Types	server/cms/types/schemas/product.js	/^let Types = mongoose.Schema.Types;$/;"	v
+Types	server/cms/types/schemas/productGroup.js	/^let Types = mongoose.Schema.Types;$/;"	v
+UPLOADED	server/cms/shared_server_app/uploadState.js	/^  UPLOADED:     'UPLOADED',$/;"	p	class:UPLOAD_STATE
+UPLOAD_STATE	server/cms/shared_server_app/uploadState.js	/^export const UPLOAD_STATE = {$/;"	c
+User	server/cms/types/models/User.js	/^let User = mongoose.model('User', user);$/;"	v
+UserMenu	app_m/components/UserMenu.js	/^const UserMenu = ({user, onLogout, onNewPassword}) => {$/;"	C
+UserOverview	app_m/components/overviews/UserOverview.js	/^export class UserOverview extends Overview {$/;"	c
+Value	app_w/components/products/Product.js	/^const Value = ({property, children, ...restProps}) => {$/;"	C
+VoidOutput	server/cms/gvda/createGraphQLSchema.js	/^  const VoidOutput = new GraphQLObjectType({$/;"	C
+Website and its CMS of kunstumsglas.at	README.md	/^# Website and its CMS of kunstumsglas.at$/;"	c
+__html	app_w/components/Artist.js	/^    const html = {__html:artist.contact_html};$/;"	p	class:Artist.render.html
+__html	app_w/components/products/ProductGroupDescription.js	/^    const html = {__html:props.introduction_html};$/;"	p	class:ProductGroupDescription.render.html
+__html	app_w/components/utils/HtmlText.js	/^  const html = {__html:message};$/;"	p	class:html
+__webpack_require__	public/app.bundle.js	/^\/******\/ 	function __webpack_require__(moduleId) {$/;"	f
+_cachedLandingPageData	app_w/reducers/locale.js	/^  _cachedLandingPageData: {}$/;"	p	class:defaultState
+_cachedLocalizedMessages	app_w/reducers/locale.js	/^  _cachedLocalizedMessages: {},$/;"	p	class:defaultState
+_cachedProductGroups	app_w/reducers/productGroup.js	/^  _cachedProductGroups: {},$/;"	p	class:defaultState
+_creationContext	app_m/reducers/entity.js	/^  _creationContext: null$/;"	p	class:defaultState
+_forcePicReloadEntityId	app_m/reducers/entity.js	/^  _forcePicReloadEntityId: null,$/;"	p	class:defaultState
+_forcePicReloadEntityId	app_m/reducers/entity.js	/^  let _forcePicReloadEntityId = id;$/;"	v
+_history	app_m/reducers/entity.js	/^  _history: [],$/;"	p	class:defaultState
+_history	app_m/reducers/entity.js	/^  let _history = mkHistoryAfterLoadEntity($/;"	v
+_history	app_m/reducers/entity.js	/^  let _history = state._history;$/;"	v
+_locale	app_w/reducers/artist.js	/^  _locale: undefined,$/;"	p	class:defaultState
+_locale	app_w/reducers/productGroup.js	/^  _locale: undefined$/;"	p	class:defaultState
+_runningProcess	app_m/reducers/auth.js	/^  _runningProcess: null,$/;"	p	class:defaultState
+_runningProcess	app_m/reducers/auth.js	/^  let _runningProcess = process.create();$/;"	v
+_runningProcess	app_m/reducers/auth.js	/^  let _runningProcess = state._runningProcess;$/;"	v
+_runningProcess	app_m/reducers/entity.js	/^  _runningProcess: null,$/;"	p	class:defaultState
+_runningProcess	app_m/reducers/entity.js	/^  let _runningProcess = process.create();$/;"	v
+_runningProcess	app_m/reducers/entity.js	/^  let _runningProcess = state._runningProcess;$/;"	v
+_runningProcess	app_w/reducers/artist.js	/^  _runningProcess: null,$/;"	p	class:defaultState
+_runningProcess	app_w/reducers/locale.js	/^  _runningProcess: null,$/;"	p	class:defaultState
+_runningProcess	app_w/reducers/productGroup.js	/^  _runningProcess: null,$/;"	p	class:defaultState
+_runningProcess	app_w/reducers/utils.js	/^  let _runningProcess = process.create();$/;"	v
+_runningProcess	app_w/reducers/utils.js	/^  let _runningProcess = state._runningProcess;$/;"	v
+aPlacingIsRunning	app_m/components/CollectionsView.js	/^                              aPlacingIsRunning:                false,$/;"	p	class:CollectionsView.constructor.draggableState
+about.us	app_w/i18n/translated.json	/^    "about.us": "About us",$/;"	s	object:en-US
+about.us	app_w/i18n/translated.json	/^    "about.us": "Über uns",$/;"	s	object:de-DE
+adaptDocument	server/locales/init.js	/^const adaptDocument = (doc,localizedStringsProperties,locales) => {$/;"	C
+adaptDocuments	server/locales/init.js	/^const adaptDocuments = (locales,productModelsWithLocalizedStrings) => {$/;"	C
+adaptTranslatedStrings	server/locales/init.js	/^const adaptTranslatedStrings = (translatedStrings,properties,locales) => {$/;"	C
+adaptValue	server/locales/init.js	/^const adaptValue = (id,property,value,locales) => {$/;"	C
+addEntityDescription	app_m/processes/LoadEntityProcess.js	/^  addEntityDescription(identity, graphQLResult) {$/;"	m	class:LoadEntityProcess
+addEntityOverviews	app_m/processes/LoadEntityProcess.js	/^  addEntityOverviews(entityDescription, graphQLResult) {$/;"	m	class:LoadEntityProcess
+addEntityPropertyValues	app_m/processes/LoadEntityProcess.js	/^  addEntityPropertyValues(entityOverviews, { entityDescription }) {$/;"	m	class:LoadEntityProcess
+addError	app_m/reducers/error.js	/^const addError = (state,action) => {$/;"	C
+addGetFileRoutes	server/cms/types/addGetFileRoutes.js	/^const addGetFileRoutes = (app,db) => {$/;"	C
+addIfExist	app_w/components/products/Product.js	/^  addIfExist(alt,properties,propertyName) {$/;"	m	class:Product
+additionalErrors	app_m/reducers/error.js	/^    let additionalErrors = state.additionalErrors.slice(0);$/;"	v
+additionalErrors	app_m/reducers/error.js	/^  additionalErrors:    []$/;"	p	class:defaultState
+additionalErrors	app_m/reducers/error.js	/^  let additionalErrors = state.additionalErrors.slice(0);$/;"	v
+alias	app_m/webpack.config.js	/^    alias: {$/;"	c	class:module.exports.resolve
+allBack	app_m/components/EntityView.js	/^    const allBack = entityChanged ? this.getAllBackButton() : null;$/;"	C
+allEntitiesExist	server/cms/types/queries/utils/propertyChangers/IdArrayChanger.js	/^const allEntitiesExist = (ids, dbModel) =>$/;"	C
+allIds	server/cms/types/queries/utils/propertyDescriptionFactories/mkTranslatedStringsDescription.js	/^  const allIds              = getAllIdsSorted(translatedStrings,defaultMessagesMap);$/;"	C
+allLocaleTranslationPairs	server/cms/types/schemaTypes/TranslatedMessage.js	/^const allLocaleTranslationPairs = (vals) => {$/;"	C
+app	server/server.js	/^let app = express();$/;"	v
+app	test/README.md	/^app$/;"	s
+appError	app_m/reducers/error.js	/^  let appError = new AppError(action.title, action.errorMessages)$/;"	v
+apply	app_w/MakeDefaultMessagesWebpackPlugin.js	/^MakeDefaultMessagesWebpackPlugin.prototype.apply = function(compiler) {$/;"	m	class:MakeDefaultMessagesWebpackPlugin
+args	app_m/components/EntityView.js	/^    const args = {$/;"	c	class:EntityView.mkPropertyState
+array	server/cms/types/queries/utils/propertyDescriptionFactories/mkTranslatedStringsDescription.js	/^  const array = translatedStrings.map(ts=>ts.id).sort().reduce((a,id)=>{$/;"	C
+artist	app_w/components/Artist.js	/^  artist:      PropTypes.object,$/;"	p	class:Artist.propTypes
+artist	app_w/reducers/artist.js	/^  artist: undefined$/;"	p	class:defaultState
+artist	app_w/reducers/artist.js	/^  const artist = action.result;$/;"	C
+artist	app_w/reducers/artist.js	/^const artist = (state = defaultState, action) => {$/;"	C
+artistName	app_w/components/products/ProductGallery.js	/^  artistName:   PropTypes.string,$/;"	p	class:ProductGallery.propTypes
+attempts	server/db/connectToDb.js	/^var attempts = 0;$/;"	v
+auth	app_m/reducers/auth.js	/^const auth = (state = defaultState, action) => {$/;"	C
+author	package.json	/^  "author": "Poprádi Árpád",$/;"	s
+autoprefixer	package.json	/^    "autoprefixer": "7.1.5",$/;"	s	object:devDependencies
+babel-cli	package.json	/^    "babel-cli": "6.26.0",$/;"	s	object:devDependencies
+babel-core	package.json	/^    "babel-core": "6.26.0",$/;"	s	object:devDependencies
+babel-eslint	package.json	/^    "babel-eslint": "8.0.1",$/;"	s	object:devDependencies
+babel-jest	package.json	/^    "babel-jest": "21.2.0",$/;"	s	object:devDependencies
+babel-loader	package.json	/^    "babel-loader": "7.1.2",$/;"	s	object:devDependencies
+babel-plugin-react-intl	package.json	/^    "babel-plugin-react-intl": "2.3.1",$/;"	s	object:devDependencies
+babel-plugin-transform-class-properties	package.json	/^    "babel-plugin-transform-class-properties": "6.24.1",$/;"	s	object:devDependencies
+babel-plugin-transform-object-rest-spread	package.json	/^    "babel-plugin-transform-object-rest-spread": "6.26.0",$/;"	s	object:devDependencies
+babel-preset-es2015	package.json	/^    "babel-preset-es2015": "6.24.1",$/;"	s	object:devDependencies
+babel-preset-react	package.json	/^    "babel-preset-react": "6.24.1",$/;"	s	object:devDependencies
+babel-register	package.json	/^    "babel-register": "6.26.0",$/;"	s	object:devDependencies
+back	app_m/reducers/entity.js	/^const back = state => {$/;"	C
+back	app_w/i18n/translated.json	/^    "back": "back",$/;"	s	object:en-US
+back	app_w/i18n/translated.json	/^    "back": "zurück",$/;"	s	object:de-DE
+backAllowed	app_m/components/App.js	/^  backAllowed:           PropTypes.bool.isRequired,$/;"	p	class:App.propTypes
+backAllowed	app_m/reducers/entity.js	/^  backAllowed: false,$/;"	p	class:defaultState
+backAllowed	app_m/reducers/entity.js	/^  let backAllowed = isBackAllowed(_history);$/;"	v
+backgroundImage	app_m/components/overviews/ProductOverview.js	/^    let style = {backgroundImage: 'url(' + this.getPicPath('Product') + ')'};$/;"	p	class:ProductOverview.render.style
+backgroundImage	app_m/components/overviews/UserOverview.js	/^    let style = {backgroundImage: 'url(' + this.getPicPath('User') + ')'};$/;"	p	class:UserOverview.render.style
+backward	app_m/reducers/entity.js	/^  let backward =$/;"	v
+baseFileName	app_m/components/propertyStates/FileUploadStatusPropertyState.js	/^      baseFileName: this.baseFileName$/;"	p	class:FileUploadStatusPropertyState.render.props
+baseFileName	app_m/components/propertyViews/FileUploadStatusPropertyView.js	/^   baseFileName:           PropTypes.string.isRequired$/;"	p	class:FileUploadStatusPropertyView.propTypes
+baseModelName	server/cms/types/queries/utils/getModel.js	/^  let baseModelName = entity.constructor.modelName;$/;"	v
+bcrypt	package.json	/^    "bcrypt": "3.0.4",$/;"	s	object:dependencies
+bigPicBuffer	server/cms/types/queries/utils/savePics.js	/^    let bigPicBuffer = bufferFromDataUrl(bigPicDataUrl);$/;"	v
+body	public/main.css	/^body {$/;"	s
+body	server/cms/auth/mkAuthRoutes.js	/^  const body = req.body;$/;"	C
+body-parser	package.json	/^    "body-parser": "1.18.2",$/;"	s	object:dependencies
+buffer	server/cms/types/queries/utils/saveFile.js	/^    let buffer   = bufferFromDataUrl(valueAsString);$/;"	v
+buffer-equal	package.json	/^    "buffer-equal": "1.0.0",$/;"	s	object:devDependencies
+bufferFromDataUrl	server/cms/types/queries/utils/bufferFromDataUrl.js	/^const bufferFromDataUrl = (data) => {$/;"	C
+bufferstream	package.json	/^    "bufferstream": "0.6.2",$/;"	s	object:dependencies
+build	package.json	/^    "build": "npm run build_app_m && npm run build_app_w && npm run build_server",$/;"	s	object:scripts
+buildLocales	app_w/webpack.config.js	/^const buildLocales = require('.\/MakeDefaultMessagesWebpackPlugin');$/;"	C
+build_app_m	package.json	/^    "build_app_m": "node .\/node_modules\/webpack\/bin\/webpack.js --config app_m\/webpack.confi/;"	s	object:scripts
+build_app_w	package.json	/^    "build_app_w": "node .\/node_modules\/webpack\/bin\/webpack.js --config app_w\/webpack.confi/;"	s	object:scripts
+build_server	package.json	/^    "build_server": "rm -rf server_build\/* && babel server --out-dir server_build --source-maps/;"	s	object:scripts
+building_app_m	package.json	/^    "building_app_m": "npm run build_app_m -- --progress --colors --watch",$/;"	s	object:scripts
+building_app_w	package.json	/^    "building_app_w": "npm run build_app_w -- --progress --colors --watch",$/;"	s	object:scripts
+cacheIn	server/cache/CacheIn.js	/^const cacheIn = () => {$/;"	C
+cacheOut	server/cache/cacheOut.js	/^const cacheOut = () => theLoadedCache;$/;"	C
+cacheSchema	server/cms/types/schemas/cache.js	/^var cacheSchema = mongoose.Schema({$/;"	v
+cancelText	app_m/components/dialogs/ConfirmDialog.js	/^  cancelText:     PropTypes.string.isRequired,$/;"	p	class:ConfirmDialog.propTypes
+cast	server/cms/types/schemaTypes/FileUploadStatus.js	/^FileUploadStatus.prototype.cast = function(val) {$/;"	m	class:FileUploadStatus
+cast	server/cms/types/schemaTypes/TranslatedMessage.js	/^TranslatedMessage.prototype.cast = function(val) {$/;"	m	class:TranslatedMessage
+chai	package.json	/^    "chai": "4.1.2",$/;"	s	object:devDependencies
+change	server/cms/types/queries/utils/propertyChangers/BoolChanger.js	/^  change() {$/;"	m	class:BoolChanger
+change	server/cms/types/queries/utils/propertyChangers/FileChanger.js	/^  change() {$/;"	m	class:FileChanger
+change	server/cms/types/queries/utils/propertyChangers/IdArrayChanger.js	/^  change() {$/;"	m	class:IdArrayChanger
+change	server/cms/types/queries/utils/propertyChangers/LocalizedStringsChanger.js	/^  change() {$/;"	m	class:LocalizedStringsChanger
+change	server/cms/types/queries/utils/propertyChangers/PicsChanger.js	/^  change() {$/;"	m	class:PicsChanger
+change	server/cms/types/queries/utils/propertyChangers/StringChanger.js	/^  change() {$/;"	m	class:StringChanger
+change	server/cms/types/queries/utils/propertyChangers/TranslatedStringsChanger.js	/^  change() {$/;"	m	class:TranslatedStringsChanger
+changeEntity	server/cms/types/init.js	/^  let changeEntity = ChangeEntity.create(db);$/;"	v
+changeEntity	server/cms/types/queries/utils/EntityChanger.js	/^  changeEntity() {$/;"	m	class:EntityChanger
+changeLocaleText	app_w/components/Title.js	/^  changeLocaleText: PropTypes.string.isRequired$/;"	p	class:Title.propTypes
+changedExternalComponentStates	app_m/components/EntityView.js	/^    let changedExternalComponentStates = [];$/;"	v
+changedInterval	app_m/components/CollectionsView.js	/^                              changedInterval:                  [],$/;"	p	class:CollectionsView.constructor.draggableState
+changedPropertiesMap	app_m/components/EntityView.js	/^    let changedPropertiesMap = merge({}, this.state.changedPropertiesMap);$/;"	v
+changedTranslations	app_m/components/translationComponents/TranslatedStringView.js	/^  changedTranslations:   PropTypes.object,$/;"	p	class:TranslatedStringView.propTypes
+checkConfig	server/cms/auth/init.js	/^const checkConfig = (config) => {$/;"	C
+checkConfig	server/cms/auth/mkAuthRoutes.js	/^const checkConfig = (config) => {$/;"	C
+checkTypes	server/cms/types/queries/CreateEntityTo.js	/^const checkTypes = (parent, property) => {$/;"	C
+children	app_w/components/App.js	/^  children:          PropTypes.object,$/;"	p	class:App.propTypes
+children	app_w/components/Main.js	/^  children: React.PropTypes.object$/;"	p	class:Main.propTypes
+circle-back-arrow-glyph	app_w/assets/icons/left-arrow.svg	/^         fill="#000000" \/>$/;"	i
+circle-back-arrow-glyph	public/app_w/assets/icons/left-arrow.svg	/^         fill="#000000" \/>$/;"	i
+circle-next-arrow-disclosure-glyph	app_w/assets/icons/right-arrow.svg	/^         fill="#000000" \/>$/;"	i
+circle-next-arrow-disclosure-glyph	public/app_w/assets/icons/right-arrow.svg	/^         fill="#000000" \/>$/;"	i
+className	app_m/components/CollectionsView.js	/^      let className= classnames({'kugm-collectionsview': true,$/;"	v
+classnames	package.json	/^    "classnames": "2.2.5",$/;"	s	object:dependencies
+cmsConfig	server/config/CmsConfig.js	/^var cmsConfig = mongoose.Schema({$/;"	v
+colIx	app_m/components/CollectionsView.js	/^      let colIx = Math.floor( (x \/ itemGutterLength) );$/;"	v
+column	app_m/components/CollectionsView.js	/^      let column  = i % maxColumn;$/;"	v
+componentDidMount	app_w/components/pages/AboutUs.js	/^  componentDidMount() {$/;"	m	class:AboutUs
+componentDidMount	app_w/components/products/GalleryOfAProductGroup.js	/^  componentDidMount() {$/;"	m	class:GalleryOfAProductGroup
+componentDidMount	app_w/components/products/ProductGallery.js	/^  componentDidMount() {$/;"	m	class:ProductGallery
+componentDidMount	app_w/components/products/ProductGroupGallery.js	/^  componentDidMount() {$/;"	m	class:ProductGroupGallery
+componentDidUpdate	app_m/components/propertyViews/LocalizedStringsPropertyView.js	/^  componentDidUpdate() {$/;"	m	class:LocalizedStringsPropertyView
+componentDidUpdate	app_m/components/propertyViews/StringPropertyView.js	/^  componentDidUpdate() {$/;"	m	class:StringPropertyView
+componentDidUpdate	app_w/components/pages/AboutUs.js	/^  componentDidUpdate() {$/;"	m	class:AboutUs
+componentWillReceiveProps	app_m/components/App.js	/^  componentWillReceiveProps(nextProps) {$/;"	m	class:App
+componentWillReceiveProps	app_m/components/EntityView.js	/^  componentWillReceiveProps(nextProps) {$/;"	m	class:EntityView
+componentWillReceiveProps	app_m/components/LoginSignup.js	/^  componentWillReceiveProps(nextProps) {$/;"	m	class:LoginSignup
+componentWillReceiveProps	app_m/components/TranslationView.js	/^  componentWillReceiveProps(nextProps) {$/;"	m	class:TranslationView
+componentWillReceiveProps	app_m/components/propertyViews/LocalizedStringsPropertyView.js	/^  componentWillReceiveProps(nextProps) {$/;"	m	class:LocalizedStringsPropertyView
+componentWillReceiveProps	app_m/components/propertyViews/StringPropertyView.js	/^  componentWillReceiveProps(nextProps) {$/;"	m	class:StringPropertyView
+componentWillReceiveProps	app_m/components/translationComponents/TranslatedStringView.js	/^  componentWillReceiveProps(nextProps) {$/;"	m	class:TranslatedStringView
+componentWillReceiveProps	app_w/components/products/ProductGallery.js	/^  componentWillReceiveProps(nextProps) {$/;"	m	class:ProductGallery
+componentWillReceiveProps	app_w/components/products/ProductGroupGallery.js	/^  componentWillReceiveProps(nextProps) {$/;"	m	class:ProductGroupGallery
+componentWillUnmount	app_w/components/products/GalleryOfAProductGroup.js	/^  componentWillUnmount() {$/;"	m	class:GalleryOfAProductGroup
+componentWillUnmount	app_w/components/products/ProductGallery.js	/^  componentWillUnmount() {$/;"	m	class:ProductGallery
+componentWillUnmount	app_w/components/products/ProductGroupGallery.js	/^  componentWillUnmount() {$/;"	m	class:ProductGroupGallery
+componentWillUpdate	app_m/components/CollectionsView.js	/^    componentWillUpdate(nextProps) {$/;"	m	class:CollectionsView
+compression-webpack-plugin	package.json	/^    "compression-webpack-plugin": "1.0.1",$/;"	s	object:devDependencies
+configDb	test/run_server_test.js	/^  let configDb = require('..\/server\/config\/db.js');$/;"	v
+configObject	server/cms/auth/mkAuthRoutes.js	/^  const configObject = config.toObject();$/;"	C
+configPath	server/config/pathes.js	/^export const configPath  = path.resolve(__dirname,'..\/..\/server\/config');$/;"	C
+configPath	test/run_server_test.js	/^var configPath       = path.resolve(__dirname,'..\/server\/config');$/;"	v
+confirmText	app_m/components/dialogs/ConfirmDialog.js	/^  confirmText:    PropTypes.string.isRequired,$/;"	p	class:ConfirmDialog.propTypes
+connect-mongo	package.json	/^    "connect-mongo": "2.0.0",$/;"	s	object:dependencies
+connectToDb	server/db/connectToDb.js	/^const connectToDb = (config_db) => {$/;"	C
+constructor	app_m/components/App.js	/^  constructor(){$/;"	m	class:App
+constructor	app_m/components/CollectionsView.js	/^    constructor(){$/;"	m	class:CollectionsView
+constructor	app_m/components/EntityView.js	/^  constructor() {$/;"	m	class:EntityView
+constructor	app_m/components/LoginSignup.js	/^  constructor(){$/;"	m	class:LoginSignup
+constructor	app_m/components/NewPassword.js	/^  constructor(){$/;"	m	class:NewPassword
+constructor	app_m/components/TranslationView.js	/^  constructor(){$/;"	m	class:TranslationView
+constructor	app_m/components/dialogs/ConfirmDialog.js	/^    constructor(){$/;"	m	class:ConfirmDialog
+constructor	app_m/components/dialogs/ConfirmRemoveDialog.js	/^    constructor(){$/;"	m	class:ConfirmRemoveDialog
+constructor	app_m/components/dialogs/ErrorDialog.js	/^    constructor(){$/;"	m	class:ErrorDialog
+constructor	app_m/components/overviews/GalleryItemOverview.js	/^  constructor(){$/;"	m	class:GalleryItemOverview
+constructor	app_m/components/overviews/Overview.js	/^  constructor(){$/;"	m	class:Overview
+constructor	app_m/components/overviews/ProductGroupOverview.js	/^  constructor(){$/;"	m	class:ProductGroupOverview
+constructor	app_m/components/overviews/ProductOverview.js	/^  constructor(){$/;"	m	class:ProductOverview
+constructor	app_m/components/overviews/TranslationOverview.js	/^  constructor(){$/;"	m	class:TranslationOverview
+constructor	app_m/components/overviews/UserOverview.js	/^  constructor(){$/;"	m	class:UserOverview
+constructor	app_m/components/propertyViews/BoolPropertyView.js	/^    constructor(){$/;"	m	class:BoolPropertyView
+constructor	app_m/components/propertyViews/DataURLPropertyView.js	/^  constructor(){$/;"	m	class:DataURLPropertyView
+constructor	app_m/components/propertyViews/FileUploadStatusPropertyView.js	/^    constructor(){$/;"	m	class:FileUploadStatusPropertyView
+constructor	app_m/components/propertyViews/IdArrayPropertyView.js	/^  constructor(){$/;"	m	class:IdArrayPropertyView
+constructor	app_m/components/propertyViews/LocalizedStringsPropertyView.js	/^  constructor(){$/;"	m	class:LocalizedStringsPropertyView
+constructor	app_m/components/propertyViews/PropertyView.js	/^    constructor(){$/;"	m	class:PropertyView
+constructor	app_m/components/propertyViews/StringPropertyView.js	/^  constructor(){$/;"	m	class:StringPropertyView
+constructor	app_m/components/translationComponents/TranslatedStringView.js	/^  constructor(){$/;"	m	class:TranslatedStringView
+constructor	app_m/test/local-storage-mock.js	/^  constructor() {$/;"	m	class:LocalStorageMock
+constructor	app_m/test/session-storage-mock.js	/^  constructor() {$/;"	m	class:SessionStorageMock
+constructor	app_w/Root.js	/^  constructor() {$/;"	m	class:Root
+constructor	app_w/components/App.js	/^  constructor() {$/;"	m	class:App
+constructor	app_w/components/Artist.js	/^  constructor() {$/;"	m	class:Artist
+constructor	app_w/components/CookieBanner.js	/^  constructor() {$/;"	m	class:CookieBanner
+constructor	app_w/components/Copyright.js	/^  constructor() {$/;"	m	class:Copyright
+constructor	app_w/components/Info.js	/^  constructor() {$/;"	m	class:Info
+constructor	app_w/components/Main.js	/^  constructor() {$/;"	m	class:Main
+constructor	app_w/components/Navbar.js	/^  constructor() {$/;"	m	class:Navbar
+constructor	app_w/components/Title.js	/^  constructor() {$/;"	m	class:Title
+constructor	app_w/components/pages/AboutUs.js	/^  constructor() {$/;"	m	class:AboutUs
+constructor	app_w/components/pages/Contact.js	/^  constructor() {$/;"	m	class:Contact
+constructor	app_w/components/pages/DataProtectionPolicy.js	/^  constructor() {$/;"	m	class:DataProtectionPolicy
+constructor	app_w/components/pages/Impressum.js	/^  constructor() {$/;"	m	class:Impressum
+constructor	app_w/components/products/GalleryOfAProductGroup.js	/^  constructor() {$/;"	m	class:GalleryOfAProductGroup
+constructor	app_w/components/products/GalleryOfAProductGroupItem.js	/^  constructor() {$/;"	m	class:GalleryOfAProductGroupItem
+constructor	app_w/components/products/Product.js	/^  constructor() {$/;"	m	class:Product
+constructor	app_w/components/products/ProductGallery.js	/^  constructor() {$/;"	m	class:ProductGallery
+constructor	app_w/components/products/ProductGroup.js	/^  constructor() {$/;"	m	class:ProductGroup
+constructor	app_w/components/products/ProductGroupDescription.js	/^  constructor() {$/;"	m	class:ProductGroupDescription
+constructor	app_w/components/products/ProductGroupGallery.js	/^  constructor() {$/;"	m	class:ProductGroupGallery
+constructor	app_w/components/products/ProductGroups.js	/^  constructor() {$/;"	m	class:ProductGroups
+constructor	app_w/components/products/Products.js	/^  constructor() {$/;"	m	class:Products
+constructor	app_w/components/products/ProductsGalleryItem.js	/^  constructor() {$/;"	m	class:ProductsGalleryItem
+constructor	server/cms/types/queries/utils/isEntityRemovable.js	/^  let constructor = entity.constructor;$/;"	v
+constructor	server/error/KugmError.js	/^BadRequest.prototype.constructor = BadRequest;$/;"	m	class:BadRequest
+constructor	server/error/KugmError.js	/^InternalServerError.prototype.constructor = InternalServerError;$/;"	m	class:InternalServerError
+constructor	server/error/KugmError.js	/^KugmError.prototype.constructor = KugmError;$/;"	m	class:KugmError
+constructor	server/error/KugmError.js	/^NotFound.prototype.constructor = NotFound;$/;"	m	class:NotFound
+constructorArgs	server/cms/types/queries/utils/mkTemporaryEntity.js	/^  let constructorArgs = {};$/;"	v
+contact	app_w/i18n/translated.json	/^    "contact": "Contact",$/;"	s	object:en-US
+contact	app_w/i18n/translated.json	/^    "contact": "Kontakt",$/;"	s	object:de-DE
+content	app_m/components/CollectionsView.js	/^      let content = (menu.id) ? this.props.createItemMenu(menu.id) : this.props.createBackground/;"	v
+cookie-parser	package.json	/^    "cookie-parser": "1.4.3",$/;"	s	object:dependencies
+cookie.banner.text	app_w/i18n/translated.json	/^    "cookie.banner.text": "Diese Seite verwendet cookies.",$/;"	s	object:de-DE
+cookie.banner.text	app_w/i18n/translated.json	/^    "cookie.banner.text": "This page uses cookies.",$/;"	s	object:en-US
+create	app_m/components/propertyStates/BoolPropertyState.js	/^  create({ propertyDescription, onChanged, onUnchanged }) {$/;"	m	class:BoolPropertyState
+create	app_m/components/propertyStates/DataURLPropertyState.js	/^  create({ propertyDescription, onChanged, onUnchanged }) {$/;"	m	class:DataURLPropertyState
+create	app_m/components/propertyStates/FileUploadStatusPropertyState.js	/^  create({ propertyDescription, onChanged, onUnchanged, entityDescription }) {$/;"	m	class:FileUploadStatusPropertyState
+create	app_m/components/propertyStates/IdArrayPropertyState.js	/^  create({$/;"	m	class:IdArrayPropertyState
+create	app_m/components/propertyStates/LocalizedStringsPropertyState.js	/^  create({$/;"	m	class:LocalizedStringsPropertyState
+create	app_m/components/propertyStates/StringPropertyState.js	/^  create({$/;"	m	class:StringPropertyState
+create	app_m/processes/CreateEntityToProcess.js	/^  create() {$/;"	m	class:CreateEntityToProcess
+create	app_m/processes/IsLoggedInProcess.js	/^  create() {$/;"	m	class:IsLoggedInProcess
+create	app_m/processes/LoadEntityProcess.js	/^  create() {$/;"	m	class:LoadEntityProcess
+create	app_m/processes/LoginProcess.js	/^  create() {$/;"	m	class:LoginProcess
+create	app_m/processes/LogoutProcess.js	/^  create() {$/;"	m	class:LogoutProcess
+create	app_m/processes/RemoveEntityProcess.js	/^  create() {$/;"	m	class:RemoveEntityProcess
+create	app_m/processes/SaveEntityProcess.js	/^  create() {$/;"	m	class:SaveEntityProcess
+create	app_m/processes/SetNewPasswordProcess.js	/^  create() {$/;"	m	class:SetNewPasswordProcess
+create	app_m/processes/SignupProcess.js	/^  create() {$/;"	m	class:SignupProcess
+create	app_w/processes/LoadArtistProcess.js	/^  create() {$/;"	m	class:LoadArtistProcess
+create	app_w/processes/LoadLocaleProcess.js	/^  create() {$/;"	m	class:LoadLocaleProcess
+create	app_w/processes/LoadProductGroupProcess.js	/^  create() {$/;"	m	class:LoadProductGroupProcess
+create	app_w/processes/LoadProductProcess.js	/^  create() {$/;"	m	class:LoadProductProcess
+create	server/cms/types/queries/ChangeEntity.js	/^  create(db) {$/;"	m	class:ChangeEntity
+create	server/cms/types/queries/CreateEntityTo.js	/^  create(db) {$/;"	m	class:CreateEntityTo
+create	server/cms/types/queries/RemoveEntity.js	/^  create(db) {$/;"	m	class:RemoveEntity
+create	server/cms/types/queries/utils/EntityChanger.js	/^  create(entity, data, db, model) {$/;"	m	class:EntityChanger
+create	server/cms/types/queries/utils/EntityFactory.js	/^  create(dbModelName, data, db) {$/;"	m	class:EntityFactory
+create	server/cms/types/queries/utils/propertyChangers/BoolChanger.js	/^  create(entity, property, valueAsString) {$/;"	m	class:BoolChanger
+create	server/cms/types/queries/utils/propertyChangers/FileChanger.js	/^  create(entity,property,valueAsString,model,db) {$/;"	m	class:FileChanger
+create	server/cms/types/queries/utils/propertyChangers/IdArrayChanger.js	/^  create(entity, property, valueAsString, model) {$/;"	m	class:IdArrayChanger
+create	server/cms/types/queries/utils/propertyChangers/LocalizedStringsChanger.js	/^  create(entity,property,valueAsString) {$/;"	m	class:LocalizedStringsChanger
+create	server/cms/types/queries/utils/propertyChangers/PicsChanger.js	/^  create(entity, property, valueAsString, model) {$/;"	m	class:PicsChanger
+create	server/cms/types/queries/utils/propertyChangers/StringChanger.js	/^  create(entity, property, valueAsString) {$/;"	m	class:StringChanger
+create	server/cms/types/queries/utils/propertyChangers/TranslatedStringsChanger.js	/^  create(entity, property, valueAsString) {$/;"	m	class:TranslatedStringsChanger
+createBackgroundMenu	app_m/components/CollectionsView.js	/^  createBackgroundMenu:      PropTypes.func.isRequired,$/;"	p	class:CollectionsView.propTypes
+createEntity	server/cms/types/queries/utils/EntityFactory.js	/^  createEntity() {$/;"	m	class:EntityFactory
+createEntityTo	server/cms/types/init.js	/^  let createEntityTo = CreateEntityTo.create(db);$/;"	v
+createFreshTestDir	test/run_server_test.js	/^const createFreshTestDir = (dir, functionality) => {$/;"	C
+createGraphQLSchema	server/cms/gvda/createGraphQLSchema.js	/^const createGraphQLSchema = (typesAccess) => {$/;"	C
+createIndex_html	test/run_server_test.js	/^const createIndex_html = () => {$/;"	C
+createItem	app_m/components/CollectionsView.js	/^  createItem:                PropTypes.func.isRequired,$/;"	p	class:CollectionsView.propTypes
+createItemMenu	app_m/components/CollectionsView.js	/^  createItemMenu:            PropTypes.func.isRequired,$/;"	p	class:CollectionsView.propTypes
+createNewItemAllowed	server/cms/types/queries/utils/mkPropertyDescriptions.js	/^  let createNewItemAllowed = setFlag(options, 'createNewItemAllowed',true);$/;"	v
+create_REGISTRATION_IS_ALLOWED	test/run_server_test.js	/^const create_REGISTRATION_IS_ALLOWED = () => {$/;"	C
+css-loader	package.json	/^    "css-loader": "0.28.7",$/;"	s	object:devDependencies
+currentError	app_m/reducers/error.js	/^  currentError:        null,$/;"	p	class:defaultState
+currentError	app_m/reducers/error.js	/^  let currentError     = null;$/;"	v
+d	public/app.bundle.js	/^\/******\/ 	__webpack_require__.d = function(exports, name, getter) {$/;"	f	function:__webpack_require__
+data.protection.policy	app_w/i18n/translated.json	/^    "data.protection.policy": "Data Protection Policy"$/;"	s	object:en-US
+data.protection.policy.contact	app_w/i18n/translated.json	/^    "data.protection.policy.contact": "The responsible body as defined by current data protectio/;"	s	object:en-US
+data.protection.policy.link	app_w/i18n/translated.json	/^    "data.protection.policy.link": "Data Protection Policy",$/;"	s	object:de-DE
+data.protection.policy.link	app_w/i18n/translated.json	/^    "data.protection.policy.link": "Data Protection Policy",$/;"	s	object:en-US
+data.protection.policy.responsible	app_w/i18n/translated.json	/^    "data.protection.policy.responsible": "The responsible body as defined by current data prote/;"	s	object:en-US
+data.protection.policy.text.in.html	app_w/i18n/translated.json	/^    "data.protection.policy.text.in.html": "<h3>Data protection policy<\/h3>Verantwortlich im Si/;"	s	object:en-US
+data.protection.policy.text.in.html	app_w/i18n/translated.json	/^    "data.protection.policy.text.in.html": "<h3>Datenschutzerklärung<\/h3>Verantwortlich im Sin/;"	s	object:de-DE
+data.protection.policy.titel	app_w/i18n/translated.json	/^    "data.protection.policy.titel": "Data Protection Policy",$/;"	s	object:en-US
+datauri	package.json	/^    "datauri": "1.0.5",$/;"	s	object:devDependencies
+datauri	server/cms/types/queries/utils/mkEntityPropertyValues.js	/^      const datauri = new Datauri();$/;"	C
+datauri	server/cms/types/queries/utils/mkPropertyDescriptions.js	/^  const datauri = new Datauri();$/;"	C
+dataurl	server/cms/types/queries/utils/mkPropertyDescriptions.js	/^  let dataurl = datauri.content;$/;"	v
+db	server/server.js	/^let db;$/;"	v
+dbModel	app_m/components/EntityView.js	/^    const dbModel = identity.dbModel;$/;"	C
+dbModel	app_m/components/dialogs/ConfirmRemoveDialog.js	/^  dbModel:        PropTypes.string.isRequired,$/;"	p	class:ConfirmRemoveDialog.propTypes
+de-DE	app_w/i18n/translated.json	/^  "de-DE": {$/;"	o
+deep-freeze	package.json	/^    "deep-freeze": "0.0.1",$/;"	s	object:devDependencies
+defaultLocalizedStringsMap	server/locales/init.js	/^const defaultLocalizedStringsMap = (locales) => {$/;"	C
+defaultMessage	app_w/build/messages/app_w/components/CookieBanner.json	/^    "defaultMessage": "a"$/;"	s	object:0
+defaultMessage	app_w/build/messages/app_w/components/CookieBanner.json	/^    "defaultMessage": "a"$/;"	s	object:1
+defaultMessage	app_w/build/messages/app_w/components/Info.json	/^    "defaultMessage": "a"$/;"	s	object:0
+defaultMessage	app_w/build/messages/app_w/components/Info.json	/^    "defaultMessage": "a"$/;"	s	object:1
+defaultMessage	app_w/build/messages/app_w/components/Info.json	/^    "defaultMessage": "a"$/;"	s	object:2
+defaultMessage	app_w/build/messages/app_w/components/Info.json	/^    "defaultMessage": "a"$/;"	s	object:3
+defaultMessage	app_w/build/messages/app_w/components/Navbar.json	/^    "defaultMessage": "a"$/;"	s	object:0
+defaultMessage	app_w/build/messages/app_w/components/Navbar.json	/^    "defaultMessage": "a"$/;"	s	object:1
+defaultMessage	app_w/build/messages/app_w/components/Navbar.json	/^    "defaultMessage": "a"$/;"	s	object:2
+defaultMessage	app_w/build/messages/app_w/components/Title.json	/^    "defaultMessage": "a"$/;"	s	object:0
+defaultMessage	app_w/build/messages/app_w/components/Title.json	/^    "defaultMessage": "a"$/;"	s	object:1
+defaultMessage	app_w/build/messages/app_w/components/pages/AboutUs.json	/^    "defaultMessage": "a"$/;"	s	object:0
+defaultMessage	app_w/build/messages/app_w/components/pages/Contact.json	/^    "defaultMessage": "a"$/;"	s	object:0
+defaultMessage	app_w/build/messages/app_w/components/pages/DataProtectionPolicy.json	/^    "defaultMessage": "a"$/;"	s	object:0
+defaultMessage	app_w/build/messages/app_w/components/pages/Impressum.json	/^    "defaultMessage": "a"$/;"	s	object:0
+defaultMessage	app_w/build/messages/app_w/components/products/GalleryOfAProductGroupItem.json	/^    "defaultMessage": "a"$/;"	s	object:0
+defaultMessage	app_w/build/messages/app_w/components/products/Product.json	/^    "defaultMessage": "a"$/;"	s	object:0
+defaultMessage	app_w/build/messages/app_w/components/products/Product.json	/^    "defaultMessage": "a"$/;"	s	object:1
+defaultMessageIds	server/cms/types/queries/utils/propertyDescriptionFactories/mkTranslatedStringsDescription.js	/^  const defaultMessageIds    = without(Object.keys(defaultMessagesMap),'_id');$/;"	C
+defaultMessages	app_w/MakeDefaultMessagesWebpackPlugin.js	/^  let defaultMessages = glob.sync(filePattern)$/;"	v
+defaultMessagesFileName	app_w/MakeDefaultMessagesWebpackPlugin.js	/^const defaultMessagesFileName = '.\/app_w\/i18n\/defaultMessages.json';$/;"	C
+defaultMessagesFileName	server/cms/types/queries/utils/propertyDescriptionFactories/readCurrentWebsiteMessageIdsMap.js	/^const defaultMessagesFileName = path.resolve(__dirname, '..\/..\/..\/..\/..\/..\/app_w\/i18n\/de/;"	C
+defaultState	app_m/reducers/auth.js	/^const defaultState = {$/;"	c
+defaultState	app_m/reducers/entity.js	/^const defaultState = {$/;"	c
+defaultState	app_m/reducers/error.js	/^const defaultState = {$/;"	c
+defaultState	app_w/reducers/artist.js	/^const defaultState = {$/;"	c
+defaultState	app_w/reducers/locale.js	/^const defaultState = {$/;"	c
+defaultState	app_w/reducers/productGroup.js	/^const defaultState = {$/;"	c
+defaultTranslatedStringsMap	server/locales/init.js	/^const defaultTranslatedStringsMap = (properties,locales) => {$/;"	C
+defaultTsMap	server/locales/init.js	/^  const defaultTsMap = defaultTranslatedStringsMap(properties,locales);$/;"	C
+defs3396	app_w/assets/icons/right-arrow.svg	/^     id="defs3396" \/>$/;"	i
+defs3396	public/app_w/assets/icons/right-arrow.svg	/^     id="defs3396" \/>$/;"	i
+defs4260	app_w/assets/icons/left-arrow.svg	/^     id="defs4260" \/>$/;"	i
+defs4260	public/app_w/assets/icons/left-arrow.svg	/^     id="defs4260" \/>$/;"	i
+denormalizeTranslatedStrings	app_m/components/TranslationView.js	/^const denormalizeTranslatedStrings = (id,entities) => {$/;"	C
+dependencies	package.json	/^  "dependencies": {$/;"	o
+desc3394	app_w/assets/icons/right-arrow.svg	/^     id="desc3394" \/>$/;"	i
+desc3394	public/app_w/assets/icons/right-arrow.svg	/^     id="desc3394" \/>$/;"	i
+desc4258	app_w/assets/icons/left-arrow.svg	/^     id="desc4258" \/>$/;"	i
+desc4258	public/app_w/assets/icons/left-arrow.svg	/^     id="desc4258" \/>$/;"	i
+description	package.json	/^  "description": "web apps and the server of kunstumsglas.at",$/;"	s
+devDependencies	package.json	/^  "devDependencies": {$/;"	o
+devtool	app_m/webpack.config.js	/^  devtool: devtool,$/;"	p	class:module.exports
+devtool	app_m/webpack.config.js	/^var devtool = isProduction ? 'source-map' : 'eval-source-map';$/;"	v
+devtool	app_w/webpack.config.js	/^  devtool: devtool,$/;"	p	class:module.exports
+devtool	app_w/webpack.config.js	/^var devtool = isProduction ? 'source-map' : 'eval-source-map';$/;"	v
+discriminatorKey	server/cms/types/schemas/product.js	/^const schemaOptions = { discriminatorKey: 'kind' };$/;"	p	class:schemaOptions
+dispatch	app_m/components/App.js	/^  dispatch:              PropTypes.func.isRequired$/;"	p	class:App.propTypes
+dispatch	app_m/processes/Process.js	/^let dispatch;$/;"	v
+dispatch	app_w/components/App.js	/^  dispatch:          PropTypes.func.isRequired$/;"	p	class:App.propTypes
+dispatch	app_w/components/Artist.js	/^  dispatch:    PropTypes.func.isRequired$/;"	p	class:Artist.propTypes
+dispatch	app_w/components/products/ProductGallery.js	/^  dispatch:     PropTypes.func.isRequired,$/;"	p	class:ProductGallery.propTypes
+dispatch	app_w/components/products/ProductGroupGallery.js	/^  dispatch:     PropTypes.func.isRequired,$/;"	p	class:ProductGroupGallery.propTypes
+dispatch	app_w/components/products/ProductGroups.js	/^  dispatch:      PropTypes.func.isRequired$/;"	p	class:ProductGroups.propTypes
+dispatch	app_w/processes/Process.js	/^let dispatch;$/;"	v
+dispatchInNextTick	app_m/reducers/auth.js	/^let dispatchInNextTick;$/;"	v
+dispatchInNextTick	app_m/reducers/entity.js	/^let dispatchInNextTick;$/;"	v
+dispatchInNextTick	app_m/store.js	/^const dispatchInNextTick = (action) => process.nextTick(()=>store.dispatch(action));$/;"	C
+dispatchInNextTick	app_w/reducers/artist.js	/^let dispatchInNextTick;$/;"	v
+dispatchInNextTick	app_w/reducers/productGroup.js	/^let dispatchInNextTick;$/;"	v
+dispatchInNextTick	app_w/store.js	/^const dispatchInNextTick = (action) => process.nextTick(()=>store.dispatch(action));$/;"	C
+dispatchNullEntity	app_m/processes/LoadEntityProcess.js	/^  dispatchNullEntity() {$/;"	m	class:LoadEntityProcess
+dispatchProcessFinishedError	app_m/processes/Process.js	/^  dispatchProcessFinishedError(error) {$/;"	m	class:Process
+dispatchProcessFinishedError	app_w/processes/Process.js	/^  dispatchProcessFinishedError(error) {$/;"	m	class:Process
+dispatchProcessFinishedOk	app_m/processes/Process.js	/^  dispatchProcessFinishedOk(result) {$/;"	m	class:Process
+dispatchProcessFinishedOk	app_w/processes/Process.js	/^  dispatchProcessFinishedOk(result) {$/;"	m	class:Process
+dispatchSetArtistIfNeeded	app_w/components/Artist.js	/^  dispatchSetArtistIfNeeded(props) {$/;"	m	class:Artist
+dispatchSetProductGroupIfNeeded	app_w/components/products/ProductGroupGallery.js	/^  dispatchSetProductGroupIfNeeded(props) {$/;"	m	class:ProductGroupGallery
+dispatchSetProductIfNeeded	app_w/components/products/ProductGallery.js	/^  dispatchSetProductIfNeeded(props) {$/;"	m	class:ProductGallery
+displayedCookiesNotification	app_w/components/App.js	/^let displayedCookiesNotification = document.cookie.includes('displayedCookiesNotification');$/;"	v
+docs	server/locales/init.js	/^    let docs;$/;"	v
+doesFileExistRWSync	server/cms/types/queries/utils/doesFileExist.js	/^export const doesFileExistRWSync = (path) => {$/;"	C
+doesFileExistSync	server/cms/types/queries/utils/doesFileExist.js	/^export const doesFileExistSync = (path) => {$/;"	C
+doesNeedId	server/cms/types/queries/utils/EntityFactory.js	/^const doesNeedId = (schemaPaths, pv) => {$/;"	C
+domNode	app_m/components/CollectionsView.js	/^        let domNode = itemDOMNodes[p];$/;"	v
+draggableState	app_m/components/CollectionsView.js	/^      this.draggableState = {order:                             this.props.ids,$/;"	c	class:CollectionsView.constructor
+draggedItem	app_m/components/CollectionsView.js	/^                             draggedItem:                       {$/;"	c	class:CollectionsView.constructor.draggableState
+draggedItem	app_m/components/CollectionsView.js	/^      let draggedItem = state.draggedItem;$/;"	v
+draggedIx	app_m/components/CollectionsView.js	/^      let draggedIx = state.draggedItem.ix;$/;"	v
+en-US	app_w/i18n/translated.json	/^  "en-US": {$/;"	o
+ensureAllLocalizedStringsPropertyHaveTheCurrentLocales	server/locales/init.js	/^const ensureAllLocalizedStringsPropertyHaveTheCurrentLocales = (locales) => {$/;"	C
+ensureAllProductModelHaveTheCurrentLocales	server/locales/init.js	/^const ensureAllProductModelHaveTheCurrentLocales = (locales) => {$/;"	C
+ensureListedProductsOrderIsTheSameAsOfProducts	server/cms/types/schemas/productGroup.js	/^productGroup.methods.ensureListedProductsOrderIsTheSameAsOfProducts = function() {$/;"	c	class:productGroup.methods
+ensureTranslationFor	server/locales/init.js	/^const ensureTranslationFor = (productModelsWithLocalizedTitles,locales) => {$/;"	C
+entity	app_m/reducers/entity.js	/^const entity = (state = defaultState, action) => {$/;"	C
+entity	server/cms/types/queries/utils/mkProductDescriptionForCustomer.js	/^  let entity;$/;"	v
+entityChanged	server/cache/CacheIn.js	/^  entityChanged: function(entity) {$/;"	m	class:CacheIn
+entityCreated	server/cache/CacheIn.js	/^  entityCreated: function(entity) {$/;"	m	class:CacheIn
+entityDescription	app_m/components/App.js	/^  entityDescription:     PropTypes.object,$/;"	p	class:App.propTypes
+entityDescription	app_m/components/EntityView.js	/^  entityDescription: PropTypes.object.isRequired,$/;"	p	class:EntityView.propTypes
+entityDescription	app_m/reducers/entity.js	/^  entityDescription: null,$/;"	p	class:defaultState
+entityOverview	app_m/components/overviews/Overview.js	/^  entityOverview:   PropTypes.object.isRequired,$/;"	p	class:Overview.propTypes
+entityOverview	app_m/components/propertyViews/IdArrayPropertyView.js	/^   let entityOverview    = entityOverviews[id];$/;"	v
+entityOverviews	app_m/components/App.js	/^  entityOverviews:       PropTypes.object,$/;"	p	class:App.propTypes
+entityOverviews	app_m/components/EntityView.js	/^  entityOverviews: PropTypes.object.isRequired,$/;"	p	class:EntityView.propTypes
+entityOverviews	app_m/components/propertyStates/DataURLPropertyState.js	/^      entityOverviews: this.entityOverviews,$/;"	p	class:DataURLPropertyState.render.props
+entityOverviews	app_m/components/propertyStates/FileUploadStatusPropertyState.js	/^      entityOverviews: this.entityOverviews,$/;"	p	class:FileUploadStatusPropertyState.render.props
+entityOverviews	app_m/components/propertyStates/IdArrayPropertyState.js	/^      entityOverviews: this.entityOverviews,$/;"	p	class:IdArrayPropertyState.render.props
+entityOverviews	app_m/components/propertyViews/IdArrayPropertyView.js	/^   entityOverviews:       PropTypes.object.isRequired,$/;"	p	class:IdArrayPropertyView.propTypes
+entityOverviews	app_m/reducers/entity.js	/^  entityOverviews: {$/;"	p	class:defaultState
+entityOverviews	app_m/reducers/entity.js	/^  entityOverviews[id] = { forcePicReload: true };$/;"	c
+entityOverviews	app_m/reducers/entity.js	/^  let entityOverviews = action.result.entityOverviews;$/;"	v
+entityOverviews	app_m/reducers/entity.js	/^  let entityOverviews = cloneDeep(state.entityOverviews);$/;"	v
+entityRemoved	server/cache/CacheIn.js	/^  entityRemoved: function(entity) {$/;"	m	class:CacheIn
+entry	app_m/webpack.config.js	/^  entry: '.\/app_m\/index.js',$/;"	p	class:module.exports
+entry	app_w/webpack.config.js	/^  entry: '.\/app_w\/index.js',$/;"	p	class:module.exports
+error	app_m/components/App.js	/^  error:                 PropTypes.object,$/;"	p	class:App.propTypes
+error	app_m/reducers/error.js	/^const error = (state=defaultState, action) => {$/;"	C
+errorAPI	app_m/api.js	/^function errorAPI(response) {$/;"	f
+errorAPI	app_w/api.js	/^function errorAPI(response) {$/;"	f
+errorAcknowledged	app_m/reducers/error.js	/^const errorAcknowledged = (state) => {$/;"	C
+errorMessages	server/error/responseWithError.js	/^      let errorMessages = [];$/;"	v
+errorMessages	server/error/responseWithError.js	/^    let errorMessages = err.errorMessages;$/;"	v
+es6-promisify	package.json	/^    "es6-promisify": "5.0.0",$/;"	s	object:dependencies
+eslint	package.json	/^    "eslint": "4.9.0",$/;"	s	object:devDependencies
+eslint-config-defaults	package.json	/^    "eslint-config-defaults": "9.0.0",$/;"	s	object:devDependencies
+eslint-plugin-react	package.json	/^    "eslint-plugin-react": "7.4.0",$/;"	s	object:devDependencies
+eventEmitter	server/cms/types/schemas/cache.js	/^cacheSchema.statics.eventEmitter = function() {$/;"	f	function:cacheSchema.statics
+eventEmitter	server/cms/types/schemas/cache.js	/^let eventEmitter = new EventEmitter();$/;"	v
+exitIfMongodCannotStarted	test/start_app_local.sh	/^function exitIfMongodCannotStarted() {$/;"	f
+exports	app_m/webpack.config.js	/^module.exports = {$/;"	c	class:module
+exports	app_w/webpack.config.js	/^module.exports = {$/;"	c	class:module
+exports	server/config/db.js	/^module.exports = {$/;"	c	class:module
+express	package.json	/^    "express": "4.16.2",$/;"	s	object:dependencies
+express	server/index_html.js	/^var express = require('express');$/;"	v
+express-graphql	package.json	/^    "express-graphql": "0.6.4",$/;"	s	object:dependencies
+express-session	package.json	/^    "express-session": "1.15.6",$/;"	s	object:dependencies
+express-static-gzip	package.json	/^    "express-static-gzip": "0.3.0",$/;"	s	object:devDependencies
+extract-text-webpack-plugin	package.json	/^    "extract-text-webpack-plugin": "3.0.1",$/;"	s	object:devDependencies
+extractCSS	app_m/webpack.config.js	/^const extractCSS = new ExtractTextPlugin({$/;"	C
+extractCSS	app_w/webpack.config.js	/^const extractCSS = new ExtractTextPlugin({$/;"	C
+extractRegisteringAllowed	app_m/api.js	/^const extractRegisteringAllowed = (response) => {$/;"	C
+fetch-mock	package.json	/^    "fetch-mock": "5.13.1",$/;"	s	object:devDependencies
+fetchArtist	app_w/api.js	/^export const fetchArtist = (name,locale) => {$/;"	C
+fetchGraphQL	app_m/api.js	/^export const fetchGraphQL = (query,variables) => {\/\/GraphQL calls it query even for mutation$/;"	C
+fetchIsLoggedIn	app_m/api.js	/^export const fetchIsLoggedIn = () => {$/;"	C
+fetchLocale	app_w/api.js	/^export const fetchLocale = (locale) => {$/;"	C
+fetchLogin	app_m/api.js	/^export const fetchLogin = (username, password) => {$/;"	C
+fetchLogout	app_m/api.js	/^export const fetchLogout = () => {$/;"	C
+fetchProduct	app_w/api.js	/^export const fetchProduct = (id,locale) => {$/;"	C
+fetchProductGroup	app_w/api.js	/^export const fetchProductGroup = (id,locale) => {$/;"	C
+fetchSetNewPassword	app_m/api.js	/^export const fetchSetNewPassword = (password,newPassword) => {$/;"	C
+fetchSignup	app_m/api.js	/^export const fetchSignup = (username, password) => {$/;"	C
+file	app_m/components/propertyViews/FileUploadStatusPropertyView.js	/^    let file = e.target.files[0];$/;"	v
+file-loader	package.json	/^    "file-loader": "1.1.5",$/;"	s	object:devDependencies
+fileExtension	server/cms/types/queries/utils/mkPropertyDescriptions.js	/^  let fileExtension = propertyOptions.extension;$/;"	v
+filePattern	app_w/MakeDefaultMessagesWebpackPlugin.js	/^const filePattern             = '.\/app_w\/build\/messages\/**\/*.json';$/;"	C
+fileProperties	server/cms/types/queries/RemoveEntity.js	/^  let fileProperties = [];$/;"	v
+filename	app_m/webpack.config.js	/^    filename: 'management-app.bundle.js'$/;"	p	class:module.exports.output
+filename	app_w/webpack.config.js	/^    filename: 'app.bundle.js'$/;"	p	class:module.exports.output
+filename	server/cms/types/fileUtils.js	/^  let filename;$/;"	v
+filename	server/cms/types/queries/utils/propertyChangers/FileChanger.js	/^  let filename = gfsFileNameOf(entity,property);$/;"	v
+filename	server/cms/types/queries/utils/saveFile.js	/^    let filename = gfsFileNameOf(entity,property);$/;"	v
+firstLocalizedString	app_m/components/utils/getFirstString.js	/^    const firstLocalizedString = getFirstPropertyDescription(entityDescription,'LocalizedStrings/;"	C
+firstString	app_m/components/utils/getFirstString.js	/^    const firstString = getFirstPropertyDescription(entityDescription,'StringProperty');$/;"	C
+focused	app_m/components/propertyViews/LocalizedStringsPropertyView.js	/^  focused:               PropTypes.bool.isRequired,$/;"	p	class:LocalizedStringsPropertyView.propTypes
+focused	app_m/components/propertyViews/StringPropertyView.js	/^  focused:               PropTypes.bool.isRequired,$/;"	p	class:StringPropertyView.propTypes
+focused	app_m/components/translationComponents/TranslatedStringView.js	/^  focused:               PropTypes.bool.isRequired,$/;"	p	class:TranslatedStringView.propTypes
+focusedIx	app_m/components/propertyViews/LocalizedStringsPropertyView.js	/^    const focusedIx = state.focusedIx;$/;"	C
+focusedStringPropertyIx	app_m/components/translationComponents/TranslatedStringView.js	/^    this.state = {focusedStringPropertyIx: null}$/;"	p	class:TranslatedStringView.constructor.state
+forcePicReload	app_m/reducers/entity.js	/^  entityOverviews[id] = { forcePicReload: true };$/;"	p	class:entityOverviews
+formatError	server/cms/gvda/init.js	/^  const formatError = graphiql$/;"	C
+fs	app_w/MakeDefaultMessagesWebpackPlugin.js	/^const fs    = require('fs');$/;"	C
+fs-extra	package.json	/^    "fs-extra": "4.0.2",$/;"	s	object:devDependencies
+fse	test/run_server_test.js	/^var fse              = require('fs-extra');$/;"	v
+gallery	app_w/components/products/GalleryOfAProductGroup.js	/^  gallery: PropTypes.array.isRequired,$/;"	p	class:GalleryOfAProductGroup.propTypes
+galleryItem	app_w/components/products/GalleryOfAProductGroupItem.js	/^  galleryItem: PropTypes.object.isRequired,$/;"	p	class:GalleryOfAProductGroupItem.propTypes
+galleryItem	server/cms/types/schemas/galleryItem.js	/^let galleryItem = mongoose.Schema({$/;"	v
+galleryItemModelsWithLocalizedStrings	server/locales/init.js	/^  const galleryItemModelsWithLocalizedStrings  = getAllGalleryItemModelsWithLocalizedStrings();$/;"	C
+gelasertes	server/cms/types/schemas/product.js	/^export const gelasertes = mongoose.Schema({$/;"	C
+getAllBack	app_m/components/translationComponents/TranslatedStringView.js	/^  getAllBack() {$/;"	m	class:TranslatedStringView
+getAllGalleryItemModelsWithLocalizedStrings	server/locales/init.js	/^const getAllGalleryItemModelsWithLocalizedStrings = () => {$/;"	C
+getAllIdsSorted	server/cms/types/queries/utils/propertyDescriptionFactories/mkTranslatedStringsDescription.js	/^const getAllIdsSorted = (translatedStrings,defaultMessagesMap) => {$/;"	C
+getAllProductGroupModelsWithLocalizedStrings	server/locales/init.js	/^const getAllProductGroupModelsWithLocalizedStrings = () => {$/;"	C
+getAllProductModelsWithLocalizedStrings	server/locales/init.js	/^const getAllProductModelsWithLocalizedStrings = () => {$/;"	C
+getAllProductModelsWithLocalizedTitles	server/locales/init.js	/^const getAllProductModelsWithLocalizedTitles = () => {$/;"	C
+getAllUserModelsWithLocalizedStrings	server/locales/init.js	/^const getAllUserModelsWithLocalizedStrings = () => {$/;"	C
+getArrows	app_w/components/products/Product.js	/^  getArrows() {$/;"	m	class:Product
+getArrows	app_w/components/products/ProductGroupGallery.js	/^  getArrows() {$/;"	m	class:ProductGroupGallery
+getBack	app_m/components/App.js	/^  getBack() {$/;"	m	class:App
+getBack	app_m/components/propertyViews/FileUploadStatusPropertyView.js	/^  getBack() {$/;"	m	class:FileUploadStatusPropertyView
+getBack	app_m/components/propertyViews/PropertyView.js	/^  getBack() {$/;"	m	class:PropertyView
+getChangeLocalText	app_w/components/App.js	/^  getChangeLocalText() {$/;"	m	class:App
+getChangerConstructor	server/cms/types/queries/utils/propertyChangers/mkPropertyChanger.js	/^const getChangerConstructor = propertyTypeName => {$/;"	C
+getCmsConfig	server/config/getCmsConfig.js	/^const getCmsConfig = () => CmsConfig.findOne({})$/;"	C
+getCompletedReorderedTranslatedStrings	app_m/components/TranslationView.js	/^const getCompletedReorderedTranslatedStrings = (translatedStrings,locales) => {$/;"	C
+getContactTheArtist	app_w/components/products/Product.js	/^  getContactTheArtist() {$/;"	m	class:Product
+getDOMNode	app_m/components/overviews/Overview.js	/^  getDOMNode() {$/;"	m	class:Overview
+getDefaultLocale	app_w/components/App.js	/^const getDefaultLocale = () => {$/;"	C
+getDiff	app_m/components/propertyStates/PropertyState.js	/^  getDiff() {$/;"	m	class:PropertyState
+getDownload	app_m/components/propertyViews/FileUploadStatusPropertyView.js	/^  getDownload() {$/;"	m	class:FileUploadStatusPropertyView
+getEditor	app_m/components/propertyViews/LocalizedStringsPropertyView.js	/^  getEditor(string,ix) {$/;"	m	class:LocalizedStringsPropertyView
+getEditor	app_m/components/propertyViews/StringPropertyView.js	/^  getEditor() {$/;"	m	class:StringPropertyView
+getEntity	server/cms/types/queries/utils/getEntity.js	/^const getEntity = (identity) => {$/;"	C
+getEntityDescription	app_m/processes/LoadEntityProcess.js	/^  getEntityDescription(identity, entityOverviews) {$/;"	m	class:LoadEntityProcess
+getEntityPropertyValuesRequest	app_m/components/propertyViews/IdArrayPropertyView.js	/^const getEntityPropertyValuesRequest = (id,$/;"	C
+getEntityPropertyValuesRequests	app_m/components/propertyViews/getEntityPropertyValuesRequests.js	/^function getEntityPropertyValuesRequests(propertyDescription,entityOverviews) {$/;"	f
+getEntityPropertyValuesRequests	app_m/processes/LoadEntityProcess.js	/^  getEntityPropertyValuesRequests(entityOverviews, entityDescription) {$/;"	m	class:LoadEntityProcess
+getErrorDialog	app_m/components/App.js	/^  getErrorDialog() {$/;"	m	class:App
+getFileRoutes	server/cms/types/addGetFileRoutes.js	/^const getFileRoutes = (db) => {$/;"	C
+getFirstPropertyDescription	app_m/components/utils/getFirstString.js	/^const getFirstPropertyDescription = (entityDescription,typeName) => {$/;"	C
+getFirstString	app_m/components/overviews/GalleryItemOverview.js	/^  getFirstString(localizedStrings) {$/;"	m	class:GalleryItemOverview
+getFirstString	app_m/components/utils/getFirstString.js	/^const getFirstString = (entityDescription) => {$/;"	C
+getImages	app_w/components/products/Product.js	/^  getImages() {$/;"	m	class:Product
+getImg	app_m/components/propertyViews/DataURLPropertyView.js	/^  getImg() {$/;"	m	class:DataURLPropertyView
+getInputFile	app_m/components/propertyViews/FileUploadStatusPropertyView.js	/^  getInputFile() {$/;"	m	class:FileUploadStatusPropertyView
+getItem	app_m/test/session-storage-mock.js	/^  getItem(k) {$/;"	m	class:SessionStorageMock
+getLastIdentityInTheHistory	app_m/reducers/entity.js	/^const getLastIdentityInTheHistory = state => {$/;"	C
+getLinks	app_w/components/Navbar.js	/^  getLinks() {$/;"	m	class:Navbar
+getLocaleBar	app_m/components/TranslationView.js	/^  getLocaleBar() {$/;"	m	class:TranslationView
+getLocalizedStringsProperties	server/locales/init.js	/^const getLocalizedStringsProperties = (Model) => {$/;"	C
+getLocalizedTitle	server/cms/types/queries/utils/mkProductDescriptionForCustomer.js	/^const getLocalizedTitle = (property,options,translatedStrings,locale) => {$/;"	C
+getLocalizedTitlesProperties	server/locales/init.js	/^const getLocalizedTitlesProperties = (Model) => {$/;"	C
+getLocalizedValue	server/cms/types/queries/utils/mkProductDescriptionForCustomer.js	/^const getLocalizedValue = (value,options,locale) => {$/;"	C
+getMainComponent	app_m/components/App.js	/^  getMainComponent() {$/;"	m	class:App
+getMessageIdField	app_m/components/translationComponents/TranslatedStringView.js	/^  getMessageIdField() {$/;"	m	class:TranslatedStringView
+getModel	server/cms/types/queries/utils/getModel.js	/^const getModel = (entity) => {$/;"	C
+getMultilineEditor	app_m/components/propertyViews/LocalizedStringsPropertyView.js	/^  getMultilineEditor(string,ix) {$/;"	m	class:LocalizedStringsPropertyView
+getMultilineEditor	app_m/components/propertyViews/StringPropertyView.js	/^  getMultilineEditor() {$/;"	m	class:StringPropertyView
+getName	app_w/components/products/Product.js	/^  getName() {$/;"	m	class:Product
+getOverviewConstructor	app_m/components/overviews/getOverviewConstructor.js	/^const getOverviewConstructor = (dbModelName) =>{$/;"	C
+getPicPath	app_m/components/overviews/Overview.js	/^  getPicPath(dbModel) {$/;"	m	class:Overview
+getPrice	app_w/components/products/Product.js	/^  getPrice() {$/;"	m	class:Product
+getProductDescription	app_w/components/products/Product.js	/^  getProductDescription(name) {$/;"	m	class:Product
+getProductGroupGalleries	app_w/components/products/ProductGroups.js	/^  getProductGroupGalleries() {$/;"	m	class:ProductGroups
+getProductGroupIx	app_w/reducers/locale.js	/^const getProductGroupIx = (state, pgid) => {$/;"	C
+getProductIx	app_w/reducers/productGroup.js	/^const getProductIx = state => {$/;"	C
+getProducts	app_w/components/products/Products.js	/^  getProducts() {$/;"	m	class:Products
+getProperties	app_w/components/products/Product.js	/^  getProperties() {$/;"	m	class:Product
+getProperty	app_w/components/products/Product.js	/^  getProperty(property,propertyDescription) {$/;"	m	class:Product
+getPropertyDescription	app_m/components/translationComponents/TranslatedStringView.js	/^  getPropertyDescription(localizedStringId, localizedString) {$/;"	m	class:TranslatedStringView
+getPropertyDescriptions	server/cms/types/queries/GetEntityDescription.js	/^const getPropertyDescriptions = (entity) => {$/;"	C
+getPropertyInWhichEntityIsReferred	server/cms/types/queries/RemoveEntity.js	/^const getPropertyInWhichEntityIsReferred = (parentEntity, entity) => {$/;"	C
+getPropertyStateType	app_m/components/propertyStates/getPropertyStateType.js	/^const getPropertyStateType = typename => {$/;"	C
+getPropertyTypeName	server/cms/types/queries/utils/getPropertyTypeName.js	/^const getPropertyTypeName = (schemaPathsPropertyOptions) => {$/;"	C
+getPropertyValueInputs	app_m/processes/Process.js	/^  getPropertyValueInputs(propertyDescriptions) {$/;"	m	class:Process
+getPropertyViewConstructor	app_m/components/propertyViews/getPropertyViewConstructor.js	/^const getPropertyViewConstructor = (typename) => {$/;"	C
+getQuestion	app_m/components/dialogs/ConfirmRemoveDialog.js	/^    getQuestion() {$/;"	m	class:ConfirmRemoveDialog
+getReferredDbModelName	server/cms/types/queries/utils/propertyChangers/IdArrayChanger.js	/^const getReferredDbModelName = (entity, propertyOptions) => {$/;"	C
+getRemoveButton	app_m/components/translationComponents/TranslatedStringView.js	/^  getRemoveButton() {$/;"	m	class:TranslatedStringView
+getResetState	app_m/components/EntityView.js	/^  getResetState(props) {$/;"	m	class:EntityView
+getResetState	app_m/components/TranslationView.js	/^  getResetState(entityDescription) {$/;"	m	class:TranslationView
+getSingleLineEditor	app_m/components/propertyViews/LocalizedStringsPropertyView.js	/^  getSingleLineEditor(string,ix) {$/;"	m	class:LocalizedStringsPropertyView
+getSingleLineEditor	app_m/components/propertyViews/StringPropertyView.js	/^  getSingleLineEditor() {$/;"	m	class:StringPropertyView
+getString	server/cms/types/schemaTypes/TranslatedString.js	/^const getString = (localizedStrings,locale) => {$/;"	C
+getStringView	app_m/components/propertyViews/LocalizedStringsPropertyView.js	/^  getStringView(locale,string,focused,ix) {$/;"	m	class:LocalizedStringsPropertyView
+getStringViews	app_m/components/propertyViews/LocalizedStringsPropertyView.js	/^  getStringViews() {$/;"	m	class:LocalizedStringsPropertyView
+getTitle	app_m/components/TranslationView.js	/^  getTitle() {$/;"	m	class:TranslationView
+getTitle	app_m/components/propertyViews/LocalizedStringsPropertyView.js	/^  getTitle() {$/;"	m	class:LocalizedStringsPropertyView
+getTitle	app_m/components/propertyViews/StringPropertyView.js	/^  getTitle() {$/;"	m	class:StringPropertyView
+getTranslatedStrings	server/cms/types/queries/utils/propertyDescriptionFactories/mkTranslatedStringsDescription.js	/^  const getTranslatedStrings = () => {$/;"	C
+getTranslationOf	server/locales/init.js	/^const getTranslationOf = (modelName) => {$/;"	C
+getTranslations	app_m/components/translationComponents/TranslatedStringView.js	/^  getTranslations() {$/;"	m	class:TranslatedStringView
+getUrl	app_w/components/products/Product.js	/^  getUrl() {$/;"	m	class:Product
+getUrl	server/config/db.js	/^function getUrl() {$/;"	f
+getUsedLocales	app_m/components/TranslationView.js	/^const getUsedLocales = (translatedStrings) => {$/;"	C
+getUsedLocales	server/cms/types/schemas/cache.js	/^const getUsedLocales = (translatedStrings) => {$/;"	C
+getUserMenu	app_m/components/App.js	/^  getUserMenu() {$/;"	m	class:App
+getValue	app_m/components/propertyViews/StringPropertyView.js	/^  getValue() {$/;"	m	class:StringPropertyView
+getValue	app_m/processes/Process.js	/^PropertyValueInput.prototype.getValue = function(propertyDescription) {$/;"	m	class:PropertyValueInput
+getView	app_m/components/propertyViews/LocalizedStringsPropertyView.js	/^  getView(string) {$/;"	m	class:LocalizedStringsPropertyView
+getWebsiteLandingPageProductGroupsData	server/cms/types/schemas/cache.js	/^cacheSchema.methods.getWebsiteLandingPageProductGroupsData = function(locale) {$/;"	f	function:cacheSchema.methods
+gfsFileNameOf	server/cms/types/queries/utils/propertyChangers/FileChanger.js	/^const gfsFileNameOf = (entity,property) => {$/;"	C
+gfsFileNameOf	server/cms/types/queries/utils/saveFile.js	/^const gfsFileNameOf = (entity,property) => {$/;"	C
+gfsFileNameOfId	server/cms/types/fileUtils.js	/^export const gfsFileNameOfId = (id,property) => `${id}\/${property}`;$/;"	C
+gfsFileNameOfId	server/cms/types/queries/utils/saveFile.js	/^const gfsFileNameOfId = (id,property) => {$/;"	C
+glasfusing	server/cms/types/schemas/product.js	/^export const glasfusing = mongoose.Schema({$/;"	C
+glob	app_w/MakeDefaultMessagesWebpackPlugin.js	/^const glob  = require('glob');$/;"	C
+graphQLErrorAPI	app_m/processes/Process.js	/^  graphQLErrorAPI(graphQLResult) {$/;"	m	class:Process
+graphiqlOn	server/cms/gvda/config/graphiql.js	/^let graphiqlOn = false;$/;"	v
+graphql	package.json	/^    "graphql": "0.9.1",$/;"	s	object:dependencies
+gridfs-stream	package.json	/^    "gridfs-stream": "1.1.1",$/;"	s	object:dependencies
+gsap	package.json	/^    "gsap": "1.20.3",$/;"	s	object:dependencies
+gutter	app_m/components/CollectionsView.js	/^let gutter           = 20;$/;"	v
+helmet	package.json	/^    "helmet": "3.9.0",$/;"	s	object:dependencies
+high	app_m/components/CollectionsView.js	/^      let high = draggedIx;$/;"	v
+history	app_m/reducers/entity.js	/^  let history = cloneDeep(_history);$/;"	v
+html	app_w/components/Artist.js	/^    const html = {__html:artist.contact_html};$/;"	c	class:Artist.render
+html	app_w/components/products/ProductGroupDescription.js	/^    const html = {__html:props.introduction_html};$/;"	c	class:ProductGroupDescription.render
+html	app_w/components/utils/HtmlText.js	/^  const html = {__html:message};$/;"	c
+id	app_m/components/CollectionsView.js	/^                                                                  id: null,$/;"	p	class:CollectionsView.constructor.draggableState.draggedItem
+id	app_m/components/overviews/Overview.js	/^  id:               PropTypes.string.isRequired,$/;"	p	class:Overview.propTypes
+id	app_m/reducers/entity.js	/^  let id = state._runningProcess.identity.id;$/;"	v
+id	app_w/build/messages/app_w/components/CookieBanner.json	/^    "id": "Cookie_Banner_Text",$/;"	s	object:0
+id	app_w/build/messages/app_w/components/CookieBanner.json	/^    "id": "Link_zur_Datenschutzerklärung",$/;"	s	object:1
+id	app_w/build/messages/app_w/components/Info.json	/^    "id": "Link_zum_Datenschutzerklärung",$/;"	s	object:3
+id	app_w/build/messages/app_w/components/Info.json	/^    "id": "Link_zum_Impressum",$/;"	s	object:2
+id	app_w/build/messages/app_w/components/Info.json	/^    "id": "Link_zum_Kontakt",$/;"	s	object:1
+id	app_w/build/messages/app_w/components/Info.json	/^    "id": "Link_zum_Über_Uns",$/;"	s	object:0
+id	app_w/build/messages/app_w/components/Navbar.json	/^    "id": "Benutzen_Sie_die_Pfeil_tasten_zum_Navigation",$/;"	s	object:2
+id	app_w/build/messages/app_w/components/Navbar.json	/^    "id": "Link_Zurück",$/;"	s	object:0
+id	app_w/build/messages/app_w/components/Navbar.json	/^    "id": "Link_zur_Start_Seite",$/;"	s	object:1
+id	app_w/build/messages/app_w/components/Title.json	/^    "id": "Link_zum_Kontakt",$/;"	s	object:1
+id	app_w/build/messages/app_w/components/Title.json	/^    "id": "Link_zum_Über_Uns",$/;"	s	object:0
+id	app_w/build/messages/app_w/components/pages/AboutUs.json	/^    "id": "Über_uns_Inhalt_html",$/;"	s	object:0
+id	app_w/build/messages/app_w/components/pages/Contact.json	/^    "id": "Kontakt_Inhalt_html",$/;"	s	object:0
+id	app_w/build/messages/app_w/components/pages/DataProtectionPolicy.json	/^    "id": "Datenschutzerklärung_Inhalt_html",$/;"	s	object:0
+id	app_w/build/messages/app_w/components/pages/Impressum.json	/^    "id": "Impressum_Inhalt_html",$/;"	s	object:0
+id	app_w/build/messages/app_w/components/products/GalleryOfAProductGroupItem.json	/^    "id": "Produkte",$/;"	s	object:0
+id	app_w/build/messages/app_w/components/products/Product.json	/^    "id": "KUG_kontaktieren",$/;"	s	object:1
+id	app_w/build/messages/app_w/components/products/Product.json	/^    "id": "Link_zum_Künstler_kontaktieren",$/;"	s	object:0
+id	app_w/components/products/ProductsGalleryItem.js	/^  id: PropTypes.string.isRequired,$/;"	p	class:ProductsGalleryItem.propTypes
+id	app_w/reducers/productGroup.js	/^  const id = state._runningProcess.id;$/;"	C
+id	server/cms/types/addGetFileRoutes.js	/^const id = (db) => {$/;"	C
+id	server/cms/types/queries/utils/savePics.js	/^  let id           = entity._id.toString();$/;"	v
+id	server/locales/init.js	/^  const id = doc._id;$/;"	C
+identity	app_m/components/EntityView.js	/^    const identity = entityDescription.identity;$/;"	C
+identity	app_m/components/propertyStates/FileUploadStatusPropertyState.js	/^      identity: this.identity,$/;"	p	class:FileUploadStatusPropertyState.render.props
+identity	app_m/components/propertyViews/FileUploadStatusPropertyView.js	/^   identity:               PropTypes.object.isRequired,$/;"	p	class:FileUploadStatusPropertyView.propTypes
+ids	app_m/components/CollectionsView.js	/^  ids:                       PropTypes.arrayOf(PropTypes.string),$/;"	p	class:CollectionsView.propTypes
+ids	app_w/components/products/Products.js	/^  ids: PropTypes.array.isRequired,$/;"	p	class:Products.propTypes
+index_html	server/index_html.js	/^const index_html = (publicPath) => {$/;"	C
+initAuth	server/cms/auth/init.js	/^const initAuth = (app,db,configInDb,dbUrl) => {$/;"	C
+initCache	server/cache/init.js	/^const initCache = () => {$/;"	C
+initCms	server/cms/init.js	/^const initCms = (app,db,configInDb,dbUrl) => {$/;"	C
+initError	server/error/init.js	/^const initError = (app) => {$/;"	C
+initGvda	server/cms/gvda/init.js	/^const initGvda = (app,typesAccess) => {$/;"	C
+initLocales	server/locales/init.js	/^const initLocales = (locales) => {$/;"	C
+initProcess	app_m/processes/Process.js	/^  initProcess(name) {$/;"	m	class:Process
+initProcess	app_w/processes/Process.js	/^  initProcess(name) {$/;"	m	class:Process
+initPropertyState	app_m/components/propertyStates/PropertyState.js	/^  initPropertyState({ propertyDescription, onChanged, onUnchanged }) {$/;"	m	class:PropertyState
+initTypes	server/cms/types/init.js	/^const initTypes = db => {$/;"	C
+initWebsite	server/website/init.js	/^const initWebsite = (app) => {$/;"	C
+installedModules	public/app.bundle.js	/^\/******\/ 	var installedModules = {};$/;"	v
+intl	app_w/components/products/GalleryOfAProductGroupItem.js	/^  intl: PropTypes.object.isRequired,$/;"	p	class:GalleryOfAProductGroupItem.propTypes
+introduction_html	app_w/components/products/ProductGroupDescription.js	/^  introduction_html: PropTypes.string.isRequired$/;"	p	class:ProductGroupDescription.propTypes
+isBackAllowed	app_m/reducers/entity.js	/^const isBackAllowed = history => {$/;"	C
+isDesktopDevice	app_w/components/utils/deviceInfo.js	/^const isDesktopDevice = ()=> {$/;"	C
+isEntityRemovable	server/cms/types/queries/utils/isEntityRemovable.js	/^const isEntityRemovable = (entity) => () => {$/;"	C
+isFocusable	app_m/components/propertyStates/BoolPropertyState.js	/^  isFocusable() {$/;"	m	class:BoolPropertyState
+isFocusable	app_m/components/propertyStates/DataURLPropertyState.js	/^  isFocusable() {$/;"	m	class:DataURLPropertyState
+isFocusable	app_m/components/propertyStates/FileUploadStatusPropertyState.js	/^  isFocusable() {$/;"	m	class:FileUploadStatusPropertyState
+isFocusable	app_m/components/propertyStates/IdArrayPropertyState.js	/^  isFocusable() {$/;"	m	class:IdArrayPropertyState
+isFocusable	app_m/components/propertyStates/LocalizedStringsPropertyState.js	/^  isFocusable() {$/;"	m	class:LocalizedStringsPropertyState
+isFocusable	app_m/components/propertyStates/StringPropertyState.js	/^  isFocusable() {$/;"	m	class:StringPropertyState
+isIdArray	server/cms/types/queries/utils/getPropertyTypeName.js	/^const isIdArray = (propertyType) => {$/;"	C
+isLocalizedStrings	server/cms/types/queries/utils/getPropertyTypeName.js	/^const isLocalizedStrings = (propertyType) => {$/;"	C
+isLocalizedStrings	server/locales/init.js	/^const isLocalizedStrings = (value) => {$/;"	C
+isLoggedIn	app_m/reducers/auth.js	/^const isLoggedIn = state => {$/;"	C
+isMobilDevice	app_w/components/utils/deviceInfo.js	/^const isMobilDevice = ()=> {$/;"	C
+isMyRunningProcess	app_m/reducers/auth.js	/^const isMyRunningProcess = (state, action) => {$/;"	C
+isMyRunningProcess	app_m/reducers/entity.js	/^const isMyRunningProcess = (state, action) => {$/;"	C
+isMyRunningProcess	app_w/reducers/utils.js	/^const isMyRunningProcess = (state,action) => {$/;"	C
+isProductModel	server/locales/init.js	/^const isProductModel = (Model) => {$/;"	C
+isProduction	app_m/webpack.config.js	/^const isProduction = (process.env.NODE_ENV === 'production');$/;"	C
+isProduction	app_w/webpack.config.js	/^const isProduction = (process.env.NODE_ENV === 'production');$/;"	C
+isStateStatus	server/cms/types/queries/utils/propertyChangers/FileChanger.js	/^const isStateStatus = (valueAsString) => {$/;"	C
+isStateStatus	server/cms/types/queries/utils/saveFile.js	/^const isStateStatus = (valueAsString) => {$/;"	C
+isTitleLocalized	server/locales/init.js	/^const isTitleLocalized = (propertyOptions) => {$/;"	C
+isTranslatedStrings	server/cms/types/queries/utils/getPropertyTypeName.js	/^const isTranslatedStrings = (propertyType) => {$/;"	C
+item	server/locales/init.js	/^      const item = value[i];$/;"	C
+itemGutterLength	app_m/components/CollectionsView.js	/^let itemGutterLength = itemLength + gutter;$/;"	v
+itemLength	app_m/components/CollectionsView.js	/^let itemLength       = 200;$/;"	v
+ix	app_m/components/CollectionsView.js	/^                                                                  ix:        null$/;"	p	class:CollectionsView.constructor.draggableState.draggedItem
+ix	app_m/components/CollectionsView.js	/^      let ix = (rowIx)*maxColumn + colIx;$/;"	v
+ix	app_m/components/EntityView.js	/^      let ix = changedPropertiesMap[changedProperty];$/;"	v
+ix	app_w/components/products/GalleryOfAProductGroup.js	/^  ix: PropTypes.number.isRequired,$/;"	p	class:GalleryOfAProductGroup.propTypes
+jest	package.json	/^    "jest": "21.2.1",$/;"	s	object:devDependencies
+jest	package.json	/^  "jest": {$/;"	o
+killMongod	test/start_app_local.sh	/^function killMongod() {$/;"	f
+landingPageData	app_w/reducers/locale.js	/^  const landingPageData = action.result.landingPageData;$/;"	C
+landingPageData	app_w/reducers/locale.js	/^  const landingPageData = state._cachedLandingPageData[action.locale];$/;"	C
+landingPageData	app_w/reducers/locale.js	/^  landingPageData: undefined,$/;"	p	class:defaultState
+lastIdentityInTheHistory	app_m/reducers/entity.js	/^  let lastIdentityInTheHistory = getLastIdentityInTheHistory(state);$/;"	v
+lastIdentityInTheHistory	app_m/reducers/entity.js	/^  let lastIdentityInTheHistory = history[history.length - 1];$/;"	v
+left	app_m/components/CollectionsView.js	/^        left: menu.x,$/;"	p	class:style
+license	package.json	/^  "license": "UNLICENSED",$/;"	s
+link	app_w/components/products/GalleryOfAProductGroup.js	/^  link: PropTypes.string.isRequired,$/;"	p	class:GalleryOfAProductGroup.propTypes
+link	app_w/components/products/GalleryOfAProductGroupItem.js	/^  link: PropTypes.string.isRequired,$/;"	p	class:GalleryOfAProductGroupItem.propTypes
+loadEntity	app_m/reducers/entity.js	/^const loadEntity = (state, action) => {$/;"	C
+loaders	app_m/webpack.config.js	/^    loaders: [$/;"	p	class:module.exports.module
+locale	app_m/components/propertyViews/LocalizedStringsPropertyView.js	/^    const locale    = state.locales[focusedIx];$/;"	C
+locale	app_w/components/App.js	/^  let locale  = (navigator.languages && navigator.languages[0])$/;"	v
+locale	app_w/components/App.js	/^  locale:            PropTypes.string,$/;"	p	class:App.propTypes
+locale	app_w/reducers/locale.js	/^  const locale = state._runningProcess.locale;$/;"	C
+locale	app_w/reducers/locale.js	/^  locale: undefined,$/;"	p	class:defaultState
+locale	app_w/reducers/locale.js	/^const locale = (state = defaultState, action) => {$/;"	C
+locale	app_w/reducers/productGroup.js	/^  const locale = productGroup.locale;$/;"	C
+localeWithoutRegionCode	app_w/components/App.js	/^  const localeWithoutRegionCode = locale.toLowerCase().split(\/[_-]+\/)[0];$/;"	C
+locales	server/locales/mkEmptyLocalizedStrings.js	/^  const locales = cacheOut().locales;$/;"	C
+localizedMessages	app_w/components/App.js	/^  localizedMessages: PropTypes.object,$/;"	p	class:App.propTypes
+localizedMessages	app_w/reducers/locale.js	/^  const localizedMessages = action.result.localizedMessages;$/;"	C
+localizedMessages	app_w/reducers/locale.js	/^  const localizedMessages = state._cachedLocalizedMessages[action.locale];$/;"	C
+localizedMessages	app_w/reducers/locale.js	/^  localizedMessages: undefined,$/;"	p	class:defaultState
+localizedName	app_w/components/products/ProductGroupDescription.js	/^  localizedName:  PropTypes.string.isRequired,$/;"	p	class:ProductGroupDescription.propTypes
+localizedString	server/cms/types/schemaTypes/TranslatedString.js	/^  const localizedString = localizedStrings.find(localizedString=>localizedString.locale===locale/;"	C
+localizedStringId	app_m/components/TranslationView.js	/^const localizedStringId      = (id,locale)=>`${id}_${locale}`;$/;"	C
+localizedStringId	server/cms/types/schemas/cache.js	/^const localizedStringId      = (id,locale)=>`${id}_${locale}`;$/;"	C
+localizedStringIds	app_m/components/translationComponents/TranslatedStringView.js	/^  localizedStringIds:    PropTypes.array.isRequired,$/;"	p	class:TranslatedStringView.propTypes
+localizedStrings	app_m/components/TranslationView.js	/^  const localizedStrings      = entities.localizedStrings;$/;"	C
+localizedStrings	app_m/components/translationComponents/TranslatedStringView.js	/^  localizedStrings:      PropTypes.array.isRequired,$/;"	p	class:TranslatedStringView.propTypes
+localizedStringsMap	server/cms/types/queries/utils/propertyDescriptionFactories/mkTranslatedStringsDescription.js	/^  const localizedStringsMap = mkLocalizedStringsMap(translatedStrings);$/;"	C
+localizedStringsMap	server/locales/init.js	/^const localizedStringsMap = (localizedStrings) => {$/;"	C
+localizedStringsProperties	server/locales/init.js	/^    const localizedStringsProperties = productModelsWithLocalizedStrings[modelName]$/;"	C
+localizedStringsProperties	server/locales/init.js	/^  let localizedStringsProperties = [];$/;"	v
+localizedTitlesProperties	server/locales/init.js	/^  let localizedTitlesProperties = [];$/;"	v
+location	app_w/components/App.js	/^  location:          PropTypes.object,$/;"	p	class:App.propTypes
+location	app_w/components/products/ProductGallery.js	/^  location:     PropTypes.object.isRequired$/;"	p	class:ProductGallery.propTypes
+location	app_w/components/products/ProductGroupGallery.js	/^  location:     PropTypes.object.isRequired$/;"	p	class:ProductGroupGallery.propTypes
+lodash	package.json	/^    "lodash": "4.17.4",$/;"	s	object:dependencies
+lodash.clonedeep	package.json	/^    "lodash.clonedeep": "4.5.0",$/;"	s	object:dependencies
+lodash.isequal	package.json	/^    "lodash.isequal": "4.5.0",$/;"	s	object:dependencies
+lodash.merge	package.json	/^    "lodash.merge": "4.6.0",$/;"	s	object:dependencies
+lodash.partition	package.json	/^    "lodash.partition": "4.6.0",$/;"	s	object:dependencies
+lodash.union	package.json	/^    "lodash.union": "4.6.0",$/;"	s	object:dependencies
+lodash.without	package.json	/^    "lodash.without": "4.4.0",$/;"	s	object:dependencies
+lodash.zipobject	package.json	/^    "lodash.zipobject": "4.1.3",$/;"	s	object:dependencies
+logHelpAndThrow	server/cms/auth/init.js	/^const logHelpAndThrow = () => {$/;"	C
+logOn	server/config/log.js	/^let logOn = false;$/;"	v
+logUnhandledException	server/error/unhandled_error.js	/^const logUnhandledException = (err, req, res, next) => {\/\/ eslint-disable-line$/;"	C
+loggedIn	server/cms/auth/loggedIn.js	/^const loggedIn = (req,res,next)=>{$/;"	C
+login	app_m/components/LoginSignup.js	/^    this.state={name:'', password:'', login: true \/*false means signup*\/};$/;"	p	class:LoginSignup.constructor.state
+login	app_m/reducers/auth.js	/^const login = (state, action) => {$/;"	C
+logout	app_m/reducers/auth.js	/^const logout = state => {$/;"	C
+logout	server/cms/auth/mkAuthRoutes.js	/^const logout = (req,res) => {$/;"	C
+low	app_m/components/CollectionsView.js	/^      let low  = chasedIx;$/;"	v
+main	package.json	/^  "main": "index.js",$/;"	s
+mainView	server/cms/types/schemas/mainView.js	/^let mainView = mongoose.Schema({$/;"	v
+mainView	server/cms/types/schemas/mainview.js	/^let mainView = mongoose.Schema({$/;"	v
+mapStateToProps	app_m/components/App.js	/^const mapStateToProps = (state) => {$/;"	C
+mapStateToProps	app_w/components/App.js	/^const mapStateToProps = (state) => {$/;"	C
+mapStateToProps	app_w/components/Artist.js	/^const mapStateToProps = (state) => {$/;"	C
+mapStateToProps	app_w/components/products/ProductGallery.js	/^const mapStateToProps = (state) => {$/;"	C
+mapStateToProps	app_w/components/products/ProductGroup.js	/^const mapStateToProps = (state) => {$/;"	C
+mapStateToProps	app_w/components/products/ProductGroupGallery.js	/^const mapStateToProps = (state) => {$/;"	C
+mapStateToProps	app_w/components/products/ProductGroups.js	/^const mapStateToProps = (state) => {$/;"	C
+markedToRemove	app_m/components/translationComponents/TranslatedStringView.js	/^  markedToRemove:        PropTypes.bool$/;"	p	class:TranslatedStringView.propTypes
+maxColumn	app_m/components/CollectionsView.js	/^      let maxColumn = Math.floor(this.refs.me.clientWidth \/ itemGutterLength);$/;"	v
+maxColumnIx	app_m/components/CollectionsView.js	/^      let maxColumnIx = maxColumn - 1;$/;"	v
+maxIx	app_m/components/CollectionsView.js	/^      let maxIx = state.changedInterval[1] || this.draggableState.order.length-1;$/;"	v
+menu	app_m/components/CollectionsView.js	/^        menu: null,$/;"	p	class:CollectionsView.constructor.state
+mergeChange	app_m/components/propertyStates/PropertyState.js	/^  mergeChange(toMerge) {$/;"	m	class:PropertyState
+mergeIntoTranslatedStrings	server/cms/types/queries/utils/propertyDescriptionFactories/mkTranslatedStringsDescription.js	/^const mergeIntoTranslatedStrings = (translatedStrings,defaultMessagesMap) => {$/;"	C
+merged	server/locales/init.js	/^  const merged = merge(defaultTsMap,tsMap);$/;"	C
+message	app_w/components/utils/HtmlText.js	/^  let message = intl.formatMessage({id: messageDescriptor.id});$/;"	v
+messageId	app_m/components/translationComponents/TranslatedStringView.js	/^  messageId:             PropTypes.string.isRequired,$/;"	p	class:TranslatedStringView.propTypes
+metadata3404	app_w/assets/icons/right-arrow.svg	/^     id="metadata3404">$/;"	i
+metadata3404	public/app_w/assets/icons/right-arrow.svg	/^     id="metadata3404">$/;"	i
+metadata4268	app_w/assets/icons/left-arrow.svg	/^     id="metadata4268">$/;"	i
+metadata4268	public/app_w/assets/icons/left-arrow.svg	/^     id="metadata4268">$/;"	i
+middleware	app_m/store.js	/^let middleware = [];$/;"	v
+middleware	app_w/store.js	/^let middleware = [thunk];$/;"	v
+minIx	app_m/components/CollectionsView.js	/^      let minIx = state.changedInterval[0] || 0;$/;"	v
+missingProperties	app_m/components/propertyViews/IdArrayPropertyView.js	/^   let missingProperties = neededProperties.reduce((a,p)=>$/;"	v
+miu	app_w/assets/icons/left-arrow.svg	/^     fill="white">$/;"	i
+miu	app_w/assets/icons/right-arrow.svg	/^     fill="#ffffff">$/;"	i
+miu	public/app_w/assets/icons/left-arrow.svg	/^     fill="white">$/;"	i
+miu	public/app_w/assets/icons/right-arrow.svg	/^     fill="#ffffff">$/;"	i
+mkAuthRoutes	server/cms/auth/mkAuthRoutes.js	/^const mkAuthRoutes = () =>{$/;"	C
+mkBooleanDescription	server/cms/types/queries/utils/mkPropertyDescriptions.js	/^const mkBooleanDescription = (title,property,bool) => {$/;"	C
+mkCompletedReorderedLocalizedStrings	app_m/components/TranslationView.js	/^const mkCompletedReorderedLocalizedStrings = (localizedStrings,locales) => {$/;"	C
+mkDataURLDescription	server/cms/types/queries/utils/mkPropertyDescriptions.js	/^const mkDataURLDescription = (title,property,buffer) => {$/;"	C
+mkDefaultMessages	app_w/MakeDefaultMessagesWebpackPlugin.js	/^const mkDefaultMessages = (filePattern) => {$/;"	C
+mkEmptyLocalizedStrings	server/locales/mkEmptyLocalizedStrings.js	/^const mkEmptyLocalizedStrings = () => {$/;"	C
+mkEntityPropertyValues	server/cms/types/queries/utils/mkEntityPropertyValues.js	/^const mkEntityPropertyValues = (entityPropertyValuesRequest) => {$/;"	C
+mkEntityPropertyValuesI	server/cms/types/queries/utils/mkEntityPropertyValues.js	/^const mkEntityPropertyValuesI = (entity, properties) => {$/;"	C
+mkFileUploadStatusDescription	server/cms/types/queries/utils/mkPropertyDescriptions.js	/^const mkFileUploadStatusDescription = (title,property,value,propertyOptions) => {$/;"	C
+mkHistoryAfterLoadEntity	app_m/reducers/entity.js	/^const mkHistoryAfterLoadEntity = ($/;"	C
+mkIdArrayDescription	server/cms/types/queries/utils/mkPropertyDescriptions.js	/^const mkIdArrayDescription = (title,$/;"	C
+mkLocalizedStringsDescription	server/cms/types/queries/utils/propertyDescriptionFactories/mkTranslatedStringsDescription.js	/^const mkLocalizedStringsDescription = (title,property,value,multiline) => {$/;"	C
+mkLocalizedStringsMap	server/cms/types/queries/utils/propertyDescriptionFactories/mkTranslatedStringsDescription.js	/^const mkLocalizedStringsMap = (translatedStrings) => {$/;"	C
+mkProductDescriptionForCustomer	server/cms/types/queries/utils/mkProductDescriptionForCustomer.js	/^const mkProductDescriptionForCustomer = (id,locale) => {$/;"	C
+mkPropertyChanger	server/cms/types/queries/utils/propertyChangers/mkPropertyChanger.js	/^const mkPropertyChanger = function(entity, pv, model, db) {$/;"	f
+mkPropertyDescription	server/cms/types/queries/utils/mkPropertyDescriptions.js	/^const mkPropertyDescription = (entity,schema,property) => {$/;"	C
+mkPropertyDescriptions	server/cms/types/queries/utils/mkPropertyDescriptions.js	/^const mkPropertyDescriptions = (entity,schema) => {$/;"	C
+mkPropertyState	app_m/components/EntityView.js	/^  mkPropertyState(entityDescription, propertyDescription, entityOverviews, ix) {$/;"	m	class:EntityView
+mkPropertyStates	app_m/components/EntityView.js	/^  mkPropertyStates(props) {$/;"	m	class:EntityView
+mkPropertyValueOutput	server/cms/types/queries/utils/mkEntityPropertyValues.js	/^const mkPropertyValueOutput = (entity,schemaPaths,property) => {$/;"	C
+mkStringDescription	server/cms/types/queries/utils/mkPropertyDescriptions.js	/^const mkStringDescription = (title,property,string,propertyOptions) => {$/;"	C
+mkTemporaryEntity	server/cms/types/queries/utils/mkTemporaryEntity.js	/^const mkTemporaryEntity = (dbModelName) => {$/;"	C
+mkTranslatedStringsDescription	server/cms/types/queries/utils/propertyDescriptionFactories/mkTranslatedStringsDescription.js	/^const mkTranslatedStringsDescription = (entity,title,property,value) => {$/;"	C
+mkUnremovableTranslatedStrings	server/cms/types/queries/utils/propertyDescriptionFactories/mkTranslatedStringsDescription.js	/^const mkUnremovableTranslatedStrings = (translatedStrings) => {$/;"	C
+mkdirp	package.json	/^    "mkdirp": "0.5.1",$/;"	s	object:devDependencies
+mocha	package.json	/^    "mocha": "4.0.1",$/;"	s	object:devDependencies
+mochaParameters	test/run_server_test.js	/^  let mochaParameters = process.argv.slice(3);$/;"	v
+modelName	server/locales/init.js	/^  const modelName = 'GalleryItem';$/;"	C
+modelName	server/locales/init.js	/^  const modelName = 'ProductGroup';$/;"	C
+modelName	server/locales/init.js	/^  const modelName = 'User';$/;"	C
+module	app_m/webpack.config.js	/^  module: {$/;"	c	class:module.exports
+module	app_w/webpack.config.js	/^  module: {$/;"	c	class:module.exports
+modules	app_m/webpack.config.js	/^    modules: [$/;"	p	class:module.exports.resolve
+mongodParamLine	test/run_server_test.js	/^  let mongodParamLine = `--dbpath ${testDbDir} --port ${configDb.port}`;$/;"	v
+mongod_process	test/run_server_test.js	/^let mongod_process = startMongodProcess();$/;"	v
+mongoose	package.json	/^    "mongoose": "4.12.3",$/;"	s	object:dependencies
+morgan	package.json	/^    "morgan": "1.9.0",$/;"	s	object:dependencies
+ms	package.json	/^    "ms": "2.0.0",$/;"	s	object:dependencies
+multiline	server/cms/types/queries/utils/mkPropertyDescriptions.js	/^      const multiline = !! propertyOptions.multiline;$/;"	C
+multiline	server/cms/types/queries/utils/mkPropertyDescriptions.js	/^  let multiline = !! propertyOptions.multiline;$/;"	v
+n	public/app.bundle.js	/^\/******\/ 	__webpack_require__.n = function(module) {$/;"	f	function:__webpack_require__
+name	app_m/components/EntityView.js	/^    const name = getFirstString(entityDescription);$/;"	C
+name	app_m/components/LoginSignup.js	/^    this.state={name:'', password:'', login: true \/*false means signup*\/};$/;"	p	class:LoginSignup.constructor.state
+name	app_m/components/dialogs/ConfirmRemoveDialog.js	/^  name:           PropTypes.string.isRequired,$/;"	p	class:ConfirmRemoveDialog.propTypes
+name	app_w/components/products/ProductGroupDescription.js	/^  name:              PropTypes.string.isRequired,$/;"	p	class:ProductGroupDescription.propTypes
+name	package.json	/^  "name": "kunstumsglas.at",$/;"	s
+namedview3402	app_w/assets/icons/right-arrow.svg	/^     inkscape:current-layer="svg3390" \/>$/;"	i
+namedview3402	public/app_w/assets/icons/right-arrow.svg	/^     inkscape:current-layer="svg3390" \/>$/;"	i
+namedview4266	app_w/assets/icons/left-arrow.svg	/^     inkscape:current-layer="svg4254" \/>$/;"	i
+namedview4266	public/app_w/assets/icons/left-arrow.svg	/^     inkscape:current-layer="svg4254" \/>$/;"	i
+neededProperties	app_m/components/propertyViews/IdArrayPropertyView.js	/^  let neededProperties = Overview.neededProperties;$/;"	v
+newOrder	app_m/components/CollectionsView.js	/^      let newOrder = [];$/;"	v
+newPassword1	app_m/components/NewPassword.js	/^    this.state={oldPassword:'', newPassword1:'', newPassword2:''};$/;"	p	class:NewPassword.constructor.state
+newPassword2	app_m/components/NewPassword.js	/^    this.state={oldPassword:'', newPassword1:'', newPassword2:''};$/;"	p	class:NewPassword.constructor.state
+newPasswordPage	app_m/components/App.js	/^    this.state = {newPasswordPage:false};$/;"	p	class:App.constructor.state
+newState	app_m/reducers/entity.js	/^  let newState = state;$/;"	v
+newState	app_w/reducers/locale.js	/^    let newState = merge({}, state);$/;"	v
+newValue	server/locales/init.js	/^    const newValue = locales.map(locale=>({locale,string:''}));$/;"	C
+nextIx	app_m/components/EntityView.js	/^    let nextIx = ix + 1;$/;"	v
+nextProductGroupId	app_w/reducers/locale.js	/^  const nextProductGroupId = productGroupIds[nextProductGroupIx];$/;"	C
+nextProductGroupIx	app_w/reducers/locale.js	/^  const nextProductGroupIx = productGroupIx < productGroupIds.length - 1$/;"	C
+nextProductGroupIx	app_w/reducers/locale.js	/^  const nextProductGroupIx = productGroupIx > 0$/;"	C
+nextProductId	app_w/reducers/productGroup.js	/^  const nextProductId = productIds[nextProductIx];$/;"	C
+nextProductIx	app_w/reducers/productGroup.js	/^  const nextProductIx = productIx < productIds.length - 1 ? productIx + 1 : 0;$/;"	C
+nextProductIx	app_w/reducers/productGroup.js	/^  const nextProductIx = productIx > 0 ? productIx - 1 : productIds.length - 1;$/;"	C
+noTitle	app_m/components/propertyViews/StringPropertyView.js	/^  noTitle:               PropTypes.bool$/;"	p	class:StringPropertyView.propTypes
+node-sass	package.json	/^    "node-sass": "4.11.0",$/;"	s	object:devDependencies
+normalizr	package.json	/^    "normalizr": "3.2.4",$/;"	s	object:dependencies
+o	public/app.bundle.js	/^\/******\/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnP/;"	f	function:__webpack_require__
+oldPassword	app_m/components/NewPassword.js	/^    this.state={oldPassword:'', newPassword1:'', newPassword2:''};$/;"	p	class:NewPassword.constructor.state
+onAllBack	app_m/components/translationComponents/TranslatedStringView.js	/^  onAllBack:             PropTypes.func,$/;"	p	class:TranslatedStringView.propTypes
+onBack	app_m/components/propertyStates/BoolPropertyState.js	/^      onBack:                this.changed ? this.setBack : null,$/;"	p	class:BoolPropertyState.render.props
+onBack	app_m/components/propertyStates/DataURLPropertyState.js	/^      onBack: this.changed ? this.setBack : null,$/;"	p	class:DataURLPropertyState.render.props
+onBack	app_m/components/propertyStates/FileUploadStatusPropertyState.js	/^      onBack: this.changed ? this.setBack : null,$/;"	p	class:FileUploadStatusPropertyState.render.props
+onBack	app_m/components/propertyStates/IdArrayPropertyState.js	/^      onBack: this.changed ? this.setBack : null,$/;"	p	class:IdArrayPropertyState.render.props
+onBack	app_m/components/propertyStates/LocalizedStringsPropertyState.js	/^      onBack: this.changed ? this.setBack : null,$/;"	p	class:LocalizedStringsPropertyState.render.props
+onBack	app_m/components/propertyStates/StringPropertyState.js	/^      onBack: this.changed ? this.setBack : null,$/;"	p	class:StringPropertyState.render.props
+onBack	app_m/components/propertyViews/BoolPropertyView.js	/^   onBack:                 PropTypes.func,$/;"	p	class:BoolPropertyView.propTypes
+onBack	app_m/components/propertyViews/DataURLPropertyView.js	/^   onBack:                 PropTypes.func,$/;"	p	class:DataURLPropertyView.propTypes
+onBack	app_m/components/propertyViews/FileUploadStatusPropertyView.js	/^   onBack:                 PropTypes.func,$/;"	p	class:FileUploadStatusPropertyView.propTypes
+onBack	app_m/components/propertyViews/IdArrayPropertyView.js	/^   onBack:                PropTypes.func,$/;"	p	class:IdArrayPropertyView.propTypes
+onBack	app_m/components/propertyViews/LocalizedStringsPropertyView.js	/^  onBack:                PropTypes.func,$/;"	p	class:LocalizedStringsPropertyView.propTypes
+onBack	app_m/components/propertyViews/PropertyView.js	/^   onBack:                 PropTypes.func$/;"	p	class:PropertyView.propTypes
+onBack	app_m/components/propertyViews/StringPropertyView.js	/^  onBack:                PropTypes.func,$/;"	p	class:StringPropertyView.propTypes
+onBack	app_m/components/translationComponents/TranslatedStringView.js	/^  onBack:                PropTypes.func,$/;"	p	class:TranslatedStringView.propTypes
+onCancel	app_m/components/NewPassword.js	/^  onCancel:         PropTypes.func.isRequired,$/;"	p	class:NewPassword.propTypes
+onCancel	app_m/components/dialogs/ConfirmDialog.js	/^  onCancel:       PropTypes.func.isRequired,$/;"	p	class:ConfirmDialog.propTypes
+onCancel	app_m/components/dialogs/ConfirmRemoveDialog.js	/^  onCancel:       PropTypes.func.isRequired,$/;"	p	class:ConfirmRemoveDialog.propTypes
+onChangeLocale	app_w/components/Title.js	/^  onChangeLocale:   PropTypes.func.isRequired,$/;"	p	class:Title.propTypes
+onChangeOrder	app_m/components/CollectionsView.js	/^  onChangeOrder:             PropTypes.func.isRequired$/;"	p	class:CollectionsView.propTypes
+onChanged	app_m/components/EntityView.js	/^      onChanged: () => this.setChanged(property, ix),$/;"	p	class:EntityView.mkPropertyState.args
+onClick	app_m/components/overviews/Overview.js	/^  onClick:          PropTypes.func.isRequired$/;"	p	class:Overview.propTypes
+onConfirm	app_m/components/dialogs/ConfirmDialog.js	/^  onConfirm:      PropTypes.func.isRequired$/;"	p	class:ConfirmDialog.propTypes
+onCreateNewEntity	app_m/components/EntityView.js	/^      onCreateNewEntity: dbModelName =>$/;"	p	class:EntityView.mkPropertyState.args
+onCreateNewEntity	app_m/components/EntityView.js	/^  onCreateNewEntity: PropTypes.func.isRequired$/;"	p	class:EntityView.propTypes
+onCreateNewEntity	app_m/components/propertyStates/IdArrayPropertyState.js	/^      onCreateNewEntity: dbModelName => this.onCreateNewEntity(dbModelName)$/;"	p	class:IdArrayPropertyState.render.props
+onCreateNewEntity	app_m/components/propertyViews/IdArrayPropertyView.js	/^   onCreateNewEntity:     PropTypes.func.isRequired$/;"	p	class:IdArrayPropertyView.propTypes
+onFinishEdit	app_m/components/propertyStates/LocalizedStringsPropertyState.js	/^      onFinishEdit: this.onFocusReleased,$/;"	p	class:LocalizedStringsPropertyState.render.props
+onFinishEdit	app_m/components/propertyStates/StringPropertyState.js	/^      onFinishEdit: this.onFocusReleased,$/;"	p	class:StringPropertyState.render.props
+onFinishEdit	app_m/components/propertyViews/LocalizedStringsPropertyView.js	/^  onFinishEdit:          PropTypes.func.isRequired,$/;"	p	class:LocalizedStringsPropertyView.propTypes
+onFinishEdit	app_m/components/propertyViews/StringPropertyView.js	/^  onFinishEdit:          PropTypes.func.isRequired,$/;"	p	class:StringPropertyView.propTypes
+onFinishEdit	app_m/components/translationComponents/TranslatedStringView.js	/^  onFinishEdit:          PropTypes.func.isRequired,$/;"	p	class:TranslatedStringView.propTypes
+onFocusReleased	app_m/components/EntityView.js	/^      onFocusReleased: () => this.setFocusOnNext(ix),$/;"	p	class:EntityView.mkPropertyState.args
+onFocusSet	app_m/components/EntityView.js	/^      onFocusSet: e => this.setFocus(e, ix),$/;"	p	class:EntityView.mkPropertyState.args
+onLogout	app_m/components/UserMenu.js	/^  onLogout:      PropTypes.func,$/;"	p	class:UserMenu.propTypes
+onMergePropertyChange	app_m/components/propertyStates/BoolPropertyState.js	/^      onMergePropertyChange: this.mergeChange$/;"	p	class:BoolPropertyState.render.props
+onMergePropertyChange	app_m/components/propertyStates/DataURLPropertyState.js	/^      onMergePropertyChange: this.mergeChange$/;"	p	class:DataURLPropertyState.render.props
+onMergePropertyChange	app_m/components/propertyStates/FileUploadStatusPropertyState.js	/^      onMergePropertyChange: this.mergeChange,$/;"	p	class:FileUploadStatusPropertyState.render.props
+onMergePropertyChange	app_m/components/propertyStates/IdArrayPropertyState.js	/^      onMergePropertyChange: this.mergeChange,$/;"	p	class:IdArrayPropertyState.render.props
+onMergePropertyChange	app_m/components/propertyStates/LocalizedStringsPropertyState.js	/^      onMergePropertyChange: this.mergeChange,$/;"	p	class:LocalizedStringsPropertyState.render.props
+onMergePropertyChange	app_m/components/propertyStates/StringPropertyState.js	/^      onMergePropertyChange: this.mergeChange,$/;"	p	class:StringPropertyState.render.props
+onMergePropertyChange	app_m/components/propertyViews/BoolPropertyView.js	/^   onMergePropertyChange:  PropTypes.func.isRequired$/;"	p	class:BoolPropertyView.propTypes
+onMergePropertyChange	app_m/components/propertyViews/DataURLPropertyView.js	/^   onMergePropertyChange:  PropTypes.func.isRequired$/;"	p	class:DataURLPropertyView.propTypes
+onMergePropertyChange	app_m/components/propertyViews/FileUploadStatusPropertyView.js	/^   onMergePropertyChange:  PropTypes.func.isRequired,$/;"	p	class:FileUploadStatusPropertyView.propTypes
+onMergePropertyChange	app_m/components/propertyViews/IdArrayPropertyView.js	/^   onMergePropertyChange: PropTypes.func.isRequired,$/;"	p	class:IdArrayPropertyView.propTypes
+onMergePropertyChange	app_m/components/propertyViews/LocalizedStringsPropertyView.js	/^  onMergePropertyChange: PropTypes.func.isRequired,$/;"	p	class:LocalizedStringsPropertyView.propTypes
+onMergePropertyChange	app_m/components/propertyViews/StringPropertyView.js	/^  onMergePropertyChange: PropTypes.func.isRequired,$/;"	p	class:StringPropertyView.propTypes
+onNewPassword	app_m/components/UserMenu.js	/^  onNewPassword: PropTypes.func$/;"	p	class:UserMenu.propTypes
+onPasswordError	app_m/components/NewPassword.js	/^  onPasswordError:  PropTypes.func.isRequired$/;"	p	class:NewPassword.propTypes
+onRemove	app_m/components/dialogs/ConfirmRemoveDialog.js	/^  onRemove:       PropTypes.func.isRequired$/;"	p	class:ConfirmRemoveDialog.propTypes
+onRemove	app_m/components/translationComponents/TranslatedStringView.js	/^  onRemove:              PropTypes.func,$/;"	p	class:TranslatedStringView.propTypes
+onRemoveEntity	app_m/components/EntityView.js	/^  onRemoveEntity: PropTypes.func.isRequired,$/;"	p	class:EntityView.propTypes
+onSaveEntity	app_m/components/EntityView.js	/^  onSaveEntity: PropTypes.func.isRequired,$/;"	p	class:EntityView.propTypes
+onSelectEntity	app_m/components/EntityView.js	/^      onSelectEntity: this.props.onSelectEntity,$/;"	p	class:EntityView.mkPropertyState.args
+onSelectEntity	app_m/components/EntityView.js	/^  onSelectEntity: PropTypes.func.isRequired,$/;"	p	class:EntityView.propTypes
+onSelectEntity	app_m/components/propertyStates/IdArrayPropertyState.js	/^      onSelectEntity: this.onSelectEntity,$/;"	p	class:IdArrayPropertyState.render.props
+onSelectEntity	app_m/components/propertyViews/IdArrayPropertyView.js	/^   onSelectEntity:        PropTypes.func.isRequired,$/;"	p	class:IdArrayPropertyView.propTypes
+onSetNewPassword	app_m/components/NewPassword.js	/^  onSetNewPassword: PropTypes.func.isRequired,$/;"	p	class:NewPassword.propTypes
+onStartEdit	app_m/components/propertyStates/LocalizedStringsPropertyState.js	/^      onStartEdit: this.onFocusSet,$/;"	p	class:LocalizedStringsPropertyState.render.props
+onStartEdit	app_m/components/propertyStates/StringPropertyState.js	/^      onStartEdit: this.onFocusSet,$/;"	p	class:StringPropertyState.render.props
+onStartEdit	app_m/components/propertyViews/LocalizedStringsPropertyView.js	/^  onStartEdit:           PropTypes.func.isRequired,$/;"	p	class:LocalizedStringsPropertyView.propTypes
+onStartEdit	app_m/components/propertyViews/StringPropertyView.js	/^  onStartEdit:           PropTypes.func.isRequired,$/;"	p	class:StringPropertyView.propTypes
+onStartEdit	app_m/components/translationComponents/TranslatedStringView.js	/^  onStartEdit:           PropTypes.func.isRequired,$/;"	p	class:TranslatedStringView.propTypes
+onTranslationChange	app_m/components/translationComponents/TranslatedStringView.js	/^  onTranslationChange:   PropTypes.func.isRequired,$/;"	p	class:TranslatedStringView.propTypes
+onUnchanged	app_m/components/EntityView.js	/^      onUnchanged: () => this.setUnchanged(property),$/;"	p	class:EntityView.mkPropertyState.args
+onreadystatechange	app_w/global.js	/^xhr.onreadystatechange = function() {$/;"	f	function:xhr
+open	app_m/components/CollectionsView.js	/^        open: false$/;"	p	class:CollectionsView.constructor.state
+open	app_w/components/products/ProductGroupDescription.js	/^    this.state={open:false}$/;"	p	class:ProductGroupDescription.constructor.state
+options	server/cms/types/queries/utils/mkPropertyDescriptions.js	/^      const options = (entity.id==='mainview')$/;"	C
+order	app_m/components/CollectionsView.js	/^      let order = state.order;$/;"	v
+order	app_m/components/CollectionsView.js	/^      this.draggableState = {order:                             this.props.ids,$/;"	p	class:CollectionsView.constructor.draggableState
+otherItemsShift	app_m/components/CollectionsView.js	/^      let otherItemsShift = (chasedIx < draggedIx) ? 1 : -1;$/;"	v
+output	app_m/webpack.config.js	/^  output: {$/;"	c	class:module.exports
+output	app_w/webpack.config.js	/^  output: {$/;"	c	class:module.exports
+parseBool	server/cms/types/queries/utils/propertyChangers/BoolChanger.js	/^const parseBool = string => {$/;"	C
+passport	package.json	/^    "passport": "0.3.2",$/;"	s	object:dependencies
+passport-local	package.json	/^    "passport-local": "1.0.0",$/;"	s	object:dependencies
+passport-local-mongoose	package.json	/^    "passport-local-mongoose": "4.2.1",$/;"	s	object:dependencies
+password	app_m/components/LoginSignup.js	/^    this.state={name:'', password:'', login: true \/*false means signup*\/};$/;"	p	class:LoginSignup.constructor.state
+path	app_m/webpack.config.js	/^    path:     __dirname + '\/..\/public',$/;"	p	class:module.exports.output
+path	app_m/webpack.config.js	/^const path = require('path');$/;"	C
+path	app_w/webpack.config.js	/^    path:     __dirname + '\/..\/public',$/;"	p	class:module.exports.output
+path	test/run_server_test.js	/^var path             = require('path');$/;"	v
+path3347	app_w/assets/icons/left-arrow.svg	/^     inkscape:connector-curvature="0" \/>$/;"	i
+path3347	public/app_w/assets/icons/left-arrow.svg	/^     inkscape:connector-curvature="0" \/>$/;"	i
+path3406	app_w/assets/icons/right-arrow.svg	/^     inkscape:connector-curvature="0" \/>$/;"	i
+path3406	public/app_w/assets/icons/right-arrow.svg	/^     inkscape:connector-curvature="0" \/>$/;"	i
+path4160	app_w/assets/icons/right-arrow.svg	/^     inkscape:connector-curvature="0" \/>$/;"	i
+path4160	public/app_w/assets/icons/right-arrow.svg	/^     inkscape:connector-curvature="0" \/>$/;"	i
+path4270	app_w/assets/icons/left-arrow.svg	/^     inkscape:connector-curvature="0" \/>$/;"	i
+path4270	public/app_w/assets/icons/left-arrow.svg	/^     inkscape:connector-curvature="0" \/>$/;"	i
+pgId	app_w/components/products/Products.js	/^  pgId: PropTypes.string.isRequired$/;"	p	class:Products.propTypes
+pgId	app_w/components/products/ProductsGalleryItem.js	/^  pgId: PropTypes.string.isRequired$/;"	p	class:ProductsGalleryItem.propTypes
+plugins	app_m/webpack.config.js	/^  plugins: plugins,$/;"	p	class:module.exports
+plugins	app_m/webpack.config.js	/^var plugins = isProduction$/;"	v
+plugins	app_w/webpack.config.js	/^  plugins: plugins,$/;"	p	class:module.exports
+plugins	app_w/webpack.config.js	/^var plugins = isProduction$/;"	v
+port	server/config/port.js	/^const port = parseInt(process.env.PORT);$/;"	C
+postcss-loader	package.json	/^    "postcss-loader": "2.0.8",$/;"	s	object:devDependencies
+process	test/run_server_test.js	/^  let process = spawn('mongod', mongodParamLine.split(' '), {});$/;"	v
+processFinishedError	app_m/reducers/auth.js	/^const processFinishedError = (state, action) => {$/;"	C
+processFinishedError	app_m/reducers/entity.js	/^const processFinishedError = (state, action) => {$/;"	C
+processFinishedError	app_w/reducers/artist.js	/^const processFinishedError = (state, action) => {$/;"	C
+processFinishedError	app_w/reducers/locale.js	/^const processFinishedError = (state, action) => {$/;"	C
+processFinishedError	app_w/reducers/productGroup.js	/^const processFinishedError = (state, action) => {$/;"	C
+processFinishedOk	app_m/reducers/auth.js	/^const processFinishedOk = (state, action) => {$/;"	C
+processFinishedOk	app_m/reducers/entity.js	/^const processFinishedOk = (state, action) => {$/;"	C
+processFinishedOk	app_w/reducers/artist.js	/^const processFinishedOk = (state, action) => {$/;"	C
+processFinishedOk	app_w/reducers/locale.js	/^const processFinishedOk = (state, action) => {$/;"	C
+processFinishedOk	app_w/reducers/productGroup.js	/^const processFinishedOk = (state, action) => {$/;"	C
+processName	app_m/processes/CreateEntityToProcess.js	/^  processName: 'CreateEntityToProcess',$/;"	p	class:CreateEntityToProcess
+processName	app_m/processes/IsLoggedInProcess.js	/^  processName: 'IsLoggedInProcess',$/;"	p	class:IsLoggedInProcess
+processName	app_m/processes/LoadEntityProcess.js	/^  processName: 'LoadEntityProcess',$/;"	p	class:LoadEntityProcess
+processName	app_m/processes/LoginProcess.js	/^  processName: 'LoginProcess',$/;"	p	class:LoginProcess
+processName	app_m/processes/LogoutProcess.js	/^  processName: 'LogoutProcess',$/;"	p	class:LogoutProcess
+processName	app_m/processes/RemoveEntityProcess.js	/^  processName: 'RemoveEntityProcess',$/;"	p	class:RemoveEntityProcess
+processName	app_m/processes/SaveEntityProcess.js	/^  processName: 'SaveEntityProcess',$/;"	p	class:SaveEntityProcess
+processName	app_m/processes/SetNewPasswordProcess.js	/^  processName: 'SetNewPasswordProcess',$/;"	p	class:SetNewPasswordProcess
+processName	app_m/processes/SignupProcess.js	/^  processName: 'SignupProcess',$/;"	p	class:SignupProcess
+processName	app_w/processes/LoadArtistProcess.js	/^  processName: 'LoadArtistProcess',$/;"	p	class:LoadArtistProcess
+processName	app_w/processes/LoadLocaleProcess.js	/^  processName: 'LoadLocaleProcess',$/;"	p	class:LoadLocaleProcess
+processName	app_w/processes/LoadProductGroupProcess.js	/^  processName: 'LoadProductGroupProcess',$/;"	p	class:LoadProductGroupProcess
+processName	app_w/processes/LoadProductProcess.js	/^  processName: 'LoadProductProcess',$/;"	p	class:LoadProductProcess
+processOkCreateEntityTo	app_m/reducers/entity.js	/^const processOkCreateEntityTo = state => {$/;"	C
+processOkIsLoggedIn	app_m/reducers/auth.js	/^const processOkIsLoggedIn = (state, action) => {$/;"	C
+processOkLoadArtist	app_w/reducers/artist.js	/^const processOkLoadArtist = (state, action) => {$/;"	C
+processOkLoadEntity	app_m/reducers/entity.js	/^const processOkLoadEntity = (state, action) => {$/;"	C
+processOkLoadLocale	app_w/reducers/locale.js	/^const processOkLoadLocale = (state, action) => {$/;"	C
+processOkLoadProduct	app_w/reducers/productGroup.js	/^const processOkLoadProduct = (state, action) => {$/;"	C
+processOkLoadProductGroup	app_w/reducers/productGroup.js	/^const processOkLoadProductGroup = (state, action) => {$/;"	C
+processOkLogin	app_m/reducers/auth.js	/^const processOkLogin = (state, action) => {$/;"	C
+processOkLogout	app_m/reducers/auth.js	/^const processOkLogout = (state, action) => {$/;"	C
+processOkRemoveEntityProcess	app_m/reducers/entity.js	/^const processOkRemoveEntityProcess = state => {$/;"	C
+processOkSaveEntity	app_m/reducers/entity.js	/^const processOkSaveEntity = state => {$/;"	C
+processOkSetNewPassword	app_m/reducers/auth.js	/^const processOkSetNewPassword = (state, action) => {$/;"	C
+processOkSignup	app_m/reducers/auth.js	/^const processOkSignup = state => {$/;"	C
+product	app_w/components/products/ProductGallery.js	/^  product:      PropTypes.object,$/;"	p	class:ProductGallery.propTypes
+product	app_w/reducers/productGroup.js	/^  const product = action.result;$/;"	C
+product	app_w/reducers/productGroup.js	/^  const product = state.product;$/;"	C
+product	app_w/reducers/productGroup.js	/^  product: undefined,$/;"	p	class:defaultState
+product	server/cms/types/schemas/product.js	/^export const product = mongoose.Schema({$/;"	C
+productGroup	app_w/components/products/ProductGroup.js	/^  productGroup: PropTypes.object,$/;"	p	class:ProductGroup.propTypes
+productGroup	app_w/components/products/ProductGroupGallery.js	/^  productGroup: PropTypes.object,$/;"	p	class:ProductGroupGallery.propTypes
+productGroup	app_w/reducers/productGroup.js	/^  const productGroup = action.result;$/;"	C
+productGroup	app_w/reducers/productGroup.js	/^  productGroup: undefined,$/;"	p	class:defaultState
+productGroup	app_w/reducers/productGroup.js	/^const productGroup = (state = defaultState, action) => {$/;"	C
+productGroup	server/cms/types/schemas/productGroup.js	/^let productGroup = mongoose.Schema({$/;"	v
+productGroupIds	app_w/reducers/locale.js	/^  const productGroupIds = productGroups.map(pg => pg.id);$/;"	C
+productGroupIx	app_w/reducers/locale.js	/^  const productGroupIx = productGroupIds.findIndex(_pgid => _pgid === pgid);$/;"	C
+productGroupLocale	app_w/reducers/productGroup.js	/^  const productGroupLocale = state._cachedProductGroups[action.id];$/;"	C
+productGroupModelsWithLocalizedStrings	server/locales/init.js	/^  const productGroupModelsWithLocalizedStrings = getAllProductGroupModelsWithLocalizedStrings();$/;"	C
+productGroupName	app_w/components/products/GalleryOfAProductGroup.js	/^  productGroupName: PropTypes.string.isRequired,$/;"	p	class:GalleryOfAProductGroup.propTypes
+productGroupName	app_w/components/products/GalleryOfAProductGroupItem.js	/^  productGroupName: PropTypes.string.isRequired,$/;"	p	class:GalleryOfAProductGroupItem.propTypes
+productGroups	app_w/components/products/ProductGroups.js	/^  productGroups: PropTypes.array.isRequired,$/;"	p	class:ProductGroups.propTypes
+productGroups	app_w/reducers/locale.js	/^  const productGroups = state.landingPageData.productGroups;$/;"	C
+productIds	app_w/reducers/productGroup.js	/^  const productIds = state.productGroup.productIds;$/;"	C
+productIx	app_w/reducers/productGroup.js	/^  const productIx = productIds.findIndex(pid => pid === product.id);$/;"	C
+productIx	app_w/reducers/productGroup.js	/^  productIx: undefined,$/;"	p	class:defaultState
+productModelsWithLocalizedStrings	server/locales/init.js	/^  const productModelsWithLocalizedStrings      = getAllProductModelsWithLocalizedStrings();$/;"	C
+productModelsWithLocalizedTitles	server/locales/init.js	/^  const productModelsWithLocalizedTitles = getAllProductModelsWithLocalizedTitles();$/;"	C
+propTypes	app_m/components/App.js	/^App.propTypes = {$/;"	c	class:App
+propTypes	app_m/components/CollectionsView.js	/^CollectionsView.propTypes = {$/;"	c	class:CollectionsView
+propTypes	app_m/components/EntityView.js	/^EntityView.propTypes = {$/;"	c	class:EntityView
+propTypes	app_m/components/NewPassword.js	/^NewPassword.propTypes = {$/;"	c	class:NewPassword
+propTypes	app_m/components/UserMenu.js	/^UserMenu.propTypes = {$/;"	c	class:UserMenu
+propTypes	app_m/components/dialogs/ConfirmDialog.js	/^ConfirmDialog.propTypes = {$/;"	c	class:ConfirmDialog
+propTypes	app_m/components/dialogs/ConfirmRemoveDialog.js	/^ConfirmRemoveDialog.propTypes = {$/;"	c	class:ConfirmRemoveDialog
+propTypes	app_m/components/overviews/Overview.js	/^Overview.propTypes = {$/;"	c	class:Overview
+propTypes	app_m/components/propertyViews/BoolPropertyView.js	/^BoolPropertyView.propTypes = {$/;"	c	class:BoolPropertyView
+propTypes	app_m/components/propertyViews/DataURLPropertyView.js	/^DataURLPropertyView.propTypes = {$/;"	c	class:DataURLPropertyView
+propTypes	app_m/components/propertyViews/FileUploadStatusPropertyView.js	/^FileUploadStatusPropertyView.propTypes = {$/;"	c	class:FileUploadStatusPropertyView
+propTypes	app_m/components/propertyViews/IdArrayPropertyView.js	/^IdArrayPropertyView.propTypes = {$/;"	c	class:IdArrayPropertyView
+propTypes	app_m/components/propertyViews/LocalizedStringsPropertyView.js	/^LocalizedStringsPropertyView.propTypes = {$/;"	c	class:LocalizedStringsPropertyView
+propTypes	app_m/components/propertyViews/PropertyView.js	/^PropertyView.propTypes = {$/;"	c	class:PropertyView
+propTypes	app_m/components/propertyViews/StringPropertyView.js	/^StringPropertyView.propTypes = {$/;"	c	class:StringPropertyView
+propTypes	app_m/components/translationComponents/TranslatedStringView.js	/^TranslatedStringView.propTypes = {$/;"	c	class:TranslatedStringView
+propTypes	app_w/components/App.js	/^App.propTypes = {$/;"	c	class:App
+propTypes	app_w/components/Artist.js	/^Artist.propTypes = {$/;"	c	class:Artist
+propTypes	app_w/components/CookieBanner.js	/^CookieBanner.propTypes = {$/;"	c	class:CookieBanner
+propTypes	app_w/components/Main.js	/^Main.propTypes = {$/;"	c	class:Main
+propTypes	app_w/components/Title.js	/^Title.propTypes = {$/;"	c	class:Title
+propTypes	app_w/components/products/GalleryOfAProductGroup.js	/^GalleryOfAProductGroup.propTypes = {$/;"	c	class:GalleryOfAProductGroup
+propTypes	app_w/components/products/GalleryOfAProductGroupItem.js	/^GalleryOfAProductGroupItem.propTypes = {$/;"	c	class:GalleryOfAProductGroupItem
+propTypes	app_w/components/products/ProductGallery.js	/^ProductGallery.propTypes = {$/;"	c	class:ProductGallery
+propTypes	app_w/components/products/ProductGroup.js	/^ProductGroup.propTypes = {$/;"	c	class:ProductGroup
+propTypes	app_w/components/products/ProductGroupDescription.js	/^ProductGroupDescription.propTypes = {$/;"	c	class:ProductGroupDescription
+propTypes	app_w/components/products/ProductGroupGallery.js	/^ProductGroupGallery.propTypes = {$/;"	c	class:ProductGroupGallery
+propTypes	app_w/components/products/ProductGroups.js	/^ProductGroups.propTypes = {$/;"	c	class:ProductGroups
+propTypes	app_w/components/products/Products.js	/^Products.propTypes = {$/;"	c	class:Products
+propTypes	app_w/components/products/ProductsGalleryItem.js	/^ProductsGalleryItem.propTypes = {$/;"	c	class:ProductsGalleryItem
+properties	server/locales/init.js	/^    const properties = productModelsWithLocalizedTitles[modelName];$/;"	C
+propertyDescription	app_m/components/propertyStates/BoolPropertyState.js	/^      propertyDescription:   this.workingPropertyDescription,$/;"	p	class:BoolPropertyState.render.props
+propertyDescription	app_m/components/propertyStates/DataURLPropertyState.js	/^      propertyDescription: this.workingPropertyDescription,$/;"	p	class:DataURLPropertyState.render.props
+propertyDescription	app_m/components/propertyStates/FileUploadStatusPropertyState.js	/^      propertyDescription: this.workingPropertyDescription,$/;"	p	class:FileUploadStatusPropertyState.render.props
+propertyDescription	app_m/components/propertyStates/IdArrayPropertyState.js	/^      propertyDescription: this.workingPropertyDescription,$/;"	p	class:IdArrayPropertyState.render.props
+propertyDescription	app_m/components/propertyStates/LocalizedStringsPropertyState.js	/^      propertyDescription: this.workingPropertyDescription,$/;"	p	class:LocalizedStringsPropertyState.render.props
+propertyDescription	app_m/components/propertyStates/StringPropertyState.js	/^      propertyDescription: this.workingPropertyDescription,$/;"	p	class:StringPropertyState.render.props
+propertyDescription	app_m/components/propertyViews/BoolPropertyView.js	/^   propertyDescription:    PropTypes.object.isRequired,$/;"	p	class:BoolPropertyView.propTypes
+propertyDescription	app_m/components/propertyViews/DataURLPropertyView.js	/^   propertyDescription:    PropTypes.object.isRequired,$/;"	p	class:DataURLPropertyView.propTypes
+propertyDescription	app_m/components/propertyViews/FileUploadStatusPropertyView.js	/^   propertyDescription:    PropTypes.object.isRequired,$/;"	p	class:FileUploadStatusPropertyView.propTypes
+propertyDescription	app_m/components/propertyViews/IdArrayPropertyView.js	/^   propertyDescription:   PropTypes.object.isRequired,$/;"	p	class:IdArrayPropertyView.propTypes
+propertyDescription	app_m/components/propertyViews/LocalizedStringsPropertyView.js	/^  propertyDescription:   PropTypes.object.isRequired,$/;"	p	class:LocalizedStringsPropertyView.propTypes
+propertyDescription	app_m/components/propertyViews/StringPropertyView.js	/^  propertyDescription:   PropTypes.object.isRequired,$/;"	p	class:StringPropertyView.propTypes
+propertyOptions	server/cms/types/queries/utils/mkPropertyDescriptions.js	/^  let propertyOptions = schemaPaths[property].options;$/;"	v
+propertyOptionsType0	server/cms/types/queries/utils/propertyChangers/IdArrayChanger.js	/^  let propertyOptionsType0 = propertyOptions.type[0];$/;"	v
+propertyType	server/cms/types/queries/utils/getPropertyTypeName.js	/^  let propertyType = schemaPathsPropertyOptions.type;$/;"	v
+propertyType0	server/cms/types/queries/utils/getPropertyTypeName.js	/^  let propertyType0 = propertyType[0];$/;"	v
+propertyTypeName	server/cms/types/queries/utils/getPropertyTypeName.js	/^  let propertyTypeName = propertyType.name;$/;"	v
+props	app_m/components/propertyStates/BoolPropertyState.js	/^    let props = {$/;"	c	class:BoolPropertyState.render
+props	app_m/components/propertyStates/DataURLPropertyState.js	/^    let props = {$/;"	c	class:DataURLPropertyState.render
+props	app_m/components/propertyStates/FileUploadStatusPropertyState.js	/^    let props = {$/;"	c	class:FileUploadStatusPropertyState.render
+props	app_m/components/propertyStates/IdArrayPropertyState.js	/^    let props = {$/;"	c	class:IdArrayPropertyState.render
+props	app_m/components/propertyStates/LocalizedStringsPropertyState.js	/^    let props = {$/;"	c	class:LocalizedStringsPropertyState.render
+props	app_m/components/propertyStates/StringPropertyState.js	/^    let props = {$/;"	c	class:StringPropertyState.render
+publicPath	app_m/webpack.config.js	/^    publicPath: '\/', \/\/All relative url within the app will be absoluteize with this prefix b/;"	p	class:module.exports.output
+publicPath	app_w/webpack.config.js	/^    publicPath: '\/', \/\/All relative url within the app will be absolutized with this prefix b/;"	p	class:module.exports.output
+publicPath	server/config/pathes.js	/^export const publicPath  = path.resolve(__dirname,'..\/..\/public');$/;"	C
+pushBrowserHistoryToProduct	app_w/reducers/productGroup.js	/^const pushBrowserHistoryToProduct = (productGroupId, nextProductId) => {$/;"	C
+pushBrowserHistoryToProductGroup	app_w/reducers/locale.js	/^const pushBrowserHistoryToProductGroup = productGroupId => {$/;"	C
+question	app_m/components/dialogs/ConfirmDialog.js	/^  question:       PropTypes.object.isRequired,$/;"	p	class:ConfirmDialog.propTypes
+react	package.json	/^    "react": "15.4.2",$/;"	s	object:dependencies
+react-addons-css-transition-group	package.json	/^    "react-addons-css-transition-group": "15.6.2",$/;"	s	object:dependencies
+react-addons-test-utils	package.json	/^    "react-addons-test-utils": "15.6.2",$/;"	s	object:devDependencies
+react-addons-transition-group	package.json	/^    "react-addons-transition-group": "15.6.2",$/;"	s	object:dependencies
+react-dom	package.json	/^    "react-dom": "15.4.2",$/;"	s	object:dependencies
+react-intl	package.json	/^    "react-intl": "2.4.0",$/;"	s	object:dependencies
+react-redux	package.json	/^    "react-redux": "5.0.6",$/;"	s	object:dependencies
+react-router	package.json	/^    "react-router": "3.0.2",$/;"	s	object:dependencies
+react-test-renderer	package.json	/^    "react-test-renderer": "16.0.0",$/;"	s	object:devDependencies
+react-touch	package.json	/^    "react-touch": "0.4.2",$/;"	s	object:dependencies
+readCurrentWebsiteMessageIdsMap	server/cms/types/queries/utils/propertyDescriptionFactories/readCurrentWebsiteMessageIdsMap.js	/^const readCurrentWebsiteMessageIdsMap = () => {$/;"	C
+readFile	server/cms/types/queries/utils/propertyDescriptionFactories/readCurrentWebsiteMessageIdsMap.js	/^const readFile = promisify(fs.readFile);$/;"	C
+reader	app_m/components/propertyViews/DataURLPropertyView.js	/^    var reader=new FileReader();$/;"	v
+reader	app_m/components/propertyViews/FileUploadStatusPropertyView.js	/^    var reader=new FileReader();$/;"	v
+readstream	server/cms/types/fileUtils.js	/^    let readstream = db.gfs.createReadStream({filename});$/;"	v
+redux	package.json	/^    "redux": "3.7.2",$/;"	s	object:dependencies
+redux-logger	package.json	/^    "redux-logger": "2.8.2",$/;"	s	object:dependencies
+redux-reset	package.json	/^    "redux-reset": "0.3.0",$/;"	s	object:dependencies
+redux-thunk	package.json	/^    "redux-thunk": "2.2.0",$/;"	s	object:dependencies
+referredDbModel	app_m/components/propertyViews/IdArrayPropertyView.js	/^  let referredDbModel  = propertyDescription.referredDbModel;$/;"	v
+referredDbModelName	server/cms/types/queries/utils/mkPropertyDescriptions.js	/^      let referredDbModelName = getReferredDbModelName(entity,propertyOptions);$/;"	v
+referringProperty	server/cms/types/queries/RemoveEntity.js	/^  let referringProperty;$/;"	v
+refresh	server/cms/types/schemas/cache.js	/^cacheSchema.methods.refresh = function(modelName,baseModelName,entity,entityRemoved) {$/;"	f	function:cacheSchema.methods
+refreshCache	server/cache/CacheIn.js	/^const refreshCache = (entity,entityRemoved) => {$/;"	C
+refreshListedProductsAfterProductChangeOrRemove	server/cms/types/schemas/productGroup.js	/^productGroup.statics.refreshListedProductsAfterProductChangeOrRemove = function(product,productR/;"	f	function:productGroup.statics
+refreshWebsiteLocalizedData	server/cms/types/schemas/cache.js	/^cacheSchema.methods.refreshWebsiteLocalizedData = function() {$/;"	c	class:cacheSchema.methods
+registeringAllowed	app_m/components/App.js	/^  registeringAllowed:    PropTypes.bool,$/;"	p	class:App.propTypes
+registeringAllowed	app_m/reducers/auth.js	/^  registeringAllowed: false$/;"	p	class:defaultState
+reloadCacheOut	server/cache/cacheOut.js	/^const reloadCacheOut = () => {$/;"	C
+removable	server/cms/types/queries/utils/isEntityRemovable.js	/^  let removable   = true;$/;"	v
+remove	app_m/components/EntityView.js	/^    const remove = !entityChanged && removable ? this.getRemoveButton() : null;$/;"	C
+removeEntity	app_m/reducers/entity.js	/^const removeEntity = (state, action) => {$/;"	C
+removeEntity	server/cms/types/init.js	/^  let removeEntity = RemoveEntity.create(db);$/;"	v
+removeGfsFileIfExist	server/cms/types/queries/utils/propertyChangers/FileChanger.js	/^const removeGfsFileIfExist = (db,filename) => {$/;"	C
+removeGfsFileIfExist	server/cms/types/queries/utils/saveFile.js	/^const removeGfsFileIfExist = (db,filename) => {$/;"	C
+removeItem	app_m/test/session-storage-mock.js	/^  removeItem(k) {$/;"	m	class:SessionStorageMock
+removeItemAllowed	server/cms/types/queries/utils/mkPropertyDescriptions.js	/^  let removeItemAllowed    = setFlag(options, 'removeItemAllowed',   true);$/;"	v
+removeRelatedGfsFileIfExist	server/cms/types/queries/utils/propertyChangers/FileChanger.js	/^const removeRelatedGfsFileIfExist = (db,entity,property) => {$/;"	C
+removeRelatedGfsFiles	server/cms/types/queries/RemoveEntity.js	/^const removeRelatedGfsFiles = (db, entity) => {$/;"	C
+render	app_m/components/App.js	/^  render() {$/;"	m	class:App
+render	app_m/components/LoginSignup.js	/^  render() {$/;"	m	class:LoginSignup
+render	app_m/components/NewPassword.js	/^  render() {$/;"	m	class:NewPassword
+render	app_m/components/TranslationView.js	/^  render() {$/;"	m	class:TranslationView
+render	app_m/components/dialogs/ConfirmDialog.js	/^    render() {$/;"	m	class:ConfirmDialog
+render	app_m/components/dialogs/ConfirmRemoveDialog.js	/^    render() {$/;"	m	class:ConfirmRemoveDialog
+render	app_m/components/dialogs/ErrorDialog.js	/^    render() {$/;"	m	class:ErrorDialog
+render	app_m/components/overviews/GalleryItemOverview.js	/^  render() {$/;"	m	class:GalleryItemOverview
+render	app_m/components/overviews/ProductGroupOverview.js	/^  render() {$/;"	m	class:ProductGroupOverview
+render	app_m/components/overviews/ProductOverview.js	/^  render() {$/;"	m	class:ProductOverview
+render	app_m/components/overviews/TranslationOverview.js	/^  render() {$/;"	m	class:TranslationOverview
+render	app_m/components/overviews/UserOverview.js	/^  render() {$/;"	m	class:UserOverview
+render	app_m/components/propertyStates/BoolPropertyState.js	/^  render(key) {$/;"	m	class:BoolPropertyState
+render	app_m/components/propertyStates/DataURLPropertyState.js	/^  render(key) {$/;"	m	class:DataURLPropertyState
+render	app_m/components/propertyStates/FileUploadStatusPropertyState.js	/^  render(key) {$/;"	m	class:FileUploadStatusPropertyState
+render	app_m/components/propertyStates/IdArrayPropertyState.js	/^  render(key) {$/;"	m	class:IdArrayPropertyState
+render	app_m/components/propertyStates/LocalizedStringsPropertyState.js	/^  render(key, focused) {$/;"	m	class:LocalizedStringsPropertyState
+render	app_m/components/propertyStates/StringPropertyState.js	/^  render(key, focused) {$/;"	m	class:StringPropertyState
+render	app_m/components/propertyViews/BoolPropertyView.js	/^    render() {$/;"	m	class:BoolPropertyView
+render	app_m/components/propertyViews/DataURLPropertyView.js	/^  render() {$/;"	m	class:DataURLPropertyView
+render	app_m/components/propertyViews/FileUploadStatusPropertyView.js	/^    render() {$/;"	m	class:FileUploadStatusPropertyView
+render	app_m/components/propertyViews/IdArrayPropertyView.js	/^  render() {$/;"	m	class:IdArrayPropertyView
+render	app_m/components/propertyViews/LocalizedStringsPropertyView.js	/^  render() {$/;"	m	class:LocalizedStringsPropertyView
+render	app_m/components/propertyViews/StringPropertyView.js	/^  render() {$/;"	m	class:StringPropertyView
+render	app_m/components/translationComponents/TranslatedStringView.js	/^  render() {$/;"	m	class:TranslatedStringView
+render	app_w/Root.js	/^  render() {$/;"	m	class:Root
+render	app_w/components/App.js	/^  render() {$/;"	m	class:App
+render	app_w/components/Artist.js	/^  render() {$/;"	m	class:Artist
+render	app_w/components/Copyright.js	/^  render() {$/;"	m	class:Copyright
+render	app_w/components/Main.js	/^  render() {$/;"	m	class:Main
+render	app_w/components/Navbar.js	/^  render() {$/;"	m	class:Navbar
+render	app_w/components/Title.js	/^  render() {$/;"	m	class:Title
+render	app_w/components/pages/AboutUs.js	/^  render() {$/;"	m	class:AboutUs
+render	app_w/components/pages/Contact.js	/^  render() {$/;"	m	class:Contact
+render	app_w/components/pages/DataProtectionPolicy.js	/^  render() {$/;"	m	class:DataProtectionPolicy
+render	app_w/components/pages/Impressum.js	/^  render() {$/;"	m	class:Impressum
+render	app_w/components/products/GalleryOfAProductGroup.js	/^  render() {$/;"	m	class:GalleryOfAProductGroup
+render	app_w/components/products/GalleryOfAProductGroupItem.js	/^  render() {$/;"	m	class:GalleryOfAProductGroupItem
+render	app_w/components/products/Product.js	/^  render() {$/;"	m	class:Product
+render	app_w/components/products/ProductGallery.js	/^  render() {$/;"	m	class:ProductGallery
+render	app_w/components/products/ProductGroup.js	/^  render() {$/;"	m	class:ProductGroup
+render	app_w/components/products/ProductGroupDescription.js	/^  render() {$/;"	m	class:ProductGroupDescription
+render	app_w/components/products/ProductGroupGallery.js	/^  render() {$/;"	m	class:ProductGroupGallery
+render	app_w/components/products/ProductGroups.js	/^  render() {$/;"	m	class:ProductGroups
+render	app_w/components/products/Products.js	/^  render() {$/;"	m	class:Products
+render	app_w/components/products/ProductsGalleryItem.js	/^  render() {$/;"	m	class:ProductsGalleryItem
+renderWasRequestedDuringDragging	app_m/components/CollectionsView.js	/^                              renderWasRequestedDuringDragging: false$/;"	p	class:CollectionsView.constructor.draggableState
+reordeingAllowed	app_m/components/CollectionsView.js	/^  reordeingAllowed:          PropTypes.bool.isRequired,$/;"	p	class:CollectionsView.propTypes
+reordeingAllowed	server/cms/types/queries/utils/mkPropertyDescriptions.js	/^  let reordeingAllowed     = setFlag(options, 'reordeingAllowed',    true);$/;"	v
+repository	package.json	/^  "repository": {$/;"	o
+resetState	app_m/components/propertyViews/LocalizedStringsPropertyView.js	/^  resetState(props,focusedIx) {$/;"	m	class:LocalizedStringsPropertyView
+resolve	app_m/webpack.config.js	/^  resolve: {$/;"	c	class:module.exports
+resolve-url	package.json	/^    "resolve-url": "0.2.1",$/;"	s	object:devDependencies
+resolve-url-loader	package.json	/^    "resolve-url-loader": "2.1.1",$/;"	s	object:devDependencies
+responseWithError	server/error/responseWithError.js	/^const responseWithError = (res) => (err) => {$/;"	C
+result	app_m/reducers/auth.js	/^  let result = action.result;$/;"	v
+result	server/locales/init.js	/^  let result = true;$/;"	v
+rmIfExists	server/cms/types/queries/utils/propertyChangers/PicsChanger.js	/^const rmIfExists = path => {$/;"	C
+rmIfExists	server/cms/types/queries/utils/savePics.js	/^const rmIfExists = (path) => {$/;"	C
+rollback	server/cms/types/queries/utils/EntityChanger.js	/^  rollback() {$/;"	m	class:EntityChanger
+rollback	server/cms/types/queries/utils/EntityFactory.js	/^  rollback() {$/;"	m	class:EntityFactory
+rollback	server/cms/types/queries/utils/propertyChangers/BoolChanger.js	/^  rollback() {}$/;"	m	class:BoolChanger
+rollback	server/cms/types/queries/utils/propertyChangers/FileChanger.js	/^  rollback() {$/;"	m	class:FileChanger
+rollback	server/cms/types/queries/utils/propertyChangers/IdArrayChanger.js	/^  rollback() {}$/;"	m	class:IdArrayChanger
+rollback	server/cms/types/queries/utils/propertyChangers/LocalizedStringsChanger.js	/^  rollback() {$/;"	m	class:LocalizedStringsChanger
+rollback	server/cms/types/queries/utils/propertyChangers/PicsChanger.js	/^  rollback() {$/;"	m	class:PicsChanger
+rollback	server/cms/types/queries/utils/propertyChangers/StringChanger.js	/^  rollback() {}$/;"	m	class:StringChanger
+rollback	server/cms/types/queries/utils/propertyChangers/TranslatedStringsChanger.js	/^  rollback() {$/;"	m	class:TranslatedStringsChanger
+rollbackIfExist	server/cms/types/queries/utils/EntityFactory.js	/^const rollbackIfExist = function(entityChanger) {$/;"	f
+rootReducer	app_m/store.js	/^const rootReducer = combineReducers({auth,entity,error});$/;"	C
+rootReducer	app_w/store.js	/^const rootReducer = combineReducers({locale,productGroup,artist});$/;"	C
+router	server/cms/auth/mkAuthRoutes.js	/^  let router = express.Router();$/;"	v
+router	server/cms/types/addGetFileRoutes.js	/^  let router = express.Router();$/;"	v
+router	server/index_html.js	/^  let router = express.Router();$/;"	v
+row	app_m/components/CollectionsView.js	/^      let row = (i - column)\/maxColumn;$/;"	v
+rowIx	app_m/components/CollectionsView.js	/^      let rowIx = Math.floor( (y \/ itemGutterLength) );$/;"	v
+rules	app_w/webpack.config.js	/^    rules: [$/;"	p	class:module.exports.module
+run	server/cms/types/queries/ChangeEntity.js	/^  run(root, { identity, data }) {$/;"	m	class:ChangeEntity
+run	server/cms/types/queries/CreateEntityTo.js	/^  run(root, { dbModel, data, parent, property }) {$/;"	m	class:CreateEntityTo
+run	server/cms/types/queries/RemoveEntity.js	/^  run(root, { identity, parentIdentity }) {$/;"	m	class:RemoveEntity
+runMochaTest	test/run_server_test.js	/^const runMochaTest = () => {$/;"	C
+sass-loader	package.json	/^    "sass-loader": "6.0.6",$/;"	s	object:devDependencies
+save	app_m/components/EntityView.js	/^    const save = entityChanged ? this.getSaveButton() : null;$/;"	C
+saveBufferToGfs	server/cms/types/queries/utils/propertyChangers/FileChanger.js	/^const saveBufferToGfs = (gfs,buffer,filename) => {$/;"	C
+saveBufferToGfs	server/cms/types/queries/utils/saveFile.js	/^const saveBufferToGfs = (gfs,buffer,filename) => {$/;"	C
+saveEntity	app_m/reducers/entity.js	/^const saveEntity = (state, action) => {$/;"	C
+saveFile	server/cms/types/queries/utils/saveFile.js	/^const saveFile = (db)=>(entity,property,valueAsString) => {$/;"	C
+savePics	server/cms/types/queries/utils/savePics.js	/^const savePics = (entity,valueAsString) => {$/;"	C
+schema	server/cms/gvda/createGraphQLSchema.js	/^  const schema = new GraphQLSchema({$/;"	C
+schema	server/cms/gvda/init.js	/^  const schema      = createGraphQLSchema(typesAccess);$/;"	C
+schema	server/cms/types/queries/GetEntityDescription.js	/^  let schema = getModel(entity).schema;$/;"	v
+schema	server/cms/types/queries/RemoveEntity.js	/^  let schema = entity.constructor.schema;$/;"	v
+schema	server/cms/types/queries/RemoveEntity.js	/^  let schema = parentEntity.constructor.schema;$/;"	v
+schema	server/cms/types/queries/utils/isEntityRemovable.js	/^  let schema      = constructor.schema;$/;"	v
+schema	server/cms/types/queries/utils/mkEntityPropertyValues.js	/^  let schema      = entity.constructor.schema;$/;"	v
+schema	server/cms/types/queries/utils/mkTemporaryEntity.js	/^  let schema      = Model.schema;$/;"	v
+schema	server/locales/init.js	/^  const schema      = Model.schema;$/;"	C
+schemaOptions	server/cms/types/schemas/product.js	/^const schemaOptions = { discriminatorKey: 'kind' };$/;"	c
+schemaPaths	server/cms/types/queries/RemoveEntity.js	/^  let schemaPaths = schema.paths;$/;"	v
+schemaPaths	server/cms/types/queries/utils/isEntityRemovable.js	/^  let schemaPaths = schema.paths;$/;"	v
+schemaPaths	server/cms/types/queries/utils/mkEntityPropertyValues.js	/^  let schemaPaths = schema.paths;$/;"	v
+schemaPaths	server/cms/types/queries/utils/mkPropertyDescriptions.js	/^  let schemaPaths      = schema.paths;$/;"	v
+schemaPaths	server/cms/types/queries/utils/mkPropertyDescriptions.js	/^  let schemaPaths = schema.paths;$/;"	v
+schemaPaths	server/cms/types/queries/utils/mkTemporaryEntity.js	/^  let schemaPaths = schema.paths;$/;"	v
+schemaPaths	server/locales/init.js	/^  const schemaPaths = schema.paths;$/;"	C
+schemaPathsProperty	server/cms/types/queries/CreateEntityTo.js	/^  let schemaPathsProperty = Model.schema.paths[property];$/;"	v
+schemaPathsProperty	server/cms/types/queries/utils/mkEntityPropertyValues.js	/^  let schemaPathsProperty = schemaPaths[property];$/;"	v
+scripts	package.json	/^  "scripts": {$/;"	o
+sendBufferAsOctetStream	server/cms/types/fileUtils.js	/^export const sendBufferAsOctetStream = (res,buffer,next) => {$/;"	C
+sendFileFromGfs	server/cms/types/fileUtils.js	/^export const sendFileFromGfs = (res,db,id,property,next) => {$/;"	C
+server	test/README.md	/^server$/;"	s
+setArtist	app_w/reducers/artist.js	/^const setArtist = (state, action) => {$/;"	C
+setBack	app_m/components/propertyStates/PropertyState.js	/^  setBack() {$/;"	m	class:PropertyState
+setChanged	app_m/components/propertyStates/PropertyState.js	/^  setChanged() {$/;"	m	class:PropertyState
+setDispatch	app_m/processes/Process.js	/^  setDispatch(storeDispatch) {$/;"	m	class:Process
+setDispatch	app_w/processes/Process.js	/^  setDispatch(storeDispatch) {$/;"	m	class:Process
+setDispatchInNextTick	app_m/reducers/auth.js	/^auth.setDispatchInNextTick = function(storeDispatchInNextTick) {$/;"	f	function:auth
+setDispatchInNextTick	app_m/reducers/entity.js	/^entity.setDispatchInNextTick = function(storeDispatchInNextTick) {$/;"	f	function:entity
+setDispatchInNextTick	app_w/reducers/artist.js	/^artist.setDispatchInNextTick = function(storeDispatchInNextTick) {$/;"	f	function:artist
+setDispatchInNextTick	app_w/reducers/productGroup.js	/^productGroup.setDispatchInNextTick = function(storeDispatchInNextTick) {$/;"	f	function:productGroup
+setFlag	server/cms/types/queries/utils/mkPropertyDescriptions.js	/^const setFlag = (options,flagName,defaultValue) => {$/;"	C
+setItem	app_m/test/local-storage-mock.js	/^  setItem(n, v) {$/;"	m	class:LocalStorageMock
+setItem	app_m/test/session-storage-mock.js	/^  setItem(k, v) {$/;"	m	class:SessionStorageMock
+setLocale	app_w/reducers/artist.js	/^const setLocale = (state, action) => {$/;"	C
+setLocale	app_w/reducers/locale.js	/^const setLocale = (state, action) => {$/;"	C
+setLocale	app_w/reducers/productGroup.js	/^const setLocale = (state, action) => {$/;"	C
+setNewPassword	app_m/reducers/auth.js	/^const setNewPassword = (state, action) => {$/;"	C
+setNewPassword	server/cms/auth/mkAuthRoutes.js	/^const setNewPassword = (req,res,next) => {$/;"	C
+setNextProduct	app_w/reducers/productGroup.js	/^const setNextProduct = state => {$/;"	C
+setNextProductGroup	app_w/reducers/locale.js	/^const setNextProductGroup = (state, action) => {$/;"	C
+setPicBuffers	server/cms/types/queries/utils/savePics.js	/^const setPicBuffers = (entity, bigPicDataUrl) => {$/;"	C
+setPreviousProduct	app_w/reducers/productGroup.js	/^const setPreviousProduct = state => {$/;"	C
+setPreviousProductGroup	app_w/reducers/locale.js	/^const setPreviousProductGroup = (state, action) => {$/;"	C
+setProduct	app_w/reducers/productGroup.js	/^const setProduct = (state, action) => {$/;"	C
+setProductGroup	app_w/reducers/productGroup.js	/^const setProductGroup = (state, action) => {$/;"	C
+setVisited	app_w/components/CookieBanner.js	/^  setVisited: React.PropTypes.func$/;"	p	class:CookieBanner.propTypes
+setWebsiteLandingPageData	server/cms/types/schemas/cache.js	/^cacheSchema.methods.setWebsiteLandingPageData = function() {$/;"	f	function:cacheSchema.methods
+setWebsiteLocalizedMessages	server/cms/types/schemas/cache.js	/^cacheSchema.methods.setWebsiteLocalizedMessages = function(translatedStrings) {$/;"	c	class:cacheSchema.methods
+setupClickHandlers	app_w/components/pages/AboutUs.js	/^  setupClickHandlers() {$/;"	m	class:AboutUs
+shouldComponentUpdate	app_m/components/CollectionsView.js	/^    shouldComponentUpdate() {$/;"	m	class:CollectionsView
+signup	app_m/reducers/auth.js	/^const signup = (state, action) => {$/;"	C
+signupSucceeded	app_m/components/App.js	/^  signupSucceeded:       PropTypes.bool,$/;"	p	class:App.propTypes
+signupSucceeded	app_m/reducers/auth.js	/^  signupSucceeded: null,$/;"	p	class:defaultState
+slice	app_w/assets/icons/left-arrow.svg	/^         transform="translate(215.000000, 119.000000)" \/>$/;"	i
+slice	app_w/assets/icons/right-arrow.svg	/^         transform="translate(215.000000, 119.000000)" \/>$/;"	i
+slice	public/app_w/assets/icons/left-arrow.svg	/^         transform="translate(215.000000, 119.000000)" \/>$/;"	i
+slice	public/app_w/assets/icons/right-arrow.svg	/^         transform="translate(215.000000, 119.000000)" \/>$/;"	i
+smallPicBuffer	server/cms/types/queries/utils/savePics.js	/^    let smallPicBuffer = fse.readFileSync(tmpSmallPath);$/;"	v
+spawn	test/run_server_test.js	/^  let spawn=require('child_process').spawn;$/;"	v
+spawnSync	test/run_server_test.js	/^  var spawnSync=require('child_process').spawnSync;$/;"	v
+start	app_m/processes/CreateEntityToProcess.js	/^  start(entityDescriptionDiff, parentIdentity, parentProperty) {$/;"	m	class:CreateEntityToProcess
+start	app_m/processes/IsLoggedInProcess.js	/^  start() {$/;"	m	class:IsLoggedInProcess
+start	app_m/processes/LoadEntityProcess.js	/^  start(identity, entityOverviews) {$/;"	m	class:LoadEntityProcess
+start	app_m/processes/LoginProcess.js	/^  start(name, password) {$/;"	m	class:LoginProcess
+start	app_m/processes/LogoutProcess.js	/^  start() {$/;"	m	class:LogoutProcess
+start	app_m/processes/RemoveEntityProcess.js	/^  start(identity, parentIdentity) {$/;"	m	class:RemoveEntityProcess
+start	app_m/processes/SaveEntityProcess.js	/^  start(entityDescriptionDiff) {$/;"	m	class:SaveEntityProcess
+start	app_m/processes/SetNewPasswordProcess.js	/^  start(password, newPassword) {$/;"	m	class:SetNewPasswordProcess
+start	app_m/processes/SignupProcess.js	/^  start(name, password) {$/;"	m	class:SignupProcess
+start	app_w/processes/LoadArtistProcess.js	/^  start(name, pgid, locale) {$/;"	m	class:LoadArtistProcess
+start	app_w/processes/LoadLocaleProcess.js	/^  start(locale) {$/;"	m	class:LoadLocaleProcess
+start	app_w/processes/LoadProductGroupProcess.js	/^  start(id, locale) {$/;"	m	class:LoadProductGroupProcess
+start	app_w/processes/LoadProductProcess.js	/^  start(pid, pgid, locale) {$/;"	m	class:LoadProductProcess
+start	package.json	/^    "start": "node server_build\/server.js --gc_interval=100",$/;"	s	object:scripts
+startMongodProcess	test/run_server_test.js	/^const startMongodProcess = () => {$/;"	C
+startProcess	app_m/reducers/auth.js	/^const startProcess = (state, process, p1, p2) => {$/;"	C
+startProcess	app_m/reducers/entity.js	/^const startProcess = (state, process, p1, p2, p3, p4) => {$/;"	C
+startProcess	app_w/reducers/utils.js	/^const startProcess = (state,process,p1,p2,p3,p4,p5,p6) => {$/;"	C
+start_app_local	package.json	/^    "start_app_local": ".\/test\/start_app_local.sh"$/;"	s	object:scripts
+state	app_m/components/App.js	/^    this.state = {newPasswordPage:false};$/;"	c	class:App.constructor
+state	app_m/components/CollectionsView.js	/^      this.state = {$/;"	c	class:CollectionsView.constructor
+state	app_m/components/LoginSignup.js	/^    this.state={name:'', password:'', login: true \/*false means signup*\/};$/;"	c	class:LoginSignup.constructor
+state	app_m/components/NewPassword.js	/^    this.state={oldPassword:'', newPassword1:'', newPassword2:''};$/;"	c	class:NewPassword.constructor
+state	app_m/components/propertyViews/StringPropertyView.js	/^    this.state={value:nextProps.propertyDescription.string};$/;"	c	class:StringPropertyView.componentWillReceiveProps
+state	app_m/components/propertyViews/StringPropertyView.js	/^    this.state={value:this.props.propertyDescription.string};$/;"	c	class:StringPropertyView.constructor
+state	app_m/components/translationComponents/TranslatedStringView.js	/^    this.state = {focusedStringPropertyIx: null}$/;"	c	class:TranslatedStringView.constructor
+state	app_w/components/products/ProductGroupDescription.js	/^    this.state={open:false}$/;"	c	class:ProductGroupDescription.constructor
+status	server/error/responseWithError.js	/^    let status = err.status;$/;"	v
+store	app_m/store.js	/^const store = createStore(rootReducer,$/;"	C
+store	app_w/store.js	/^const store = createStore(rootReducer,$/;"	C
+string	app_m/components/propertyViews/LocalizedStringsPropertyView.js	/^    const string    = e.target.value;$/;"	C
+stringifyJSON	app_w/MakeDefaultMessagesWebpackPlugin.js	/^const stringifyJSON = (json) => JSON.stringify(json, null, 2);$/;"	C
+style	app_m/components/CollectionsView.js	/^      var style = {$/;"	c
+style	app_m/components/overviews/ProductOverview.js	/^    let style = {backgroundImage: 'url(' + this.getPicPath('Product') + ')'};$/;"	c	class:ProductOverview.render
+style	app_m/components/overviews/UserOverview.js	/^    let style = {backgroundImage: 'url(' + this.getPicPath('User') + ')'};$/;"	c	class:UserOverview.render
+style-loader	package.json	/^    "style-loader": "0.19.0",$/;"	s	object:devDependencies
+supertest	package.json	/^    "supertest": "3.0.0",$/;"	s	object:devDependencies
+test	package.json	/^    "test": "npm run test_app_m && npm run test_app_w && npm run test_server && echo All tests a/;"	s	object:scripts
+testDbDir	test/run_server_test.js	/^var testDbDir        = path.resolve(__dirname,"test_db");$/;"	v
+testPublicPath	test/run_server_test.js	/^var testPublicPath   = path.resolve(__dirname,"public");$/;"	v
+testURL	package.json	/^    "testURL": "http:\/\/localhost"$/;"	s	object:jest
+test_app_m	package.json	/^    "test_app_m": "jest \/app_m --no-watchman",$/;"	s	object:scripts
+test_app_w	package.json	/^    "test_app_w": "jest \/app_w --no-watchman",$/;"	s	object:scripts
+test_one_app	package.json	/^    "test_one_app": "jest --no-watchman",$/;"	s	object:scripts
+test_server	package.json	/^    "test_server": "NODE_ENV=test node test\/run_server_test.js -- --db_port 31122 --port 3122",$/;"	s	object:scripts
+title	app_m/components/CollectionsView.js	/^  title:                     PropTypes.string,$/;"	p	class:CollectionsView.propTypes
+title	server/cms/types/queries/utils/mkPropertyDescriptions.js	/^  let title = propertyOptions.title;$/;"	v
+title3392	app_w/assets/icons/right-arrow.svg	/^     id="title3392" \/>$/;"	i
+title3392	public/app_w/assets/icons/right-arrow.svg	/^     id="title3392" \/>$/;"	i
+title4256	app_w/assets/icons/left-arrow.svg	/^     id="title4256" \/>$/;"	i
+title4256	public/app_w/assets/icons/left-arrow.svg	/^     id="title4256" \/>$/;"	i
+tl	app_m/components/CollectionsView.js	/^      let tl = new TimelineMax({$/;"	v
+tmpBigPath	server/cms/types/queries/utils/savePics.js	/^  let tmpBigPath   = tmpDirPath+`\/bigPic_${id}`;$/;"	v
+tmpDirPath	server/config/pathes.js	/^export const tmpDirPath  = path.resolve(__dirname,'..\/..\/tmp');$/;"	C
+tmpDirPath	test/run_server_test.js	/^var tmpDirPath       = path.resolve(__dirname,'..\/server\/tmp');$/;"	v
+tmpSmallPath	server/cms/types/queries/utils/savePics.js	/^  let tmpSmallPath = tmpDirPath+`\/smallPic_${id}`;$/;"	v
+toArtist	app_w/components/pages/AboutUs.js	/^  toArtist(event,name) {$/;"	m	class:AboutUs
+toLocalizedStrings	server/locales/init.js	/^const toLocalizedStrings = (localizedStringsMap) => {$/;"	C
+toString	server/cms/types/queries/utils/mkEntityPropertyValues.js	/^const toString = (value,schemaPathsPropertyOptions) => {$/;"	C
+toTranslatedStrings	server/locales/init.js	/^const toTranslatedStrings = (translatedStringsMap) => {$/;"	C
+top	app_m/components/CollectionsView.js	/^        top:  menu.y,$/;"	p	class:style
+translatedString	app_m/components/TranslationView.js	/^  const translatedString = translatedStrings[id];$/;"	C
+translatedString	server/cms/types/queries/utils/mkProductDescriptionForCustomer.js	/^  const translatedString = translatedStrings.find(ts=>ts.id===property);$/;"	C
+translatedStrings	app_m/components/TranslationView.js	/^  const translatedStrings     = entities.translatedStrings;$/;"	C
+translatedStringsIds	server/cms/types/queries/utils/propertyDescriptionFactories/mkTranslatedStringsDescription.js	/^  const translatedStringsIds = translatedStrings.map(ts=>ts.id);$/;"	C
+translatedStringsMap	server/locales/init.js	/^const translatedStringsMap = (translatedStrings) => {$/;"	C
+translation	server/cms/types/schemas/translation.js	/^let translation = mongoose.Schema({$/;"	v
+translation	server/locales/init.js	/^    let translation;$/;"	v
+tsMap	server/locales/init.js	/^  const tsMap        = translatedStringsMap(translatedStrings);$/;"	C
+type	package.json	/^    "type": "git",$/;"	s	object:repository
+types	server/cms/init.js	/^  const types = initTypes(db);$/;"	C
+types	server/cms/types/init.js	/^  let types = {};$/;"	v
+u	app_w/global.js	/^var u="https:\/\/analytics.kunstumsglas.at\/";$/;"	v
+uploadStatus	server/cms/types/queries/utils/mkPropertyDescriptions.js	/^  let uploadStatus  = value;$/;"	v
+url	package.json	/^    "url": "git@popradiarpad.eu:kunstumsglas.at_management.git"$/;"	s	object:repository
+url	server/config/db.js	/^  url:  getUrl(),$/;"	p	class:module.exports
+user	app_m/components/App.js	/^  user:                  PropTypes.object,$/;"	p	class:App.propTypes
+user	app_m/components/UserMenu.js	/^  user:          PropTypes.object.isRequired,$/;"	p	class:UserMenu.propTypes
+user	app_m/reducers/auth.js	/^  let user = result.userName ? { name: result.userName } : null;$/;"	v
+user	app_m/reducers/auth.js	/^  user: undefined,$/;"	p	class:defaultState
+user	server/cms/auth/mkAuthRoutes.js	/^  const user = req.user;$/;"	C
+user	server/cms/types/schemas/user.js	/^var user = mongoose.Schema({$/;"	v
+userModelsWithLocalizedStrings	server/locales/init.js	/^  const userModelsWithLocalizedStrings         = getAllUserModelsWithLocalizedStrings();$/;"	C
+userSetPassword	server/cms/auth/mkAuthRoutes.js	/^const userSetPassword = (user,password) => new Promise((resolve,reject)=>user.setPassword(passwo/;"	C
+value	app_m/components/propertyViews/StringPropertyView.js	/^    this.state={value:nextProps.propertyDescription.string};$/;"	p	class:StringPropertyView.componentWillReceiveProps.state
+value	app_m/components/propertyViews/StringPropertyView.js	/^    this.state={value:this.props.propertyDescription.string};$/;"	p	class:StringPropertyView.constructor.state
+value	server/cms/types/queries/utils/mkEntityPropertyValues.js	/^  let value = toString(entity[property],schemaPathsProperty.options);$/;"	v
+value	server/cms/types/queries/utils/mkPropertyDescriptions.js	/^  let value = entity[property];$/;"	v
+verbose	package.json	/^    "verbose": true,$/;"	b	object:jest
+version	package.json	/^  "version": "1.0.0",$/;"	s
+viewDescriptions	server/cms/types/queries/utils/mkPropertyDescriptions.js	/^  let viewDescriptions = [];$/;"	v
+wait_for_mongod_finish_ms	test/run_server_test.js	/^var wait_for_mongod_finish_ms = 350;$/;"	v
+wait_for_mongod_start_ms	test/run_server_test.js	/^var wait_for_mongod_start_ms  = 200;$/;"	v
+waldglasGraviertes	server/cms/types/schemas/product.js	/^export const waldglasGraviertes = mongoose.Schema({$/;"	C
+webpack	app_m/webpack.config.js	/^const webpack = require('webpack');$/;"	C
+webpack	app_w/webpack.config.js	/^const webpack = require('webpack');$/;"	C
+webpack	package.json	/^    "webpack": "3.8.1",$/;"	s	object:devDependencies
+webpack-dev-server	package.json	/^    "webpack-dev-server": "2.9.3"$/;"	s	object:devDependencies
+whatwg-fetch	package.json	/^    "whatwg-fetch": "2.0.3"$/;"	s	object:dependencies
+x	app_m/components/CollectionsView.js	/^      let x=e.clientX-r.left+scrollLeft;$/;"	v
+xhr	app_w/global.js	/^var xhr = new XMLHttpRequest();$/;"	v
+y	app_m/components/CollectionsView.js	/^      let y=e.clientY-r.top+scrollTop;$/;"	v
+Über_uns_Inhalt_html	app_w/i18n/defaultMessages.json	/^  "Über_uns_Inhalt_html": "a",$/;"	s
