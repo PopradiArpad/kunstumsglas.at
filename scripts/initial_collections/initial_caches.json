@@ -1,0 +1,25 @@
+{
+  "_id": {
+    "$oid": "58f0e170e8d9012d2cbe6fef"
+  },
+  "locales": ["de-DE", "en-US"],
+  "__v": 1,
+  "_websiteLocalizedMessages": {
+    "en-US": {
+    },
+    "de-DE": {
+    }
+  },
+  "websiteLocalizedData": {
+    "en-US": {
+    },
+    "de-DE": {
+    }
+  },
+  "_websiteLandingPageData": {
+    "en-US": {
+    },
+    "de-DE": {
+    }
+  }
+}

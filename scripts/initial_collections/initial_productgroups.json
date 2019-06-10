@@ -1,0 +1,103 @@
+{
+  "_id": {
+    "$oid": "584038bd483b486c77685fa0"
+  },
+  "products": [],
+  "__v": 106,
+  "name": "Waldglas",
+  "gallery": [],
+  "online": true,
+  "productModelToCreate": "WaldglasGraviertesProduct",
+  "artistName": "",
+  "introduction_html": [{
+    "locale": "de-DE",
+    "string": "\u003cp\u003e\nDie Produktion von mundgeblasenem Glas hat eine jahrhundertelange Tradition. Sie erfordert großes handwerkliches Geschick, ja sogar künstlerische Fähigkeiten auch Fingerspitzengefühl sowie die seit Generationen weitergegebenen Erfahrungen in der Glasproduktion. Feinste Arbeit bei größter physischer Belastung zu leisten, (es herrschen immerhin Arbeitstemperaturen von 50° bis 60° Celsius vor einem Glasschmelzofen), erfordert besonderes Einfühlungsvermögen und Experimentierfreudigkeit mit der Materie Glas. Da die Glashütten wegen ihres hohen Verbrauches an Holz, zur Befeuerung der Öfen und zur Gewinnung von Pottasche, meist inmitten von Wäldern an entsprechend wasserführenden Bächen und Flüssen errichtet wurden, nannte man ihre Produkte „Waldglas“.\n\u003c/p\u003e\n\u003cp\u003e\nAuch die Grünlich-bräunliche Farbe des Glases unterstrich die Bezeichnung Waldglas, welches sich hoher Beliebtheit erfreute, vor allem bei den Leuten des Adels und später auch beim gehobenen Bürgerstand, die sich diesen Luxus im 14. bis 16. Jahrhundert leisten konnten. Von diesen mittelalterlichen Formen werden heute nach Vorlagen aus alten Zeichnungen, von Museumsstücken oder aus Museumsbildbänden, Repliken nach den alten Methoden erzeugt, wobei man darauf achtet, auch die Glasmasse in Farbe und Reinheit dem ursprünglichen Waldglas nachzuahmen. Man verzichtet auf Läuterung (Reinigung) und Entfärben des Glases. \n\u003c/p\u003e\n\u003cp\u003e\nLassen Sie sich vom Zauber des Waldglases einfangen, Sie erwerben damit ein Stück Geschiche aus mehreren Jahrhunderten Glasmacherkunst komponiert zu Unikaten,   denn jedes Stück fällt unterschiedlich aus.\nViel Freude an den außergewöhnlich künnstlerisch und doch traditionell verarbeiteten Stücken aus\nWaldglas!\n\u003c/p\u003e"
+  }, {
+    "locale": "en-US",
+    "string": "\u003cp\u003e\nDie Produktion von mundgeblasenem Glas hat eine jahrhundertelange Tradition. Sie erfordert großes handwerkliches Geschick, ja sogar künstlerische Fähigkeiten auch Fingerspitzengefühl sowie die seit Generationen weitergegebenen Erfahrungen in der Glasproduktion. Feinste Arbeit bei größter physischer Belastung zu leisten, (es herrschen immerhin Arbeitstemperaturen von 50° bis 60° Celsius vor einem Glasschmelzofen), erfordert besonderes Einfühlungsvermögen und Experimentierfreudigkeit mit der Materie Glas. Da die Glashütten wegen ihres hohen Verbrauches an Holz, zur Befeuerung der Öfen und zur Gewinnung von Pottasche, meist inmitten von Wäldern an entsprechend wasserführenden Bächen und Flüssen errichtet wurden, nannte man ihre Produkte „Waldglas“.\n\u003c/p\u003e\n\u003cp\u003e\nAuch die Grünlich-bräunliche Farbe des Glases unterstrich die Bezeichnung Waldglas, welches sich hoher Beliebtheit erfreute, vor allem bei den Leuten des Adels und später auch beim gehobenen Bürgerstand, die sich diesen Luxus im 14. bis 16. Jahrhundert leisten konnten. Von diesen mittelalterlichen Formen werden heute nach Vorlagen aus alten Zeichnungen, von Museumsstücken oder aus Museumsbildbänden, Repliken nach den alten Methoden erzeugt, wobei man darauf achtet, auch die Glasmasse in Farbe und Reinheit dem ursprünglichen Waldglas nachzuahmen. Man verzichtet auf Läuterung (Reinigung) und Entfärben des Glases. \n\u003c/p\u003e\n\u003cp\u003e\nLassen Sie sich vom Zauber des Waldglases einfangen, Sie erwerben damit ein Stück Geschiche aus mehreren Jahrhunderten Glasmacherkunst komponiert zu Unikaten,   denn jedes Stück fällt unterschiedlich aus.\nViel Freude an den außergewöhnlich künnstlerisch und doch traditionell verarbeiteten Stücken aus\nWaldglas!\n\u003c/p\u003e"
+  }],
+  "localizedName": [{
+    "locale": "de-DE",
+    "string": "Waldglas"
+  }, {
+    "locale": "en-US",
+    "string": "Forest glass"
+  }],
+  "listedProducts": []
+} {
+  "_id": {
+    "$oid": "584038bd483b486c77685fa1"
+  },
+  "products": [],
+  "__v": 58,
+  "online": true,
+  "gallery": [],
+  "name": "Graviertes",
+  "productModelToCreate": "WaldglasGraviertesProduct",
+  "introduction_html": [{
+    "locale": "de-DE",
+    "string": "\u003cp\u003e\nHelga Popradi bearbeitet Glas mit der Klassischen Technik der Glasgravur. Sie setzt mit plastisch herausgearbeteten Dekor spielerische Lichtreflexe auf Schalen, Vasen und Trinkgläser.\n\u003c/p\u003e"
+  }, {
+    "locale": "en-US",
+    "string": "\u003cp\u003e\nHelga Popradi processes the Glas with the classical methods of engraving...\n\u003c/p\u003e\n"
+  }],
+  "artistName": "Helga",
+  "localizedName": [{
+    "locale": "de-DE",
+    "string": "Graviertes"
+  }, {
+    "locale": "en-US",
+    "string": "Engraved"
+  }],
+  "listedProducts": []
+} {
+  "_id": {
+    "$oid": "5878fd783b1c22387c2f0275"
+  },
+  "products": [],
+  "__v": 68,
+  "online": false,
+  "name": "Gelasertes",
+  "gallery": [],
+  "productModelToCreate": "GelasertesProduct",
+  "introduction_html": [{
+    "locale": "de-DE",
+    "string": ""
+  }, {
+    "locale": "en-US",
+    "string": ""
+  }],
+  "localizedName": [{
+    "locale": "de-DE",
+    "string": "Gelasertes"
+  }, {
+    "locale": "en-US",
+    "string": "Lasered"
+  }],
+  "listedProducts": []
+} {
+  "_id": {
+    "$oid": "587f53d8488530b227693cb8"
+  },
+  "products": [],
+  "__v": 46,
+  "gallery": [],
+  "name": "Glasfusing",
+  "productModelToCreate": "GlasfusingProduct",
+  "online": true,
+  "introduction_html": [{
+    "locale": "de-DE",
+    "string": ""
+  }, {
+    "locale": "en-US",
+    "string": ""
+  }],
+  "localizedName": [{
+    "locale": "de-DE",
+    "string": "Glasfusing"
+  }, {
+    "locale": "en-US",
+    "string": "Glasfusing"
+  }],
+  "listedProducts": []
+}

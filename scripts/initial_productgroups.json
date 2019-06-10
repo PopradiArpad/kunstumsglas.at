@@ -1,0 +1,92 @@
+{
+  "products": [],
+  "name": "Waldglas",
+  "gallery": [],
+  "online": true,
+  "productModelToCreate": "WaldglasGraviertesProduct",
+  "artistName": "",
+  "introduction_html": [{
+    "locale": "de-DE",
+    "string": ""
+  }, {
+    "locale": "en-US",
+    "string": ""
+  }],
+  "localizedName": [{
+    "locale": "de-DE",
+    "string": ""
+  }, {
+    "locale": "en-US",
+    "string": ""
+  }],
+  "listedProducts": []
+}
+{
+  "products": [],
+  "name": "Graviertes",
+  "gallery": [],
+  "online": true,
+  "productModelToCreate": "WaldglasGraviertesProduct",
+  "artistName": "",
+  "introduction_html": [{
+    "locale": "de-DE",
+    "string": ""
+  }, {
+    "locale": "en-US",
+    "string": ""
+  }],
+  "localizedName": [{
+    "locale": "de-DE",
+    "string": ""
+  }, {
+    "locale": "en-US",
+    "string": ""
+  }],
+  "listedProducts": []
+}
+{
+  "products": [],
+  "name": "Gelasertes",
+  "gallery": [],
+  "online": true,
+  "productModelToCreate": "GelasertesProduct",
+  "artistName": "",
+  "introduction_html": [{
+    "locale": "de-DE",
+    "string": ""
+  }, {
+    "locale": "en-US",
+    "string": ""
+  }],
+  "localizedName": [{
+    "locale": "de-DE",
+    "string": ""
+  }, {
+    "locale": "en-US",
+    "string": ""
+  }],
+  "listedProducts": []
+}
+{
+  "products": [],
+  "name": "Glasfusing",
+  "gallery": [],
+  "online": true,
+  "productModelToCreate": "GlasfusingProduct",
+  "artistName": "",
+  "introduction_html": [{
+    "locale": "de-DE",
+    "string": ""
+  }, {
+    "locale": "en-US",
+    "string": ""
+  }],
+  "localizedName": [{
+    "locale": "de-DE",
+    "string": ""
+  }, {
+    "locale": "en-US",
+    "string": ""
+  }],
+  "listedProducts": []
+}

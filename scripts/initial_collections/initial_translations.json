@@ -1,0 +1,299 @@
+{
+  "_id": {
+    "$oid": "58eb455caede1937f5c987cd"
+  },
+  "translationOf": "website",
+  "translatedStrings": [{
+    "id": "Benutzen_Sie_die_Pfeil_tasten_zum_Navigation",
+    "localizedStrings": [{
+      "locale": "de-DE",
+      "string": "Benutzen Sie die Pfeiltasten auf der Tastatur zum Navigieren"
+    }, {
+      "locale": "en-US",
+      "string": "Use the arrow keys on the keyboard to navigate"
+    }]
+  }, {
+    "id": "Cookie_Banner_Text",
+    "localizedStrings": [{
+      "locale": "de-DE",
+      "string": "Diese Seite verwendet Cookies, um Ihnen den bestmöglichen Service zu gewährleisten. Wenn Sie auf der Seite weitersurfen stimmen Sie der Datenschutzerklärung zu."
+    }, {
+      "locale": "en-US",
+      "string": "Our site uses cookies to collect information and improve our service. With the usage of this site you accept our privacy policy"
+    }]
+  }, {
+    "id": "Datenschutzerklärung_Inhalt_html",
+    "localizedStrings": [{
+      "locale": "de-DE",
+      "string": "\u003ch1\u003eDatenschutzerklärung\u003c/h1\u003e\n\n\nVerantwortlich im Sinne der Datenschutzgesetzes:\u003cbr\u003e\n\u003cpre\u003e\nKunst ums Glas\nBienerstrasse 86\n6240 Rattenberg\nÖsterreich\nkunstumsglas@gmx.at\n\u003c/pre\u003e\n\n\n\n\u003ch2\u003eErfassung von Daten\u003c/h2\u003e\n\u003cp\u003e\nWährend Sie auf unsere Webseiten zugreifen, erfassen wir automatisch Daten von allgemeiner Natur. Diese Daten (Server-Logfiles) umfassen zum Beispiel die Art ihres Browsers, ihr Betriebssystem, den Domainnamen Ihres Internetanbieters sowie weitere ähnliche allgemeine Daten. Diese Daten sind absolut Personen unabhängig und werden genutzt, um Ihnen die Webseiten korrekt darzustellen und werden bei jeder Nutzung des Internets abgerufen. Die absolut anonymen Daten werden statistisch ausgewertet um unseren Service für Sie zu verbessern.\n\u003c/p\u003e\n\n\u003ch2\u003eCookies\u003c/h2\u003e\n\u003cp\u003e\nUnsere Webseite verwendet „Cookies“. Cookies sind Textdateien, die vom Server einer Webseite auf Ihren Rechner übertragen werden. Bestimmte Daten wie IP-Adresse, Browser, Betriebssystem und Internet Verbindung werden dabei übertragen.\n\nCookies starten keine Programme und übertragen keine Viren. Die durch Cookies gesammelten Informationen dienen dazu, Ihnen die Navigation zu erleichtern und die Anzeige unserer Webseiten zu optimieren.\n\nDaten, die von uns erfasst werden, werden niemals ohne Ihre Einwilligung an Daten an Dritte weitergegeben oder mit personenbezogenen Daten verknüpft.\n\nDie Verwendung von Cookies kann über Einstellungen in ihrem Browser verhindert werden. In den Erläuterungen zu Ihrem Internetbrowsers finden Sie Informationen darüber, wie man diese Einstellungen verändern kann. Einzelne Funktionen unserer Website können unter Umständen nicht richtig funktionieren, wenn die Verwendung von Cookies deaktiviert ist.\n\u003c/p\u003e\n\n\u003ch2\u003eÄnderung der Datenschutzbestimmungen\u003c/h2\u003e\n\u003cp\u003e\nUnsere Datenschutzerklärung können in unregelmäßigen Abständen angepasst werden, damit sie den aktuellen rechtlichen Anforderungen entsprechen oder um Änderungen unserer Dienstleistungen umzusetzen, z. B. bei der Einfügung neuer Angebote. Für Ihren nächsten Besuch gilt dann automatisch die neue Datenschutzerklärung.\n\u003c/p\u003e\n\n\u003cp\u003e\nDiese Datenschutzerklärung Seite wurde mit der Hilfe von datenschutzerklärunggenerator.de erstellt.\n\u003c/p\u003e\n"
+    }, {
+      "locale": "en-US",
+      "string": "\u003ch1\u003ePrivacy policy\u003c/h1\u003e\n\nThis website is operated by\n\u003cpre\u003e\nKunst ums Glas\nBienerstrasse 86\n6240 Rattenberg\nAustria\nkunstumsglas@gmx.at\n\u003c/pre\u003e\n\n\n\u003cp\u003e\nThis page is used to inform website visitors regarding our policies with the collection,\nuse, and disclosure of Personal Information if anyone decided to use our Service.\n\nIf you choose to use our Service, then you agree to the collection and use\nof information in relation with this policy. The Personal Information that\nwe collect are used for providing and improving the Service.\nWe will not use or share your information with anyone except as described\nin this Privacy Policy.\n\u003c/p\u003e\n\n\u003ch2\u003eCookies\u003c/h2\u003e\n\u003cp\u003e\nCookies are files with small amount of data that is commonly used an anonymous unique\nidentifier. These are sent to your browser from the website that you visit and are\nstored on your computer’s hard drive.\nOur website uses these “cookies” to collection information and to improve our Service.\nYou have the option to either accept or refuse these cookies,\nand know when a cookie is being sent to your computer.\nIf you choose to refuse our cookies,\nyou may not be able to use some portions of our Service.\n\u003c/p\u003e\n\n\u003ch2\u003eLog Data\u003c/h2\u003e\n\u003cp\u003e\nWe want to inform you that whenever you visit our Service, we collect information that your\nbrowser sends to us that is called Log Data. This Log Data may include information such as\nyour computer’s Internet Protocol (“IP”) address, browser version, pages of our Service\nthat you visit, the time and date of your visit, the time spent on those pages,\nand other statistics.\n\u003c/p\u003e\n\n\n\u003ch2\u003eChanges to This Privacy Policy\u003c/h2\u003e\n\u003cp\u003e\nWe may update our Privacy Policy from time to time.\nThus, we advise you to review this page periodically for any changes.\nWe will notify you of any changes by posting the new Privacy Policy on this page.\nThese changes are effective immediately, after they are posted on this page.\n\u003c/p\u003e\n\n\u003cp\u003e\nThis Privacy Policy page was created with the help of privacypolicytemplate.net.\n\u003c/p\u003e\n\n"
+    }]
+  }, {
+    "id": "Impressum_Inhalt_html",
+    "localizedStrings": [{
+      "locale": "de-DE",
+      "string": "\u003ch1\u003e\nImpressum\n\u003c/h1\u003e\n\n\u003cp\u003e\n\u003cstrong\u003eKunst ums Glas\u003c/strong\u003e\u003cbr\u003e\nBienerstrasse 86\u003cbr\u003e\n6240 Rattenebrg\u003cbr\u003e\nÖsterreich\n\u003c/p\u003e\n\n\u003cp\u003e\nTel: +43 5337 93629\u003cbr\u003e\nEmail: \u003ca href=\"mailto:kunstumsglas@gmx.at\"\u003ekunstumsglas@gmx.at\u003c/a\u003e\n\u003c/p\u003e\n\n\u003cp\u003e\n\u003cstrong\u003eGeschäftsführer:\u003c/strong\u003e\u003cbr\u003e\nHelga Popradi\u003cbr\u003e\nUst.ID: ATU47085504  \n\u003c/p\u003e\n\n\u003cp\u003e\n\u003cstrong\u003eRechtshinweis:\u003cbr\u003e\n© Kunst ums Glas 2016 - 2017\n\u003c/strong\u003e\n\u003c/p\u003e\n  \n\u003cp\u003e\n\u003cstrong\u003eBilder:\u003c/strong\u003e\u003cbr\u003e\n\u003ca href=\"http://popradiarpad.eu\"\u003eÁrpád Poprádi\u003c/a\u003e\n\u003c/p\u003e\n\n"
+    }, {
+      "locale": "en-US",
+      "string": "\u003ch1\u003e\nImpressum\n\u003c/h1\u003e\n\n\u003cp\u003e\n\u003cstrong\u003eKunst ums Glas\u003c/strong\u003e\u003cbr\u003e\nBienerstrasse 86\u003cbr\u003e\n6240 Rattenebrg\u003cbr\u003e\nAustria\n\u003c/p\u003e\n\n\u003cp\u003e\nTel: +43 5337 93629\u003cbr\u003e\nEmail: \u003ca href=\"mailto:kunstumsglas@gmx.at\"\u003ekunstumsglas@gmx.at\u003c/a\u003e\n\u003c/p\u003e\n\n\u003cp\u003e\n\u003cstrong\u003emanaging director:\u003c/strong\u003e\u003cbr\u003e\nHelga Popradi\u003cbr\u003e\nUst.ID: ATU47085504  \n\u003c/p\u003e\n\n\u003cp\u003e\n\u003cstrong\u003eLegal disclaimer:\u003cbr\u003e\n© Kunst ums Glas 2016 - 2017\n\u003c/strong\u003e\n\u003c/p\u003e\n  \n\u003cp\u003e\n\u003cstrong\u003eImages:\u003c/strong\u003e\u003cbr\u003e\n\u003ca href=\"http://popradiarpad.eu\"\u003eÁrpád Poprádi\u003c/a\u003e\n\u003c/p\u003e\n\n"
+    }]
+  }, {
+    "id": "KUG_kontaktieren",
+    "localizedStrings": [{
+      "locale": "de-DE",
+      "string": "Kunst ums Glas kontaktieren"
+    }, {
+      "locale": "en-US",
+      "string": "Contact Kunst ums Glas"
+    }]
+  }, {
+    "id": "Kontakt_Inhalt_html",
+    "localizedStrings": [{
+      "locale": "de-DE",
+      "string": "\u003ch1\u003eKontakt\u003c/h1\u003e\n\n\u003cpre\u003e\nKunst ums Glas\nBienerstrasse 86\n6240 Rattenebrg\nÖsterreich\n\nTel : +43 5337 93629\n\nEmail: \u003ca href=\"mailto:kunstumsglas@gmx.at\"\u003ekunstumsglas@gmx.at\u003c/a\u003e\nEmail: \u003ca href=\"mailto:kunstumsglas@gmx.at\"\u003eHelga Popradi\u003c/a\u003e\nEmail: \u003ca href=\"mailto:henkel.sabine@aon.at\"\u003eSabine Margreiter\u003c/a\u003e\n\u003c/pre\u003e\n"
+    }, {
+      "locale": "en-US",
+      "string": "\u003ch1\u003eContact\u003c/h1\u003e\n\n\u003cpre\u003e\nKunst ums Glas\nBienerstrasse 86\n6240 Rattenebrg\nAustria\n\nTel : +43 5337 93629\n\nEmail: \u003ca href=\"mailto:kunstumsglas@gmx.at\"\u003ekunstumsglas@gmx.at\u003c/a\u003e\nEmail: \u003ca href=\"mailto:kunstumsglas@gmx.at\"\u003eHelga Popradi\u003c/a\u003e\nEmail: \u003ca href=\"mailto:henkel.sabine@aon.at\"\u003eSabine Margreiter\u003c/a\u003e\n\u003c/pre\u003e\n\n\n"
+    }]
+  }, {
+    "id": "Link_Zurück",
+    "localizedStrings": [{
+      "locale": "de-DE",
+      "string": "Zurück"
+    }, {
+      "locale": "en-US",
+      "string": "back"
+    }]
+  }, {
+    "id": "Link_zum_Datenschutzerklärung",
+    "localizedStrings": [{
+      "locale": "de-DE",
+      "string": "Datenschutzerklärung"
+    }, {
+      "locale": "en-US",
+      "string": "Data protection policy"
+    }]
+  }, {
+    "id": "Link_zum_Impressum",
+    "localizedStrings": [{
+      "locale": "de-DE",
+      "string": "Impressum"
+    }, {
+      "locale": "en-US",
+      "string": "Impressum"
+    }]
+  }, {
+    "id": "Link_zum_Kontakt",
+    "localizedStrings": [{
+      "locale": "de-DE",
+      "string": "Kontakt"
+    }, {
+      "locale": "en-US",
+      "string": "Contact"
+    }]
+  }, {
+    "id": "Link_zum_Künstler_kontaktieren",
+    "localizedStrings": [{
+      "locale": "de-DE",
+      "string": "Künstler kontaktieren"
+    }, {
+      "locale": "en-US",
+      "string": "Contact the artist"
+    }]
+  }, {
+    "id": "Link_zum_Über_Uns",
+    "localizedStrings": [{
+      "locale": "de-DE",
+      "string": "Über uns"
+    }, {
+      "locale": "en-US",
+      "string": "About us"
+    }]
+  }, {
+    "id": "Link_zur_Datenschutzerklärung",
+    "localizedStrings": [{
+      "locale": "de-DE",
+      "string": "Datenschutzerklärung"
+    }, {
+      "locale": "en-US",
+      "string": "Privacy policy"
+    }]
+  }, {
+    "id": "Link_zur_Start_Seite",
+    "localizedStrings": [{
+      "locale": "de-DE",
+      "string": "Start Seite"
+    }, {
+      "locale": "en-US",
+      "string": "Start page"
+    }]
+  }, {
+    "id": "Produkte",
+    "localizedStrings": [{
+      "locale": "de-DE",
+      "string": "Produkte"
+    }, {
+      "locale": "en-US",
+      "string": "products"
+    }]
+  }, {
+    "id": "Über_uns_Inhalt_html",
+    "localizedStrings": [{
+      "locale": "de-DE",
+      "string": "\u003ch1\u003e\nÜber uns\n\u003c/h1\u003e\n\u003cimg src='/pics/about_us/kug-innen-800.JPG'\u003e\n\n\u003csection\u003e\n\u003cp\u003e\nUnser kleines Geschäft im Rattenberg bietet ein breites Spektrum an Glasbearbeitung\nund Glasprodukten.\nGegründet im Jahr 1999 in Rattenberg, die Glasstadt Österreichs in der Nähe der\neinzigen Glasfachsschule Österreichs.\n\u003c/p\u003e\n\u003c/section\u003e\n\n\u003csection class='kug-section-artist'\u003e\n\n\u003csection\u003e\n\u003cspan id='artist-name-Helga' class='kug-span-link'\u003e\nHelga Popradi\n\u003c/span\u003e\n\n\u003ch3\u003e\nGlasgravur\n\u003c/h3\u003e\n\u003cimg src='/pics/about_us/löwenzahn.JPG'\u003e\n\u003cp\u003e\nDas sonst durchsichtige Glas wird lichterfüllt durch die künstlerisch hineingearbeiteten Schnitte.\nDie verschiedenen Tiefen, Helligkeiten und Schattierungen erzeugt Helga durch die Kombination von \nunterschiedlich körnigen Diamant-,und Siliziumkarbidgravurrädern.\nMit Polieren bringt sie Teile der Gravur zum Glänzen.\n\u003c/p\u003e\n\n\n\u003ch3\u003e\nLasergravur\n\u003c/h3\u003e\n\u003cimg src='/pics/about_us/leopard.JPG'\u003e\n\u003cp\u003e\nMit Laser bearbeitet sie die Glasoberfläche punktuell,\nder Effekt entsteht durch das feine Rasterbildmuster.\n\u003c/p\u003e\n\u003c/section\u003e\n\n\n\u003csection\u003e\n\u003cspan id='artist-name-Sabine' class='kug-span-link'\u003e\nSabine Henkel\n\u003c/span\u003e\n\u003ch3\u003e\nGlasfusing\n\u003c/h3\u003e\n\u003cimg src='/pics/about_us/fused-glass.JPG'\u003e\n\u003cp\u003e\nSabine schmilzt einzelne Glasstücke\nin ihrem Brennofen zu farbenprächtigen Unikaten.\n\u003c/p\u003e\n\u003c/section\u003e\n\n\u003csection\u003e\n\u003cspan id='artist-name-Brigitte' class='kug-span-link'\u003e\nBrigitte Kleyn-Altenburger\n\u003c/span\u003e\n\u003ch3\u003e\nGlasätzen\n\u003c/h3\u003e\n\u003cimg src='/pics/about_us/etched-glass.JPG'\u003e\n\u003cp\u003e\narbeitet mit der seltenen Technik der Glasätzen.\n\u003c/p\u003e\n\u003c/section\u003e\n\u003c/section\u003e\n\n\n\n\n"
+    }, {
+      "locale": "en-US",
+      "string": "\u003ch1\u003e\nÜber uns\n\u003c/h1\u003e\n\u003cimg src='/pics/about_us/kug-innen-800.JPG'\u003e\n\n\u003csection\u003e\n\u003cp\u003e\nUnser kleines Geschäft im Rattenberg bietet ein breites Spektrum an Glasbearbeitung\nund Glasprodukten.\nGegründet im Jahr 1999 in Rattenberg, die Glasstadt Österreichs in der Nähe der\neinzigen Glasfachsschule Österreichs.\n\u003c/p\u003e\n\u003c/section\u003e\n\n\u003csection class='kug-section-artist'\u003e\n\n\u003csection\u003e\n\u003cspan id='artist-name-Helga' class='kug-span-link'\u003e\nHelga Popradi\n\u003c/span\u003e\n\n\u003ch3\u003e\nGlasgravur\n\u003c/h3\u003e\n\u003cimg src='/pics/about_us/löwenzahn.JPG'\u003e\n\u003cp\u003e\nDas sonst durchsichtige Glas wird lichterfüllt durch die künstlerisch hineingearbeiteten Schnitte.\nDie verschiedenen Tiefen, Helligkeiten und Schattierungen erzeugt Helga durch die Kombination von \nunterschiedlich körnigen Diamant-,und Siliziumkarbidgravurrädern.\nMit Polieren bringt sie Teile der Gravur zum Glänzen.\n\u003c/p\u003e\n\n\n\u003ch3\u003e\nLasergravur\n\u003c/h3\u003e\n\u003cimg src='/pics/about_us/leopard.JPG'\u003e\n\u003cp\u003e\nMit Laser bearbeitet sie die Glasoberfläche punktuell,\nder Effekt entsteht durch das feine Rasterbildmuster.\n\u003c/p\u003e\n\u003c/section\u003e\n\n\n\u003csection\u003e\n\u003cspan id='artist-name-Sabine' class='kug-span-link'\u003e\nSabine Henkel\n\u003c/span\u003e\n\u003ch3\u003e\nGlasfusing\n\u003c/h3\u003e\n\u003cimg src='/pics/about_us/fused-glass.JPG'\u003e\n\u003cp\u003e\nSabine schmilzt einzelne Glasstücke\nin ihrem Brennofen zu farbenprächtigen Unikaten.\n\u003c/p\u003e\n\u003c/section\u003e\n\n\u003csection\u003e\n\u003cspan id='artist-name-Brigitte' class='kug-span-link'\u003e\nBrigitte Kleyn-Altenburger\n\u003c/span\u003e\n\u003ch3\u003e\nGlasätzen\n\u003c/h3\u003e\n\u003cimg src='/pics/about_us/etched-glass.JPG'\u003e\n\u003cp\u003e\narbeitet mit der seltenen Technik der Glasätzen.\n\u003c/p\u003e\n\u003c/section\u003e\n\u003c/section\u003e\n\n\n\n\n\n"
+    }]
+  }],
+  "__v": 157
+} {
+  "_id": {
+    "$oid": "58ef86506b6b3c13c128832b"
+  },
+  "translationOf": "GelasertesProduct",
+  "translatedStrings": [{
+    "id": "weight",
+    "localizedStrings": [{
+      "locale": "de-DE",
+      "string": "Gewicht"
+    }, {
+      "locale": "en-US",
+      "string": "weight"
+    }]
+  }, {
+    "id": "price",
+    "localizedStrings": [{
+      "locale": "de-DE",
+      "string": "Preis"
+    }, {
+      "locale": "en-US",
+      "string": "price"
+    }]
+  }],
+  "__v": 12
+} {
+  "_id": {
+    "$oid": "58ef86506b6b3c13c128832c"
+  },
+  "translationOf": "GlasfusingProduct",
+  "translatedStrings": [{
+    "id": "width",
+    "localizedStrings": [{
+      "locale": "de-DE",
+      "string": "Breite"
+    }, {
+      "locale": "en-US",
+      "string": "width"
+    }]
+  }, {
+    "id": "height",
+    "localizedStrings": [{
+      "locale": "de-DE",
+      "string": "Höhe"
+    }, {
+      "locale": "en-US",
+      "string": "height"
+    }]
+  }, {
+    "id": "diameter",
+    "localizedStrings": [{
+      "locale": "de-DE",
+      "string": "Durchmesser"
+    }, {
+      "locale": "en-US",
+      "string": "diameter"
+    }]
+  }, {
+    "id": "stainlesssteelstick",
+    "localizedStrings": [{
+      "locale": "de-DE",
+      "string": "Edelstahlstab"
+    }, {
+      "locale": "en-US",
+      "string": "stainlesssteelstick"
+    }]
+  }, {
+    "id": "metalstick",
+    "localizedStrings": [{
+      "locale": "de-DE",
+      "string": "Metalstab"
+    }, {
+      "locale": "en-US",
+      "string": "metalstick"
+    }]
+  }, {
+    "id": "weight",
+    "localizedStrings": [{
+      "locale": "de-DE",
+      "string": "Gewicht"
+    }, {
+      "locale": "en-US",
+      "string": "weight"
+    }]
+  }, {
+    "id": "price",
+    "localizedStrings": [{
+      "locale": "de-DE",
+      "string": "Preis"
+    }, {
+      "locale": "en-US",
+      "string": "price"
+    }]
+  }],
+  "__v": 11
+} {
+  "_id": {
+    "$oid": "58ef86506b6b3c13c128832d"
+  },
+  "translationOf": "WaldglasGraviertesProduct",
+  "translatedStrings": [{
+    "id": "diameter",
+    "localizedStrings": [{
+      "locale": "de-DE",
+      "string": "Durchmesser"
+    }, {
+      "locale": "en-US",
+      "string": "diameter"
+    }]
+  }, {
+    "id": "height",
+    "localizedStrings": [{
+      "locale": "de-DE",
+      "string": "Höhe"
+    }, {
+      "locale": "en-US",
+      "string": "height"
+    }]
+  }, {
+    "id": "usagetipp",
+    "localizedStrings": [{
+      "locale": "de-DE",
+      "string": "Verwendungstipp"
+    }, {
+      "locale": "en-US",
+      "string": "Usagetip"
+    }]
+  }, {
+    "id": "weight",
+    "localizedStrings": [{
+      "locale": "de-DE",
+      "string": "Gewicht"
+    }, {
+      "locale": "en-US",
+      "string": "weight"
+    }]
+  }, {
+    "id": "price",
+    "localizedStrings": [{
+      "locale": "de-DE",
+      "string": "Preis"
+    }, {
+      "locale": "en-US",
+      "string": "price"
+    }]
+  }],
+  "__v": 9
+}
