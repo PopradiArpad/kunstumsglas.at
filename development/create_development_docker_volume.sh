@@ -7,7 +7,7 @@ PROJECT_DIR=$(realpath "${SCRIPT_ABS_DIR}/..");
 
 . "${SCRIPT_ABS_DIR}/include_local_development_environment_data.sh"
 
-function is_volume_exist() {
+function does_volume_exist() {
   sudo docker volume ls|grep "${DOCKER_VOLUME}";
   return $?;
 }
@@ -17,7 +17,7 @@ function copy_db_dir_to_volume() {
 }
 
 function create_volume_if_not_exists() {
-  if is_volume_exist; then
+  if does_volume_exist; then
     echo "${DOCKER_VOLUME} exists.";
   else
     sudo docker volume create "${DOCKER_VOLUME}" || exit 1;

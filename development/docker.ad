@@ -1,0 +1,270 @@
+:toc:
+
+== Build images
+* How many space need the app? Enough
+
+Each process is only some procent resident memory (rss)
+Disk is only ~14% used.
+
+=== Build docker images from a branch
+```
+cd kunstumsglas.at
+git checkout branchname
+sudo docker build -t kug_server:branchname .
+```
+
+== Administrate the service db without the application
+What is the name of the database volume in docker?
+```
+sudo docker volume ls
+```
+Start the mongo container mounted with the app db to the right mount point.
+```
+sudo docker run --rm -ti --mount source=kugattest_data,target=/data/db mongo:latest bash
+```
+Start a mongod process in background
+```
+mongod &
+```
+Start mongo to administrate
+```
+mongo
+```
+Select the right db
+```
+show dbs
+use kug_at-test
+```
+Manipulate the db
+
+Stop mongo and shutdown the mongod process
+https://docs.mongodb.com/manual/tutorial/manage-mongodb-processes/#stop-mongod-processes
+```
+use admin
+db.shutdownServer()
+```
+
+=== Creating/manipulating CmsConfig
+```
+db.cmsconfigs.insertOne({"secret" : "secret", "registeringAllowed" : true})
+```
+
+=== Backup a database
+Warning about the naming!
+
+==== Terminology
+__mongo_db_data__ is the whole data used by a mongod instance.
+Tipically located on a volume.
+__db__ is a db in a __mongo_db_data__
+You can see all __dbs__ in mongo:
+```
+show dbs
+```
+
+==== Make backup from a detached volume
+We are going to backup the kug_at-test __db__ into the $(pwd)/backup directory on the host.
+Make the backup dir on the host:
+```
+mkdir -p backup
+rm -rf backup/*
+```
+Start a temporary container attached to the db volume
+```
+sudo docker run -ti --rm --mount src=kugattest_data,dst=/data/db \
+--mount type=bind,src=$(pwd)/backup,dst=/data/backup mongo bash
+```
+Start a mongod process in background
+```
+mongod --master&
+```
+backup
+```
+mongodump --oplog --db=kug_at-test --out=/data/backup
+```
+Make a full dump to let use __oplog__
+```
+mongodump --oplog --archive=/data/backup/archive
+```
+
+==== Make hot db backup from a running stack
+```
+sudo docker run -ti --rm --network kug_at-TEST_network \
+--mount type=bind,src=$(pwd)/backup,dst=/data/backup mongo bash
+```
+Make a full dump to let use __oplog__
+```
+mongodump --oplog --out=/data/backup
+mongodump --host=db:27017 --oplog --archive=/data/backup/archive
+```
+
+==== Restore backup into a stack
+WARNING: to do this the network of the stack must be an (from outside)attachable network
+We are going to restore a backup the kug_at-test __db__ into the $(pwd)/backup directory on the host.
+Make the backup dir on the host:
+
+=== Restart the web service after db setup
+```
+sudo docker service update --force kug_at-TEST_web
+```
+That creates a new container and replaces the service with that.
+Attention! Service and container are different. After service update
+service id is still the same but a new container is created.
+
+Remove the old container after a successfull update.
+
+
+
+=== Copy db into a stack's __mongo_db_data__
+The backup folder is $(pwd)/backup
+It should contains only the folder of the db that we need (e.g $(pwd)/backup/test)
+```
+sudo docker run -ti --rm --network kug_at-TEST_network \
+--mount type=bind,src=$(pwd)/backup,dst=/data/backup mongo bash
+```
+Restore everything
+```
+mongorestore --host=db:27017 /data/backup
+```
+Remove the old kug_at-test db.
+```
+use kug_at-test
+db.dropDatabase()
+```
+Copy test into a newly created kug_at-test
+```
+db.copyDatabase('test', 'kug_at-test')
+```
+Remove the test db.
+```
+use test
+db.dropDatabase()
+```
+
+==== Dump a database of a mongod of a service into an archive file
+Make a full dump into the local directory __backup__.
+We use full dump to let use oplog (changes during the dump will be
+detected and played into the dump).
+```
+sudo docker run --rm --network kug_at-TEST_network --entrypoint="" \
+--mount type=bind,src=$(pwd)/backup,dst=/data/backup mongo mongodump \
+--host=db:27017 --oplog --archive=/data/backup/archive.data
+```
+
+__Warning about mongorestore__ mongorestore can create a new database or add data to an existing database. However, mongorestore performs inserts only and does not perform updates. That is, if restoring documents to an existing database and collection and existing documents have the same value id field as the to-be-restored documents, mongorestore will not overwrite those documents.
+
+__Warning about drop__ Before restoring the collections from the dumped backup, drops the collections from the target database. --drop does not drop collections that are not in the backup.
+
+When the restore includes the admin database, mongorestore with --drop removes all user credentials and replaces them with the users defined in the dump file. Therefore, in systems with authorization enabled, mongorestore must be able to authenticate to an existing user and to a user defined in the dump file. If mongorestore can’t authenticate to a user defined in the dump file, the restoration process will fail, leaving an empty database.
+
+
+==== Restore  __mongo_db_data__ of a mongod of a service from an archive file
+Before restore bring down the service!
+Restore against a volume not a living stack!
+```
+sudo docker stack down kug_at-TEST
+```
+Connect a temporary mongo container to the volume and restore with the archive
+```
+sudo docker run --rm --mount src=kug_at-TEST_data,dst=/data/db \
+--mount type=bind,src=$(pwd)/backup,dst=/data/backup \
+--entrypoint="" mongo bash -c 'mongod& sleep 1;mongorestore --drop --oplogReplay --archive=/data/backup/archive.data'
+```
+
+=== Which resources are up?
+```
+for i in stack container volume network; do echo $i; sudo docker $i ls; echo; done
+```
+
+== Local tests and Debugging
+Chrome currently has a problem to attach to Docker swarm networks running on `localhost`:
+Use `127.0.0.1` instead of `localhost`!
+
+=== Let a container debug from Chrome DevTools
+```
+sudo docker run -it --rm \
+--mount type=bind,src=`pwd`,dst=/root/app \
+-p 9229:9229 node:8.6.0-alpine \
+node --inspect-brk=0.0.0.0:9229 /root/app/index.js
+```
+
+=== Let a service debug from Chrome DevTools
+The compose file:
+```
+    command: node --inspect=0.0.0.0:9229 some.js
+    ports:
+      - target: 9229
+        published: 9229
+        protocol: tcp
+        mode: host
+```
+
+
+-----------------------------------
+## Roadmap
+  * Change the microservice setup to using environment variables
+  * Each microservice gets a Dockerfile
+  * The app gets a docker-compose.yml for
+    * development
+    * test
+    * production
+* Load up to the server
+
+## Push image to the deployment server
+
+
+## Rolling updates
+Docker can [update a service](https://docs.docker.com/engine/swarm/swarm-tutorial/rolling-update/)
+It's a more steppig process. And needs some preparation:
+
+1. In the Dockerfile: start the process explict with `node server.js --args`
+to let get the service controller signals (SIGINT, SIGTERM) for a gracefull shutdown
+
+2. Prepare the server process to get the SIGINT and terminates the currently running things.
+
+### Update a service explicitly
+Docker doesn't update to the same image name!
+Even if the image is different than the running one!
+Use `sudo docker service update --force` in such cases.
+
+### Update the stack
+The `docker stack deploy` updates the services in the stack according to
+the new compose file. The not changed services don't get restart.
+```
+sudo docker stack deploy -c compose.yml stack-name
+```
+
+## Image Tag  management
+Local test versions have tag :test
+Production versions
+1. must be built from a named git version (e.g master, branch-x)
+2. Rolling update?
+
+## Deploy
+* local
+db?
+
+## Migrate data into the dockerized deployment
+### for the test site
+* make a docker network:
+  docker network create --attachable -d overlay kug_at-TEST_network
+* make a docker volume for the db:
+  docker volume create --name kug_at-TEST_data
+* create the compose file (compose-deployment-TEST.yml)
+  adapt everything where test/TEST written except MONGO_URL
+* copy the compose file to /home/kugm/test
+* set the site as "under construction"
+* make archive from the db:
+  mongodump --oplog --port=30002 --archive=/home/kugm/test/archive.data
+* stop pm2 processes
+* load db archive into the db volume:
+  as root
+  cd /home/kugm/scripts
+  ./restore-stack-db.sh kug_at-TEST_data /home/kugm/test archive.data
+* start stack as
+  docker stack deploy -c compose-deployment-TEST.yml kug_at-TEST
+* set site back
+* rm pm2 processes
+* rm all but
+  * the compose file
+  * ssl dir
+  * log dir

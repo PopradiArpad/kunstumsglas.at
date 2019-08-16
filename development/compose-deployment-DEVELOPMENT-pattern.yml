@@ -1,0 +1,60 @@
+#COMPOSE FILE PATTERN FOR DEVELOPMENT
+# Some words must be subtitued with the real values.
+#
+# start:
+#   sudo docker stack deploy -c THISFILENAME STACKNAME
+# stop:
+#   sudo docker stack rm STACKNAME
+version: "3.3"
+services:
+  db:
+    image: mongo:3.4.9
+    #Start as master to let have oplog to let make secure hot backup
+    command: mongod --master
+    #Expose the service only on this machine
+    ports:
+      - "127.0.0.1:DOCKER_DB_PORT:27017"
+    volumes:
+      - type: volume
+        source: DOCKER_VOLUME
+        target: /data/db
+        volume:
+          nocopy: true
+    environment:
+      - NODE_ENV=production
+    deploy:
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 3
+        window: 5s
+      update_config:
+        failure_action: pause
+  web:
+    image: DOCKER_IMAGE
+    #Expose the service only on this machine
+    ports:
+      - "127.0.0.1:DOCKER_WEB_PORT:8080"
+    environment:
+      - NODE_ENV=production
+      - MONGO_URL=mongodb://db:27017/test
+      - PORT=8080
+    deploy:
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 3
+        window: 5s
+      update_config:
+        failure_action: pause
+volumes:
+  data:
+# The network must be created as an external attachable network
+# before first stack start to let make hot backups via
+# sudo docker network create --attachable -d kunstumsglas-at-development-network
+# backup
+# mongodump --host=db:27017 --db=kug_at-test -out=/data/backup
+networks:
+  default:
+    external:
+      name: DOCKER_NETWORK
