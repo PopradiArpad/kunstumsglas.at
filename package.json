@@ -16,7 +16,9 @@
     "test_server": "NODE_ENV=test node test/run_server_test.js -- --db_port 31122 --port 3122",
     "start": "node server_build/server.js --gc_interval=100",
     "start_development_app": "./development/start_development_app.sh",
-    "start_development_mongo_shell": "./development/start_development_mongo_shell.sh"
+    "start_development_mongo_shell": "./development/start_development_mongo_shell.sh",
+    "create_development_docker_image": "./development/create_development_docker_image.sh",
+    "create_development_docker_volume": "./development/create_development_docker_volume.sh"
   },
   "repository": {
     "type": "git",
