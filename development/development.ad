@@ -50,30 +50,15 @@ db.users.find({})
 . Register a user on http://localhost:3002/management.html
 . Stop app.
 . Link the MainView document to other documents
-.. with script *./scripts/db_management.sh start_mongod_and_run_script_in_it path_to_db scripts/setup_initial_mainview.js*
-.. or manually
 +
 ----
-./scripts/db_management.sh start_mongod_and_open_mongo_shell path_to_db
-use test
-// mainviews is empty now
-db.mainviews.find({})
-
-// PUSH USERS INTO THE MAINVIEW
-db.users.find({}, {"id":1})
-db.mainviews.update({}, {$push: {users: ObjectId("XXXXXXXXXX") } } )
-
-// PUSH TRANSLATIONS INTO THE MAINVIEW
-// get the translations of the hard-coded product groups
-db.translations.find({}, {"id":1})
-// push them into mainview
-db.mainviews.update({}, {$push: {translations: ObjectId("XXXXXXXXXX")} } )
-
-// PUSH PRODUCT GROUPS INTO THE MAINVIEW
-db.productgroups.find({}, {"id":1})
-db.mainviews.update({}, {$push: {productGroups: ObjectId("XXXXXXXXXX") }} )
+./scripts/db_management.sh start_mongod_and_run_script_in_it path_to_db scripts/setup_initial_mainview.js
 ----
-. You can start the app and the MainView shows the first user, the translations and the empty product groups.
+. Start the app, log in and trigger localization cache manually :((( to get localized texts on the website by
+.. changing "Übersetzungen" of website
+.. and creating some product or gallery picture
++
+WARNING: Without these steps you see only "a" instead of a text. Really bad... 
 
 == Extract data from existing database
 === Which data format and which tool to use?
