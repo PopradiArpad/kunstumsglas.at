@@ -13,11 +13,12 @@ function print_help_and_exit() {
   local EXIT_VAL="$1";
 
   echo -e "${NORM}Commands:";
-  echo -e "${GREEN}create ${CYAN}path_to_db session_secret${NORM}             : Create a new KUG db at path_to_db with a session secret to sign the session id cookie.";
-  echo -e "${GREEN}start_mongod_and_open_mongo_shell ${CYAN}path_to_db${NORM} : Start the database of path_to_db and open a mongo shell to it.";
-  echo -e "${GREEN}allow_registering_user ${CYAN}path_to_db${NORM}            : Allow user registering in the database.";
-  echo -e "${GREEN}disallow_registering_user ${CYAN}path_to_db${NORM}         : Disallow user registering in the database.";
-  echo -e "${GREEN}set_session_secret ${CYAN}path_to_db session_secret${NORM} : Set the secret to sign the session id cookie.";
+  echo -e "${GREEN}create ${CYAN}path_to_db session_secret${NORM}                            : Create a new KUG db at path_to_db with a session secret to sign the session id cookie.";
+  echo -e "${GREEN}start_mongod_and_open_mongo_shell ${CYAN}path_to_db${NORM}                : Start the database of path_to_db and open a mongo shell to it.";
+  echo -e "${GREEN}start_mongod_and_run_script_in_it ${CYAN}path_to_db path_to_script${NORM} : Start the database of path_to_db and run a js script in it.";
+  echo -e "${GREEN}allow_registering_user ${CYAN}path_to_db${NORM}                           : Allow user registering in the database.";
+  echo -e "${GREEN}disallow_registering_user ${CYAN}path_to_db${NORM}                        : Disallow user registering in the database.";
+  echo -e "${GREEN}set_session_secret ${CYAN}path_to_db session_secret${NORM}                : Set the secret to sign the session id cookie.";
 
   exit $EXIT_VAL;
 }
@@ -89,6 +90,17 @@ function start_mongod_and_open_mongo_shell() {
   # echo -e "start_mongod_and_open_mongo_shell ${RED}NOT IMPLEMENTED${NORM}";
 }
 
+function start_mongod_and_run_script_in_it() {
+  local PATH_TO_DB="$1";
+  local PATH_TO_SCRIPT="$2";
+
+  start_mongod "$PATH_TO_DB";
+  echo -e "${GREEN}mongod started${NORM}";
+  mongo "$PATH_TO_DB" "$PATH_TO_SCRIPT";
+  echo -e "${GREEN}stopping mongod...${NORM}";
+  kill_mongod;
+}
+
 function allow_registering_user() {
   local PATH_TO_DB="$1";
 
@@ -130,6 +142,9 @@ case "$1" in
     ;;
   start_mongod_and_open_mongo_shell)
     start_mongod_and_open_mongo_shell "$2";
+    ;;
+  start_mongod_and_run_script_in_it)
+    start_mongod_and_run_script_in_it "$2" "$3";
     ;;
   allow_registering_user)
     allow_registering_user "$2";

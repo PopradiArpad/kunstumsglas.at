@@ -5,6 +5,8 @@
 
 . clone git repo
 . [[start-app]]`nvm use v8.6.0` (see actual node version in Dockerfile)
+. install Mongo 3.4.x by following https://docs.mongodb.com/v3.4/tutorial/install-mongodb-on-ubuntu/[this] (the Xenial build is ok for later versions)
+. setup the application data in *development/development_environment.sh*.
 . `npm run build`
 . `npm run start_development_app`
 +
@@ -42,11 +44,14 @@ db.users.find({})
 . Hopefully see some hint what the password for the users can be.
 
 == Create initial database
+. Setup the application data in *development/development_environment.sh*.
 . Use `./scripts/db_management.sh create`
 . <<start-app>>
 . Register a user on http://localhost:3002/management.html
 . Stop app.
-. Fill the data of mainview manually :(((
+. Link the MainView document to other documents
+.. with script *./scripts/db_management.sh start_mongod_and_run_script_in_it path_to_db scripts/setup_initial_mainview.js*
+.. or manually
 +
 ----
 ./scripts/db_management.sh start_mongod_and_open_mongo_shell path_to_db

@@ -8,7 +8,7 @@
 version: "3.3"
 services:
   db:
-    image: mongo:3.4.9
+    image: mongo:3.4.23
     #Start as master to let have oplog to let make secure hot backup
     command: mongod --master
     #Expose the service only on this machine
