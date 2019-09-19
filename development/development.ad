@@ -46,9 +46,6 @@ db.users.find({})
 == Create initial database
 . Setup the application data in *development/development_environment.sh*.
 . Use `./scripts/db_management.sh create`
-. <<start-app>>
-. Register a user on http://localhost:3002/management.html
-. Stop and restart the app to make the new user visible on the main view of the management site.
 
 == Extract data from existing database
 === Which data format and which tool to use?

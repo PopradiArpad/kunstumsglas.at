@@ -19,8 +19,7 @@ import isDeepEqual                    from 'lodash.isequal';
 const initLocales = (locales) => {
   ensureAllLocalizedStringsPropertyHaveTheCurrentLocales(locales);
   ensureAllProductModelHaveTheCurrentLocales(locales);
-  return refreshWebsiteLocalizedData()
-         .then(refresMainView);
+  return refreshWebsiteLocalizedData();
 }
 
 function refreshWebsiteLocalizedData() {
@@ -32,11 +31,6 @@ function refreshWebsiteLocalizedData() {
           .then(mainview => {
             return CacheIn.entityChanged(mainview);
           });
-}
-
-function refresMainView() {
-    return MainView.findOne()
-          .then(mv => mv.refresh());
 }
 
 const ensureAllProductModelHaveTheCurrentLocales = (locales) => {
