@@ -6,6 +6,7 @@
 *  LICENSE file in the root directory of this source tree.
 */
 
+//WARNING DESIGN ERROR: THIS DATA SHOULD BE NOT IN DB.
  
 import mongoose     from 'mongoose';
 import cache        from '../schemas/cache';

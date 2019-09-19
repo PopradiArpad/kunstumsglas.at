@@ -1,0 +1,29 @@
+# Test
+
+## Initialize server test db
+[big red yellow-background]*TODO:*
+
+* Let app start with empty db
+* Let store product and web info into the db without running app.
+
+This db tar is not for development usage:
+
+----
+txn-recover: unsupported WiredTiger file version: this build  only supports major/minor versions up to 1/0,  and the file is version 2/0:
+----
+
+```
+cd PROJECT_ROOT
+cp test/db_test.tar.xz .
+tar -xf db_test.tar.xz
+```
+
+## server
+```
+npm run test_server
+```
+
+## app
+```
+npm run test_app -- jest options
+```

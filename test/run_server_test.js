@@ -6,11 +6,15 @@
 *  LICENSE file in the root directory of this source tree.
 */
 
- 
+
 //THIS SCRIPT MUST BE STARTED FROM THE PROJECT ROOT TO LET MOCHA FIND THE DEPENDENCIES
 //====================================================================================
 //EXAMPLE:
 //npm run test_server -- --db_port 30002 --port 3000 -g 'change product'
+
+
+console.log(`${__filename} MUST BE ADAPTED! THERE IS NO SERVER TEST ANYWAY. USE JUST AT REWRITE!`);
+process.exit(1);
 
 var fse              = require('fs-extra');
 var path             = require('path');

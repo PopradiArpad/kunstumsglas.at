@@ -6,8 +6,11 @@
 *  LICENSE file in the root directory of this source tree.
 */
 
- 
+
 import mongoose   from 'mongoose';
+import Translation from '../models/Translation';
+import ProductGroup from '../models/ProductGroup';
+import User from '../models/User';
 let Types = mongoose.Schema.Types;
 
 //The specific path options,that are not from Mongoose or Mongo:
@@ -19,5 +22,25 @@ let mainView = mongoose.Schema({
   productGroups:  {type: [{type: Types.ObjectId, ref: 'ProductGroup'}], title: 'Produktgruppen'},
   users:          {type: [{type: Types.ObjectId, ref: 'User'}],         title: 'Künstler'},
 });
+
+function link_to_mainview(cursor, mainview, mainview_field) {
+  cursor.next().then(qr => {
+    if (qr) {
+      mainview.update({$push: {[mainview_field]: qr.id} })
+      .then(()=>link_to_mainview(cursor, mainview, mainview_field));
+    }
+  });
+}
+
+mainView.methods.refresh = function() {
+  return this.update({$set: {"translations": [], "productGroups": [], "users": []}} )
+        .then(() => Translation.find({}, {"id":1}).cursor())
+        .then(cursor => link_to_mainview(cursor, this, "translations"))
+        .then(() => ProductGroup.find({}, {"id":1}).cursor())
+        .then(cursor => link_to_mainview(cursor, this, "productGroups"))
+        .then(() => User.find({}, {"id":1}).cursor())
+        .then(cursor => link_to_mainview(cursor, this, "users"));
+}
+
 
 export default mainView;

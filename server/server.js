@@ -24,6 +24,7 @@ import morgan           from 'morgan';
 import expressStaticGzip from "express-static-gzip";
 import ms               from "ms";
 import helmet           from "helmet";
+import {refresMainView} from './cms/types/models/MainView';
 let app = express();
 
 
@@ -55,6 +56,7 @@ connectToDb(dbConfig)
 .then(()=>reloadCacheOut())
 .then(()=>cacheOut())
 .then(cacheout=>initLocales(cacheout.locales))
+.then(refresMainView)
 .then(()=>getCmsConfig())
 .then(cmsConfig=>{
   initCms(app,db,cmsConfig,dbConfig.url);

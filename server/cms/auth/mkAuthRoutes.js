@@ -6,12 +6,13 @@
 *  LICENSE file in the root directory of this source tree.
 */
 
- 
-import passport     from 'passport';
-import User         from '../types/models/User';
-import CmsConfig    from '../../config/CmsConfig';
-import express      from 'express';
-import promisify    from 'es6-promisify';
+
+import passport           from 'passport';
+import User               from '../types/models/User';
+import {refresMainView}   from '../types/models/MainView';
+import CmsConfig          from '../../config/CmsConfig';
+import express            from 'express';
+import promisify          from 'es6-promisify';
 import loggedIn           from './loggedIn';
 import {BadRequest}       from '../../error/KugmError';
 import responseWithError  from '../../error/responseWithError';
@@ -29,6 +30,10 @@ const mkAuthRoutes = () =>{
       }
 
       console.log(`user ${req.body.username} registered`);
+
+      //TODO: do not ignore promise result
+      refresMainView();
+
       res.sendStatus(200);
     });
   });

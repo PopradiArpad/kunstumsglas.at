@@ -13,10 +13,14 @@
     "build_server": "rm -rf server_build/* && babel server --out-dir server_build --source-maps --copy-files  --presets es2015 --ignore features/'*'",
     "test_app_m": "jest /app_m --no-watchman",
     "test_app_w": "jest /app_w --no-watchman",
-    "test_one_app": "jest --no-watchman",
     "test_server": "NODE_ENV=test node test/run_server_test.js -- --db_port 31122 --port 3122",
     "start": "node server_build/server.js --gc_interval=100",
-    "start_app_local": "./test/start_app_local.sh"
+    "start_development_app": "./development/start_development_app.sh",
+    "start_development_mongo_shell": "./development/start_development_mongo_shell.sh",
+    "create_development_docker_image": "./development/create_development_docker_image.sh",
+    "create_development_docker_volume": "./development/create_development_docker_volume.sh",
+    "start_development_stack": "./development/start_development_stack.sh",
+    "stop_development_stack": "./development/stop_development_stack.sh"
   },
   "repository": {
     "type": "git",

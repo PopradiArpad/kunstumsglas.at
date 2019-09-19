@@ -1,0 +1,63 @@
+= KUG Development
+:toc:
+
+== Setup KUG Development Environment
+
+. clone git repo
+. [[start-app]]`nvm use v8.6.0` (see actual node version in Dockerfile)
+. install Mongo 3.4.x by following https://docs.mongodb.com/v3.4/tutorial/install-mongodb-on-ubuntu/[this] (the Xenial build is ok for later versions)
+. setup the application data in *development/development_environment.sh*.
+. `npm run build`
+. `npm run start_development_app`
++
+The website runs on http://localhost:3002
++
+The CMS runs on http://localhost:3002/management.html
+. To see into  the running database:
++
+`npm run start_development_mongo_shell`
+
+[big red yellow-background]*TODO:*
+
+* Let app start with empty db
+* Let store product and web info into the db without running app.
+
+== Switching between branches
+WARNING: *node_modules* is not under version control so major version updates
+on development branches causes incompatibility between *kug* and the *node_modules*.
+To reinstall *node_modules*:
+
+. `rm -rf node_modules`
+. `npm install`
+
+== Get access to an existing database without having password
+See into the database:
+
+. `npm run start_development_app`
+. `npm run start_development_mongo_shell`
+. in mongo
++
+----
+use test
+db.users.find({})
+----
+. Hopefully see some hint what the password for the users can be.
+
+== Create initial database
+. Setup the application data in *development/development_environment.sh*.
+. Use `./scripts/db_management.sh create`
+
+== Extract data from existing database
+=== Which data format and which tool to use?
+If you want to backup/restore all kind of data use *mongodump/mongorestore*,
+which use BSON as storing format. If you want to see the data structure and have only
+JSON representable data, use *mongoexport/mongoimport* which use JSON as storing format.
+
+=== Create collections for initial database creation
+. <<start-app>> with the right database.
+. `mongoexport --port 30002 --db test --collection translations  --out initial_collections/translations.json`
+. `mongoexport --port 30002 --db test --collection productgroups --out initial_collections/productgroups.json`
+. `mongoexport --port 30002 --db test --collection caches        --out initial_collections/caches.json`
+. Beautify the files.
+. Remove references to specific products from *products*, *listedProducts*, *gallery* in initial_collections/productgroups.json.
+. Let stay only the structure of locales with empty objects in *_websiteLocalizedMessages*, *websiteLocalizedData*, *_websiteLandingPageData* in initial_collections/caches.json.
