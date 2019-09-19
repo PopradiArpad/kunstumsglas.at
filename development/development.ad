@@ -7,6 +7,9 @@
 . [[start-app]]`nvm use v8.6.0` (see actual node version in Dockerfile)
 . install Mongo 3.4.x by following https://docs.mongodb.com/v3.4/tutorial/install-mongodb-on-ubuntu/[this] (the Xenial build is ok for later versions)
 . setup the application data in *development/development_environment.sh*.
+. Create initial database
++
+`./scripts/db_management.sh create`
 . `npm run build`
 . `npm run start_development_app`
 +
@@ -42,10 +45,6 @@ use test
 db.users.find({})
 ----
 . Hopefully see some hint what the password for the users can be.
-
-== Create initial database
-. Setup the application data in *development/development_environment.sh*.
-. Use `./scripts/db_management.sh create`
 
 == Extract data from existing database
 === Which data format and which tool to use?
