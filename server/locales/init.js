@@ -6,39 +6,32 @@
 *  LICENSE file in the root directory of this source tree.
 */
 
- 
+
 import mongoose    from 'mongoose';
 import getPropertyTypeName from '../cms/types/queries/utils/getPropertyTypeName';
 import Translation from '../cms/types/models/Translation';
+import MainView from '../cms/types/models/MainView';
+import CacheIn from '../cache/CacheIn';
+import cacheOut from '../cache/cacheOut';
 import merge from 'lodash/merge';
 import isDeepEqual                    from 'lodash.isequal';
 
 const initLocales = (locales) => {
   ensureAllLocalizedStringsPropertyHaveTheCurrentLocales(locales);
   ensureAllProductModelHaveTheCurrentLocales(locales);
-  //ensureWebsiteHasTranslation(locales);
+  return refreshWebsiteLocalizedData();
 }
 
-// const ensureWebsiteHasTranslation = () => {
-//   return Translation.findOne({translationOf:'website'})
-//         .then(websiteTranslation=>{
-//           //TODO: make capable the system to create locales on the cms's website
-//           if (! websiteTranslation)
-//             return (new Translation({translationOf:'website',
-//                                      translatedStrings: [{
-//                                        id: '--translation seed--',
-//                                        localizedStrings: [{
-//                                                            locale: 'de-DE',
-//                                                            string: 'übersetzung keim'
-//                                                           },
-//                                                           {
-//                                                            locale: 'en-US',
-//                                                            string: 'translation seed'
-//                                                           }]
-//                                      }]
-//                                    })).save();
-//         });
-// }
+function refreshWebsiteLocalizedData() {
+    return Translation.findOne({translationOf:'website'})
+          .then(websiteTranslation => {
+            return CacheIn.entityChanged(websiteTranslation);
+          })
+          .then(() => MainView.findOne())
+          .then(mainview => {
+            return CacheIn.entityChanged(mainview);
+          });
+}
 
 const ensureAllProductModelHaveTheCurrentLocales = (locales) => {
   const productModelsWithLocalizedTitles = getAllProductModelsWithLocalizedTitles();

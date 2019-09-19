@@ -15,7 +15,7 @@ The website runs on http://localhost:3002
 The CMS runs on http://localhost:3002/management.html
 . To see into  the running database:
 +
-`npm run start_development_mongo`
+`npm run start_development_mongo_shell`
 
 [big red yellow-background]*TODO:*
 
@@ -54,11 +54,6 @@ db.users.find({})
 ----
 ./scripts/db_management.sh start_mongod_and_run_script_in_it path_to_db scripts/setup_initial_mainview.js
 ----
-. Start the app, log in and trigger localization cache manually :((( to get localized texts on the website by
-.. changing "Übersetzungen" of website
-.. and creating some product or gallery picture
-+
-WARNING: Without these steps you see only "a" instead of a text. Really bad... 
 
 == Extract data from existing database
 === Which data format and which tool to use?
