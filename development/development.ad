@@ -48,12 +48,7 @@ db.users.find({})
 . Use `./scripts/db_management.sh create`
 . <<start-app>>
 . Register a user on http://localhost:3002/management.html
-. Stop app.
-. Link the MainView document to other documents
-+
-----
-./scripts/db_management.sh start_mongod_and_run_script_in_it path_to_db scripts/setup_initial_mainview.js
-----
+. Stop and restart the app to make the new user visible on the main view of the management site.
 
 == Extract data from existing database
 === Which data format and which tool to use?

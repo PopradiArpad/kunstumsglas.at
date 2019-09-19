@@ -10,6 +10,8 @@
 import mongoose    from 'mongoose';
 import getPropertyTypeName from '../cms/types/queries/utils/getPropertyTypeName';
 import Translation from '../cms/types/models/Translation';
+import ProductGroup from '../cms/types/models/ProductGroup';
+import User from '../cms/types/models/User';
 import MainView from '../cms/types/models/MainView';
 import CacheIn from '../cache/CacheIn';
 import cacheOut from '../cache/cacheOut';
@@ -19,7 +21,8 @@ import isDeepEqual                    from 'lodash.isequal';
 const initLocales = (locales) => {
   ensureAllLocalizedStringsPropertyHaveTheCurrentLocales(locales);
   ensureAllProductModelHaveTheCurrentLocales(locales);
-  return refreshWebsiteLocalizedData();
+  return refreshWebsiteLocalizedData()
+         .then(refresMainView);
 }
 
 function refreshWebsiteLocalizedData() {
@@ -31,6 +34,30 @@ function refreshWebsiteLocalizedData() {
           .then(mainview => {
             return CacheIn.entityChanged(mainview);
           });
+}
+
+function link_to_mainview(cursor, mainview, mainview_field) {
+  cursor.next().then(qr => {
+    if (qr) {
+      mainview.update({$push: {[mainview_field]: qr.id} })
+      .then(()=>link_to_mainview(cursor, mainview, mainview_field));
+    }
+  });
+}
+
+function refresMainView() {
+    let mainview;
+
+    return MainView.findOne()
+          .then(mv => {
+            mainview = mv;
+            return mainview.update({$set: {"translations": [], "productGroups": [], "users": []}} ) })
+          .then(() => Translation.find({}, {"id":1}).cursor())
+          .then(cursor => link_to_mainview(cursor, mainview, "translations"))
+          .then(() => ProductGroup.find({}, {"id":1}).cursor())
+          .then(cursor => link_to_mainview(cursor, mainview, "productGroups"))
+          .then(() => User.find({}, {"id":1}).cursor())
+          .then(cursor => link_to_mainview(cursor, mainview, "users"));
 }
 
 const ensureAllProductModelHaveTheCurrentLocales = (locales) => {
