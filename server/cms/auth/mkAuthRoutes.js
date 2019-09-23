@@ -31,10 +31,9 @@ const mkAuthRoutes = () =>{
 
       console.log(`user ${req.body.username} registered`);
 
-      //TODO: do not ignore promise result
-      refresMainView();
-
-      res.sendStatus(200);
+      refresMainView()
+      .then(() => res.sendStatus(200))
+      .catch(() => res.status(500));
     });
   });
 
