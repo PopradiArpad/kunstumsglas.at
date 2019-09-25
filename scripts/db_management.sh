@@ -40,6 +40,8 @@ function start_mongod() {
     rm mongod.pid;
     exit 1;
   fi
+
+  echo -e "${GREEN}mongod started${NORM}";
 }
 
 function kill_mongod() {
@@ -47,6 +49,7 @@ function kill_mongod() {
   rm mongod.pid;
 
   if ps $MONGOPID>/dev/null; then
+    echo -e "${GREEN}stopping mongod...${NORM}";
     #Never use kill -9 on mongod!
     kill -2 $MONGOPID;
   fi
@@ -78,6 +81,7 @@ function create_initial_db() {
   cat "${SCRIPT_ABS_DIR}/initial_collections/initial_productgroups.json"  | mongoimport --db test --collection productgroups;
   cat "${SCRIPT_ABS_DIR}/initial_collections/initial_caches.json"         | mongoimport --db test --collection caches;
   echo "{_id: \"mainview\", translations:[], productGroups:[], users: []}"| mongoimport --db test --collection mainviews;
+  mongo "$PATH_TO_DB" "../scripts/setup_initial_mainview.js";
   kill_mongod;
 }
 
@@ -95,9 +99,7 @@ function start_mongod_and_run_script_in_it() {
   local PATH_TO_SCRIPT="$2";
 
   start_mongod "$PATH_TO_DB";
-  echo -e "${GREEN}mongod started${NORM}";
   mongo "$PATH_TO_DB" "$PATH_TO_SCRIPT";
-  echo -e "${GREEN}stopping mongod...${NORM}";
   kill_mongod;
 }
 
