@@ -3,20 +3,22 @@
 
 == Setup KUG Development Environment
 
-. clone git repo
+. Clone git repo
 . [[start-app]]`nvm use v8.6.0` (see actual node version in Dockerfile)
-. install Mongo 3.4.x by following https://docs.mongodb.com/v3.4/tutorial/install-mongodb-on-ubuntu/[this] (the Xenial build is ok for later versions)
-. setup the application data in *development/development_environment.sh*.
+. Install Mongo 3.4.x by following https://docs.mongodb.com/v3.4/tutorial/install-mongodb-on-ubuntu/[this] (the Xenial build is ok for later versions)
+. Build
++
+`npm run build`
+. Setup the application data in *development/development_environment.sh*.
 . Create initial database
 +
-`./scripts/db_management.sh create`
-. `npm run build`
-. `npm run start_development_app`
+`./scripts/db_management.sh create DB_NAME_FROM_DEVELOPMENT_ENVIRONMENT.SH SESSION_SECRET`
+. Start app
 +
-The website runs on http://localhost:3002
-+
+`npm run start_development_app`
+. The website runs on http://localhost:3002
 The CMS runs on http://localhost:3002/management.html
-. To see into  the running database:
+To see into  the running database:
 +
 `npm run start_development_mongo_shell`
 
