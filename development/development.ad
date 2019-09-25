@@ -12,7 +12,7 @@
 . Setup the application data in *development/development_environment.sh*.
 . Create initial database
 +
-`./scripts/db_management.sh create DB_NAME_FROM_DEVELOPMENT_ENVIRONMENT.SH SESSION_SECRET`
+`.npm run db_management create DB_NAME_FROM_DEVELOPMENT_ENVIRONMENT.SH SESSION_SECRET`
 . Start app
 +
 `npm run start_development_app`
