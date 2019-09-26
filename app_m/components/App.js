@@ -17,6 +17,7 @@ import MainView               from './MainView';
 import TranslationView        from './TranslationView';
 import ErrorDialog            from './dialogs/ErrorDialog';
 import {ErrorAcknowledged,
+        SetRegisteringAllowed,
         IsLoggedIn,
         Logout,
         Login,
@@ -115,7 +116,10 @@ export class App extends Component {
                               onSelectEntity={this.dispatchLoadEntity}
                               onRemoveEntity={this.dispatchRemoveEntity}
                               onSaveEntity={this.dispatchSaveEntity}
-                              onCreateNewEntity={this.dispatchLoadTemporaryEntity}/>;
+                              onCreateNewEntity={this.dispatchLoadTemporaryEntity}
+                              onSetRegisteringAllowed={this.dispatchSetRegisteringAllowed}
+                              registeringAllowed={this.props.registeringAllowed}
+                              />;
         default:
             return  <EntityView entityDescription={this.props.entityDescription}
                                 entityOverviews={this.props.entityOverviews}
@@ -172,6 +176,10 @@ export class App extends Component {
 
   dispatchSetNewPassword = (password,newPassword) => {
     this.props.dispatch(new SetNewPassword(password,newPassword));
+  }
+
+  dispatchSetRegisteringAllowed = (value) => {
+    this.props.dispatch(new SetRegisteringAllowed(value));
   }
 
   dispatchError = (title,errorMessages) => {

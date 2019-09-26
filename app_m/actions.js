@@ -6,9 +6,11 @@
 *  LICENSE file in the root directory of this source tree.
 */
 
- 
+
 //Action types
   //components -> reducer
+    //cms config handling
+export const SET_REGISTERING_ALLOWED = 'SET_REGISTERING_ALLOWED';
     //user handling requests
 export const IS_LOGGED_IN        = 'IS_LOGGED_IN';
 export const LOGIN               = 'LOGIN';
@@ -28,6 +30,13 @@ export const PROCESS_FINISHED_OK    = 'PROCESS_FINISHED_OK';
 export const PROCESS_FINISHED_ERROR = 'PROCESS_FINISHED_ERROR';
 
 //action constructors
+    //cms config handling
+export function SetRegisteringAllowed(value) {
+  return {
+    type: SET_REGISTERING_ALLOWED,
+    value
+  }
+}
     //user handling requests
 export function IsLoggedIn() {
   return {

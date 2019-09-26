@@ -13,19 +13,11 @@ class MainView extends Component {
   constructor() {
     super(...arguments);
 
-    this.state = {registeringAllowed: true};
     this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleChange(event) {
-    console.log('handleChange: registeringAllowed: ' + event.target.checked);
-    this.setState({registeringAllowed: event.target.checked});
-  }
-
-  handleSubmit(event) {
-    console.log('handleSubmit: registeringAllowed: ' + this.state.registeringAllowed);
-    event.preventDefault();
+    this.props.onSetRegisteringAllowed(event.target.checked);
   }
 
   render() {
@@ -45,11 +37,8 @@ class MainView extends Component {
             <form onSubmit={this.handleSubmit}>
               <label>
                 registeringAllowed:
-                <input type="checkbox" value={this.state.registeringAllowed} onChange={this.handleChange} />
+                <input type="checkbox" defaultChecked={this.props.registeringAllowed} onChange={this.handleChange} />
               </label>
-              <span className="kugm-mainview-submit">
-                <input type="submit" value="Submit" />
-              </span>
             </form>
           </div>
         </div>
@@ -62,11 +51,13 @@ MainView.propTypes = {
   //view mode
   entityDescription: PropTypes.object.isRequired,
   entityOverviews: PropTypes.object.isRequired,
+  registeringAllowed:    PropTypes.bool.isRequired,
   //edit mode
   onSelectEntity: PropTypes.func.isRequired,
   onRemoveEntity: PropTypes.func.isRequired,
   onSaveEntity: PropTypes.func.isRequired,
-  onCreateNewEntity: PropTypes.func.isRequired
+  onCreateNewEntity: PropTypes.func.isRequired,
+  onSetRegisteringAllowed: PropTypes.func.isRequired,
 };
 
 export default MainView;

@@ -6,7 +6,7 @@
 *  LICENSE file in the root directory of this source tree.
 */
 
- 
+
 import 'whatwg-fetch';//safari 10.0 needs it
 
 //About the  difference between fetch and request
@@ -18,6 +18,18 @@ import 'whatwg-fetch';//safari 10.0 needs it
 
 //TODO add right CSRF prevention: using JSON is not enough
 //See https://www.owasp.org/index.php/Reviewing_code_for_Cross-Site_Request_Forgery_issues
+
+export const fetchSetRegisteringAllowed = (value) => {
+  return Promise.resolve({registeringAllowed:value});
+  // return fetch(`/auth/fetchSetRegisteringAllowed`, {
+  //           method:       'post',
+  //           credentials:  'same-origin',//To send cookies (session data)
+  //           headers:      {'Content-Type': 'application/json'},
+  //           body:         JSON.stringify({value})
+  //         })
+  //        .then(errorAPI)
+  //        .then(extractRegisteringAllowed);
+}
 
 //TODO -> fetchGetUser
 export const fetchIsLoggedIn = () => {
