@@ -16,5 +16,6 @@ DOCKER_VOLUME="kunstumsglas-at-development-volume";
 DOCKER_NETWORK="kunstumsglas-at-development-network";
 DOCKER_DB_PORT="20002";
 DOCKER_WEB_PORT="2002";
-DOCKER_COMPOSE_FILE="${SCRIPT_ABS_DIR}/compose-deployment-DEVELOPMENT.yml";
+DOCKER_SESSION_SECRET="söskjdf(64GXldDF1.";
+DOCKER_COMPOSE_FILE="${SCRIPT_ABS_DIR}/stack-DEVELOPMENT.yml";
 DOCKER_DEVELOPMENT_STACK="kunstumsglas-at-development";

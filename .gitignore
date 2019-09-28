@@ -19,3 +19,6 @@ app_w/build
 tags
 server/config/REGISTRATION_IS_ALLOWED
 .ctags.d
+
+# temporary development files
+/development/stack-DEVELOPMENT.yml

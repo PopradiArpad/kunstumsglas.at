@@ -20,8 +20,7 @@
     "start_development_mongo_shell": "./development/start_development_mongo_shell.sh",
     "create_development_docker_image": "./development/create_development_docker_image.sh",
     "create_development_docker_volume": "./development/create_development_docker_volume.sh",
-    "start_development_stack": "./development/start_development_stack.sh",
-    "stop_development_stack": "./development/stop_development_stack.sh"
+    "development_stack": "./development/development_stack.sh"
   },
   "repository": {
     "type": "git",
