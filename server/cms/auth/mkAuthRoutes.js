@@ -63,6 +63,11 @@ const mkAuthRoutes = () =>{
                logout
              );
 
+  router.post('/setRegisteringAllowed',
+              loggedIn,
+              setRegisteringAllowed
+            );
+
   return router;
 }
 
@@ -97,6 +102,18 @@ const setNewPassword = (req,res,next) => {
   })
   .then(user=>user.save())
   .then(()=>next())
+  .catch(responseWithError(res));
+}
+
+const setRegisteringAllowed = (req, res) => {
+  let value = req.body.value;
+
+  if ((value !== true) && (value !== false)) {
+    throw new BadRequest("Invalid value!");
+  }
+
+  CmsConfig.update({}, {"registeringAllowed":value})
+  .then(()=>res.send({registeringAllowed:value}))
   .catch(responseWithError(res));
 }
 

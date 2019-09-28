@@ -18,7 +18,7 @@ import cacheOut,{reloadCacheOut} from './cache/cacheOut';
 import initLocales      from './locales/init';
 import initCms          from './cms/init';
 import initWebsite      from './website/init';
-import initError        from './error/init';
+import responseWithError from './error/responseWithError';
 import index_html       from './index_html';
 import morgan           from 'morgan';
 import expressStaticGzip from "express-static-gzip";
@@ -67,7 +67,11 @@ connectToDb(dbConfig)
   // let the browser to route it out.
   app.use('*', index_html(publicPath));
 
-  initError(app);
+  // The error handler middleware is always the last one.
+  app.use((err, req, res, next) => {// eslint-disable-line
+      responseWithError(res)(err);
+    }
+  )
 
   app.listen(port, () => {
     console.log('Server running on port '+port+' public path is '+publicPath);

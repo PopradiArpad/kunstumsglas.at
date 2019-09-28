@@ -13,9 +13,11 @@ import UserMenu               from './UserMenu';
 import LoginSignup            from './LoginSignup';
 import NewPassword            from './NewPassword';
 import EntityView             from './EntityView';
+import MainView               from './MainView';
 import TranslationView        from './TranslationView';
 import ErrorDialog            from './dialogs/ErrorDialog';
 import {ErrorAcknowledged,
+        SetRegisteringAllowed,
         IsLoggedIn,
         Logout,
         Login,
@@ -102,17 +104,30 @@ export class App extends Component {
                           onSubmitSignup={this.dispatchSignup} />;
 
     if (this.props.entityDescription) {
-      //TODO make TranslationView  a simple property view
-      return (this.props.entityDescription.identity.dbModel==='Translation')
-             ? <TranslationView entityDescription={this.props.entityDescription}
+      switch (this.props.entityDescription.identity.dbModel) {
+        case 'Translation':
+            return <TranslationView entityDescription={this.props.entityDescription}
+                                    entityOverviews={this.props.entityOverviews}
+                                    onSaveEntity={this.dispatchSaveEntity}/>;
+
+        case 'MainView':
+            return  <MainView entityDescription={this.props.entityDescription}
+                              entityOverviews={this.props.entityOverviews}
+                              onSelectEntity={this.dispatchLoadEntity}
+                              onRemoveEntity={this.dispatchRemoveEntity}
+                              onSaveEntity={this.dispatchSaveEntity}
+                              onCreateNewEntity={this.dispatchLoadTemporaryEntity}
+                              onSetRegisteringAllowed={this.dispatchSetRegisteringAllowed}
+                              registeringAllowed={this.props.registeringAllowed}
+                              />;
+        default:
+            return  <EntityView entityDescription={this.props.entityDescription}
                                 entityOverviews={this.props.entityOverviews}
-                                onSaveEntity={this.dispatchSaveEntity}/>
-             : <EntityView entityDescription={this.props.entityDescription}
-                           entityOverviews={this.props.entityOverviews}
-                           onSelectEntity={this.dispatchLoadEntity}
-                           onRemoveEntity={this.dispatchRemoveEntity}
-                           onSaveEntity={this.dispatchSaveEntity}
-                           onCreateNewEntity={this.dispatchLoadTemporaryEntity}/>;
+                                onSelectEntity={this.dispatchLoadEntity}
+                                onRemoveEntity={this.dispatchRemoveEntity}
+                                onSaveEntity={this.dispatchSaveEntity}
+                                onCreateNewEntity={this.dispatchLoadTemporaryEntity}/>;
+      }
     }
 
     return <LoadingPage/>;
@@ -161,6 +176,10 @@ export class App extends Component {
 
   dispatchSetNewPassword = (password,newPassword) => {
     this.props.dispatch(new SetNewPassword(password,newPassword));
+  }
+
+  dispatchSetRegisteringAllowed = (value) => {
+    this.props.dispatch(new SetRegisteringAllowed(value));
   }
 
   dispatchError = (title,errorMessages) => {

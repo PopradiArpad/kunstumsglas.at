@@ -7,6 +7,7 @@
 */
 
 import {
+  SET_REGISTERING_ALLOWED,
   IS_LOGGED_IN,
   LOGIN,
   LOGOUT,
@@ -17,6 +18,7 @@ import {
   AddError,
   LoadEntity
 } from '../actions';
+import SetRegisteringAllowedProcess from '../processes/SetRegisteringAllowedProcess';
 import IsLoggedInProcess from '../processes/IsLoggedInProcess';
 import LogoutProcess from '../processes/LogoutProcess';
 import LoginProcess from '../processes/LoginProcess';
@@ -39,6 +41,8 @@ const defaultState = {
 const auth = (state = defaultState, action) => {
   switch (action.type) {
     //from components
+    case SET_REGISTERING_ALLOWED:
+      return setRegisteringAllowed(state, action);
     case IS_LOGGED_IN:
       return isLoggedIn(state);
     case LOGIN:
@@ -57,6 +61,10 @@ const auth = (state = defaultState, action) => {
     default:
       return state;
   }
+};
+
+const setRegisteringAllowed = (state, action) => {
+  return startProcess(state, SetRegisteringAllowedProcess, action.value);
 };
 
 const isLoggedIn = state => {
@@ -88,6 +96,8 @@ const processFinishedOk = (state, action) => {
   if (!isMyRunningProcess(state, action)) return state;
 
   switch (state._runningProcess.name) {
+    case SetRegisteringAllowedProcess.processName:
+      return processOkSetRegisteringAllowed(state, action);
     case IsLoggedInProcess.processName:
       return processOkIsLoggedIn(state, action);
     case LogoutProcess.processName:
@@ -109,6 +119,21 @@ const processFinishedError = (state, action) => {
   );
   return merge({}, state, { _runningProcess: null });
 };
+
+const processOkSetRegisteringAllowed = (state, action) => {
+  let result = action.result;
+  let registeringAllowed = result.registeringAllowed;
+
+  return merge(
+    {},
+    state,
+    //merge
+    {
+      _runningProcess: null,
+      registeringAllowed
+    }
+  );
+}
 
 const processOkIsLoggedIn = (state, action) => {
   let result = action.result;

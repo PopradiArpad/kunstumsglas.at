@@ -13,7 +13,7 @@ server_build
 !/public/favicon.ico
 !/public/pics
 /db
-db_*
+/db_*
 mongod.pid
 app_w/build
 tags
