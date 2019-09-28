@@ -12,9 +12,19 @@
 .kugm-mainview {
   .kugm-mainview-registeringAllowed {
     padding: 1em;
+    background-color: green;
+
+    .kugm-mainview-registeringAllowed-warning-text {
+      display: none;
+    }
   }
 
-  .kugm-mainview-submit {
-    padding-left: 3em;
+  .danger {
+    background-color: red;
+
+    .kugm-mainview-registeringAllowed-warning-text {
+      display:block;
+      font-weight: bold;
+    }
   }
 }

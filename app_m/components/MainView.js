@@ -7,6 +7,7 @@
 */
 
 import React, { Component, PropTypes } from 'react';
+import classnames                      from 'classnames';
 import EntityView                      from './EntityView';
 
 class MainView extends Component {
@@ -21,6 +22,9 @@ class MainView extends Component {
   }
 
   render() {
+    let classRegisteringAllowed = classnames("kugm-mainview-registeringAllowed",
+                                             {"danger": this.props.registeringAllowed});
+
     return (
       <div className="kugm-mainview">
         <EntityView entityDescription={this.props.entityDescription}
@@ -33,13 +37,21 @@ class MainView extends Component {
           <div className="kugm-collectionsview-openclose">
             General
           </div>
-          <div className="kugm-mainview-registeringAllowed">
+          <div className={classRegisteringAllowed}>
             <form onSubmit={this.handleSubmit}>
               <label>
-                registeringAllowed:
+                Neuen User zu registrieren ist erlaubt:
                 <input type="checkbox" defaultChecked={this.props.registeringAllowed} onChange={this.handleChange} />
               </label>
             </form>
+            <div className="kugm-mainview-registeringAllowed-warning-text">
+              <ol>
+                <li>Log out</li>
+                <li>Registriere den neuen User</li>
+                <li>Log in</li>
+                <li>Setze dies wieder zurück!</li>
+              </ol>
+            </div>
           </div>
         </div>
       </div>
