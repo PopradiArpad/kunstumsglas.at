@@ -147,47 +147,44 @@ function does_volume_exist() {
 }
 
 function create_initial_db_dockerized() {
-  local DOCKER_VOLUME="$1";
-  local SESSION_SECRET="$2";
+  local DOCKER_DB_IMAGE="$1";
+  local DOCKER_VOLUME="$2";
+  local SESSION_SECRET="$3";
+
+  if does_volume_exist "${DOCKER_VOLUME}"; then
+    echo -e "${RED}Volume ${CYAN}${DOCKER_VOLUME}${RED} already exists!";
+    print_help_and_exit 1;
+  fi
 
   if [ -z "$SESSION_SECRET" ]; then
     echo -e "${CYAN}session_secret${RED} must be non empty!";
     print_help_and_exit 1;
   fi
 
-  if does_volume_exist "${DOCKER_VOLUME}"; then
-    echo -e "Volume ${CYAN}${DOCKER_VOLUME}${RED} already exists!";
-    print_help_and_exit 1;
-  fi
-
-  local TMP_SCRIPT="${PROJECT_DIR}/tmp/create_initial_volume.sh";
+  local TMP_SCRIPT="${SCRIPT_ABS_DIR}/tmp_create_initial_volume.sh";
 
   rm -rf "${TMP_SCRIPT}" || exit 1;
 
   cat \
   << EOF > "${TMP_SCRIPT}"
-    echo "{registeringAllowed:true,secret:"${SESSION_SECRET}"}"           | mongoimport --db test --collection cmsconfigs;
-    cat /scripts/initial_collections/initial_translations.json            | mongoimport --db test --collection translations;
-    cat /scripts/initial_collections/initial_productgroups.json           | mongoimport --db test --collection productgroups;
-    cat /scripts/initial_collections/initial_caches.json                  | mongoimport --db test --collection caches;
-    echo {_id: "mainview", translations:[], productGroups:[], users: []}" | mongoimport --db test --collection mainviews;
-    mongo /data/db scripts/setup_initial_mainview.js;
+    echo '{registeringAllowed:true,secret:"${SESSION_SECRET}"}'             | mongoimport --db test --collection cmsconfigs || exit 1;
+    cat /scripts/initial_collections/initial_translations.json              | mongoimport --db test --collection translations || exit 1;
+    cat /scripts/initial_collections/initial_productgroups.json             | mongoimport --db test --collection productgroups || exit 1;
+    cat /scripts/initial_collections/initial_caches.json                    | mongoimport --db test --collection caches || exit 1;
+    echo '{_id: "mainview", translations:[], productGroups:[], users: []}'  | mongoimport --db test --collection mainviews || exit 1;
+    mongo scripts/setup_initial_mainview.js;
 EOF
 
-  sudo docker run --rm --mount type=bind,source="${PROJECT_DIR}/scripts",target="/scripts" --mount source="${DOCKER_VOLUME}",target="/data/db" ${DOCKER_IMAGE} --entrypoint /bin/sh
-  # rm -rf "${TMP_SCRIPT}" || exit 1;
+    local TMP_DB_INIT="tmp_db_init";
 
-  ################
-  # mkdir -p "$PATH_TO_DB" || exit 1;
-  #
-  # start_mongod "$PATH_TO_DB";
-  # echo "{registeringAllowed:true,secret:\"${SESSION_SECRET}\"}"           | mongoimport --db test --collection cmsconfigs;
-  # cat "${SCRIPT_ABS_DIR}/initial_collections/initial_translations.json"   | mongoimport --db test --collection translations;
-  # cat "${SCRIPT_ABS_DIR}/initial_collections/initial_productgroups.json"  | mongoimport --db test --collection productgroups;
-  # cat "${SCRIPT_ABS_DIR}/initial_collections/initial_caches.json"         | mongoimport --db test --collection caches;
-  # echo "{_id: \"mainview\", translations:[], productGroups:[], users: []}"| mongoimport --db test --collection mainviews;
-  # mongo "$PATH_TO_DB" "../scripts/setup_initial_mainview.js";
-  # kill_mongod;
+    sudo docker run --name ${TMP_DB_INIT} \
+                    -d --rm \
+                    --mount type=bind,source="${SCRIPT_ABS_DIR}",target="/scripts" \
+                    --mount source="${DOCKER_VOLUME}",target="/data/db" \
+                    ${DOCKER_DB_IMAGE} || exit 1;
+    sudo docker exec ${TMP_DB_INIT} '/bin/bash' '/scripts/tmp_create_initial_volume.sh' || exit 1;
+    sudo docker container stop ${TMP_DB_INIT} || exit 1;
+    rm -rf "${TMP_SCRIPT}" || exit 1;
 }
 
 ###################################
@@ -198,7 +195,7 @@ case "$1" in
     create_initial_db "$2" "$3";
     ;;
   create_dockerized)
-    create_initial_db_dockerized "$2" "$3";
+    create_initial_db_dockerized "$2" "$3" "$4";
     ;;
   start_mongod_and_open_mongo_shell)
     start_mongod_and_open_mongo_shell "$2";

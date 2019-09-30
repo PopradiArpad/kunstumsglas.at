@@ -33,9 +33,9 @@ function exit_when_not_empty(array) {
 let conn = new Mongo();
 let db = conn.getDB("test");
 
-print_current_mainview();
+// print_current_mainview();
 check_prerequisites(db);
 link_to_mainview("users", "users");
 link_to_mainview("translations", "translations");
 link_to_mainview("productgroups", "productGroups");
-print_current_mainview();
+// print_current_mainview();

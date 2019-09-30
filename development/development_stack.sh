@@ -49,20 +49,22 @@ function does_volume_exist() {
   return $?;
 }
 
-function copy_db_dir_to_volume() {
-  local LOCAL_DB_PATH="$1";
-
-  sudo docker run --rm --mount type=bind,source="${LOCAL_DB_PATH}",target=/from --mount type=volume,source="${DOCKER_VOLUME}",target=/db  --entrypoint="/bin/sh" alpine -c 'rm -rf /db/*; cp -r /from/* /db' || exit 1;
-}
+# function copy_db_dir_to_volume() {
+#   local LOCAL_DB_PATH="$1";
+#
+#   sudo docker run --rm --mount type=bind,source="${LOCAL_DB_PATH}",target=/from --mount type=volume,source="${DOCKER_VOLUME}",target=/db  --entrypoint="/bin/sh" alpine -c 'rm -rf /db/*; cp -r /from/* /db' || exit 1;
+# }
 
 function create_volume_if_not_exists() {
   if ! does_volume_exist; then
     echo -e "${CYAN}Creating and setting up ${LGREEN}${DOCKER_VOLUME}${NORM}";
 
     local TMP_MONGO_DB="tmp/TMP_MONGO_DB";
-    npm run db_management create ${TMP_MONGO_DB} ${DOCKER_SESSION_SECRET} || exit 1;
-    copy_db_dir_to_volume "${PROJECT_DIR}/${TMP_MONGO_DB}" || exit 1;
-    rm -rf "${TMP_MONGO_DB}" || exit 1;
+    # npm run db_management create ${TMP_MONGO_DB} ${DOCKER_SESSION_SECRET} || exit 1;
+    # copy_db_dir_to_volume "${PROJECT_DIR}/${TMP_MONGO_DB}" || exit 1;
+    # rm -rf "${TMP_MONGO_DB}" || exit 1;
+
+    npm run db_management create_dockerized ${DOCKER_DB_IMAGE} ${DOCKER_VOLUME} ${DOCKER_SESSION_SECRET} || exit 1;
   fi
 }
 
