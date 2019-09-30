@@ -20,6 +20,11 @@ services:
         target: /data/db
         volume:
           nocopy: true
+      - type: volume
+        source: configdb
+        target: /data/configdb
+        volume:
+          nocopy: true
     environment:
       - NODE_ENV=production
     deploy:
@@ -39,16 +44,18 @@ services:
       - NODE_ENV=production
       - MONGO_URL=mongodb://db:27017/test
       - PORT=8080
-    deploy:
-      restart_policy:
-        condition: on-failure
-        delay: 5s
-        max_attempts: 3
-        window: 5s
-      update_config:
-        failure_action: pause
+    # deploy:
+    #   restart_policy:
+    #     condition: on-failure
+    #     delay: 5s
+    #     max_attempts: 3
+    #     window: 5s
+    #   update_config:
+    #     failure_action: pause
 volumes:
-  data:
+  DOCKER_VOLUME:
+    external: true
+  configdb:
 # The network must be created as an external attachable network
 # before first stack start to let make hot backups via
 # sudo docker network create --attachable -d kunstumsglas-at-development-network

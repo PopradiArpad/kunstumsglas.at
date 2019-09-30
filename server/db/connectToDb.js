@@ -14,7 +14,7 @@ import promisify from 'es6-promisify';
 var attempts = 0;
 
 const connectToDb = (config_db) => {
-  return new Promise((resolve)=>{
+  return new Promise((resolve, reject)=>{
     // Use native promises instead of mongoose's own lib: http://mongoosejs.com/docs/promises.html
     mongoose.Promise = global.Promise;
 
@@ -24,13 +24,12 @@ const connectToDb = (config_db) => {
     mongoose.connect(config_db.url);
 
     con.on('error', (err) => {
-      if (attempts < 3) {
+      if (attempts < 10) {
         attempts++;
-        console.error("Database is not accessable. Sleeping");
+        console.error("Database is not accessible. Sleeping");
         setTimeout(()=>connectToDb(config_db),1000);
       } else {
-        console.error("Database is not accessable: ",err);
-        throw new Error('Unable to connect to the database after '+attempts+' attempts');
+        reject(new Error('Unable to connect to the database after '+attempts+' attempts: ' + err.message));
       }
     });
 
@@ -40,6 +39,7 @@ const connectToDb = (config_db) => {
         con.gfs_exist  = promisify(con.gfs.exist, con.gfs);
         con.gfs_remove = promisify(con.gfs.remove,con.gfs);
 
+        console.log("Connected to database.");
         resolve(con);
       });
     }

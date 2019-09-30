@@ -59,12 +59,7 @@ function create_volume_if_not_exists() {
   if ! does_volume_exist; then
     echo -e "${CYAN}Creating and setting up ${LGREEN}${DOCKER_VOLUME}${NORM}";
 
-    local TMP_MONGO_DB="tmp/TMP_MONGO_DB";
-    # npm run db_management create ${TMP_MONGO_DB} ${DOCKER_SESSION_SECRET} || exit 1;
-    # copy_db_dir_to_volume "${PROJECT_DIR}/${TMP_MONGO_DB}" || exit 1;
-    # rm -rf "${TMP_MONGO_DB}" || exit 1;
-
-    npm run db_management create_dockerized ${DOCKER_DB_IMAGE} ${DOCKER_VOLUME} ${DOCKER_SESSION_SECRET} || exit 1;
+    npm run db_management create ${DOCKER_DB_IMAGE} ${DOCKER_VOLUME} ${DOCKER_SESSION_SECRET} || exit 1;
   fi
 }
 
@@ -93,8 +88,8 @@ function deploy_stack_i() {
 function deploy_stack() {
   create_network_if_not_exist;
   create_volume_if_not_exists;
-  # create_docker_compose_file;
-  # deploy_stack_i;
+  create_docker_compose_file;
+  deploy_stack_i;
 }
 
 ###################################
