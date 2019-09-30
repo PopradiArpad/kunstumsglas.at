@@ -139,11 +139,66 @@ function set_session_secret() {
 }
 
 ###################################
+# Dockerized helpers
+###################################
+function does_volume_exist() {
+  sudo docker volume ls|grep "${DOCKER_VOLUME}" > /dev/null;
+  return $?;
+}
+
+function create_initial_db_dockerized() {
+  local DOCKER_VOLUME="$1";
+  local SESSION_SECRET="$2";
+
+  if [ -z "$SESSION_SECRET" ]; then
+    echo -e "${CYAN}session_secret${RED} must be non empty!";
+    print_help_and_exit 1;
+  fi
+
+  if does_volume_exist "${DOCKER_VOLUME}"; then
+    echo -e "Volume ${CYAN}${DOCKER_VOLUME}${RED} already exists!";
+    print_help_and_exit 1;
+  fi
+
+  local TMP_SCRIPT="${PROJECT_DIR}/tmp/create_initial_volume.sh";
+
+  rm -rf "${TMP_SCRIPT}" || exit 1;
+
+  cat \
+  << EOF > "${TMP_SCRIPT}"
+    echo "{registeringAllowed:true,secret:"${SESSION_SECRET}"}"           | mongoimport --db test --collection cmsconfigs;
+    cat /scripts/initial_collections/initial_translations.json            | mongoimport --db test --collection translations;
+    cat /scripts/initial_collections/initial_productgroups.json           | mongoimport --db test --collection productgroups;
+    cat /scripts/initial_collections/initial_caches.json                  | mongoimport --db test --collection caches;
+    echo {_id: "mainview", translations:[], productGroups:[], users: []}" | mongoimport --db test --collection mainviews;
+    mongo /data/db scripts/setup_initial_mainview.js;
+EOF
+
+  sudo docker run --rm --mount type=bind,source="${PROJECT_DIR}/scripts",target="/scripts" --mount source="${DOCKER_VOLUME}",target="/data/db" ${DOCKER_IMAGE} --entrypoint /bin/sh
+  # rm -rf "${TMP_SCRIPT}" || exit 1;
+
+  ################
+  # mkdir -p "$PATH_TO_DB" || exit 1;
+  #
+  # start_mongod "$PATH_TO_DB";
+  # echo "{registeringAllowed:true,secret:\"${SESSION_SECRET}\"}"           | mongoimport --db test --collection cmsconfigs;
+  # cat "${SCRIPT_ABS_DIR}/initial_collections/initial_translations.json"   | mongoimport --db test --collection translations;
+  # cat "${SCRIPT_ABS_DIR}/initial_collections/initial_productgroups.json"  | mongoimport --db test --collection productgroups;
+  # cat "${SCRIPT_ABS_DIR}/initial_collections/initial_caches.json"         | mongoimport --db test --collection caches;
+  # echo "{_id: \"mainview\", translations:[], productGroups:[], users: []}"| mongoimport --db test --collection mainviews;
+  # mongo "$PATH_TO_DB" "../scripts/setup_initial_mainview.js";
+  # kill_mongod;
+}
+
+###################################
 # Main
 ###################################
 case "$1" in
   create)
     create_initial_db "$2" "$3";
+    ;;
+  create_dockerized)
+    create_initial_db_dockerized "$2" "$3";
     ;;
   start_mongod_and_open_mongo_shell)
     start_mongod_and_open_mongo_shell "$2";

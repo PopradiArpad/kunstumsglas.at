@@ -74,11 +74,12 @@ function create_docker_compose_file() {
   echo -e "${CYAN}Creating Docker compose file ${LGREEN}${COMPOSE_FILE}";
   cat "${SCRIPT_ABS_DIR}/stack-DEVELOPMENT-pattern.yml"| \
   sed \
-      -e "s/DOCKER_IMAGE/${DOCKER_IMAGE}/g"     \
-      -e "s/DOCKER_VOLUME/${DOCKER_VOLUME}/g"   \
-      -e "s/DOCKER_NETWORK/${DOCKER_NETWORK}/g" \
-      -e "s/DOCKER_DB_PORT/${DOCKER_DB_PORT}/g" \
-      -e "s/DOCKER_WEB_PORT/${DOCKER_WEB_PORT}/g" \
+      -e "s/DOCKER_IMAGE/${DOCKER_IMAGE}/g"           \
+      -e "s/DOCKER_DB_IMAGE/${DOCKER_DB_IMAGE}/g"     \
+      -e "s/DOCKER_VOLUME/${DOCKER_VOLUME}/g"         \
+      -e "s/DOCKER_NETWORK/${DOCKER_NETWORK}/g"       \
+      -e "s/DOCKER_DB_PORT/${DOCKER_DB_PORT}/g"       \
+      -e "s/DOCKER_WEB_PORT/${DOCKER_WEB_PORT}/g"     \
       > ${DOCKER_COMPOSE_FILE} || exit 1;
 }
 

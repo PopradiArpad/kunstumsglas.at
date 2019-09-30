@@ -12,6 +12,7 @@ PORT="3002";
 
 # with Docker
 DOCKER_IMAGE="kunstumsglas.at:development";
+DOCKER_DB_IMAGE="mongo:3.4.23";
 DOCKER_VOLUME="kunstumsglas-at-development-volume";
 DOCKER_NETWORK="kunstumsglas-at-development-network";
 DOCKER_DB_PORT="20002";
