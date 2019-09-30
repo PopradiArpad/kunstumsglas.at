@@ -9,6 +9,9 @@ GREEN="\e[32m"
 CYAN="\e[36m"
 NORM="\e[0m"
 
+
+#TODO: DOCKERIZE! TO MAKE THE USED MONGODB VERSION INDEPENDENT FROM THE HOST
+
 function print_help_and_exit() {
   local EXIT_VAL="$1";
 
