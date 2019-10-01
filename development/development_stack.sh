@@ -69,7 +69,7 @@ function create_volume_if_not_exists() {
 # Compose file and deployment handling
 ###################################
 function create_docker_compose_file() {
-  echo -e "${CYAN}Creating Docker compose file ${LGREEN}${COMPOSE_FILE}";
+  echo -e "${CYAN}Creating ${LGREEN}compose file ${DOCKER_COMPOSE_FILE}${NORM}";
   cat "${SCRIPT_ABS_DIR}/stack-DEVELOPMENT-pattern.yml"| \
   sed \
       -e "s/DOCKER_IMAGE/${DOCKER_IMAGE}/g"           \
@@ -82,7 +82,7 @@ function create_docker_compose_file() {
 }
 
 function deploy_stack_i() {
-  echo -e "${CYAN}Starting ${LGREEN}${DOCKER_DEVELOPMENT_STACK}${NORM} from ${LGREEN}${DOCKER_COMPOSE_FILE}.";
+  echo -e "${CYAN}Starting ${LGREEN}stack ${DOCKER_DEVELOPMENT_STACK}${NORM}${CYAN} from ${LGREEN}${DOCKER_COMPOSE_FILE}.";
   sudo docker stack deploy -c ${DOCKER_COMPOSE_FILE} ${DOCKER_DEVELOPMENT_STACK} || exit 1;
 }
 
