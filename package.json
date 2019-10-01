@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
     "build": "npm run build_app_m && npm run build_app_w && npm run build_server",
-    "db_management": "./scripts/db_management.sh",
     "test": "npm run test_app_m && npm run test_app_w && npm run test_server && echo All tests are OK",
+    "development_stack": "./development/development_stack.sh",
+    "db_management": "./scripts/db_management.sh",
     "build_app_m": "node ./node_modules/webpack/bin/webpack.js --config app_m/webpack.config.js",
     "building_app_m": "npm run build_app_m -- --progress --colors --watch",
     "build_app_w": "node ./node_modules/webpack/bin/webpack.js --config app_w/webpack.config.js",
@@ -17,10 +18,7 @@
     "test_server": "NODE_ENV=test node test/run_server_test.js -- --db_port 31122 --port 3122",
     "start": "node server_build/server.js --gc_interval=100",
     "start_development_app": "./development/start_development_app.sh",
-    "start_development_mongo_shell": "./development/start_development_mongo_shell.sh",
-    "create_development_docker_image": "./development/create_development_docker_image.sh",
-    "create_development_docker_volume": "./development/create_development_docker_volume.sh",
-    "development_stack": "./development/development_stack.sh"
+    "start_development_mongo_shell": "./development/start_development_mongo_shell.sh"
   },
   "repository": {
     "type": "git",

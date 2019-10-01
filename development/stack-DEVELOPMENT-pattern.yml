@@ -1,10 +1,8 @@
-#COMPOSE FILE PATTERN FOR DEVELOPMENT
+# COMPOSE FILE PATTERN FOR DEVELOPMENT
 # Some words must be subtitued with the real values.
 #
-# start:
-#   sudo docker stack deploy -c THISFILENAME STACKNAME
-# stop:
-#   sudo docker stack rm STACKNAME
+# WARNING: Docker swarm using overlay network can not create a LOCAL port for the services!
+# The ports will be open to 0.0.0.0 (from everywhere)! See https://github.com/moby/moby/issues/32299
 version: "3.3"
 services:
   db:
@@ -44,14 +42,14 @@ services:
       - NODE_ENV=production
       - MONGO_URL=mongodb://db:27017/test
       - PORT=8080
-    # deploy:
-    #   restart_policy:
-    #     condition: on-failure
-    #     delay: 5s
-    #     max_attempts: 3
-    #     window: 5s
-    #   update_config:
-    #     failure_action: pause
+    deploy:
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 3
+        window: 5s
+      update_config:
+        failure_action: pause
 volumes:
   DOCKER_VOLUME:
     external: true

@@ -6,5 +6,4 @@ server_build
 /db_*
 app_w/build
 tags
-server_build
 .ctags.d

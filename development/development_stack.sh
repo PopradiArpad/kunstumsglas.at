@@ -17,12 +17,20 @@ function print_help_and_exit() {
 
   echo -e "${CYAN}Manage development docker stack defined in ${LGREEN}development_environment.sh:";
   echo -e "${NORM}Commands:";
-  echo -e "${GREEN}deploy${NORM} : Deploy development stack.";
+  echo -e "${GREEN}deploy${NORM} : Build image, create volume and network if needed then deploy development stack.";
   echo -e "${GREEN}rm${NORM}     : Remove development stack.";
 
   exit $EXIT_VAL;
 }
 
+
+###################################
+# Image handling
+###################################
+function build_image() {
+  echo -e "${CYAN}Building ${LGREEN}image ${DOCKER_IMAGE}${NORM}";
+  sudo docker build -t "${DOCKER_IMAGE}" .
+}
 
 ###################################
 # Network handling
@@ -34,7 +42,7 @@ function does_network_exist() {
 
 function create_network_if_not_exist() {
   if ! does_network_exist; then
-    echo -e "${CYAN}Creating ${LGREEN}${DOCKER_NETWORK}";
+    echo -e "${CYAN}Creating ${LGREEN}network ${DOCKER_NETWORK}${NORM}";
 
     #Use external network to allow attach external containers for db backup
     sudo docker network create --driver overlay --attachable ${DOCKER_NETWORK} > /dev/null || exit 1;
@@ -49,23 +57,16 @@ function does_volume_exist() {
   return $?;
 }
 
-# function copy_db_dir_to_volume() {
-#   local LOCAL_DB_PATH="$1";
-#
-#   sudo docker run --rm --mount type=bind,source="${LOCAL_DB_PATH}",target=/from --mount type=volume,source="${DOCKER_VOLUME}",target=/db  --entrypoint="/bin/sh" alpine -c 'rm -rf /db/*; cp -r /from/* /db' || exit 1;
-# }
-
 function create_volume_if_not_exists() {
   if ! does_volume_exist; then
-    echo -e "${CYAN}Creating and setting up ${LGREEN}${DOCKER_VOLUME}${NORM}";
+    echo -e "${CYAN}Creating and setting up ${LGREEN}volume ${DOCKER_VOLUME}${NORM}";
 
     npm run db_management create ${DOCKER_DB_IMAGE} ${DOCKER_VOLUME} ${DOCKER_SESSION_SECRET} || exit 1;
   fi
 }
 
-
 ###################################
-# Deploy stack
+# Compose file and deployment handling
 ###################################
 function create_docker_compose_file() {
   echo -e "${CYAN}Creating Docker compose file ${LGREEN}${COMPOSE_FILE}";
@@ -85,16 +86,17 @@ function deploy_stack_i() {
   sudo docker stack deploy -c ${DOCKER_COMPOSE_FILE} ${DOCKER_DEVELOPMENT_STACK} || exit 1;
 }
 
+###################################
+# Command handlers
+###################################
 function deploy_stack() {
+  build_image;
   create_network_if_not_exist;
   create_volume_if_not_exists;
   create_docker_compose_file;
   deploy_stack_i;
 }
 
-###################################
-# Remove stack
-###################################
 function rm_stack() {
   sudo docker stack rm ${DOCKER_DEVELOPMENT_STACK} || exit 1;
 }
@@ -102,6 +104,9 @@ function rm_stack() {
 ###################################
 # Main
 ###################################
+# Because of build, etc
+cd ${PROJECT_DIR} || exit 1;
+
 case "$1" in
   deploy)
     deploy_stack;
