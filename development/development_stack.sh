@@ -82,7 +82,7 @@ function create_docker_compose_file() {
 }
 
 function deploy_stack_i() {
-  echo -e "${CYAN}Starting ${LGREEN}stack ${DOCKER_DEVELOPMENT_STACK}${NORM}${CYAN} from ${LGREEN}${DOCKER_COMPOSE_FILE}.";
+  echo -e "${CYAN}Starting ${LGREEN}stack ${DOCKER_DEVELOPMENT_STACK}${NORM}${CYAN}.";
   sudo docker stack deploy -c ${DOCKER_COMPOSE_FILE} ${DOCKER_DEVELOPMENT_STACK} || exit 1;
 }
 

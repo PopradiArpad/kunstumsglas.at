@@ -81,20 +81,6 @@ function create_initial_db() {
     print_help_and_exit 1;
   fi
 
-  local TMP_SCRIPT="${SCRIPT_ABS_DIR}/tmp_create_initial_volume.sh";
-
-  rm -rf "${TMP_SCRIPT}" || exit 1;
-
-  cat \
-  << EOF > "${TMP_SCRIPT}"
-    echo '{registeringAllowed:true,secret:"${SESSION_SECRET}"}'             | mongoimport --db test --collection cmsconfigs || exit 1;
-    cat /scripts/initial_collections/initial_translations.json              | mongoimport --db test --collection translations || exit 1;
-    cat /scripts/initial_collections/initial_productgroups.json             | mongoimport --db test --collection productgroups || exit 1;
-    cat /scripts/initial_collections/initial_caches.json                    | mongoimport --db test --collection caches || exit 1;
-    echo '{_id: "mainview", translations:[], productGroups:[], users: []}'  | mongoimport --db test --collection mainviews || exit 1;
-    mongo scripts/setup_initial_mainview.js;
-EOF
-
     local TMP_DB_INIT="tmp_db_init";
 
     sudo docker run --name ${TMP_DB_INIT} \
@@ -102,9 +88,16 @@ EOF
                     --mount type=bind,source="${SCRIPT_ABS_DIR}",target="/scripts" \
                     --mount source="${DOCKER_VOLUME}",target="/data/db" \
                     ${DOCKER_DB_IMAGE} > /dev/null || exit 1;
-    sudo docker exec ${TMP_DB_INIT} '/bin/bash' '/scripts/tmp_create_initial_volume.sh' > /dev/null || exit 1;
-    sudo docker container stop ${TMP_DB_INIT} || exit 1;
-    rm -rf "${TMP_SCRIPT}" || exit 1;
+    #  /dev/null has no effect. I don't know why
+    sudo docker exec -i ${TMP_DB_INIT} '/bin/bash'  << EOF > /dev/null || exit 1
+      echo '{registeringAllowed:true,secret:"${SESSION_SECRET}"}'             | mongoimport --db test --collection cmsconfigs || exit 1;
+      cat /scripts/initial_collections/initial_translations.json              | mongoimport --db test --collection translations || exit 1;
+      cat /scripts/initial_collections/initial_productgroups.json             | mongoimport --db test --collection productgroups || exit 1;
+      cat /scripts/initial_collections/initial_caches.json                    | mongoimport --db test --collection caches || exit 1;
+      echo '{_id: "mainview", translations:[], productGroups:[], users: []}'  | mongoimport --db test --collection mainviews || exit 1;
+      mongo scripts/setup_initial_mainview.js;
+EOF
+    sudo docker container stop ${TMP_DB_INIT}  > /dev/null || exit 1;
 }
 
 function start_mongod_and_open_mongo_shell() {
