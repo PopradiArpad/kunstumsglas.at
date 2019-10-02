@@ -87,17 +87,18 @@ function create_initial_db() {
                     -d --rm \
                     --mount type=bind,source="${SCRIPT_ABS_DIR}",target="/scripts" \
                     --mount source="${DOCKER_VOLUME}",target="/data/db" \
-                    ${DOCKER_DB_IMAGE} > /dev/null || exit 1;
+                    ${DOCKER_DB_IMAGE} > /dev/null;
     #  /dev/null has no effect. I don't know why
-    sudo docker exec -i ${TMP_DB_INIT} '/bin/bash'  << EOF > /dev/null || exit 1
-      echo '{registeringAllowed:true,secret:"${SESSION_SECRET}"}'             | mongoimport --db test --collection cmsconfigs || exit 1;
-      cat /scripts/initial_collections/initial_translations.json              | mongoimport --db test --collection translations || exit 1;
-      cat /scripts/initial_collections/initial_productgroups.json             | mongoimport --db test --collection productgroups || exit 1;
-      cat /scripts/initial_collections/initial_caches.json                    | mongoimport --db test --collection caches || exit 1;
-      echo '{_id: "mainview", translations:[], productGroups:[], users: []}'  | mongoimport --db test --collection mainviews || exit 1;
+    sudo docker exec -i ${TMP_DB_INIT} '/bin/bash'  << EOF > /dev/null
+      set -ue;
+      echo '{registeringAllowed:true,secret:"${SESSION_SECRET}"}'             | mongoimport --db test --collection cmsconfigs;
+      cat /scripts/initial_collections/initial_translations.json              | mongoimport --db test --collection translations;
+      cat /scripts/initial_collections/initial_productgroups.json             | mongoimport --db test --collection productgroups;
+      cat /scripts/initial_collections/initial_caches.json                    | mongoimport --db test --collection caches;
+      echo '{_id: "mainview", translations:[], productGroups:[], users: []}'  | mongoimport --db test --collection mainviews;
       mongo scripts/setup_initial_mainview.js;
 EOF
-    sudo docker container stop ${TMP_DB_INIT}  > /dev/null || exit 1;
+    sudo docker container stop ${TMP_DB_INIT}  > /dev/null;
 }
 
 function start_mongod_and_open_mongo_shell() {
@@ -121,6 +122,7 @@ function start_mongod_and_run_script_in_it() {
 ###################################
 # Main
 ###################################
+set -ue;
 case "$1" in
   create)
     create_initial_db "$2" "$3" "$4";
