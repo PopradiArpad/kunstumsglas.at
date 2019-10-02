@@ -90,7 +90,7 @@ function create_initial_db() {
                     ${DOCKER_DB_IMAGE} > /dev/null;
     #  /dev/null has no effect. I don't know why
     sudo docker exec -i ${TMP_DB_INIT} '/bin/bash'  << EOF > /dev/null
-      set -ue;
+      set -ueo pipefail;
       echo '{registeringAllowed:true,secret:"${SESSION_SECRET}"}'             | mongoimport --db test --collection cmsconfigs;
       cat /scripts/initial_collections/initial_translations.json              | mongoimport --db test --collection translations;
       cat /scripts/initial_collections/initial_productgroups.json             | mongoimport --db test --collection productgroups;
@@ -122,7 +122,7 @@ function start_mongod_and_run_script_in_it() {
 ###################################
 # Main
 ###################################
-set -ue;
+set -ueo pipefail;
 case "$1" in
   create)
     create_initial_db "$2" "$3" "$4";
