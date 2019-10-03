@@ -22,3 +22,6 @@ server/config/REGISTRATION_IS_ALLOWED
 
 # temporary development files
 /development/stack-DEVELOPMENT.yml
+
+# deployment details
+/production/production_environment.sh
