@@ -76,4 +76,5 @@ RUN chmod +x /usr/local/bin/docker-entrypoint.sh
 ENTRYPOINT ["docker-entrypoint.sh"]
 
 # (SIGINT, SIGTERM) for a gracefull shutdown in rolling updates
+# CMD ["node", "server_build/server.js","--gc_interval=100", "--log", "--graphiql"]
 CMD ["node", "server_build/server.js","--gc_interval=100"]
