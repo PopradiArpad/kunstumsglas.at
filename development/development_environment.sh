@@ -11,10 +11,12 @@ DB_PORT="30002";
 PORT="3002";
 
 # with Docker
+DOCKER_DEVELOPMENT_STACK="kunstumsglas-at-development";
 DOCKER_IMAGE="kunstumsglas.at:development";
-DOCKER_VOLUME="kunstumsglas-at-development-volume";
-DOCKER_NETWORK="kunstumsglas-at-development-network";
+DOCKER_DB_IMAGE="mongo:3.4.23";
+DOCKER_VOLUME="${DOCKER_DEVELOPMENT_STACK}_volume";  # USE _ AND NOT - AS SEPARATOR! THIS NAME WILL BE GENERATED AT DEPLOYMENT
+DOCKER_NETWORK="${DOCKER_DEVELOPMENT_STACK}-network";
 DOCKER_DB_PORT="20002";
 DOCKER_WEB_PORT="2002";
-DOCKER_COMPOSE_FILE="${SCRIPT_ABS_DIR}/compose-deployment-DEVELOPMENT.yml";
-DOCKER_DEVELOPMENT_STACK="kunstumsglas-at-development";
+DOCKER_SESSION_SECRET="söskjdf(64GXldDF1.";
+DOCKER_COMPOSE_FILE="${SCRIPT_ABS_DIR}/stack-DEVELOPMENT.yml";

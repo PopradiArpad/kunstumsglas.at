@@ -1,14 +1,12 @@
-#COMPOSE FILE PATTERN FOR DEVELOPMENT
+# COMPOSE FILE PATTERN FOR DEVELOPMENT
 # Some words must be subtitued with the real values.
 #
-# start:
-#   sudo docker stack deploy -c THISFILENAME STACKNAME
-# stop:
-#   sudo docker stack rm STACKNAME
+# WARNING: Docker swarm using overlay network can not create a LOCAL port for the services!
+# The ports will be open to 0.0.0.0 (from everywhere)! See https://github.com/moby/moby/issues/32299
 version: "3.3"
 services:
   db:
-    image: mongo:3.4.23
+    image: DOCKER_DB_IMAGE
     #Start as master to let have oplog to let make secure hot backup
     command: mongod --master
     #Expose the service only on this machine
@@ -18,6 +16,11 @@ services:
       - type: volume
         source: DOCKER_VOLUME
         target: /data/db
+        volume:
+          nocopy: true
+      - type: volume
+        source: configdb
+        target: /data/configdb
         volume:
           nocopy: true
     environment:
@@ -39,16 +42,25 @@ services:
       - NODE_ENV=production
       - MONGO_URL=mongodb://db:27017/test
       - PORT=8080
-    deploy:
-      restart_policy:
-        condition: on-failure
-        delay: 5s
-        max_attempts: 3
-        window: 5s
-      update_config:
-        failure_action: pause
+    volumes:
+      - type: volume
+        source: tmp
+        target: /app/tmp
+        volume:
+          nocopy: true
+    # deploy:
+    #   restart_policy:
+    #     condition: on-failure
+    #     delay: 5s
+    #     max_attempts: 3
+    #     window: 5s
+    #   update_config:
+    #     failure_action: pause
 volumes:
-  data:
+  DOCKER_VOLUME:
+    external: true
+  configdb:
+  tmp:
 # The network must be created as an external attachable network
 # before first stack start to let make hot backups via
 # sudo docker network create --attachable -d kunstumsglas-at-development-network
