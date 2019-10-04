@@ -24,10 +24,53 @@ function print_help_and_exit() {
 
 
 #################################
+# Remote deployment handling
+#################################
+
+function project_name() {
+  local BASENAME=$(basename $PR_GIT_URL);
+
+  echo "${BASENAME%.*}";
+}
+
+function image_name() {
+  echo $(project_name):${PR_BRANCH}-$(git log -n 1 --pretty=format:"%h");
+}
+
+function clone_and_cd() {
+  local PR_NAME=$(project_name ${PR_GIT_URL});
+
+  echo -e "${CYAN}Shallow cloning${NORM} ${LGREEN}${PR_BRANCH}${NORM} ${CYAN}branch of${NORM} ${LGREEN}${PR_GIT_URL}${NORM}";
+  git clone -b ${PR_BRANCH} --depth 1 ${PR_GIT_URL};
+  cd ${PR_NAME};
+}
+
+function build_image() {
+  local IMAGE=$(image_name);
+
+  echo -e "${CYAN}Building ${LGREEN}image ${IMAGE}${NORM}";
+  sudo docker build -t "${IMAGE}" .
+}
+
+#################################
 # Command handlers
 #################################
 function deploy_stack() {
-  echo "Not implemented";
+  local BUILD_DIR="${PROJECT_DIR}/tmp/build";
+
+
+  echo -e "${CYAN}Creating ${LGREEN}workdir ${BUILD_DIR}${NORM}";
+  mkdir -p ${BUILD_DIR} && cd ${BUILD_DIR};
+
+  clone_and_cd;
+  build_image;
+  # push_image;
+  # create_docker_compose_file;
+  # push_docker_compose_file;
+  # deploy_remote;
+
+  rm -rf ${BUILD_DIR};
+  echo -e "${CYAN}Removed ${LGREEN}workdir ${BUILD_DIR}${NORM}";
 }
 
 function rm_stack() {
@@ -37,9 +80,6 @@ function rm_stack() {
 #################################
 # Main
 #################################
-# Because of build, etc
-cd ${PROJECT_DIR} || exit 1;
-
 set -ueo pipefail;
 
 . "${SCRIPT_ABS_DIR}/production_environment.sh";
