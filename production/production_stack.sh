@@ -37,11 +37,15 @@ function image_name() {
   echo $(project_name):${PR_BRANCH}-$(git log -n 1 --pretty=format:"%h");
 }
 
+function stack_name() {
+  echo $(project_name)_${STACK_PURPOSE};
+}
+
 function clone_and_cd() {
-  local PR_NAME=$(project_name ${PR_GIT_URL});
+  local PR_NAME=$(project_name);
 
   echo -e "${CYAN}Shallow cloning${NORM} ${LGREEN}${PR_BRANCH}${NORM} ${CYAN}branch of${NORM} ${LGREEN}${PR_GIT_URL}${NORM}";
-  git clone -b ${PR_BRANCH} --depth 1 ${PR_GIT_URL};
+  git clone --branch ${PR_BRANCH} --depth 1 ${PR_GIT_URL};
   cd ${PR_NAME};
 }
 
@@ -50,6 +54,30 @@ function build_image() {
 
   echo -e "${CYAN}Building ${LGREEN}image ${IMAGE}${NORM}";
   sudo docker build -t "${IMAGE}" .
+}
+
+function create_docker_compose_file() {
+  echo -e "${CYAN}Creating ${LGREEN}compose file stack.yml${NORM}";
+
+  local STACK=$(stack_name);
+  local STACK_DB_VOLUME="${STACK}_volume";  # USE _ AND NOT - AS SEPARATOR! THIS NAME WILL BE GENERATED AT DEPLOYMENT
+  local STACK_NETWORK="${STACK}_network";
+
+
+  # This is NOT the pattern file of the cloned project!
+  cat "${SCRIPT_ABS_DIR}/stack-pattern.yml"| \
+  sed \
+      -e "s/STACK_IMAGE/$(image_name)/g"             \
+      -e "s/STACK_DB_IMAGE/${STACK_DB_IMAGE}/g"      \
+      -e "s/STACK_DB_VOLUME/${STACK_DB_VOLUME}/g"    \
+      -e "s/STACK_NETWORK/${STACK_NETWORK}/g"        \
+      -e "s/STACK_DB_PORT/${STACK_DB_PORT}/g"        \
+      -e "s/STACK_WEB_PORT/${STACK_WEB_PORT}/g"      \
+      > stack.yml;
+
+  echo -e "${LGREEN}##### START stack.yml ######";
+  cat stack.yml
+  echo -e }"##### END stack.yml ######${NORM}";
 }
 
 #################################
@@ -65,7 +93,7 @@ function deploy_stack() {
   clone_and_cd;
   build_image;
   # push_image;
-  # create_docker_compose_file;
+  create_docker_compose_file;
   # push_docker_compose_file;
   # deploy_remote;
 
