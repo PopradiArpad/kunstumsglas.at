@@ -10,6 +10,7 @@ CYAN="\e[36m"
 LGREEN="\e[1;32m"
 NORM="\e[0m"
 
+SSH_FORWARD_CMD="";
 
 function print_help_and_exit() {
   local EXIT_VAL="$1";
@@ -75,9 +76,52 @@ function create_docker_compose_file() {
       -e "s/STACK_WEB_PORT/${STACK_WEB_PORT}/g"      \
       > stack.yml;
 
-  echo -e "${LGREEN}##### START stack.yml ######";
-  cat stack.yml
-  echo -e }"##### END stack.yml ######${NORM}";
+  # echo -e "${LGREEN}##### START stack.yml ######";
+  # cat stack.yml
+  # echo -e }"##### END stack.yml ######${NORM}";
+}
+
+function start_registry_on_host() {
+  echo -e "${CYAN}Starting registry on ${LGREEN}${REMOTE_HOST}${NORM}";
+
+  ssh root@${REMOTE_HOST} << EOF
+    set -euo pipefail;
+    # docker run --name tmp_registry  -d --rm -p 127.0.0.1:5000:5000 registry;
+EOF
+}
+
+function stop_registry_on_host() {
+  echo -e "${CYAN}Stopping registry on ${LGREEN}${REMOTE_HOST}${NORM}";
+
+  ssh root@${REMOTE_HOST} << EOF
+    set -euo pipefail;
+    # docker container stop tmp_registry;
+EOF
+}
+
+function start_forward_ssh() {
+  echo -e "${CYAN}Starting forward tunneling to ${LGREEN}${REMOTE_HOST}${NORM}";
+
+  # -f. go in background right
+  # -N: Do not execute a remote command.
+  # -L local forward
+  SSH_FORWARD_CMD="ssh -o ExitOnForwardFailure=yes -f -N -L 5000:localhost:5000 root@${REMOTE_HOST}";
+  ${SSH_FORWARD_CMD};
+}
+
+
+function stop_forward_ssh() {
+  echo -e "${CYAN}Stopping forward tunneling to ${LGREEN}${REMOTE_HOST}${NORM}";
+
+  local PID=$(pgrep -f "${SSH_FORWARD_CMD}");
+  kill -9 $PID;
+}
+
+function push_image() {
+  start_registry_on_host;
+  start_forward_ssh;
+  stop_forward_ssh;
+  stop_registry_on_host;
 }
 
 #################################
@@ -87,18 +131,18 @@ function deploy_stack() {
   local BUILD_DIR="${PROJECT_DIR}/tmp/build";
 
 
-  echo -e "${CYAN}Creating ${LGREEN}workdir ${BUILD_DIR}${NORM}";
-  mkdir -p ${BUILD_DIR} && cd ${BUILD_DIR};
+  # echo -e "${CYAN}Creating ${LGREEN}workdir ${BUILD_DIR}${NORM}";
+  # mkdir -p ${BUILD_DIR} && cd ${BUILD_DIR};
 
-  clone_and_cd;
-  build_image;
-  # push_image;
-  create_docker_compose_file;
+  # clone_and_cd;
+  # build_image;
+  # create_docker_compose_file;
+  push_image;
   # push_docker_compose_file;
   # deploy_remote;
 
-  rm -rf ${BUILD_DIR};
-  echo -e "${CYAN}Removed ${LGREEN}workdir ${BUILD_DIR}${NORM}";
+  # rm -rf ${BUILD_DIR};
+  # echo -e "${CYAN}Removed ${LGREEN}workdir ${BUILD_DIR}${NORM}";
 }
 
 function rm_stack() {
