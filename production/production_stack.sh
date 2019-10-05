@@ -57,7 +57,7 @@ function build_image() {
   sudo docker build -t "${IMAGE}" .
 }
 
-function create_docker_compose_file() {
+function create_stack_file() {
   echo -e "${CYAN}Creating ${LGREEN}compose file stack.yml${NORM}";
 
   local STACK=$(stack_name);
@@ -74,11 +74,30 @@ function create_docker_compose_file() {
       -e "s/STACK_NETWORK/${STACK_NETWORK}/g"        \
       -e "s/STACK_DB_PORT/${STACK_DB_PORT}/g"        \
       -e "s/STACK_WEB_PORT/${STACK_WEB_PORT}/g"      \
-      > stack.yml;
+      > tmp/stack.yml;
 
   # echo -e "${LGREEN}##### START stack.yml ######";
   # cat stack.yml
   # echo -e }"##### END stack.yml ######${NORM}";
+}
+
+function copy_stack_file() {
+  echo -e "${CYAN}Copying stack file to ${LGREEN}${REMOTE_HOST}:${REMOTE_ROOT_OF_STACK_FILES}${NORM}${CYAN} and backing up the current one if exists.";
+
+  STACK_FILE_ABS_DIR="${REMOTE_ROOT_OF_STACK_FILES}/$(project_name)/${STACK_PURPOSE}";
+  ssh -T root@${REMOTE_HOST} << EOF
+    set -euo pipefail;
+    STACK_FILE_ABS_DIR=${STACK_FILE_ABS_DIR};
+    STACK_PATH="\$STACK_FILE_ABS_DIR/stack.yml";
+
+    mkdir -p \$STACK_FILE_ABS_DIR;
+
+    if [[ -a "\$STACK_PATH" ]]; then
+      mv "\$STACK_PATH" "\$STACK_FILE_ABS_DIR/stack-\$(date +'%Y-%m-%d_%H-%M-%S').yml";
+    fi
+EOF
+
+  scp tmp/stack.yml root@${REMOTE_HOST}:${STACK_FILE_ABS_DIR};
 }
 
 function start_registry_on_host() {
@@ -117,9 +136,24 @@ function stop_forward_ssh() {
   kill -9 $PID;
 }
 
+function push_image_to_registry() {
+  local IMAGE=$(image_name);
+  local IMAGE_WITH_REGISTRY="localhost:5000/${IMAGE}";
+
+  echo -e "${CYAN}Creating image alias which contains the target registry ${NORM}${LGREEN}${IMAGE_WITH_REGISTRY}${NORM}";
+  # sudo docker tag "${IMAGE}" "${IMAGE_WITH_REGISTRY}";
+
+  echo -e "${CYAN}Pushing ${NORM}${LGREEN}${IMAGE_WITH_REGISTRY}${NORM}";
+  # sudo docker push "${IMAGE_WITH_REGISTRY}";
+
+  echo -e "${CYAN}Remove aliased ${NORM}${LGREEN}image ${IMAGE_WITH_REGISTRY}${NORM}";
+  # sudo docker rm "${IMAGE_WITH_REGISTRY}";
+}
+
 function push_image() {
   start_registry_on_host;
   start_forward_ssh;
+  push_image_to_registry;
   stop_forward_ssh;
   stop_registry_on_host;
 }
@@ -136,8 +170,9 @@ function deploy_stack() {
 
   # clone_and_cd;
   # build_image;
-  # create_docker_compose_file;
-  push_image;
+  create_stack_file;
+  copy_stack_file;
+  # push_image;
   # push_docker_compose_file;
   # deploy_remote;
 
