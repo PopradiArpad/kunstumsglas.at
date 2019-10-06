@@ -38,6 +38,12 @@ function image_name() {
   echo $(project_name):${PR_BRANCH}-$(git log -n 1 --pretty=format:"%h");
 }
 
+# The ssh socket uses the same port 5000 on both side,
+# therefore this name can be used on both side.
+function image_name_with_registry() {
+  echo "localhost:5000/$(image_name)";
+}
+
 function stack_name() {
   echo $(project_name)_${STACK_PURPOSE};
 }
@@ -50,13 +56,17 @@ function db_volume_name() {
   echo "$(stack_name)_volume";  # USE _ AND NOT - AS SEPARATOR! THIS NAME WILL BE GENERATED AT DEPLOYMENT
 }
 
+function remote_stack_file_abs_dir() {
+  echo "${REMOTE_ROOT_OF_STACK_FILES}/$(project_name)/${STACK_PURPOSE}";
+}
+
 #################################
 # Subcommands of push_image
 #################################
 function start_registry_on_host() {
   echo -e "${CYAN}Starting registry on ${LGREEN}${REMOTE_HOST}${NORM}";
 
-  ssh root@${REMOTE_HOST} << EOF
+  ssh -T root@${REMOTE_HOST} <<EOF
     set -euo pipefail;
     # docker run --name tmp_registry  -d --rm -p 127.0.0.1:5000:5000 registry;
 EOF
@@ -65,7 +75,7 @@ EOF
 function stop_registry_on_host() {
   echo -e "${CYAN}Stopping registry on ${LGREEN}${REMOTE_HOST}${NORM}";
 
-  ssh root@${REMOTE_HOST} << EOF
+  ssh -T root@${REMOTE_HOST} <<EOF
     set -euo pipefail;
     # docker container stop tmp_registry;
 EOF
@@ -91,7 +101,7 @@ function stop_forward_ssh() {
 
 function push_image_to_registry() {
   local IMAGE=$(image_name);
-  local IMAGE_WITH_REGISTRY="localhost:5000/${IMAGE}";
+  local IMAGE_WITH_REGISTRY=$(image_name_with_registry);
 
   echo -e "${CYAN}Creating image alias which contains the target registry ${NORM}${LGREEN}${IMAGE_WITH_REGISTRY}${NORM}";
   # sudo docker tag "${IMAGE}" "${IMAGE_WITH_REGISTRY}";
@@ -101,6 +111,16 @@ function push_image_to_registry() {
 
   echo -e "${CYAN}Remove aliased ${NORM}${LGREEN}image ${IMAGE_WITH_REGISTRY}${NORM}";
   # sudo docker rm "${IMAGE_WITH_REGISTRY}";
+}
+
+function pull_image_from_registry_on_remote() {
+    local IMAGE=$(image_name);
+    echo -e "${CYAN}Pulling ${NORM}${LGREEN}image ${IMAGE}${NORM}${CYAN} on host ${NORM}${LGREEN}${REMOTE_HOST}${NORM}";
+
+    ssh -T root@${REMOTE_HOST} << EOF
+      set -euo pipefail;
+      # docker pull $(image_name_with_registry);
+EOF
 }
 
 #################################
@@ -141,11 +161,11 @@ function create_stack_file() {
 }
 
 function copy_stack_file() {
-  echo -e "${CYAN}Copying stack file to ${LGREEN}${REMOTE_HOST}:${REMOTE_ROOT_OF_STACK_FILES}${NORM}${CYAN} and backing up the current one if exists.";
+  local STACK_FILE_ABS_DIR="$(remote_stack_file_abs_dir)";
+  echo -e "${CYAN}Copying stack file to ${LGREEN}${REMOTE_HOST}:${STACK_FILE_ABS_DIR}${NORM}${CYAN} and backing up the current one if exists${NORM}";
 
-  local STACK_FILE_ABS_DIR="${REMOTE_ROOT_OF_STACK_FILES}/$(project_name)/${STACK_PURPOSE}";
 
-  ssh -T root@${REMOTE_HOST} << EOF
+  ssh -T root@${REMOTE_HOST} <<EOF
     set -euo pipefail;
     STACK_FILE_ABS_DIR=${STACK_FILE_ABS_DIR};
     STACK_PATH="\$STACK_FILE_ABS_DIR/stack.yml";
@@ -165,19 +185,42 @@ function push_image() {
   start_forward_ssh;
   push_image_to_registry;
   stop_forward_ssh;
+  pull_image_from_registry_on_remote;
   stop_registry_on_host;
 }
 
 function create_remote_network_if_not_exist() {
-  echo "not implemented";
+  local NETWORK_NAME=$(network_name);
+  echo -e "${CYAN}Creating remote network ${LGREEN}${NETWORK_NAME}${NORM}${CYAN} if not exists${NORM}";
+
+  ssh -T root@${REMOTE_HOST} <<EOF
+    set -euo pipefail;
+
+    # function does_network_exist() {
+    #   sudo docker network ls|grep "${NETWORK_NAME}" > /dev/null;
+    #   return \$?;
+    # }
+    #
+    # if ! does_network_exist; then
+    #   sudo docker network create --driver overlay --attachable ${NETWORK_NAME} > /dev/null;
+    # fi
+EOF
 }
 
-function create_volume_network_if_not_exist() {
-  echo "not implemented";
+function create_remote_volume_if_not_exist() {
+  echo -e "${RED}create_remote_volume_if_not_exist -- not implemented${NORM}";
 }
 
 function deploy_remote_stack() {
-  echo "not implemented";
+  local STACK=$(stack_name);
+  echo -e "${CYAN}Deploying ${LGREEN}stack ${STACK}${NORM}${CYAN} on ${NORM}${LGREEN}${REMOTE_HOST}${NORM}";
+
+  ssh -T root@${REMOTE_HOST} <<EOF
+    set -euo pipefail;
+
+    cd $(remote_stack_file_abs_dir);
+    # sudo docker stack deploy -c stack.yml $(stack_name);
+EOF
 }
 
 #################################
@@ -193,10 +236,10 @@ function deploy_stack() {
   build_image;
   create_stack_file;
   copy_stack_file;
-  # push_image;
-  # create_remote_network_if_not_exist;
-  # create_volume_network_if_not_exist;
-  # deploy_remote_stack;
+  push_image;
+  create_remote_network_if_not_exist;
+  create_remote_volume_if_not_exist;
+  deploy_remote_stack;
 
   rm -rf ${BUILD_DIR};
   echo -e "${CYAN}Removed ${LGREEN}workdir ${BUILD_DIR}${NORM}";
