@@ -26,7 +26,7 @@ function print_help_and_exit() {
 
 
 #################################
-# Names
+# Generated names
 #################################
 function project_name() {
   local BASENAME=$(basename $PR_GIT_URL);
