@@ -208,7 +208,34 @@ EOF
 }
 
 function create_remote_volume_if_not_exist() {
-  echo -e "${RED}create_remote_volume_if_not_exist -- not implemented${NORM}";
+  echo -e "${CYAN}Creating remote ${LGREEN}volume $(db_volume_name)${NORM}${CYAN} if not exists on ${NORM}${LGREEN}${REMOTE_HOST}${NORM}${NORM}";
+
+  local REMOTE_DB_VOLUME_NAME=$(db_volume_name);
+#   local VOLUME_EXISTS=$(ssh -T root@${REMOTE_HOST} <<EOF
+#     function does_volume_exist() {
+#       sudo docker volume ls|grep "${REMOTE_DB_VOLUME_NAME}" > /dev/null;
+#       return $?;
+#     }
+#
+#     if does_volume_exist; then
+#       echo "y";
+#     else
+#       echo "n";
+#     fi
+# EOF
+#   );
+  local VOLUME_EXISTS="n";
+
+  if [[ $VOLUME_EXISTS = "y" ]]; then
+    return 0;
+  fi
+
+  local TMP_DB_VOLUME_NAME="$(db_volume_name)-tmp-$(date +'%Y-%m-%d_%H-%M-%S')";
+  npm run db_management create ${STACK_DB_IMAGE} ${TMP_DB_VOLUME_NAME} ${DB_SESSION_SECRET};
+  # https://www.guidodiepen.nl/2016/05/transfer-docker-data-volume-to-another-host/
+  # docker run --rm --mount source=${TMP_DB_VOLUME_NAME},target="/from" alpine ash -c "cd /from ; tar -cf - . " | ssh root@${REMOTE_HOST} "docker run --rm -i --mount source=${REMOTE_DB_VOLUME_NAME},target='/to' alpine ash -c 'cd /to ; tar -xpvf - ' ";
+
+  sudo docker volume rm ${TMP_DB_VOLUME_NAME};
 }
 
 function deploy_remote_stack() {
