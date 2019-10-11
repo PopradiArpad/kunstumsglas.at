@@ -60,11 +60,14 @@ function stack_name() {
 }
 
 function network_name() {
-  echo "$(stack_name)_network";
+  local STACK_NAME="$(stack_name)";
+  # docker: name must be valid as a DNS name component
+  echo "${STACK_NAME/\./_}_network";
 }
 
 function db_volume_name() {
-  echo "$(stack_name)_volume";  # USE _ AND NOT - AS SEPARATOR! THIS NAME WILL BE GENERATED AT DEPLOYMENT
+  local STACK_NAME="$(stack_name)";
+  echo "${STACK_NAME/\./_}_volume";  # USE _ AND NOT - AS SEPARATOR! THIS NAME WILL BE GENERATED AT DEPLOYMENT
 }
 
 function remote_stack_file_abs_dir() {
@@ -215,47 +218,50 @@ function create_remote_network_if_not_exist() {
   ssh -T root@${REMOTE_HOST} <<EOF
     set -euo pipefail;
 
-    # function does_network_exist() {
-    #   sudo docker network ls|grep "${NETWORK_NAME}" > /dev/null;
-    #   return \$?;
-    # }
-    #
-    # if ! does_network_exist; then
-    #   sudo docker network create --driver overlay --attachable ${NETWORK_NAME} > /dev/null;
-    # fi
+    function does_network_exist() {
+      docker network ls|grep "${NETWORK_NAME}" > /dev/null;
+      return \$?;
+    }
+
+    if ! does_network_exist; then
+      docker network create --driver overlay --attachable ${NETWORK_NAME} > /dev/null;
+    fi
 EOF
 }
 
-function create_remote_volume_if_not_exist() {
+function create_remote_volume_if_not_exist() (
   echo -e "${CYAN}Creating remote ${LGREEN}volume $(db_volume_name)${NORM}${CYAN} if not exists on ${NORM}${LGREEN}${REMOTE_HOST}${NORM}${NORM}";
 
   local REMOTE_DB_VOLUME_NAME=$(db_volume_name);
-#   local VOLUME_EXISTS=$(ssh -T root@${REMOTE_HOST} <<EOF
-#     function does_volume_exist() {
-#       sudo docker volume ls|grep "${REMOTE_DB_VOLUME_NAME}" > /dev/null;
-#       return $?;
-#     }
-#
-#     if does_volume_exist; then
-#       echo "y";
-#     else
-#       echo "n";
-#     fi
-# EOF
-#   );
-  local VOLUME_EXISTS="n";
+  local VOLUME_EXISTS=$(ssh -T root@${REMOTE_HOST} <<EOF
+    function does_volume_exist() {
+      sudo docker volume ls|grep "${REMOTE_DB_VOLUME_NAME}" > /dev/null;
+      return $?;
+    }
+
+    if does_volume_exist; then
+      echo "y";
+    else
+      echo "n";
+    fi
+EOF
+  );
 
   if [[ $VOLUME_EXISTS = "y" ]]; then
     return 0;
   fi
 
+  function rm_tmp_volume() {
+    sudo docker volume rm ${TMP_DB_VOLUME_NAME};
+  }
+
   local TMP_DB_VOLUME_NAME="$(db_volume_name)-tmp-$(date +'%Y-%m-%d_%H-%M-%S')";
   npm run db_management create ${STACK_DB_IMAGE} ${TMP_DB_VOLUME_NAME} ${DB_SESSION_SECRET};
-  # https://www.guidodiepen.nl/2016/05/transfer-docker-data-volume-to-another-host/
-  # docker run --rm --mount source=${TMP_DB_VOLUME_NAME},target="/from" alpine ash -c "cd /from ; tar -cf - . " | ssh root@${REMOTE_HOST} "docker run --rm -i --mount source=${REMOTE_DB_VOLUME_NAME},target='/to' alpine ash -c 'cd /to ; tar -xpvf - ' ";
+  trap rm_tmp_volume EXIT;
 
-  sudo docker volume rm ${TMP_DB_VOLUME_NAME};
-}
+  # https://www.guidodiepen.nl/2016/05/transfer-docker-data-volume-to-another-host/
+  sudo docker run --rm --mount source=${TMP_DB_VOLUME_NAME},target="/from" alpine ash -c "cd /from ; tar -cvf - . " | ssh root@${REMOTE_HOST} "docker run --rm -i --mount source=${REMOTE_DB_VOLUME_NAME},target='/to' alpine ash -c 'cd /to ; tar -xpvf - ' ";
+)
 
 function close_ports_remote() {
   echo -e "${CYAN}Closing remote ${LGREEN}ports ${STACK_DB_PORT}${NORM} ${CYAN}and ${LGREEN}${STACK_WEB_PORT}${NORM}";
@@ -293,8 +299,8 @@ function deploy_stack() {
   create_stack_file;
   copy_stack_file;
   push_image;
-  # create_remote_network_if_not_exist;
-  # create_remote_volume_if_not_exist;
+  create_remote_network_if_not_exist;
+  create_remote_volume_if_not_exist;
   # close_ports_remote;
   # deploy_remote_stack;
 
