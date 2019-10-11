@@ -24,4 +24,5 @@ server/config/REGISTRATION_IS_ALLOWED
 /development/stack-DEVELOPMENT.yml
 
 # deployment details
-/production/production_environment.sh
+/deploy_remote/kunstumsglas.at.sh
+/deploy_remote/test.kunstumsglas.at.sh

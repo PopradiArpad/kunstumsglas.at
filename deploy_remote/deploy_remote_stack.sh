@@ -14,14 +14,24 @@ SSH_FORWARD_CMD="";
 STACK_PATH_ABS="${PROJECT_DIR}/tmp/stack.yml";
 
 function print_help_and_exit() {
-  local EXIT_VAL="$1";
-
+  echo;
   echo -e "${CYAN}Manage deployment docker stack${NORM}";
   echo -e "Commands:";
-  echo -e "${GREEN}deploy${NORM} : Build image from a commit, put it on the server, create volume and network if needed then deploy the stack.";
-  echo -e "${GREEN}rm${NORM}     : Remove stack from the server.";
+  echo -e "${GREEN}deploy${NORM} ${LGREEN}path_to_deployment_env_file${NORM} : Build image from a commit, put it on the server, create volume and network if needed then deploy the stack.";
 
-  exit $EXIT_VAL;
+  exit 1;
+}
+
+function check_arguments_and_load_deployment_file() {
+  local COMMAND="${1}";
+  local DEPLOYMENT_ENV_FILE="${2}";
+
+  if [[ ! -f  "${DEPLOYMENT_ENV_FILE}" ]]; then
+    echo -e "${RED}No file${NORM} ${LGREEN}${DEPLOYMENT_ENV_FILE}${NORM}";
+    print_help_and_exit;
+  fi
+
+  . "${DEPLOYMENT_ENV_FILE}";
 }
 
 
@@ -272,29 +282,19 @@ function deploy_stack() {
   echo -e "${CYAN}Removed ${LGREEN}workdir ${BUILD_DIR}${NORM}";
 }
 
-function rm_stack() {
-  echo "Not implemented";
-}
-
 #################################
 # Main
 #################################
 set -ueo pipefail;
 
-. "${SCRIPT_ABS_DIR}/production_environment.sh";
-
-if [[ $# -eq 0 ]]; then
-  print_help_and_exit 0;
-fi
+check_arguments_and_load_deployment_file $@;
 
 case "$1" in
   deploy)
     deploy_stack;
     ;;
-  rm)
-    rm_stack;
-    ;;
   *)
+    echo -e "${RED}Unknown command${NORM} ${LGREEN}${1}${NORM}";
     print_help_and_exit 0;
     ;;
 esac
