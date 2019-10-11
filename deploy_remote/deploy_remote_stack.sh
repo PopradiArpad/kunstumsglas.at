@@ -4,14 +4,15 @@ SCRIPT_CALLING_DIR=$(dirname "$SCRIPT_CALLING_PATH");
 SCRIPT_ABS_DIR=$(realpath "${SCRIPT_CALLING_DIR}");
 PROJECT_DIR=$(realpath "${SCRIPT_ABS_DIR}/..");
 
-RED="\e[31m"
-GREEN="\e[32m"
-CYAN="\e[36m"
-LGREEN="\e[1;32m"
-NORM="\e[0m"
+RED="\e[31m";
+GREEN="\e[32m";
+CYAN="\e[36m";
+LGREEN="\e[1;32m";
+YELLOW="\e[33m";
+NORM="\e[0m";
 
-SSH_FORWARD_CMD="";
-STACK_PATH_ABS="${PROJECT_DIR}/tmp/stack.yml";
+G_STACK_PATH_ABS="${PROJECT_DIR}/tmp/stack.yml";
+G_SSH_FORWARD_CMD="";
 
 function print_help_and_exit() {
   echo;
@@ -78,7 +79,7 @@ function start_registry_on_host() {
 
   ssh -T root@${REMOTE_HOST} <<EOF
     set -euo pipefail;
-    # docker run --name tmp_registry  -d --rm -p 127.0.0.1:5000:5000 registry;
+    docker run --name tmp_registry  -d --rm -p 127.0.0.1:5000:5000 registry;
 EOF
 }
 
@@ -87,7 +88,8 @@ function stop_registry_on_host() {
 
   ssh -T root@${REMOTE_HOST} <<EOF
     set -euo pipefail;
-    # docker container stop tmp_registry;
+    docker container stop tmp_registry;
+    echo -e "${YELLOW}${REMOTE_HOST}: Stopped tmp_registry${NORM}";
 EOF
 }
 
@@ -97,15 +99,15 @@ function start_forward_ssh() {
   # -f. go in background right
   # -N: Do not execute a remote command.
   # -L local forward
-  SSH_FORWARD_CMD="ssh -o ExitOnForwardFailure=yes -f -N -L 5000:localhost:5000 root@${REMOTE_HOST}";
-  ${SSH_FORWARD_CMD};
+  G_SSH_FORWARD_CMD="ssh -o ExitOnForwardFailure=yes -f -N -L 5000:localhost:5000 root@${REMOTE_HOST}";
+  ${G_SSH_FORWARD_CMD};
 }
 
 
 function stop_forward_ssh() {
   echo -e "${CYAN}Stopping forward tunneling to ${LGREEN}${REMOTE_HOST}${NORM}";
 
-  local PID=$(pgrep -f "${SSH_FORWARD_CMD}");
+  local PID=$(pgrep -f "${G_SSH_FORWARD_CMD}");
   kill -9 $PID;
 }
 
@@ -114,34 +116,37 @@ function push_image_to_registry() {
   local IMAGE_WITH_REGISTRY=$(image_name_with_registry);
 
   echo -e "${CYAN}Creating image alias which contains the target registry ${NORM}${LGREEN}${IMAGE_WITH_REGISTRY}${NORM}";
-  # sudo docker tag "${IMAGE}" "${IMAGE_WITH_REGISTRY}";
+  sudo docker tag "${IMAGE}" "${IMAGE_WITH_REGISTRY}";
 
   echo -e "${CYAN}Pushing ${NORM}${LGREEN}${IMAGE_WITH_REGISTRY}${NORM}";
-  # sudo docker push "${IMAGE_WITH_REGISTRY}";
+  sudo docker push "${IMAGE_WITH_REGISTRY}";
 
   echo -e "${CYAN}Remove aliased ${NORM}${LGREEN}image ${IMAGE_WITH_REGISTRY}${NORM}";
-  # sudo docker rm "${IMAGE_WITH_REGISTRY}";
+  sudo docker image rm "${IMAGE_WITH_REGISTRY}";
 }
 
 function pull_image_from_registry_on_remote() {
     local IMAGE=$(image_name);
+    local IMAGE_WITH_REGISTRY=$(image_name_with_registry);
+
     echo -e "${CYAN}Pulling ${NORM}${LGREEN}image ${IMAGE}${NORM}${CYAN} on host ${NORM}${LGREEN}${REMOTE_HOST}${NORM}";
 
     ssh -T root@${REMOTE_HOST} << EOF
       set -euo pipefail;
-      # docker pull $(image_name_with_registry);
+      docker pull "${IMAGE_WITH_REGISTRY}";
+      docker tag "${IMAGE_WITH_REGISTRY}" "${IMAGE}";
+      docker image rm "${IMAGE_WITH_REGISTRY}";
 EOF
 }
 
 #################################
 # Subcommands of deploy_stack
 #################################
-function clone_and_cd() {
+function clone() {
   local PR_NAME=$(project_name);
 
   echo -e "${CYAN}Shallow cloning${NORM} ${LGREEN}${PR_BRANCH}${NORM} ${CYAN}branch of${NORM} ${LGREEN}${PR_GIT_URL}${NORM}";
   git clone --branch ${PR_BRANCH} --depth 1 ${PR_GIT_URL};
-  cd ${PR_NAME};
 }
 
 function build_image() {
@@ -152,7 +157,7 @@ function build_image() {
 }
 
 function create_stack_file() {
-  echo -e "${CYAN}Creating ${LGREEN}compose file ${STACK_PATH_ABS}${NORM}";
+  echo -e "${CYAN}Creating ${LGREEN}compose file ${G_STACK_PATH_ABS}${NORM}";
 
   # This is NOT the pattern file of the cloned project!
   cat "${SCRIPT_ABS_DIR}/stack-pattern.yml"| \
@@ -163,7 +168,7 @@ function create_stack_file() {
       -e "s/STACK_NETWORK/$(network_name)/g"        \
       -e "s/STACK_DB_PORT/${STACK_DB_PORT}/g"        \
       -e "s/STACK_WEB_PORT/${STACK_WEB_PORT}/g"      \
-      > "${STACK_PATH_ABS}";
+      > "${G_STACK_PATH_ABS}";
 
   # echo -e "${LGREEN}##### START stack.yml ######";
   # cat stack.yml
@@ -187,17 +192,21 @@ function copy_stack_file() {
     fi
 EOF
 
-  scp "${STACK_PATH_ABS}" root@${REMOTE_HOST}:${STACK_FILE_ABS_DIR};
+  scp "${G_STACK_PATH_ABS}" root@${REMOTE_HOST}:${STACK_FILE_ABS_DIR};
 }
 
-function push_image() {
+function push_image() (
   start_registry_on_host;
-  start_forward_ssh;
-  push_image_to_registry;
-  stop_forward_ssh;
+  trap stop_registry_on_host EXIT;
+
+  (
+    start_forward_ssh;
+    trap stop_forward_ssh EXIT;
+
+    push_image_to_registry;
+  )
   pull_image_from_registry_on_remote;
-  stop_registry_on_host;
-}
+)
 
 function create_remote_network_if_not_exist() {
   local NETWORK_NAME=$(network_name);
@@ -248,6 +257,15 @@ function create_remote_volume_if_not_exist() {
   sudo docker volume rm ${TMP_DB_VOLUME_NAME};
 }
 
+function close_ports_remote() {
+  echo -e "${CYAN}Closing remote ${LGREEN}ports ${STACK_DB_PORT}${NORM} ${CYAN}and ${LGREEN}${STACK_WEB_PORT}${NORM}";
+
+  ssh -T root@${REMOTE_HOST} <<EOF
+    iptables -S;
+EOF
+
+}
+
 function deploy_remote_stack() {
   local STACK=$(stack_name);
   echo -e "${CYAN}Deploying ${LGREEN}stack ${STACK}${NORM}${CYAN} on ${NORM}${LGREEN}${REMOTE_HOST}${NORM}";
@@ -269,14 +287,16 @@ function deploy_stack() {
   echo -e "${CYAN}Creating ${LGREEN}workdir ${BUILD_DIR}${NORM}";
   mkdir -p ${BUILD_DIR} && cd ${BUILD_DIR};
 
-  clone_and_cd;
+  clone;
+  cd $(project_name);
   build_image;
   create_stack_file;
   copy_stack_file;
   push_image;
-  create_remote_network_if_not_exist;
-  create_remote_volume_if_not_exist;
-  deploy_remote_stack;
+  # create_remote_network_if_not_exist;
+  # create_remote_volume_if_not_exist;
+  # close_ports_remote;
+  # deploy_remote_stack;
 
   rm -rf ${BUILD_DIR};
   echo -e "${CYAN}Removed ${LGREEN}workdir ${BUILD_DIR}${NORM}";
@@ -286,6 +306,7 @@ function deploy_stack() {
 # Main
 #################################
 set -ueo pipefail;
+export SHELLOPTS;
 
 check_arguments_and_load_deployment_file $@;
 
