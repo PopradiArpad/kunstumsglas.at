@@ -74,9 +74,33 @@ function remote_stack_file_abs_dir() {
   echo "${REMOTE_ROOT_OF_STACK_FILES}/$(project_name)/${STACK_PURPOSE}";
 }
 
-#################################
-# Subcommands of push_image
-#################################
+###################################################
+# Subcommands of push_image_if_not_exists
+###################################################
+function does_image_exist() {
+  local IMAGE_NAME=$(image_name);
+  echo -e "${CYAN}Checking${NORM} ${LGREEN}image ${IMAGE_NAME}${NORM} on ${LGREEN}${REMOTE_HOST}${NORM}";
+
+  local IMAGE_EXISTS=$(ssh -T root@${REMOTE_HOST} <<EOF
+    set -euo pipefail;
+
+    if [[ -n \$(docker image ls -q --filter reference=${IMAGE_NAME}) ]]; then
+      echo "y";
+    else
+      echo "n";
+    fi
+EOF
+    )
+
+  if [[ $(echo "${IMAGE_EXISTS}"|tail -n 1) = "y" ]]; then
+    echo -e "${CYAN}  exists${NORM}";
+    return 0;
+  else
+    echo -e "${CYAN}  not exists${NORM}";
+    return 1;
+  fi
+}
+
 function start_registry_on_host() {
   echo -e "${CYAN}Starting registry on ${LGREEN}${REMOTE_HOST}${NORM}";
 
@@ -198,7 +222,11 @@ EOF
   scp "${G_STACK_PATH_ABS}" root@${REMOTE_HOST}:${STACK_FILE_ABS_DIR};
 }
 
-function push_image() (
+function push_image_if_not_exists() (
+  if does_image_exist; then
+    return 0;
+  fi
+
   start_registry_on_host;
   trap stop_registry_on_host EXIT;
 
@@ -211,33 +239,57 @@ function push_image() (
   pull_image_from_registry_on_remote;
 )
 
+function does_remote_network_exist() {
+  local NETWORK_NAME=$(network_name);
+  echo -e "${CYAN}Checking remote network ${LGREEN}${NETWORK_NAME}${NORM}";
+
+  local NETWORK_EXIST=$(ssh -T root@${REMOTE_HOST} <<EOF
+    set -euo pipefail;
+    function does_network_exist() {
+      docker network ls|grep "${NETWORK_NAME}" > /dev/null;
+    }
+
+    if does_network_exist; then
+      echo "y";
+    else
+      echo "n";
+    fi
+EOF
+  )
+  # echo -e "NETWORK_EXIST:${CYAN}${NETWORK_EXIST}${NORM}";
+  if [[ $(echo "${NETWORK_EXIST}"|tail -n 1) = "y" ]]; then
+    echo -e "${CYAN}  exists${NORM}";
+    return 0;
+  else
+    echo -e "${CYAN}  not exist${NORM}";
+    return 1;
+  fi
+}
+
 function create_remote_network_if_not_exist() {
   local NETWORK_NAME=$(network_name);
   echo -e "${CYAN}Creating remote network ${LGREEN}${NETWORK_NAME}${NORM}${CYAN} if not exists${NORM}";
 
+  if does_remote_network_exist; then
+    return 0;
+  fi
+
   ssh -T root@${REMOTE_HOST} <<EOF
     set -euo pipefail;
 
-    function does_network_exist() {
-      docker network ls|grep "${NETWORK_NAME}" > /dev/null;
-      return \$?;
-    }
-
-    if ! does_network_exist; then
-      docker network create --driver overlay --attachable ${NETWORK_NAME} > /dev/null;
-    fi
+    docker network create --driver overlay --attachable ${NETWORK_NAME} > /dev/null;
 EOF
 }
 
-function create_remote_volume_if_not_exist() (
-  echo -e "${CYAN}Creating remote ${LGREEN}volume $(db_volume_name)${NORM}${CYAN} if not exists on ${NORM}${LGREEN}${REMOTE_HOST}${NORM}${NORM}";
+function does_remote_volume_exist() (
+  echo -e "${CYAN}Checking remote ${LGREEN}volume $(db_volume_name)${NORM}";
 
   local REMOTE_DB_VOLUME_NAME=$(db_volume_name);
   local VOLUME_EXISTS=$(ssh -T root@${REMOTE_HOST} <<EOF
+    set -euo pipefail;
 
     function does_volume_exist() {
-      sudo docker volume ls|grep "${REMOTE_DB_VOLUME_NAME}" > /dev/null;
-      return $?;
+      docker volume ls|grep "${REMOTE_DB_VOLUME_NAME}" > /dev/null;
     }
 
     if does_volume_exist; then
@@ -248,7 +300,19 @@ function create_remote_volume_if_not_exist() (
 EOF
   );
 
-  if [[ $VOLUME_EXISTS = "y" ]]; then
+  if [[ $(echo "${VOLUME_EXISTS}"|tail -n 1) = "y" ]]; then
+    echo -e "${CYAN}  exists${NORM}";
+    return 0;
+  else
+    echo -e "${CYAN}  not exists${NORM}";
+    return 1;
+  fi
+)
+
+function create_remote_volume_if_not_exist() (
+  echo -e "${CYAN}Creating remote ${LGREEN}volume $(db_volume_name)${NORM}${CYAN} if not exists on ${NORM}${LGREEN}${REMOTE_HOST}${NORM}${NORM}";
+
+  if does_remote_volume_exist; then
     return 0;
   fi
 
@@ -260,6 +324,7 @@ EOF
   npm run db_management create ${STACK_DB_IMAGE} ${TMP_DB_VOLUME_NAME} ${DB_SESSION_SECRET};
   trap rm_tmp_volume EXIT;
 
+  local REMOTE_DB_VOLUME_NAME=$(db_volume_name);
   # https://www.guidodiepen.nl/2016/05/transfer-docker-data-volume-to-another-host/
   sudo docker run --rm --mount source=${TMP_DB_VOLUME_NAME},target="/from" alpine ash -c "cd /from ; tar -cvf - . " | ssh root@${REMOTE_HOST} "docker run --rm -i --mount source=${REMOTE_DB_VOLUME_NAME},target='/to' alpine ash -c 'cd /to ; tar -xpvf - ' ";
 )
@@ -299,7 +364,7 @@ function deploy_stack() {
   build_image;
   create_stack_file;
   copy_stack_file;
-  push_image;
+  push_image_if_not_exists;
   create_remote_network_if_not_exist;
   create_remote_volume_if_not_exist;
   # close_ports_remote;
