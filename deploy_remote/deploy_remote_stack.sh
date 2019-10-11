@@ -234,6 +234,7 @@ function create_remote_volume_if_not_exist() (
 
   local REMOTE_DB_VOLUME_NAME=$(db_volume_name);
   local VOLUME_EXISTS=$(ssh -T root@${REMOTE_HOST} <<EOF
+
     function does_volume_exist() {
       sudo docker volume ls|grep "${REMOTE_DB_VOLUME_NAME}" > /dev/null;
       return $?;
