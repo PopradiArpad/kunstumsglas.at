@@ -56,18 +56,17 @@ function image_name_with_registry() {
 }
 
 function stack_name() {
-  echo $(project_name)_${STACK_PURPOSE};
+  local PROJECT_NAME="$(project_name)";
+  # docker: name must be valid as a DNS name component
+  echo ${PROJECT_NAME/\./_}_${STACK_PURPOSE};
 }
 
 function network_name() {
-  local STACK_NAME="$(stack_name)";
-  # docker: name must be valid as a DNS name component
-  echo "${STACK_NAME/\./_}_network";
+  echo "$(stack_name)_network";
 }
 
 function db_volume_name() {
-  local STACK_NAME="$(stack_name)";
-  echo "${STACK_NAME/\./_}_volume";  # USE _ AND NOT - AS SEPARATOR! THIS NAME WILL BE GENERATED AT DEPLOYMENT
+  echo "$(stack_name)_volume";  # USE _ AND NOT - AS SEPARATOR! THIS NAME WILL BE GENERATED AT DEPLOYMENT
 }
 
 function remote_stack_file_abs_dir() {
@@ -346,7 +345,7 @@ function deploy_remote_stack() {
     set -euo pipefail;
 
     cd $(remote_stack_file_abs_dir);
-    # sudo docker stack deploy -c stack.yml $(stack_name);
+    sudo docker stack deploy -c stack.yml $(stack_name);
 EOF
 }
 
@@ -368,7 +367,7 @@ function deploy_stack() {
   create_remote_network_if_not_exist;
   create_remote_volume_if_not_exist;
   # close_ports_remote;
-  # deploy_remote_stack;
+  deploy_remote_stack;
 
   rm -rf ${BUILD_DIR};
   echo -e "${CYAN}Removed ${LGREEN}workdir ${BUILD_DIR}${NORM}";
