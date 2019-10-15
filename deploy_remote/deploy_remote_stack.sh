@@ -355,7 +355,7 @@ function deploy_remote_stack() {
     set -euo pipefail;
 
     cd $(remote_stack_file_abs_dir);
-    sudo docker stack deploy -c stack.yml $(stack_name);
+    docker stack deploy -c stack.yml $(stack_name);
 EOF
 }
 
