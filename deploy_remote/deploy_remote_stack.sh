@@ -328,13 +328,33 @@ function create_remote_volume_if_not_exist() (
   sudo docker run --rm --mount source=${TMP_DB_VOLUME_NAME},target="/from" alpine ash -c "cd /from ; tar -cvf - . " | ssh root@${REMOTE_HOST} "docker run --rm -i --mount source=${REMOTE_DB_VOLUME_NAME},target='/to' alpine ash -c 'cd /to ; tar -xpvf - ' ";
 )
 
-function close_ports_remote() {
-  echo -e "${CYAN}Closing remote ${LGREEN}ports ${STACK_DB_PORT}${NORM} ${CYAN}and ${LGREEN}${STACK_WEB_PORT}${NORM}";
+function add_iptables_rule_if_not_exists() {
+  local CHAIN_AND_RULE="$1";
 
-  ssh -T root@${REMOTE_HOST} <<EOF
-    iptables -S;
+  ssh -T root@"${REMOTE_HOST}" <<EOF
+    set -euo pipefail;
+    echo -e "   ${YELLOW}${CHAIN_AND_RULE}";
+    if iptables -C ${CHAIN_AND_RULE}; then
+      echo -e "       exists";
+    else
+      iptables -A ${CHAIN_AND_RULE};
+      echo -e "       not existed";
+    fi
 EOF
+}
 
+# function save_iptable_settings() {
+#   ssh -T root@"${REMOTE_HOST}" <<EOF
+#     #
+#     dpkg-reconfigure iptables-persistent;
+# EOF
+# }
+
+function close_ports_remote() {
+  echo -e "${CYAN}Closing remote ${LGREEN}ports ${NORM} ${CYAN}and ${LGREEN}${STACK_WEB_PORT}${NORM}";
+
+   add_iptables_rule_if_not_exists "PREROUTING -t raw ! -i lo -p tcp --dport ${STACK_WEB_PORT} -j DROP";
+   add_iptables_rule_if_not_exists "PREROUTING -t raw ! -i lo -p tcp --dport ${STACK_DB_PORT} -j DROP";
 }
 
 function deploy_remote_stack() {
@@ -366,7 +386,7 @@ function deploy_stack() {
   push_image_if_not_exists;
   create_remote_network_if_not_exist;
   create_remote_volume_if_not_exist;
-  # close_ports_remote;
+  close_ports_remote;
   deploy_remote_stack;
 
   rm -rf ${BUILD_DIR};
