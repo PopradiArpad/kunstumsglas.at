@@ -48,14 +48,14 @@ services:
         target: /app/tmp
         volume:
           nocopy: true
-    # deploy:
-    #   restart_policy:
-    #     condition: on-failure
-    #     delay: 5s
-    #     max_attempts: 3
-    #     window: 5s
-    #   update_config:
-    #     failure_action: pause
+    deploy:
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 3
+        window: 5s
+      update_config:
+        failure_action: pause
 volumes:
   STACK_DB_VOLUME:
     external: true

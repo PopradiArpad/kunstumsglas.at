@@ -336,15 +336,45 @@ function add_port_to_secure() {
 EOF
 }
 
-function close_ports_remote() {
-  echo -e "${CYAN}Closing remote ${LGREEN}ports ${NORM} ${CYAN}and ${LGREEN}${STACK_WEB_PORT}${NORM}";
+function enable_service() {
+  local SERVICE="${1}";
+  local RESTART="${2}";
+
+  if [[ ${RESTART} = restart ]]; then
+    echo -e "${CYAN}Enabling and restarting ${LGREEN}service ${SERVICE}${NORM}${CYAN} on ${NORM}${LGREEN}${REMOTE_HOST}${NORM}";
+  else
+    echo -e "${CYAN}Enabling ${LGREEN}service ${SERVICE}${NORM}${CYAN} on ${NORM}${LGREEN}${REMOTE_HOST}${NORM}";
+  fi
+
+  ssh -T root@"${REMOTE_HOST}" <<EOF
+    set -euo pipefail;
+
+    set -x;
+    [[ ! -L /etc/systemd/system/${SERVICE} ]] \
+      && ln -s ${REMOTE_DIR_OF_SERVICES}/${SERVICE} /etc/systemd/system/${SERVICE} \
+      && systemctl daemon-reload;
+
+    if [[ ${RESTART} = restart ]]; then
+      # Why restart instead of start? Start does not run the already started service!
+      systemctl restart ${SERVICE};
+    fi
+
+    systemctl enable ${SERVICE};
+EOF
+}
+
+function compensate_docker_bugs() {
+  echo -e "${CYAN}Closing remote ${LGREEN}ports ${NORM}";
 
   add_port_to_secure "${STACK_WEB_PORT}";
   add_port_to_secure "${STACK_DB_PORT}";
 
-  ssh -T root@"${REMOTE_HOST}" <<EOF
-    systemctl restart secure-docker-ports.service > /dev/null;
-EOF
+  # Enabling and starting services to compensate Docker bugs.
+  # These services are not included in this script.
+    # Close ports to the outher world opened up by Docker
+  enable_service "secure-docker-ports.service" "restart";
+    # Close ports to the outher world opened up by Docker
+  enable_service "restart-stacks-after-reboot.service" "dont_restart";
 }
 
 function deploy_remote_stack() {
@@ -368,16 +398,16 @@ function deploy_stack() {
   echo -e "${CYAN}Creating ${LGREEN}workdir ${BUILD_DIR}${NORM}";
   mkdir -p ${BUILD_DIR} && cd ${BUILD_DIR};
 
-  clone;
-  cd $(project_name);
-  build_image;
-  create_stack_file;
-  copy_stack_file;
-  push_image_if_not_exists;
-  create_remote_network_if_not_exist;
-  create_remote_volume_if_not_exist;
-  close_ports_remote;
-  deploy_remote_stack;
+  # clone;
+  # cd $(project_name);
+  # build_image;
+  # create_stack_file;
+  # copy_stack_file;
+  # push_image_if_not_exists;
+  # create_remote_network_if_not_exist;
+  # create_remote_volume_if_not_exist;
+  compensate_docker_bugs;
+  # deploy_remote_stack;
 
   rm -rf ${BUILD_DIR};
   echo -e "${CYAN}Removed ${LGREEN}workdir ${BUILD_DIR}${NORM}";
