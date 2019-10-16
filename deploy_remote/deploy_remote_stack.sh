@@ -11,7 +11,7 @@ LGREEN="\e[1;32m";
 YELLOW="\e[33m";
 NORM="\e[0m";
 
-G_STACK_PATH_ABS="${PROJECT_DIR}/tmp/stack.yml";
+G_STACK_FILE_PATH_ABS="${PROJECT_DIR}/tmp/stack.yml";
 G_SSH_FORWARD_CMD="";
 
 function print_help_and_exit() {
@@ -183,7 +183,7 @@ function build_image() {
 }
 
 function create_stack_file() {
-  echo -e "${CYAN}Creating ${LGREEN}compose file ${G_STACK_PATH_ABS}${NORM}";
+  echo -e "${CYAN}Creating ${LGREEN}compose file ${G_STACK_FILE_PATH_ABS}${NORM}";
 
   # This is NOT the pattern file of the cloned project!
   cat "${SCRIPT_ABS_DIR}/stack-pattern.yml"| \
@@ -194,31 +194,43 @@ function create_stack_file() {
       -e "s/STACK_NETWORK/$(network_name)/g"        \
       -e "s/STACK_DB_PORT/${STACK_DB_PORT}/g"        \
       -e "s/STACK_WEB_PORT/${STACK_WEB_PORT}/g"      \
-      > "${G_STACK_PATH_ABS}";
+      > "${G_STACK_FILE_PATH_ABS}";
 
   # echo -e "${LGREEN}##### START stack.yml ######";
   # cat stack.yml
   # echo -e }"##### END stack.yml ######${NORM}";
 }
 
-function copy_stack_file() {
-  local STACK_FILE_ABS_DIR="$(remote_stack_file_abs_dir)";
-  echo -e "${CYAN}Copying stack file to ${LGREEN}${REMOTE_HOST}:${STACK_FILE_ABS_DIR}${NORM}${CYAN} and backing up the current one if exists${NORM}";
+function copy_stack_file_and_other_infos_needed_by_compensate_docker_bugs_service() {
+  local REMOTE_STACK_DIR="$(remote_stack_file_abs_dir)";
+  echo -e "${CYAN}Copying stack file to ${LGREEN}${REMOTE_HOST}:${REMOTE_STACK_DIR}${NORM}${CYAN} and backing up the current one if exists${NORM}";
 
+  local STACK_FILE_PATH="${REMOTE_STACK_DIR}/stack.yml";
+  local STACK_NAME_PATH="${REMOTE_STACK_DIR}/stack_name";
+  local STACK_PORTS_PATH="${REMOTE_STACK_DIR}/stack_ports";
 
   ssh -T root@${REMOTE_HOST} <<EOF
     set -euo pipefail;
-    STACK_FILE_ABS_DIR=${STACK_FILE_ABS_DIR};
-    STACK_PATH="\$STACK_FILE_ABS_DIR/stack.yml";
 
-    mkdir -p \$STACK_FILE_ABS_DIR;
+    mkdir -p ${REMOTE_STACK_DIR};
 
-    if [[ -a "\$STACK_PATH" ]]; then
-      mv "\$STACK_PATH" "\$STACK_FILE_ABS_DIR/stack-\$(date +'%Y-%m-%d_%H-%M-%S').yml";
+    # save the old stack file
+    if [[ -a "${STACK_FILE_PATH}" ]]; then
+      mv "${STACK_FILE_PATH}" "${REMOTE_STACK_DIR}/stack-\$(date +'%Y-%m-%d_%H-%M-%S').yml";
     fi
+
+    # store infos needed by "compensate-docker-bugs.service"
+    ########################################################
+
+    echo "$(stack_name)" > "${STACK_NAME_PATH}";
+
+    rm -f "${STACK_PORTS_PATH}";
+    echo "${STACK_WEB_PORT}" >> "${STACK_PORTS_PATH}";
+    echo "${STACK_DB_PORT}" >> "${STACK_PORTS_PATH}";
 EOF
 
-  scp "${G_STACK_PATH_ABS}" root@${REMOTE_HOST}:${STACK_FILE_ABS_DIR};
+  # copy (new) stack file after backing up old one above
+  scp "${G_STACK_FILE_PATH_ABS}" root@${REMOTE_HOST}:${REMOTE_STACK_DIR};
 }
 
 function push_image_if_not_exists() (
@@ -328,14 +340,6 @@ function create_remote_volume_if_not_exist() (
   sudo docker run --rm --mount source=${TMP_DB_VOLUME_NAME},target="/from" alpine ash -c "cd /from ; tar -cvf - . " | ssh root@${REMOTE_HOST} "docker run --rm -i --mount source=${REMOTE_DB_VOLUME_NAME},target='/to' alpine ash -c 'cd /to ; tar -xpvf - ' ";
 )
 
-function add_port_to_secure() {
-  local PORT="${1}";
-
-  ssh -T root@"${REMOTE_HOST}" <<EOF
-    touch "${REMOTE_DIR_OF_PORTS_TO_SECURE}/${PORT}";
-EOF
-}
-
 function enable_service() {
   local SERVICE="${1}";
   local RESTART="${2}";
@@ -349,7 +353,6 @@ function enable_service() {
   ssh -T root@"${REMOTE_HOST}" <<EOF
     set -euo pipefail;
 
-    set -x;
     [[ ! -L /etc/systemd/system/${SERVICE} ]] \
       && ln -s ${REMOTE_DIR_OF_SERVICES}/${SERVICE} /etc/systemd/system/${SERVICE} \
       && systemctl daemon-reload;
@@ -364,17 +367,15 @@ EOF
 }
 
 function compensate_docker_bugs() {
-  echo -e "${CYAN}Closing remote ${LGREEN}ports ${NORM}";
-
-  add_port_to_secure "${STACK_WEB_PORT}";
-  add_port_to_secure "${STACK_DB_PORT}";
+  echo -e "${CYAN}Compensate Docker bugs on ${LGREEN}${REMOTE_HOST}${NORM}";
+  echo -e "${CYAN}  THAT CAN CAUSE RESTART OF THE STARTED STACK AND TAKE SOME TIME!${NORM}";
 
   # Enabling and starting services to compensate Docker bugs.
   # These services are not included in this script.
-    # Close ports to the outher world opened up by Docker
-  enable_service "secure-docker-ports.service" "restart";
-    # Close ports to the outher world opened up by Docker
-  enable_service "restart-stacks-after-reboot.service" "dont_restart";
+    # Close ports to the outer world opened by Docker and restart the stack now and the boot.
+    # At this service the restart is needed to close the ports now
+    # For restarting the stack at boot "enable" would be enough.
+  enable_service "compensate-docker-bugs.service" "restart";
 }
 
 function deploy_remote_stack() {
@@ -398,16 +399,16 @@ function deploy_stack() {
   echo -e "${CYAN}Creating ${LGREEN}workdir ${BUILD_DIR}${NORM}";
   mkdir -p ${BUILD_DIR} && cd ${BUILD_DIR};
 
-  # clone;
-  # cd $(project_name);
-  # build_image;
-  # create_stack_file;
-  # copy_stack_file;
-  # push_image_if_not_exists;
-  # create_remote_network_if_not_exist;
-  # create_remote_volume_if_not_exist;
+  clone;
+  cd $(project_name);
+  build_image;
+  create_stack_file;
+  copy_stack_file_and_other_infos_needed_by_compensate_docker_bugs_service;
+  push_image_if_not_exists;
+  create_remote_network_if_not_exist;
+  create_remote_volume_if_not_exist;
   compensate_docker_bugs;
-  # deploy_remote_stack;
+  deploy_remote_stack;
 
   rm -rf ${BUILD_DIR};
   echo -e "${CYAN}Removed ${LGREEN}workdir ${BUILD_DIR}${NORM}";
