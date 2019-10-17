@@ -18,11 +18,9 @@ mongod.pid
 app_w/build
 tags
 server/config/REGISTRATION_IS_ALLOWED
-.ctags.d
 
 # temporary development files
 /development/stack-DEVELOPMENT.yml
 
 # deployment details
-/deploy_remote/kunstumsglas.at.sh
-/deploy_remote/test.kunstumsglas.at.sh
+/deploy_remote
