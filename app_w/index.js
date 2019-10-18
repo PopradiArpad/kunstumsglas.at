@@ -6,8 +6,7 @@
 *  LICENSE file in the root directory of this source tree.
 */
 
- 
-import {} from './global';
+// import {} from './global'; // piwik
 import React from 'react';
 import { render } from 'react-dom';
 import Root from './Root';
