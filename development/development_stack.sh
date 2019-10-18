@@ -17,8 +17,9 @@ function print_help_and_exit() {
 
   echo -e "${CYAN}Manage development docker stack defined in ${LGREEN}development_environment.sh:";
   echo -e "${NORM}Commands:";
-  echo -e "${GREEN}deploy${NORM} : Build image, create volume and network if needed then deploy development stack.";
-  echo -e "${GREEN}rm${NORM}     : Remove development stack.";
+  echo -e "${GREEN}deploy${NORM}       : Build image, create volume and network if needed then deploy development stack.";
+  echo -e "${GREEN}attach-to-db${NORM} : Attach a mongo container to the db service.";
+  echo -e "${GREEN}rm${NORM}           : Remove development stack.";
 
   exit $EXIT_VAL;
 }
@@ -76,7 +77,6 @@ function create_docker_compose_file() {
       -e "s/DOCKER_DB_IMAGE/${DOCKER_DB_IMAGE}/g"     \
       -e "s/DOCKER_VOLUME/${DOCKER_VOLUME}/g"         \
       -e "s/DOCKER_NETWORK/${DOCKER_NETWORK}/g"       \
-      -e "s/DOCKER_DB_PORT/${DOCKER_DB_PORT}/g"       \
       -e "s/DOCKER_WEB_PORT/${DOCKER_WEB_PORT}/g"     \
       > ${DOCKER_COMPOSE_FILE} || exit 1;
 }
@@ -101,6 +101,10 @@ function rm_stack() {
   sudo docker stack rm ${DOCKER_DEVELOPMENT_STACK} || exit 1;
 }
 
+function attach_to_db() {
+  sudo docker run -ti --rm --network "${DOCKER_NETWORK}" "${DOCKER_DB_IMAGE}" mongo --host db;
+}
+
 ###################################
 # Main
 ###################################
@@ -110,6 +114,9 @@ cd ${PROJECT_DIR} || exit 1;
 case "$1" in
   deploy)
     deploy_stack;
+    ;;
+  attach-to-db)
+    attach_to_db;
     ;;
   rm)
     rm_stack;
