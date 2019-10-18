@@ -9,9 +9,6 @@ services:
     image: DOCKER_DB_IMAGE
     #Start as master to let have oplog to let make secure hot backup
     command: mongod --master
-    #Expose the service only on this machine
-    ports:
-      - "127.0.0.1:DOCKER_DB_PORT:27017"
     volumes:
       - type: volume
         source: DOCKER_VOLUME
