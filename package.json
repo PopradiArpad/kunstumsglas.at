@@ -6,7 +6,6 @@
   "scripts": {
     "build": "npm run build_app_m && npm run build_app_w && npm run build_server",
     "test": "npm run test_app_m && npm run test_app_w && npm run test_server && echo All tests are OK",
-    "development_stack": "./development/development_stack.sh",
     "db_management": "./scripts/db_management.sh",
     "build_app_m": "node ./node_modules/webpack/bin/webpack.js --config app_m/webpack.config.js",
     "building_app_m": "npm run build_app_m -- --progress --colors --watch",

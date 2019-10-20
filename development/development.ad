@@ -1,7 +1,10 @@
 = KUG Development
 :toc:
 
-== Setup KUG Development Environment
+== Setup KUG Development Environment Dockerized
+. Use *docker-stack-manager/development-docker-stack.sh* (Not included in this project.)
+
+== Setup KUG Development Environment without Docker
 
 . Clone git repo
 . [[start-app]]`nvm use v8.6.0` (see actual node version in Dockerfile)
