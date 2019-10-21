@@ -58,7 +58,7 @@ function kill_mongod() {
 # Dockerized helpers
 ###################################
 function does_volume_exist() {
-  sudo docker volume ls|grep "${DOCKER_VOLUME}" > /dev/null;
+  sudo docker volume ls|grep "${STACK_DB_VOLUME}" > /dev/null;
   return $?;
 }
 
@@ -67,12 +67,12 @@ function does_volume_exist() {
 # Command handlers
 ###################################
 function create_initial_db() {
-  local DOCKER_DB_IMAGE="$1";
-  local DOCKER_VOLUME="$2";
+  local STACK_DB_IMAGE="$1";
+  local STACK_DB_VOLUME="$2";
   local SESSION_SECRET="$3";
 
-  if does_volume_exist "${DOCKER_VOLUME}"; then
-    echo -e "${RED}Volume ${CYAN}${DOCKER_VOLUME}${RED} already exists!";
+  if does_volume_exist "${STACK_DB_VOLUME}"; then
+    echo -e "${RED}Volume ${CYAN}${STACK_DB_VOLUME}${RED} already exists!";
     print_help_and_exit 1;
   fi
 
@@ -86,8 +86,8 @@ function create_initial_db() {
     sudo docker run --name ${TMP_DB_INIT} \
                     -d --rm \
                     --mount type=bind,source="${SCRIPT_ABS_DIR}",target="/scripts" \
-                    --mount source="${DOCKER_VOLUME}",target="/data/db" \
-                    ${DOCKER_DB_IMAGE} > /dev/null;
+                    --mount source="${STACK_DB_VOLUME}",target="/data/db" \
+                    ${STACK_DB_IMAGE} > /dev/null;
     #  /dev/null has no effect. I don't know why
     sudo docker exec -i ${TMP_DB_INIT} '/bin/bash'  << EOF > /dev/null
       set -ueo pipefail;

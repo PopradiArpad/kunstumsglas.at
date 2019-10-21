@@ -6,12 +6,12 @@
 version: "3.3"
 services:
   db:
-    image: DOCKER_DB_IMAGE
+    image: STACK_DB_IMAGE
     #Start as master to let have oplog to let make secure hot backup
     command: mongod --master
     volumes:
       - type: volume
-        source: DOCKER_VOLUME
+        source: STACK_DB_VOLUME
         target: /data/db
         volume:
           nocopy: true
@@ -31,10 +31,10 @@ services:
       update_config:
         failure_action: pause
   web:
-    image: DOCKER_IMAGE
+    image: STACK_IMAGE
     #Expose the service only on this machine
     ports:
-      - "127.0.0.1:DOCKER_WEB_PORT:8080"
+      - "127.0.0.1:STACK_WEB_PORT:8080"
     environment:
       - NODE_ENV=production
       - DEBUG=*
@@ -55,7 +55,7 @@ services:
     #   update_config:
     #     failure_action: pause
 volumes:
-  DOCKER_VOLUME:
+  STACK_DB_VOLUME:
     external: true
   configdb:
   tmp:
@@ -67,4 +67,4 @@ volumes:
 networks:
   default:
     external:
-      name: DOCKER_NETWORK
+      name: STACK_NETWORK
