@@ -99,7 +99,7 @@
     "jest": "21.2.1",
     "mkdirp": "0.5.1",
     "mocha": "4.0.1",
-    "node-sass": "4.11.0",
+    "node-sass": "4.13.1",
     "postcss-loader": "2.0.8",
     "react-addons-test-utils": "15.6.2",
     "react-test-renderer": "16.0.0",
