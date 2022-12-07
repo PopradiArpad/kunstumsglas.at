@@ -33,7 +33,7 @@
     "connect-mongo": "2.0.0",
     "cookie-parser": "1.4.3",
     "es6-promisify": "5.0.0",
-    "express": "4.16.2",
+    "express": "4.17.3",
     "express-graphql": "0.6.4",
     "express-session": "1.15.6",
     "graphql": "0.9.1",
